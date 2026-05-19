@@ -21,12 +21,12 @@ export default function Home() {
             <div style={{ background: "rgba(255,255,255,0.15)", border: "1px solid rgba(255,255,255,0.3)", color: "rgba(255,255,255,0.9)", fontSize: "0.8rem", padding: "4px 14px", borderRadius: 20, display: "inline-block", marginBottom: "1rem", fontWeight: 500 }}>
               ✦ Nhà phân phối chính thức BBG Unimax Vina
             </div>
-            <h1 style={{ fontFamily: "'Playfair Display', serif", fontSize: "clamp(2rem, 4vw, 2.8rem)", lineHeight: 1.2, marginBottom: "1rem" }}>
+            <h1 style={{ fontFamily: "'Trebuchet MS', serif", fontSize: "clamp(2rem, 4vw, 2.8rem)", lineHeight: 1.2, marginBottom: "1rem" }}>
               Mua thông minh — Sống tiện nghi<br />
               <span style={{ color: "var(--accent)" }}>chất lượng cao</span>
             </h1>
             <p style={{ fontSize: "1rem", opacity: 0.85, lineHeight: 1.7, marginBottom: "1.75rem" }}>
-              Cung cấp máy gia dụng, thiết bị diệt côn trùng, thiết bị làm đẹp cho người tiêu dùng toàn quốc.
+              Gia dụng chính hãng — công nghệ đỉnh cao. Từ bình dân đến cao cấp, có sản phẩm mọi ngân sách.
             </p>
             <div style={{ display: "flex", gap: "1rem", flexWrap: "wrap" }}>
               <Link href="/san-pham" style={{ background: "var(--accent)", color: "#fff", padding: "12px 28px", borderRadius: 28, fontSize: "0.95rem", fontWeight: 600, textDecoration: "none" }}>
@@ -45,7 +45,7 @@ export default function Home() {
               { num: "4", label: "Sàn TMĐT" },
             ].map(s => (
               <div key={s.label} style={{ textAlign: "center" }}>
-                <div style={{ fontFamily: "'Playfair Display', serif", fontSize: "2rem", color: "var(--accent)", fontWeight: 700 }}>{s.num}</div>
+                <div style={{ fontFamily: "'Trebuchet MS', serif", fontSize: "2rem", color: "var(--accent)", fontWeight: 700 }}>{s.num}</div>
                 <div style={{ fontSize: "0.8rem", color: "rgba(255,255,255,0.7)", marginTop: 4 }}>{s.label}</div>
               </div>
             ))}
@@ -56,7 +56,7 @@ export default function Home() {
       {/* Categories */}
       <section style={{ padding: "3rem 0", background: "#fff" }}>
         <div className="container">
-          <h2 style={{ fontFamily: "'Playfair Display', serif", fontSize: "1.6rem", marginBottom: "1.5rem", color: "var(--brand)" }}>Danh mục sản phẩm</h2>
+          <h2 style={{ fontFamily: "'Trebuchet MS', serif", fontSize: "1.6rem", marginBottom: "1.5rem", color: "var(--brand)" }}>Danh mục sản phẩm</h2>
           <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fit, minmax(200px, 1fr))", gap: "1rem" }}>
             {[
               { icon: "🦟", name: "Diệt côn trùng", desc: "Đèn diệt muỗi, bẫy côn trùng" },
@@ -77,7 +77,7 @@ export default function Home() {
       <section style={{ padding: "3rem 0" }}>
         <div className="container">
           <div style={{ display: "flex", justifyContent: "space-between", alignItems: "center", marginBottom: "1.5rem" }}>
-            <h2 style={{ fontFamily: "'Playfair Display', serif", fontSize: "1.6rem", color: "var(--brand)" }}>Sản phẩm nổi bật</h2>
+            <h2 style={{ fontFamily: "'Trebuchet MS', serif", fontSize: "1.6rem", color: "var(--brand)" }}>Sản phẩm nổi bật</h2>
             <Link href="/san-pham" style={{ color: "var(--brand2)", fontWeight: 500, fontSize: "0.9rem", textDecoration: "none" }}>Xem tất cả →</Link>
           </div>
           <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fill, minmax(240px, 1fr))", gap: "1rem" }}>
@@ -106,7 +106,7 @@ export default function Home() {
       {/* CTA Banner */}
       <section style={{ background: "var(--brand)", padding: "3rem 0", textAlign: "center" }}>
         <div className="container">
-          <h2 style={{ fontFamily: "'Playfair Display', serif", fontSize: "1.8rem", color: "#fff", marginBottom: "0.75rem" }}>Cần tư vấn sản phẩm?</h2>
+          <h2 style={{ fontFamily: "'Trebuchet MS', serif", fontSize: "1.8rem", color: "#fff", marginBottom: "0.75rem" }}>Cần tư vấn sản phẩm?</h2>
           <p style={{ color: "rgba(255,255,255,0.8)", marginBottom: "1.5rem", fontSize: "1rem" }}>Liên hệ ngay để được hỗ trợ nhanh nhất</p>
           <div style={{ display: "flex", gap: "1rem", justifyContent: "center", flexWrap: "wrap" }}>
             <a href="tel:0778886758" style={{ background: "var(--accent)", color: "#fff", padding: "12px 28px", borderRadius: 28, fontWeight: 600, textDecoration: "none", fontSize: "0.95rem" }}>
