@@ -23,13 +23,13 @@ export default function Home() {
             </div>
             <h1 style={{ fontFamily: "'Playfair Display', serif", fontSize: "clamp(2rem, 4vw, 2.8rem)", lineHeight: 1.2, marginBottom: "1rem" }}>
               Thiết bị gia dụng<br />
-              <span style={{ color: "#f0a500" }}>chất lượng cao</span>
+              <span style={{ color: "var(--accent)" }}>chất lượng cao</span>
             </h1>
             <p style={{ fontSize: "1rem", opacity: 0.85, lineHeight: 1.7, marginBottom: "1.75rem" }}>
               Cung cấp máy gia dụng, thiết bị diệt côn trùng, thiết bị làm đẹp cho người tiêu dùng toàn quốc.
             </p>
             <div style={{ display: "flex", gap: "1rem", flexWrap: "wrap" }}>
-              <Link href="/san-pham" style={{ background: "#f0a500", color: "#fff", padding: "12px 28px", borderRadius: 28, fontSize: "0.95rem", fontWeight: 600, textDecoration: "none" }}>
+              <Link href="/san-pham" style={{ background: "var(--accent)", color: "#fff", padding: "12px 28px", borderRadius: 28, fontSize: "0.95rem", fontWeight: 600, textDecoration: "none" }}>
                 Xem sản phẩm
               </Link>
               <Link href="/lien-he" style={{ background: "transparent", color: "#fff", border: "1.5px solid rgba(255,255,255,0.6)", padding: "12px 28px", borderRadius: 28, fontSize: "0.95rem", fontWeight: 500, textDecoration: "none" }}>
@@ -45,7 +45,7 @@ export default function Home() {
               { num: "4", label: "Sàn TMĐT" },
             ].map(s => (
               <div key={s.label} style={{ textAlign: "center" }}>
-                <div style={{ fontFamily: "'Playfair Display', serif", fontSize: "2rem", color: "#f0a500", fontWeight: 700 }}>{s.num}</div>
+                <div style={{ fontFamily: "'Playfair Display', serif", fontSize: "2rem", color: "var(--accent)", fontWeight: 700 }}>{s.num}</div>
                 <div style={{ fontSize: "0.8rem", color: "rgba(255,255,255,0.7)", marginTop: 4 }}>{s.label}</div>
               </div>
             ))}
@@ -85,7 +85,7 @@ export default function Home() {
               <Link key={p.id} href={`/san-pham/${p.id}`} style={{ background: "#fff", border: "1px solid var(--border)", borderRadius: 12, overflow: "hidden", textDecoration: "none", display: "block" }}>
                 <div style={{ background: "var(--brand-light)", height: 150, display: "flex", alignItems: "center", justifyContent: "center", fontSize: "3rem", position: "relative" }}>
                   {p.icon}
-                  <span style={{ position: "absolute", top: 8, left: 8, background: "#f0a500", color: "#fff", fontSize: "0.7rem", fontWeight: 700, padding: "3px 8px", borderRadius: 10 }}>
+                  <span style={{ position: "absolute", top: 8, left: 8, background: "var(--accent)", color: "#fff", fontSize: "0.7rem", fontWeight: 700, padding: "3px 8px", borderRadius: 10 }}>
                     -{discount(p.originalPrice, p.price)}
                   </span>
                 </div>
@@ -109,7 +109,7 @@ export default function Home() {
           <h2 style={{ fontFamily: "'Playfair Display', serif", fontSize: "1.8rem", color: "#fff", marginBottom: "0.75rem" }}>Cần tư vấn sản phẩm?</h2>
           <p style={{ color: "rgba(255,255,255,0.8)", marginBottom: "1.5rem", fontSize: "1rem" }}>Liên hệ ngay để được hỗ trợ nhanh nhất</p>
           <div style={{ display: "flex", gap: "1rem", justifyContent: "center", flexWrap: "wrap" }}>
-            <a href="tel:0778886758" style={{ background: "#f0a500", color: "#fff", padding: "12px 28px", borderRadius: 28, fontWeight: 600, textDecoration: "none", fontSize: "0.95rem" }}>
+            <a href="tel:0778886758" style={{ background: "var(--accent)", color: "#fff", padding: "12px 28px", borderRadius: 28, fontWeight: 600, textDecoration: "none", fontSize: "0.95rem" }}>
               📞 Gọi ngay: 0778 886 758
             </a>
             <a href="https://zalo.me/0778886758" target="_blank" style={{ background: "transparent", color: "#fff", border: "1.5px solid rgba(255,255,255,0.6)", padding: "12px 28px", borderRadius: 28, fontWeight: 500, textDecoration: "none", fontSize: "0.95rem" }}>
