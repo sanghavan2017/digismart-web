@@ -54,7 +54,7 @@ export default function Home() {
       </section>
 
       {/* Categories */}
-      <section style={{ padding: "3rem 0", background: "#fff" }}>
+      <section style={{ padding: "3rem 0", background: "white" }}>
         <div className="container">
           <h2 style={{ fontFamily: "'Trebuchet MS', serif", fontSize: "1.6rem", marginBottom: "1.5rem", color: "var(--brand)" }}>Danh mục sản phẩm</h2>
           <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fit, minmax(200px, 1fr))", gap: "1rem" }}>
