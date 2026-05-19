@@ -3,6 +3,14 @@ import { useState, useRef, useEffect } from "react";
 
 type Message = { role: "user" | "assistant"; content: string };
 
+const QUICK_REPLIES = [
+  "Sản phẩm diệt côn trùng",
+  "Máy sấy tóc & gia dụng",
+  "Phụ kiện điện thoại",
+  "Chính sách bảo hành",
+  "Cách đặt hàng",
+];
+
 export default function Chatbot() {
   const [open, setOpen] = useState(false);
   const [messages, setMessages] = useState<Message[]>([
@@ -10,13 +18,16 @@ export default function Chatbot() {
   ]);
   const [input, setInput] = useState("");
   const [loading, setLoading] = useState(false);
+  const [listening, setListening] = useState(false);
   const bottomRef = useRef<HTMLDivElement>(null);
+  const recognitionRef = useRef<SpeechRecognition | null>(null);
 
   useEffect(() => { bottomRef.current?.scrollIntoView({ behavior: "smooth" }); }, [messages]);
 
-  async function send() {
-    if (!input.trim() || loading) return;
-    const userMsg: Message = { role: "user", content: input };
+  async function send(text?: string) {
+    const content = text || input;
+    if (!content.trim() || loading) return;
+    const userMsg: Message = { role: "user", content };
     setMessages(prev => [...prev, userMsg]);
     setInput("");
     setLoading(true);
@@ -35,9 +46,28 @@ export default function Chatbot() {
     setLoading(false);
   }
 
+  function startVoice() {
+    const SpeechRecognition = (window as Window & { SpeechRecognition?: typeof window.SpeechRecognition; webkitSpeechRecognition?: typeof window.SpeechRecognition }).SpeechRecognition || (window as Window & { webkitSpeechRecognition?: typeof window.SpeechRecognition }).webkitSpeechRecognition;
+    if (!SpeechRecognition) {
+      alert("Trình duyệt không hỗ trợ voice. Vui lòng dùng Chrome.");
+      return;
+    }
+    const recognition = new SpeechRecognition();
+    recognition.lang = "vi-VN";
+    recognition.interimResults = false;
+    recognition.onstart = () => setListening(true);
+    recognition.onend = () => setListening(false);
+    recognition.onresult = (e: SpeechRecognitionEvent) => {
+      const transcript = e.results[0][0].transcript;
+      setInput(transcript);
+    };
+    recognition.onerror = () => setListening(false);
+    recognitionRef.current = recognition;
+    recognition.start();
+  }
+
   return (
     <div style={{ position: "fixed", bottom: 20, right: 20, zIndex: 1000 }}>
-      {/* Chat Window */}
       {open && (
         <div style={{ position: "absolute", bottom: 68, right: 0, width: 320, background: "#fff", borderRadius: 16, border: "1px solid var(--border)", boxShadow: "0 8px 32px rgba(0,0,0,0.15)", overflow: "hidden" }}>
           {/* Header */}
@@ -65,12 +95,29 @@ export default function Chatbot() {
             <div ref={bottomRef} />
           </div>
 
+          {/* Quick Replies */}
+          {messages.length <= 1 && (
+            <div style={{ padding: "6px 10px", display: "flex", flexWrap: "wrap", gap: 6, borderTop: "1px solid var(--border)" }}>
+              {QUICK_REPLIES.map(q => (
+                <button key={q} onClick={() => send(q)}
+                  style={{ fontSize: "0.72rem", padding: "4px 10px", borderRadius: 20, border: "1px solid var(--brand)", background: "var(--brand-light)", color: "var(--brand)", cursor: "pointer", fontFamily: "inherit" }}>
+                  {q}
+                </button>
+              ))}
+            </div>
+          )}
+
           {/* Input */}
-          <div style={{ padding: 10, borderTop: "1px solid var(--border)", display: "flex", gap: 6 }}>
+          <div style={{ padding: 10, borderTop: "1px solid var(--border)", display: "flex", gap: 6, alignItems: "center" }}>
+            <button onClick={startVoice}
+              style={{ background: listening ? "var(--accent)" : "var(--bg)", border: "1px solid var(--border)", borderRadius: "50%", width: 32, height: 32, cursor: "pointer", display: "flex", alignItems: "center", justifyContent: "center", fontSize: "0.9rem", flexShrink: 0 }}
+              title="Nhấn để nói">
+              {listening ? "🔴" : "🎤"}
+            </button>
             <input value={input} onChange={e => setInput(e.target.value)} onKeyDown={e => e.key === "Enter" && send()}
-              placeholder="Nhập câu hỏi..."
+              placeholder={listening ? "Đang nghe..." : "Nhập câu hỏi..."}
               style={{ flex: 1, border: "1px solid var(--border)", borderRadius: 20, padding: "7px 12px", fontSize: "0.8rem", fontFamily: "inherit", outline: "none" }} />
-            <button onClick={send} disabled={loading}
+            <button onClick={() => send()} disabled={loading}
               style={{ background: "var(--brand)", color: "#fff", border: "none", padding: "7px 14px", borderRadius: 20, fontSize: "0.8rem", cursor: "pointer", fontFamily: "inherit", fontWeight: 600 }}>
               Gửi
             </button>
