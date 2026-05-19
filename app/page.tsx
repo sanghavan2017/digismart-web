@@ -15,7 +15,7 @@ export default function Home() {
   return (
     <>
       {/* Hero */}
-      background: "linear-gradient(135deg, #042C53 0%, #185FA5 60%, #378ADD 100%)"
+      <section style={{ background: "var(--brand)", padding: "5rem 0" }}>
         <div className="container" style={{ display: "flex", alignItems: "center", justifyContent: "space-between", gap: "2rem", flexWrap: "wrap" }}>
           <div style={{ color: "#fff", maxWidth: 520 }}>
             <div style={{ background: "rgba(255,255,255,0.15)", border: "1px solid rgba(255,255,255,0.3)", color: "rgba(255,255,255,0.9)", fontSize: "0.8rem", padding: "4px 14px", borderRadius: 20, display: "inline-block", marginBottom: "1rem", fontWeight: 500 }}>
