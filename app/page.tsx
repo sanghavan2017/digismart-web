@@ -22,7 +22,7 @@ export default function Home() {
               ✦ Nhà phân phối chính thức BBG Unimax Vina
             </div>
             <h1 style={{ fontFamily: "'Playfair Display', serif", fontSize: "clamp(2rem, 4vw, 2.8rem)", lineHeight: 1.2, marginBottom: "1rem" }}>
-              Thiết bị gia dụng<br />
+              Mua thông minh — Sống tiện nghi<br />
               <span style={{ color: "var(--accent)" }}>chất lượng cao</span>
             </h1>
             <p style={{ fontSize: "1rem", opacity: 0.85, lineHeight: 1.7, marginBottom: "1.75rem" }}>
