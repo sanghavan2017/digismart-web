@@ -26,3 +26,14 @@ h1, h2, h3, h4 {
 }
 
 .container { max-width: 1200px; margin: 0 auto; padding: 0 1.5rem; }
+
+/* Navbar responsive */
+.nav-links { display: flex; gap: 1.75rem; align-items: center; }
+.nav-hamburger { display: none; flex-direction: column; gap: 5px; background: none; border: none; cursor: pointer; padding: 8px; }
+.nav-mobile { display: none; }
+
+@media (max-width: 768px) {
+  .nav-links { display: none; }
+  .nav-hamburger { display: flex; }
+  .nav-mobile { display: block; }
+}

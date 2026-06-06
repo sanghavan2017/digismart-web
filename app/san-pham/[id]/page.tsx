@@ -1,114 +1,175 @@
-import { products } from "@/data/products";
 import Link from "next/link";
+import { products } from "@/data/products";
 import { notFound } from "next/navigation";
+import type { Metadata } from "next";
 
-function formatPrice(n: number) { return n.toLocaleString("vi-VN") + "đ"; }
-function discount(orig: number, price: number) { return Math.round((1 - price / orig) * 100) + "%"; }
+function formatPrice(n: number) {
+  return n.toLocaleString("vi-VN") + "đ";
+}
+function discountPct(orig: number, price: number) {
+  return Math.round((1 - price / orig) * 100);
+}
 
-export function generateStaticParams() {
+export async function generateStaticParams() {
   return products.map(p => ({ id: p.id }));
 }
 
-export default function ProductDetail({ params }: { params: { id: string } }) {
-  const product = products.find(p => p.id === params.id);
+export async function generateMetadata({
+  params,
+}: {
+  params: Promise<{ id: string }>;
+}): Promise<Metadata> {
+  const { id } = await params;
+  const product = products.find(p => p.id === id);
+  if (!product) return { title: "Sản phẩm không tồn tại — DigiSmart" };
+  return {
+    title: `${product.name} — DigiSmart`,
+    description: product.description,
+  };
+}
+
+export default async function ProductDetailPage({
+  params,
+}: {
+  params: Promise<{ id: string }>;
+}) {
+  const { id } = await params;
+  const product = products.find(p => p.id === id);
+
   if (!product) notFound();
 
-  const related = products.filter(p => p.category === product.category && p.id !== product.id).slice(0, 3);
+  const related = products
+    .filter(p => p.category === product.category && p.id !== product.id)
+    .slice(0, 3);
 
   return (
-    <div style={{ padding: "2rem 0 4rem" }}>
-      <div className="container">
-        {/* Breadcrumb */}
-        <div style={{ fontSize: "0.85rem", color: "var(--muted)", marginBottom: "1.5rem" }}>
-          <Link href="/" style={{ color: "var(--brand2)", textDecoration: "none" }}>Trang chủ</Link>
-          {" / "}
-          <Link href="/san-pham" style={{ color: "var(--brand2)", textDecoration: "none" }}>Sản phẩm</Link>
-          {" / "}
-          {product.name}
+    <>
+      {/* Breadcrumb */}
+      <div style={{ background: "#fff", borderBottom: "1px solid var(--border)", padding: "0.75rem 0" }}>
+        <div className="container" style={{ display: "flex", gap: "0.5rem", fontFamily: "Calibri, sans-serif", fontSize: "0.85rem", color: "var(--muted)", flexWrap: "wrap" }}>
+          <Link href="/" style={{ color: "var(--muted)", textDecoration: "none" }}>Trang chủ</Link>
+          <span>/</span>
+          <Link href="/san-pham" style={{ color: "var(--muted)", textDecoration: "none" }}>Sản phẩm</Link>
+          <span>/</span>
+          <Link href={`/san-pham?cat=${encodeURIComponent(product.category)}`} style={{ color: "var(--muted)", textDecoration: "none" }}>{product.category}</Link>
+          <span>/</span>
+          <span style={{ color: "var(--text)", fontWeight: 500 }}>{product.name}</span>
         </div>
+      </div>
 
-        {/* Main */}
-        <div style={{ display: "grid", gridTemplateColumns: "minmax(280px, 420px) 1fr", gap: "2.5rem", flexWrap: "wrap" as const }}>
-          {/* Image */}
-          <div>
-            <div style={{ background: "var(--brand-light)", borderRadius: 16, height: 320, display: "flex", alignItems: "center", justifyContent: "center", fontSize: "6rem", position: "relative", marginBottom: "1rem" }}>
-              {product.icon}
-              <span style={{ position: "absolute", top: 12, left: 12, background: "#f0a500", color: "#fff", fontSize: "0.8rem", fontWeight: 700, padding: "4px 12px", borderRadius: 12 }}>
-                -{discount(product.originalPrice, product.price)}
-              </span>
-            </div>
-            <div style={{ display: "flex", gap: "0.75rem" }}>
-              {product.shopeeLink && (
-                <a href={product.shopeeLink} target="_blank" style={{ flex: 1, background: "#ee4d2d", color: "#fff", padding: "10px", borderRadius: 8, textAlign: "center", textDecoration: "none", fontSize: "0.85rem", fontWeight: 600 }}>
-                  🛍️ Mua Shopee
-                </a>
-              )}
-              {product.lazadaLink && (
-                <a href={product.lazadaLink} target="_blank" style={{ flex: 1, background: "#0f146d", color: "#fff", padding: "10px", borderRadius: 8, textAlign: "center", textDecoration: "none", fontSize: "0.85rem", fontWeight: 600 }}>
-                  🛒 Mua Lazada
-                </a>
-              )}
-            </div>
-          </div>
-
-          {/* Info */}
-          <div>
-            <div style={{ fontSize: "0.78rem", color: "var(--muted)", fontWeight: 500, textTransform: "uppercase", letterSpacing: 0.5, marginBottom: 6 }}>
-              {product.brand} · {product.sku}
-            </div>
-            <h1 style={{ fontFamily: "'Playfair Display', serif", fontSize: "1.6rem", marginBottom: "1rem", lineHeight: 1.3, color: "var(--text)" }}>{product.name}</h1>
-
-            <div style={{ display: "flex", alignItems: "baseline", gap: 12, marginBottom: "1.25rem" }}>
-              <span style={{ fontSize: "2rem", fontWeight: 700, color: "var(--brand)" }}>{formatPrice(product.price)}</span>
-              <span style={{ fontSize: "1rem", color: "var(--muted)", textDecoration: "line-through" }}>{formatPrice(product.originalPrice)}</span>
-              <span style={{ background: "#fff3cd", color: "#856404", padding: "3px 10px", borderRadius: 10, fontSize: "0.8rem", fontWeight: 600 }}>
-                Tiết kiệm {formatPrice(product.originalPrice - product.price)}
-              </span>
+      {/* Product Detail */}
+      <section style={{ background: "var(--bg)", padding: "2.5rem 0" }}>
+        <div className="container">
+          <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fit, minmax(280px, 1fr))", gap: "2.5rem" }}>
+            {/* Left: Image */}
+            <div>
+              <div style={{ background: "var(--brand-light)", borderRadius: 12, padding: "3rem", display: "flex", alignItems: "center", justifyContent: "center", fontSize: "8rem", border: "1px solid var(--border)", minHeight: 280, position: "relative" }}>
+                {product.icon}
+                <span style={{ position: "absolute", top: 14, left: 14, background: "#F07B20", color: "#fff", fontSize: "0.8rem", fontWeight: 700, padding: "4px 12px", borderRadius: 6 }}>
+                  -{discountPct(product.originalPrice, product.price)}%
+                </span>
+                {!product.inStock && (
+                  <span style={{ position: "absolute", top: 14, right: 14, background: "var(--muted)", color: "#fff", fontSize: "0.75rem", fontWeight: 700, padding: "4px 10px", borderRadius: 6 }}>
+                    Hết hàng
+                  </span>
+                )}
+              </div>
             </div>
 
-            <p style={{ color: "var(--muted)", lineHeight: 1.7, marginBottom: "1.5rem", fontSize: "0.95rem" }}>{product.shortDesc}</p>
+            {/* Right: Info */}
+            <div>
+              <div style={{ fontFamily: "Calibri, sans-serif", fontSize: "0.75rem", color: "var(--muted)", textTransform: "uppercase", letterSpacing: 0.8, marginBottom: 8 }}>
+                {product.brand} · {product.category}
+              </div>
+              <h1 style={{ fontFamily: "'Trebuchet MS', sans-serif", fontSize: "clamp(1.2rem, 2.5vw, 1.5rem)", color: "var(--text)", lineHeight: 1.35, marginBottom: "1rem" }}>
+                {product.name}
+              </h1>
 
-            {/* Specs */}
-            <div style={{ background: "var(--brand-light)", borderRadius: 10, padding: "1rem 1.25rem", marginBottom: "1.5rem" }}>
-              <p style={{ fontWeight: 600, color: "var(--brand)", marginBottom: "0.75rem", fontSize: "0.9rem" }}>Thông số kỹ thuật</p>
-              {product.specs.split(" | ").map(spec => (
-                <div key={spec} style={{ display: "flex", gap: 8, marginBottom: 6, fontSize: "0.88rem" }}>
-                  <span style={{ color: "var(--brand2)" }}>✓</span>
-                  <span>{spec}</span>
+              {/* Price */}
+              <div style={{ display: "flex", alignItems: "baseline", gap: 12, marginBottom: "1.25rem", flexWrap: "wrap" }}>
+                <span style={{ fontFamily: "'Trebuchet MS', sans-serif", fontSize: "1.75rem", fontWeight: 700, color: "#F07B20" }}>
+                  {formatPrice(product.price)}
+                </span>
+                <span style={{ fontFamily: "Calibri, sans-serif", fontSize: "1rem", color: "var(--muted)", textDecoration: "line-through" }}>
+                  {formatPrice(product.originalPrice)}
+                </span>
+                <span style={{ background: "#FEF0E3", color: "#F07B20", fontFamily: "Trebuchet MS, sans-serif", fontWeight: 700, fontSize: "0.8rem", padding: "2px 8px", borderRadius: 4 }}>
+                  Tiết kiệm {formatPrice(product.originalPrice - product.price)}
+                </span>
+              </div>
+
+              {/* Description */}
+              <p style={{ fontFamily: "Calibri, sans-serif", fontSize: "0.95rem", color: "var(--text)", lineHeight: 1.75, marginBottom: "1.5rem" }}>
+                {product.description}
+              </p>
+
+              {/* Specs */}
+              <div style={{ background: "#fff", borderRadius: 8, padding: "1.25rem", border: "1px solid var(--border)", marginBottom: "1.5rem" }}>
+                <div style={{ fontFamily: "'Trebuchet MS', sans-serif", fontWeight: 700, fontSize: "0.85rem", color: "var(--brand)", marginBottom: "0.75rem" }}>
+                  Thông số kỹ thuật
                 </div>
-              ))}
-            </div>
+                <ul style={{ listStyle: "none", display: "flex", flexDirection: "column", gap: "0.4rem" }}>
+                  {product.specs.map(s => (
+                    <li key={s} style={{ fontFamily: "Calibri, sans-serif", fontSize: "0.88rem", color: "var(--text)", display: "flex", gap: 8 }}>
+                      <span style={{ color: "#F07B20", flexShrink: 0 }}>✓</span>
+                      {s}
+                    </li>
+                  ))}
+                </ul>
+              </div>
 
-            {/* CTA */}
-            <div style={{ display: "flex", gap: "0.75rem", flexWrap: "wrap" as const }}>
-              <a href="tel:0778886758" style={{ flex: 1, minWidth: 160, background: "var(--brand)", color: "#fff", padding: "13px 20px", borderRadius: 10, fontWeight: 600, textDecoration: "none", textAlign: "center", fontSize: "0.95rem" }}>
-                📞 Gọi đặt hàng
-              </a>
-              <a href="https://zalo.me/0778886758" target="_blank" style={{ flex: 1, minWidth: 160, background: "var(--brand-light)", color: "var(--brand)", border: "1.5px solid var(--brand2)", padding: "13px 20px", borderRadius: 10, fontWeight: 600, textDecoration: "none", textAlign: "center", fontSize: "0.95rem" }}>
-                💬 Chat Zalo
-              </a>
+              {/* CTA Buttons */}
+              <div style={{ display: "flex", flexDirection: "column", gap: "0.75rem" }}>
+                {product.inStock ? (
+                  <>
+                    <a href="https://shopee.vn/digismart85" target="_blank" rel="noopener noreferrer"
+                      style={{ background: "#F07B20", color: "#fff", padding: "13px 24px", borderRadius: 8, textAlign: "center", fontFamily: "Trebuchet MS, sans-serif", fontWeight: 700, fontSize: "0.95rem", textDecoration: "none" }}>
+                      🛍️ Mua trên Shopee
+                    </a>
+                    <a href="https://tiktok.com/@digismart85" target="_blank" rel="noopener noreferrer"
+                      style={{ background: "#fff", color: "var(--brand)", padding: "11px 16px", borderRadius: 8, textAlign: "center", fontFamily: "Trebuchet MS, sans-serif", fontWeight: 600, fontSize: "0.88rem", textDecoration: "none", border: "1.5px solid var(--border)" }}>
+                      🎵 TikTok Shop DigiSmart
+                    </a>
+                    <a href="https://zalo.me/0778886758" target="_blank" rel="noopener noreferrer"
+                      style={{ background: "var(--brand)", color: "#fff", padding: "11px 24px", borderRadius: 8, textAlign: "center", fontFamily: "Trebuchet MS, sans-serif", fontWeight: 600, fontSize: "0.88rem", textDecoration: "none" }}>
+                      💬 Tư vấn qua Zalo
+                    </a>
+                  </>
+                ) : (
+                  <div style={{ background: "#f5f5f5", color: "var(--muted)", padding: "13px 24px", borderRadius: 8, textAlign: "center", fontFamily: "Trebuchet MS, sans-serif", fontWeight: 600, fontSize: "0.95rem", border: "1px solid var(--border)" }}>
+                    Sản phẩm tạm hết hàng — Liên hệ để đặt trước
+                  </div>
+                )}
+              </div>
             </div>
           </div>
         </div>
+      </section>
 
-        {/* Related */}
-        {related.length > 0 && (
-          <div style={{ marginTop: "4rem" }}>
-            <h2 style={{ fontFamily: "'Playfair Display', serif", fontSize: "1.4rem", marginBottom: "1.25rem", color: "var(--brand)" }}>Sản phẩm cùng danh mục</h2>
+      {/* Related Products */}
+      {related.length > 0 && (
+        <section style={{ background: "#fff", padding: "3rem 0", borderTop: "1px solid var(--border)" }}>
+          <div className="container">
+            <h2 style={{ fontFamily: "'Trebuchet MS', sans-serif", fontSize: "1.3rem", color: "var(--brand)", marginBottom: "1.5rem" }}>
+              Sản phẩm liên quan
+            </h2>
             <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fill, minmax(220px, 1fr))", gap: "1rem" }}>
               {related.map(p => (
-                <Link key={p.id} href={`/san-pham/${p.id}`} style={{ background: "#fff", border: "1px solid var(--border)", borderRadius: 12, overflow: "hidden", textDecoration: "none" }}>
-                  <div style={{ background: "var(--brand-light)", height: 120, display: "flex", alignItems: "center", justifyContent: "center", fontSize: "2.5rem" }}>{p.icon}</div>
+                <Link key={p.id} href={`/san-pham/${p.id}`}
+                  style={{ background: "var(--bg)", border: "1px solid var(--border)", borderRadius: 8, overflow: "hidden", textDecoration: "none", display: "block" }}>
+                  <div style={{ background: "var(--brand-light)", height: 130, display: "flex", alignItems: "center", justifyContent: "center", fontSize: "3rem" }}>
+                    {p.icon}
+                  </div>
                   <div style={{ padding: "0.875rem" }}>
-                    <div style={{ fontWeight: 600, fontSize: "0.85rem", color: "var(--text)", marginBottom: 6 }}>{p.name}</div>
-                    <span style={{ fontSize: "1rem", fontWeight: 700, color: "var(--brand)" }}>{formatPrice(p.price)}</span>
+                    <div style={{ fontFamily: "'Trebuchet MS', sans-serif", fontWeight: 700, fontSize: "0.82rem", color: "var(--text)", lineHeight: 1.4, marginBottom: "0.4rem" }}>{p.name}</div>
+                    <span style={{ fontFamily: "'Trebuchet MS', sans-serif", fontSize: "0.95rem", fontWeight: 700, color: "var(--brand2)" }}>{formatPrice(p.price)}</span>
                   </div>
                 </Link>
               ))}
             </div>
           </div>
-        )}
-      </div>
-    </div>
+        </section>
+      )}
+    </>
   );
 }

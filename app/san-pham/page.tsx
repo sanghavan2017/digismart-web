@@ -1,102 +1,106 @@
-"use client";
-import { useState } from "react";
 import Link from "next/link";
 import { products, categories } from "@/data/products";
+import type { Metadata } from "next";
 
-function formatPrice(n: number) { return n.toLocaleString("vi-VN") + "đ"; }
-function discount(orig: number, price: number) { return Math.round((1 - price / orig) * 100) + "%"; }
+export const metadata: Metadata = {
+  title: "Sản phẩm — DigiSmart",
+  description: "Phụ kiện điện tử chính hãng: chuột, bàn phím, tai nghe, SSD, sạc nhanh. Bảo hành đầy đủ, giao toàn quốc.",
+};
 
-export default function SanPhamPage() {
-  const [activeCat, setActiveCat] = useState("Tất cả");
-  const [search, setSearch] = useState("");
+function formatPrice(n: number) {
+  return n.toLocaleString("vi-VN") + "đ";
+}
+function discountPct(orig: number, price: number) {
+  return Math.round((1 - price / orig) * 100);
+}
 
-  const filtered = products.filter(p => {
-    const matchCat = activeCat === "Tất cả" || p.category === activeCat;
-    const q = search.toLowerCase();
-    const matchSearch = !q || p.name.toLowerCase().includes(q) || p.brand.toLowerCase().includes(q) || p.shortDesc.toLowerCase().includes(q) || p.specs.toLowerCase().includes(q);
-    return matchCat && matchSearch;
-  });
+export default async function ProductsPage({
+  searchParams,
+}: {
+  searchParams: Promise<{ [key: string]: string | string[] | undefined }>;
+}) {
+  const { cat } = await searchParams;
+  const activeCat = typeof cat === "string" ? cat : "";
+
+  const filtered = activeCat
+    ? products.filter(p => p.category === activeCat)
+    : products;
 
   return (
     <>
       {/* Header */}
-      <div style={{ background: "var(--brand)", padding: "2.5rem 0" }}>
+      <section style={{ background: "linear-gradient(135deg, #042C53 0%, #185FA5 100%)", padding: "2.5rem 0" }}>
         <div className="container">
-          <h1 style={{ fontFamily: "'Playfair Display', serif", fontSize: "2rem", color: "#fff", marginBottom: "0.5rem" }}>Sản phẩm</h1>
-          <p style={{ color: "rgba(255,255,255,0.75)", fontSize: "0.95rem" }}>Danh mục thiết bị gia dụng chính hãng</p>
+          <h1 style={{ fontFamily: "'Trebuchet MS', sans-serif", fontSize: "clamp(1.5rem, 3vw, 2rem)", color: "#fff", marginBottom: "0.5rem" }}>
+            Sản phẩm <span style={{ color: "#F07B20" }}>chính hãng</span>
+          </h1>
+          <p style={{ fontFamily: "Calibri, sans-serif", color: "rgba(255,255,255,0.8)", fontSize: "0.95rem" }}>
+            {filtered.length} sản phẩm{activeCat ? ` trong danh mục "${activeCat}"` : ""}
+          </p>
         </div>
-      </div>
+      </section>
 
-      {/* Search */}
-      <div style={{ background: "#fff", padding: "1.25rem 0", borderBottom: "1px solid var(--border)" }}>
+      <section style={{ padding: "2rem 0", background: "var(--bg)", minHeight: "60vh" }}>
         <div className="container">
-          <div style={{ position: "relative", maxWidth: 560 }}>
-            <input
-              type="text"
-              value={search}
-              onChange={e => setSearch(e.target.value)}
-              placeholder="🔍 Tìm theo tên, công dụng... VD: máy đuổi muỗi phòng ngủ"
-              style={{ width: "100%", padding: "11px 16px", border: "1.5px solid var(--border)", borderRadius: 28, fontSize: "0.9rem", fontFamily: "inherit", outline: "none" }}
-            />
+          {/* Category Filters */}
+          <div style={{ display: "flex", gap: "0.6rem", flexWrap: "wrap", marginBottom: "2rem" }}>
+            <Link href="/san-pham"
+              style={{ padding: "7px 18px", borderRadius: 20, textDecoration: "none", fontFamily: "Trebuchet MS, sans-serif", fontSize: "0.85rem", fontWeight: 600, background: !activeCat ? "var(--brand)" : "#fff", color: !activeCat ? "#fff" : "var(--brand)", border: `1.5px solid ${!activeCat ? "var(--brand)" : "var(--border)"}` }}>
+              Tất cả
+            </Link>
+            {categories.map(c => (
+              <Link key={c.name} href={`/san-pham?cat=${encodeURIComponent(c.name)}`}
+                style={{ padding: "7px 18px", borderRadius: 20, textDecoration: "none", fontFamily: "Trebuchet MS, sans-serif", fontSize: "0.85rem", fontWeight: 600, background: activeCat === c.name ? "var(--brand)" : "#fff", color: activeCat === c.name ? "#fff" : "var(--brand)", border: `1.5px solid ${activeCat === c.name ? "var(--brand)" : "var(--border)"}` }}>
+                {c.icon} {c.name}
+              </Link>
+            ))}
           </div>
-          <p style={{ fontSize: "0.75rem", color: "var(--muted)", marginTop: 6 }}>✨ Tìm kiếm thông minh — nhập theo ngôn ngữ tự nhiên</p>
-        </div>
-      </div>
 
-      {/* Filters */}
-      <div style={{ padding: "1rem 0", background: "var(--bg)" }}>
-        <div className="container" style={{ display: "flex", gap: "0.75rem", flexWrap: "wrap" }}>
-          {categories.map(cat => (
-            <button key={cat} onClick={() => setActiveCat(cat)}
-              style={{ padding: "7px 18px", borderRadius: 20, border: "1.5px solid", borderColor: activeCat === cat ? "var(--brand2)" : "var(--border)", background: activeCat === cat ? "var(--brand-light)" : "#fff", color: activeCat === cat ? "var(--brand)" : "var(--muted)", fontWeight: activeCat === cat ? 600 : 400, fontSize: "0.85rem", cursor: "pointer", fontFamily: "inherit" }}>
-              {cat}
-            </button>
-          ))}
-        </div>
-      </div>
-
-      {/* Products Grid */}
-      <div style={{ padding: "2rem 0 4rem" }}>
-        <div className="container">
-          <p style={{ fontSize: "0.85rem", color: "var(--muted)", marginBottom: "1rem" }}>{filtered.length} sản phẩm</p>
+          {/* Product Grid */}
           {filtered.length === 0 ? (
-            <div style={{ textAlign: "center", padding: "4rem 0", color: "var(--muted)" }}>
-              <div style={{ fontSize: "3rem", marginBottom: "1rem" }}>🔍</div>
-              <p>Không tìm thấy sản phẩm phù hợp</p>
+            <div style={{ textAlign: "center", padding: "4rem 0", color: "var(--muted)", fontFamily: "Calibri, sans-serif" }}>
+              Không tìm thấy sản phẩm trong danh mục này.
             </div>
           ) : (
             <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fill, minmax(240px, 1fr))", gap: "1rem" }}>
               {filtered.map(p => (
-                <div key={p.id} style={{ background: "#fff", border: "1px solid var(--border)", borderRadius: 12, overflow: "hidden" }}>
-                  <div style={{ background: "var(--brand-light)", height: 140, display: "flex", alignItems: "center", justifyContent: "center", fontSize: "3rem", position: "relative" }}>
+                <Link key={p.id} href={`/san-pham/${p.id}`}
+                  style={{ background: "#fff", border: "1px solid var(--border)", borderRadius: 10, overflow: "hidden", textDecoration: "none", display: "block", position: "relative" }}>
+                  {/* Image area */}
+                  <div style={{ background: "var(--brand-light)", height: 160, display: "flex", alignItems: "center", justifyContent: "center", fontSize: "3.5rem", position: "relative" }}>
                     {p.icon}
-                    <span style={{ position: "absolute", top: 8, left: 8, background: "#f0a500", color: "#fff", fontSize: "0.68rem", fontWeight: 700, padding: "3px 8px", borderRadius: 10 }}>
-                      -{discount(p.originalPrice, p.price)}
+                    <span style={{ position: "absolute", top: 10, left: 10, background: "#F07B20", color: "#fff", fontSize: "0.7rem", fontWeight: 700, padding: "3px 9px", borderRadius: 4 }}>
+                      -{discountPct(p.originalPrice, p.price)}%
                     </span>
+                    {!p.inStock && (
+                      <span style={{ position: "absolute", top: 10, right: 10, background: "var(--muted)", color: "#fff", fontSize: "0.65rem", fontWeight: 700, padding: "3px 8px", borderRadius: 4 }}>
+                        Hết hàng
+                      </span>
+                    )}
                   </div>
+                  {/* Info */}
                   <div style={{ padding: "1rem" }}>
-                    <div style={{ fontSize: "0.7rem", color: "var(--muted)", textTransform: "uppercase", letterSpacing: 0.5, marginBottom: 4 }}>{p.brand} · {p.sku}</div>
-                    <div style={{ fontWeight: 600, fontSize: "0.88rem", marginBottom: 8, color: "var(--text)", lineHeight: 1.4 }}>{p.name}</div>
-                    <div style={{ fontSize: "0.78rem", color: "var(--muted)", marginBottom: 10, borderTop: "1px solid var(--border)", paddingTop: 8 }}>{p.specs}</div>
-                    <div style={{ display: "flex", alignItems: "center", gap: 8, marginBottom: 12 }}>
-                      <span style={{ fontSize: "1.05rem", fontWeight: 700, color: "var(--brand)" }}>{formatPrice(p.price)}</span>
-                      <span style={{ fontSize: "0.78rem", color: "var(--muted)", textDecoration: "line-through" }}>{formatPrice(p.originalPrice)}</span>
+                    <div style={{ fontFamily: "Calibri, sans-serif", fontSize: "0.68rem", color: "var(--muted)", textTransform: "uppercase", letterSpacing: 0.6, marginBottom: 4 }}>
+                      {p.brand} · {p.category}
                     </div>
-                    <div style={{ display: "flex", gap: 6 }}>
-                      <Link href={`/san-pham/${p.id}`} style={{ flex: 1, background: "var(--brand)", color: "#fff", padding: "8px", borderRadius: 8, fontSize: "0.8rem", fontWeight: 600, textDecoration: "none", textAlign: "center" }}>
-                        Xem chi tiết
-                      </Link>
-                      <a href="tel:0778886758" style={{ background: "var(--brand-light)", color: "var(--brand)", padding: "8px 10px", borderRadius: 8, fontSize: "0.8rem", textDecoration: "none" }}>
-                        📞
-                      </a>
+                    <div style={{ fontFamily: "'Trebuchet MS', sans-serif", fontWeight: 700, fontSize: "0.88rem", color: "var(--text)", lineHeight: 1.4, marginBottom: "0.6rem", minHeight: 40 }}>
+                      {p.name}
+                    </div>
+                    <div style={{ display: "flex", alignItems: "center", gap: 8 }}>
+                      <span style={{ fontFamily: "'Trebuchet MS', sans-serif", fontSize: "1.05rem", fontWeight: 700, color: "var(--brand2)" }}>
+                        {formatPrice(p.price)}
+                      </span>
+                      <span style={{ fontFamily: "Calibri, sans-serif", fontSize: "0.8rem", color: "var(--muted)", textDecoration: "line-through" }}>
+                        {formatPrice(p.originalPrice)}
+                      </span>
                     </div>
                   </div>
-                </div>
+                </Link>
               ))}
             </div>
           )}
         </div>
-      </div>
+      </section>
     </>
   );
 }
