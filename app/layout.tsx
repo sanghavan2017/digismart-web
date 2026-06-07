@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import "./globals.css";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
+import Chatbot from "@/components/Chatbot";
 
 export const metadata: Metadata = {
   title: "DigiSmart — Phụ kiện điện tử chính hãng",
@@ -19,6 +20,7 @@ export default function RootLayout({
         <Navbar />
         <main style={{ flex: 1 }}>{children}</main>
         <Footer />
+        <Chatbot />
       </body>
     </html>
   );
