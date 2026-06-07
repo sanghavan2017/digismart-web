@@ -1,0 +1,39 @@
+@import url('https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:wght@300;400;500;600;700&display=swap');
+
+:root {
+  --brand:       #042C53;
+  --brand2:      #185FA5;
+  --brand3:      #378ADD;
+  --brand-light: #E6F1FB;
+  --accent:      #F07B20;
+  --bg:          #F4F7FA;
+  --surface:     #FFFFFF;
+  --text:        #2C2C2A;
+  --muted:       #B4B2A9;
+  --border:      #D6E4F0;
+}
+
+* { box-sizing: border-box; margin: 0; padding: 0; }
+
+body {
+  font-family: 'Be Vietnam Pro', Calibri, sans-serif;
+  background: var(--bg);
+  color: var(--text);
+}
+
+h1, h2, h3, h4 {
+  font-family: 'Trebuchet MS', 'Be Vietnam Pro', sans-serif;
+}
+
+.container { max-width: 1200px; margin: 0 auto; padding: 0 1.5rem; }
+
+/* Navbar responsive */
+.nav-links { display: flex; gap: 1.75rem; align-items: center; }
+.nav-hamburger { display: none; flex-direction: column; gap: 5px; background: none; border: none; cursor: pointer; padding: 8px; }
+.nav-mobile { display: none; }
+
+@media (max-width: 768px) {
+  .nav-links { display: none; }
+  .nav-hamburger { display: flex; }
+  .nav-mobile { display: block; }
+}
