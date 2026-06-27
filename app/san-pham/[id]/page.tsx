@@ -1,5 +1,6 @@
 import Link from "next/link";
 import { products } from "@/data/products";
+import LeadFormButton from "@/components/LeadFormButton";
 import { notFound } from "next/navigation";
 import type { Metadata } from "next";
 
@@ -120,6 +121,9 @@ export default async function ProductDetailPage({
 
               {/* CTA Buttons */}
               <div style={{ display: "flex", flexDirection: "column", gap: "0.75rem" }}>
+                <LeadFormButton productName={product.name} style={{ padding: "13px 24px", borderRadius: 8, fontSize: "0.95rem" }}>
+                  📩 Nhận báo giá
+                </LeadFormButton>
                 {product.inStock ? (
                   <>
                     <a href="https://shopee.vn/digismart85" target="_blank" rel="noopener noreferrer"

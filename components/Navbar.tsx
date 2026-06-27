@@ -9,6 +9,11 @@ const navLinks = [
   { href: "/lien-he", label: "Liên hệ" },
 ];
 
+const serviceLinks = [
+  { href: "/dieu-hoa", label: "Lắp đặt điều hòa" },
+  { href: "/may-loc-nuoc", label: "Máy lọc nước" },
+];
+
 const linkStyle: React.CSSProperties = {
   color: "rgba(255,255,255,0.85)",
   textDecoration: "none",
@@ -20,6 +25,8 @@ const linkStyle: React.CSSProperties = {
 
 export default function Navbar() {
   const [menuOpen, setMenuOpen] = useState(false);
+  const [serviceOpen, setServiceOpen] = useState(false);
+  const [mobileServiceOpen, setMobileServiceOpen] = useState(false);
 
   return (
     <nav style={{ background: "var(--brand)", position: "sticky", top: 0, zIndex: 100, boxShadow: "0 2px 12px rgba(4,44,83,0.15)" }}>
@@ -43,6 +50,32 @@ export default function Navbar() {
               {item.label}
             </Link>
           ))}
+
+          {/* Dịch vụ dropdown */}
+          <div
+            onMouseEnter={() => setServiceOpen(true)}
+            onMouseLeave={() => setServiceOpen(false)}
+            style={{ position: "relative" }}
+          >
+            <span style={{ ...linkStyle, cursor: "pointer", display: "inline-flex", alignItems: "center", gap: 4 }}>
+              Dịch vụ <span style={{ fontSize: "0.7rem" }}>▾</span>
+            </span>
+            {serviceOpen && (
+              <div style={{
+                position: "absolute", top: "100%", left: 0, marginTop: 6,
+                background: "#fff", borderRadius: 8, boxShadow: "0 8px 24px rgba(4,44,83,0.18)",
+                minWidth: 180, overflow: "hidden", zIndex: 200,
+              }}>
+                {serviceLinks.map(item => (
+                  <Link key={item.href} href={item.href}
+                    style={{ display: "block", padding: "10px 16px", color: "var(--brand)", textDecoration: "none", fontSize: "0.85rem", fontWeight: 500, fontFamily: "Trebuchet MS, sans-serif", borderBottom: "1px solid var(--border)" }}>
+                    {item.label}
+                  </Link>
+                ))}
+              </div>
+            )}
+          </div>
+
           <a href="tel:0778886758"
             style={{ background: "var(--accent)", color: "#fff", padding: "8px 18px", borderRadius: 20, fontSize: "0.85rem", fontWeight: 700, textDecoration: "none", whiteSpace: "nowrap", fontFamily: "Trebuchet MS, sans-serif" }}>
             📞 0778 886 758
@@ -67,6 +100,27 @@ export default function Navbar() {
               {item.label}
             </Link>
           ))}
+
+          {/* Dịch vụ (mobile) */}
+          <div style={{ borderBottom: "1px solid rgba(255,255,255,0.08)" }}>
+            <button
+              onClick={() => setMobileServiceOpen(o => !o)}
+              style={{ width: "100%", textAlign: "left", background: "none", border: "none", color: "rgba(255,255,255,0.85)", fontSize: "0.92rem", fontWeight: 500, padding: "0.75rem 0", fontFamily: "Trebuchet MS, sans-serif", cursor: "pointer", display: "flex", justifyContent: "space-between", alignItems: "center" }}>
+              Dịch vụ <span style={{ fontSize: "0.7rem" }}>{mobileServiceOpen ? "▴" : "▾"}</span>
+            </button>
+            {mobileServiceOpen && (
+              <div style={{ paddingLeft: "1rem", paddingBottom: "0.5rem" }}>
+                {serviceLinks.map(item => (
+                  <Link key={item.href} href={item.href}
+                    onClick={() => { setMenuOpen(false); setMobileServiceOpen(false); }}
+                    style={{ display: "block", color: "rgba(255,255,255,0.7)", textDecoration: "none", fontSize: "0.88rem", padding: "0.5rem 0", fontFamily: "Trebuchet MS, sans-serif" }}>
+                    {item.label}
+                  </Link>
+                ))}
+              </div>
+            )}
+          </div>
+
           <a href="tel:0778886758"
             style={{ display: "block", marginTop: "1rem", background: "var(--accent)", color: "#fff", padding: "11px 0", borderRadius: 8, fontSize: "0.9rem", fontWeight: 700, textDecoration: "none", textAlign: "center", fontFamily: "Trebuchet MS, sans-serif" }}>
             📞 0778 886 758

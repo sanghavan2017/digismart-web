@@ -1,5 +1,6 @@
 import Link from "next/link";
-import { products, categories } from "@/data/products";
+import { products, categories, brands } from "@/data/products";
+import LeadFormButton from "@/components/LeadFormButton";
 import type { Metadata } from "next";
 
 export const metadata: Metadata = {
@@ -19,12 +20,24 @@ export default async function ProductsPage({
 }: {
   searchParams: Promise<{ [key: string]: string | string[] | undefined }>;
 }) {
-  const { cat } = await searchParams;
+  const { cat, brand } = await searchParams;
   const activeCat = typeof cat === "string" ? cat : "";
+  const activeBrand = typeof brand === "string" ? brand : "";
 
-  const filtered = activeCat
-    ? products.filter(p => p.category === activeCat)
-    : products;
+  const filtered = products.filter(p =>
+    (!activeCat || p.category === activeCat) &&
+    (!activeBrand || p.brand === activeBrand)
+  );
+
+  function buildHref(next: { cat?: string; brand?: string }) {
+    const params = new URLSearchParams();
+    const c = next.cat !== undefined ? next.cat : activeCat;
+    const b = next.brand !== undefined ? next.brand : activeBrand;
+    if (c) params.set("cat", c);
+    if (b) params.set("brand", b);
+    const qs = params.toString();
+    return qs ? `/san-pham?${qs}` : "/san-pham";
+  }
 
   return (
     <>
@@ -35,7 +48,9 @@ export default async function ProductsPage({
             Sản phẩm <span style={{ color: "#F07B20" }}>chính hãng</span>
           </h1>
           <p style={{ fontFamily: "Calibri, sans-serif", color: "rgba(255,255,255,0.8)", fontSize: "0.95rem" }}>
-            {filtered.length} sản phẩm{activeCat ? ` trong danh mục "${activeCat}"` : ""}
+            {filtered.length} sản phẩm
+            {activeCat ? ` trong danh mục "${activeCat}"` : ""}
+            {activeBrand ? ` · thương hiệu "${activeBrand}"` : ""}
           </p>
         </div>
       </section>
@@ -43,15 +58,32 @@ export default async function ProductsPage({
       <section style={{ padding: "2rem 0", background: "var(--bg)", minHeight: "60vh" }}>
         <div className="container">
           {/* Category Filters */}
-          <div style={{ display: "flex", gap: "0.6rem", flexWrap: "wrap", marginBottom: "2rem" }}>
-            <Link href="/san-pham"
+          <div style={{ display: "flex", gap: "0.6rem", flexWrap: "wrap", marginBottom: "1rem" }}>
+            <Link href={buildHref({ cat: "" })}
               style={{ padding: "7px 18px", borderRadius: 20, textDecoration: "none", fontFamily: "Trebuchet MS, sans-serif", fontSize: "0.85rem", fontWeight: 600, background: !activeCat ? "var(--brand)" : "#fff", color: !activeCat ? "#fff" : "var(--brand)", border: `1.5px solid ${!activeCat ? "var(--brand)" : "var(--border)"}` }}>
-              Tất cả
+              Tất cả danh mục
             </Link>
             {categories.map(c => (
-              <Link key={c.name} href={`/san-pham?cat=${encodeURIComponent(c.name)}`}
+              <Link key={c.name} href={buildHref({ cat: c.name })}
                 style={{ padding: "7px 18px", borderRadius: 20, textDecoration: "none", fontFamily: "Trebuchet MS, sans-serif", fontSize: "0.85rem", fontWeight: 600, background: activeCat === c.name ? "var(--brand)" : "#fff", color: activeCat === c.name ? "#fff" : "var(--brand)", border: `1.5px solid ${activeCat === c.name ? "var(--brand)" : "var(--border)"}` }}>
                 {c.icon} {c.name}
+              </Link>
+            ))}
+          </div>
+
+          {/* Brand Filters */}
+          <div style={{ display: "flex", alignItems: "center", gap: "0.6rem", flexWrap: "wrap", marginBottom: "2rem" }}>
+            <span style={{ fontFamily: "Calibri, sans-serif", fontSize: "0.82rem", color: "var(--muted)", marginRight: 4 }}>
+              Thương hiệu:
+            </span>
+            <Link href={buildHref({ brand: "" })}
+              style={{ padding: "5px 14px", borderRadius: 16, textDecoration: "none", fontFamily: "Trebuchet MS, sans-serif", fontSize: "0.78rem", fontWeight: 600, background: !activeBrand ? "var(--accent)" : "#fff", color: !activeBrand ? "#fff" : "var(--text)", border: `1.5px solid ${!activeBrand ? "var(--accent)" : "var(--border)"}` }}>
+              Tất cả
+            </Link>
+            {brands.map(b => (
+              <Link key={b} href={buildHref({ brand: b })}
+                style={{ padding: "5px 14px", borderRadius: 16, textDecoration: "none", fontFamily: "Trebuchet MS, sans-serif", fontSize: "0.78rem", fontWeight: 600, background: activeBrand === b ? "var(--accent)" : "#fff", color: activeBrand === b ? "#fff" : "var(--text)", border: `1.5px solid ${activeBrand === b ? "var(--accent)" : "var(--border)"}` }}>
+                {b}
               </Link>
             ))}
           </div>
@@ -86,7 +118,7 @@ export default async function ProductsPage({
                     <div style={{ fontFamily: "'Trebuchet MS', sans-serif", fontWeight: 700, fontSize: "0.88rem", color: "var(--text)", lineHeight: 1.4, marginBottom: "0.6rem", minHeight: 40 }}>
                       {p.name}
                     </div>
-                    <div style={{ display: "flex", alignItems: "center", gap: 8 }}>
+                    <div style={{ display: "flex", alignItems: "center", gap: 8, marginBottom: "0.75rem" }}>
                       <span style={{ fontFamily: "'Trebuchet MS', sans-serif", fontSize: "1.05rem", fontWeight: 700, color: "var(--brand2)" }}>
                         {formatPrice(p.price)}
                       </span>
@@ -94,6 +126,9 @@ export default async function ProductsPage({
                         {formatPrice(p.originalPrice)}
                       </span>
                     </div>
+                    <LeadFormButton productName={p.name} style={{ width: "100%", padding: "9px 0", borderRadius: 6, fontSize: "0.8rem" }}>
+                      Nhận báo giá
+                    </LeadFormButton>
                   </div>
                 </Link>
               ))}
