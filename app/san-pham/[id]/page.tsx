@@ -155,6 +155,29 @@ export default async function ProductDetailPage({
         </div>
       </section>
 
+      {/* Đặc điểm nổi bật */}
+      {product.features && product.features.length > 0 && (
+        <section style={{ background: "#fff", padding: "3rem 0", borderTop: "1px solid var(--border)" }}>
+          <div className="container">
+            <h2 style={{ fontFamily: "'Trebuchet MS', sans-serif", fontSize: "1.3rem", color: "var(--brand)", textAlign: "center", marginBottom: "1.75rem" }}>
+              Đặc điểm nổi bật
+            </h2>
+            <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fit, minmax(220px, 1fr))", gap: "1.25rem" }}>
+              {product.features.map((f, i) => (
+                <div key={i} style={{ borderRadius: 12, overflow: "hidden", border: "1px solid var(--border)" }}>
+                  <div style={{ position: "relative", width: "100%", aspectRatio: "1 / 1" }}>
+                    <Image src={f.image} alt={f.caption} fill style={{ objectFit: "cover" }} />
+                  </div>
+                  <p style={{ fontFamily: "Calibri, sans-serif", fontSize: "0.85rem", color: "var(--text)", lineHeight: 1.6, padding: "0.875rem" }}>
+                    {f.caption}
+                  </p>
+                </div>
+              ))}
+            </div>
+          </div>
+        </section>
+      )}
+
       {/* Related Products */}
       {related.length > 0 && (
         <section style={{ background: "#fff", padding: "3rem 0", borderTop: "1px solid var(--border)" }}>
