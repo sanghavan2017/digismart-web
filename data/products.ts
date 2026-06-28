@@ -96,6 +96,12 @@ export const products: Product[] = [
     originalPrice: 28990000,
     icon: "💧",
     imageUrl: "/images/products/cleansui-eu201.jpg",
+    images: [
+      "/images/products/cleansui-eu201.jpg",
+      "/images/products/cleansui-eu201-gallery-2.jpg",
+      "/images/products/cleansui-eu201-gallery-3.jpg",
+      "/images/products/cleansui-eu201-gallery-4.jpg",
+    ],
     features: [
       { image: "/images/products/cleansui-eu201.jpg", caption: "Sản xuất và nhập khẩu nguyên chiếc từ Nhật Bản, vòi xoay 120° tiện lợi." },
       { image: "/images/tech/chan-vi-khuan-sem.jpg", caption: "Công nghệ màng lọc sợi rỗng loại bỏ vi khuẩn, tạp chất nhỏ tới 0,01 micromet, vẫn giữ khoáng tự nhiên." },
@@ -151,6 +157,12 @@ export const products: Product[] = [
     originalPrice: 11690000,
     icon: "💧",
     imageUrl: "/images/products/cleansui-eu103.jpg",
+    images: [
+      "/images/products/cleansui-eu103.jpg",
+      "/images/products/cleansui-eu103-gallery-2.jpg",
+      "/images/products/cleansui-eu103-gallery-3.jpg",
+      "/images/products/cleansui-eu103-gallery-4.jpg",
+    ],
     features: [
       { image: "/images/products/cleansui-eu103.jpg", caption: "Sản xuất và nhập khẩu nguyên chiếc từ Nhật Bản, mẫu rẻ nhất dòng lắp dưới bồn rửa." },
       { image: "/images/tech/chan-vi-khuan-sem.jpg", caption: "Công nghệ màng lọc sợi rỗng loại bỏ vi khuẩn, tạp chất nhỏ tới 0,01 micromet, vẫn giữ khoáng tự nhiên." },
@@ -210,6 +222,11 @@ export const products: Product[] = [
     originalPrice: 15590000,
     icon: "💧",
     imageUrl: "/images/products/cleansui-mp02-3.jpg",
+    images: [
+      "/images/products/cleansui-mp02-3.jpg",
+      "/images/products/cleansui-mp02-3-gallery-2.jpg",
+      "/images/products/cleansui-mp02-3-gallery-3.jpg",
+    ],
     features: [
       { image: "/images/products/cleansui-mp02-3.jpg", caption: "Sản xuất và nhập khẩu nguyên chiếc từ Nhật Bản, thân thép không gỉ cao cấp." },
       { image: "/images/tech/chan-vi-khuan-sem.jpg", caption: "Bộ lọc UMC2150 2 cấp loại bỏ tạp chất, vi khuẩn, kim loại nặng, mùi Clo dư." },
@@ -238,6 +255,11 @@ export const products: Product[] = [
     originalPrice: 15590000,
     icon: "💧",
     imageUrl: "/images/products/cleansui-mp02-4.jpg",
+    images: [
+      "/images/products/cleansui-mp02-4.jpg",
+      "/images/products/cleansui-mp02-4-gallery-2.jpg",
+      "/images/products/cleansui-mp02-4-gallery-3.jpg",
+    ],
     features: [
       { image: "/images/products/cleansui-mp02-4.jpg", caption: "Sản xuất và nhập khẩu nguyên chiếc từ Nhật Bản, thân thép không gỉ cao cấp." },
       { image: "/images/tech/chan-vi-khuan-sem.jpg", caption: "Công nghệ màng lọc sợi rỗng loại bỏ vi khuẩn, tạp chất nhỏ tới 0,01 micromet." },
@@ -266,6 +288,11 @@ export const products: Product[] = [
     originalPrice: 233690000,
     icon: "💧",
     imageUrl: "/images/products/cleansui-mpoe-s4.jpg",
+    images: [
+      "/images/products/cleansui-mpoe-s4.jpg",
+      "/images/products/cleansui-mpoe-s4-gallery-2.jpg",
+      "/images/products/cleansui-mpoe-s4-gallery-3.jpg",
+    ],
     videoId: "TSZDa0qC-eY",
     features: [
       { image: "/images/products/cleansui-mpoe-s4.jpg", caption: "Bao gồm 4 bộ lọc MPOE050E sản xuất 100% tại Nhật Bản, tuổi thọ tới 500.000 lít/bộ lọc." },
@@ -360,6 +387,10 @@ export const products: Product[] = [
     originalPrice: 5200000,
     icon: "💧",
     imageUrl: "/images/products/kitz-purifree.jpg",
+    images: [
+      "/images/products/kitz-purifree.jpg",
+      "/images/products/kitz-purifree-gallery-2.jpg",
+    ],
     features: [
       { image: "/images/products/kitz-purifree.jpg", caption: "Sản xuất 100% tại Nhật Bản bởi Kitz Group, lắp trực tiếp tại vòi." },
       { image: "/images/tech/chan-vi-khuan-sem.jpg", caption: "Lọc 4 cấp qua màng sợi rỗng, loại bỏ tạp chất mà vẫn giữ khoáng tự nhiên." },
@@ -389,6 +420,10 @@ export const products: Product[] = [
     originalPrice: 8000000,
     icon: "💧",
     imageUrl: "/images/products/kitz-oas-nts9.jpg",
+    images: [
+      "/images/products/kitz-oas-nts9.jpg",
+      "/images/products/kitz-oas-nts9-gallery-2.jpg",
+    ],
     features: [
       { image: "/images/products/kitz-oas-nts9.jpg", caption: "Sản xuất 100% tại Nhật Bản, lắp linh hoạt tại vòi hoặc âm tủ." },
       { image: "/images/tech/chan-vi-khuan-sem.jpg", caption: "Công nghệ màng lọc sợi rỗng tiên tiến, đạt chuẩn ISO 9001:2015 và ISO 14001:2015." },
@@ -444,6 +479,10 @@ export const products: Product[] = [
     originalPrice: 11500000,
     icon: "💧",
     imageUrl: "/images/products/kitz-oss-g4-e.jpg",
+    images: [
+      "/images/products/kitz-oss-g4-e.jpg",
+      "/images/products/kitz-oss-g4-e-gallery-2.jpg",
+    ],
     features: [
       { image: "/images/products/kitz-oss-g4-e.jpg", caption: "Sản xuất 100% tại Nhật Bản, lắp âm tủ, vòi chính hãng bảo hành chống gỉ 5 năm." },
       { image: "/images/tech/chan-vi-khuan-sem.jpg", caption: "Công nghệ màng lọc sợi rỗng loại bỏ tạp chất, vi khuẩn mà vẫn giữ khoáng tự nhiên." },
@@ -472,6 +511,10 @@ export const products: Product[] = [
     originalPrice: 8800000,
     icon: "💧",
     imageUrl: "/images/products/kitz-oas-9.jpg",
+    images: [
+      "/images/products/kitz-oas-9.jpg",
+      "/images/products/kitz-oas-9-gallery-2.jpg",
+    ],
     features: [
       { image: "/images/products/kitz-oas-9.jpg", caption: "Sản xuất 100% tại Nhật Bản, thân thép không gỉ SUS304 lắp âm tủ." },
       { image: "/images/tech/chan-vi-khuan-sem.jpg", caption: "Màng lọc sợi rỗng tiên tiến loại bỏ vi khuẩn, tạp chất nhỏ tới 0,1 micromet." },
