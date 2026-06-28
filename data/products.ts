@@ -7,6 +7,10 @@ export type Product = {
   originalPrice: number;
   icon: string;
   imageUrl?: string;
+  // Ảnh carousel cho trang chi tiết sản phẩm (nhiều góc chụp). Nếu có, trang chi tiết hiện carousel thay cho ảnh đơn imageUrl.
+  images?: string[];
+  // ID video YouTube giới thiệu sản phẩm (phần sau "v=" trong link YouTube)
+  videoId?: string;
   description: string;
   specs: string[];
   inStock: boolean;
@@ -49,14 +53,21 @@ export const products: Product[] = [
     originalPrice: 48600000,
     icon: "💧",
     imageUrl: "/images/products/cleansui-eu301.jpg",
+    images: [
+      "/images/products/cleansui-eu301.jpg",
+      "/images/products/cleansui-eu301-gallery-2.jpg",
+      "/images/products/cleansui-eu301-gallery-3.jpg",
+      "/images/products/cleansui-eu301-gallery-4.jpg",
+    ],
+    videoId: "P1vevIaQQJA",
     features: [
-      { image: "/images/products/cleansui-eu301-feature-1.jpg", caption: "Sản xuất và nhập khẩu nguyên chiếc từ Nhật Bản." },
-      { image: "/images/tech/chan-vi-khuan-sem.jpg", caption: "Công nghệ màng lọc sợi rỗng loại bỏ vi khuẩn, tạp chất nhỏ đến 0,01 micromet, vẫn giữ khoáng tự nhiên." },
-      { image: "/images/products/cleansui-eu301-feature-2.jpg", caption: "Thiết kế hiện đại, lắp gọn tại vòi, chống rò rỉ, an toàn khi sử dụng." },
-      { image: "/images/products/cleansui-eu301-feature-3.jpg", caption: "Vận hành đơn giản với bảng điều khiển cảm ứng, dễ chuyển đổi giữa các chế độ nước." },
+      { image: "/images/products/cleansui-eu301-feature-2.jpg", caption: "Tạo 6 chế độ nước với pH tương ứng từ 5,0 – 10,5, bao gồm 4 chế độ nước ion kiềm, 1 chế độ nước ion axit, 1 chế độ nước lọc giữ khoáng tự nhiên." },
+      { image: "/images/products/cleansui-eu301-feature-1.jpg", caption: "Kiểu dáng hiện đại, nhỏ gọn cho không gian lắp đặt tối ưu. Vật liệu bền bỉ, kết hợp bề mặt mạ chrome sáng bóng mang lại vẻ ngoài tinh tế và dễ dàng vệ sinh." },
+      { image: "/images/products/cleansui-eu301-feature-3.jpg", caption: "Bảng điều khiển trực quan, thuận tiện thao tác khi sử dụng." },
+      { image: "/images/tech/chan-vi-khuan-sem.jpg", caption: "Hệ thống chống rò rỉ ưu việt, không tạo áp lực lên bộ lọc và toàn hệ thống lọc." },
     ],
     description:
-      "Máy lọc nước tạo ion kiềm Cleansui EU301, công nghệ Nhật Bản, kèm bộ lọc EUC3000 đầu tiên. Tạo nước ion kiềm qua điện phân, phù hợp gia đình 4-6 người.",
+      "Thiết bị lọc nước tạo ion kiềm EU301 là sản phẩm chăm sóc sức khỏe của Mitsubishi Chemical Cleansui — thành viên của Tập đoàn Mitsubishi Chemical Holdings, một trong những tập đoàn hóa chất lâu đời và lớn nhất Nhật Bản. EU301 mang đến nguồn nước ion kiềm, đã có mặt tại hơn 40 quốc gia trên thế giới và đang ngày càng phổ biến tại Việt Nam. Kèm bộ lọc EUC3000 đầu tiên, phù hợp gia đình 4-6 người.",
     specs: [
       "Công suất lọc 8.000 lít / 12 tháng (~22 lít/ngày)",
       "Lưu lượng 3 lít/phút",

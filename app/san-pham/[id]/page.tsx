@@ -2,6 +2,7 @@ import Link from "next/link";
 import Image from "next/image";
 import { products } from "@/data/products";
 import LeadFormButton from "@/components/LeadFormButton";
+import ProductGallery from "@/components/ProductGallery";
 import { notFound } from "next/navigation";
 import type { Metadata } from "next";
 
@@ -65,17 +66,23 @@ export default async function ProductDetailPage({
           <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fit, minmax(280px, 1fr))", gap: "2.5rem" }}>
             {/* Left: Image */}
             <div>
-              <div style={{ background: "#fff", borderRadius: 12, padding: "3rem", display: "flex", alignItems: "center", justifyContent: "center", fontSize: "8rem", border: "1px solid var(--border)", minHeight: 280, position: "relative", overflow: "hidden" }}>
-                {product.imageUrl ? (
-                  <Image src={product.imageUrl} alt={product.name} fill style={{ objectFit: "contain", padding: "2rem" }} />
+              <div style={{ background: "#fff", borderRadius: 12, border: "1px solid var(--border)", minHeight: 280, position: "relative", overflow: "hidden" }}>
+                {product.images && product.images.length > 0 ? (
+                  <ProductGallery images={product.images} alt={product.name} />
+                ) : product.imageUrl ? (
+                  <div style={{ position: "relative", width: "100%", aspectRatio: "1 / 1" }}>
+                    <Image src={product.imageUrl} alt={product.name} fill style={{ objectFit: "contain", padding: "2rem" }} />
+                  </div>
                 ) : (
-                  product.icon
+                  <div style={{ display: "flex", alignItems: "center", justifyContent: "center", fontSize: "8rem", minHeight: 280 }}>
+                    {product.icon}
+                  </div>
                 )}
-                <span style={{ position: "absolute", top: 14, left: 14, background: "#F07B20", color: "#fff", fontSize: "0.8rem", fontWeight: 700, padding: "4px 12px", borderRadius: 6 }}>
+                <span style={{ position: "absolute", top: 14, left: 14, background: "#F07B20", color: "#fff", fontSize: "0.8rem", fontWeight: 700, padding: "4px 12px", borderRadius: 6, zIndex: 2 }}>
                   -{discountPct(product.originalPrice, product.price)}%
                 </span>
                 {!product.inStock && (
-                  <span style={{ position: "absolute", top: 14, right: 14, background: "var(--muted)", color: "#fff", fontSize: "0.75rem", fontWeight: 700, padding: "4px 10px", borderRadius: 6 }}>
+                  <span style={{ position: "absolute", top: 14, right: 14, background: "var(--muted)", color: "#fff", fontSize: "0.75rem", fontWeight: 700, padding: "4px 10px", borderRadius: 6, zIndex: 2 }}>
                     Hết hàng
                   </span>
                 )}
@@ -173,6 +180,26 @@ export default async function ProductDetailPage({
                   </p>
                 </div>
               ))}
+            </div>
+          </div>
+        </section>
+      )}
+
+      {/* Video giới thiệu */}
+      {product.videoId && (
+        <section style={{ background: "var(--bg)", padding: "3rem 0", borderTop: "1px solid var(--border)" }}>
+          <div className="container" style={{ maxWidth: 640, margin: "0 auto" }}>
+            <h2 style={{ fontFamily: "'Trebuchet MS', sans-serif", fontSize: "1.2rem", color: "var(--brand)", textAlign: "center", marginBottom: "1rem" }}>
+              Video giới thiệu sản phẩm
+            </h2>
+            <div style={{ position: "relative", paddingBottom: "56.25%", borderRadius: 12, overflow: "hidden", border: "1px solid var(--border)" }}>
+              <iframe
+                src={`https://www.youtube.com/embed/${product.videoId}`}
+                title={`Video giới thiệu ${product.name}`}
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                allowFullScreen
+                style={{ position: "absolute", top: 0, left: 0, width: "100%", height: "100%", border: "none" }}
+              />
             </div>
           </div>
         </section>
