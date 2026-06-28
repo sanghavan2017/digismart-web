@@ -1,4 +1,5 @@
 import Link from "next/link";
+import Image from "next/image";
 import { products } from "@/data/products";
 import LeadFormButton from "@/components/LeadFormButton";
 import { notFound } from "next/navigation";
@@ -64,8 +65,12 @@ export default async function ProductDetailPage({
           <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fit, minmax(280px, 1fr))", gap: "2.5rem" }}>
             {/* Left: Image */}
             <div>
-              <div style={{ background: "var(--brand-light)", borderRadius: 12, padding: "3rem", display: "flex", alignItems: "center", justifyContent: "center", fontSize: "8rem", border: "1px solid var(--border)", minHeight: 280, position: "relative" }}>
-                {product.icon}
+              <div style={{ background: "#fff", borderRadius: 12, padding: "3rem", display: "flex", alignItems: "center", justifyContent: "center", fontSize: "8rem", border: "1px solid var(--border)", minHeight: 280, position: "relative", overflow: "hidden" }}>
+                {product.imageUrl ? (
+                  <Image src={product.imageUrl} alt={product.name} fill style={{ objectFit: "contain", padding: "2rem" }} />
+                ) : (
+                  product.icon
+                )}
                 <span style={{ position: "absolute", top: 14, left: 14, background: "#F07B20", color: "#fff", fontSize: "0.8rem", fontWeight: 700, padding: "4px 12px", borderRadius: 6 }}>
                   -{discountPct(product.originalPrice, product.price)}%
                 </span>
@@ -161,8 +166,12 @@ export default async function ProductDetailPage({
               {related.map(p => (
                 <Link key={p.id} href={`/san-pham/${p.id}`}
                   style={{ background: "var(--bg)", border: "1px solid var(--border)", borderRadius: 8, overflow: "hidden", textDecoration: "none", display: "block" }}>
-                  <div style={{ background: "var(--brand-light)", height: 130, display: "flex", alignItems: "center", justifyContent: "center", fontSize: "3rem" }}>
-                    {p.icon}
+                  <div style={{ background: "#fff", borderBottom: "1px solid var(--border)", height: 130, display: "flex", alignItems: "center", justifyContent: "center", fontSize: "3rem", position: "relative", overflow: "hidden" }}>
+                    {p.imageUrl ? (
+                      <Image src={p.imageUrl} alt={p.name} fill style={{ objectFit: "contain", padding: "0.5rem" }} />
+                    ) : (
+                      p.icon
+                    )}
                   </div>
                   <div style={{ padding: "0.875rem" }}>
                     <div style={{ fontFamily: "'Trebuchet MS', sans-serif", fontWeight: 700, fontSize: "0.82rem", color: "var(--text)", lineHeight: 1.4, marginBottom: "0.4rem" }}>{p.name}</div>

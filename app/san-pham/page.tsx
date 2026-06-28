@@ -1,4 +1,5 @@
 import Link from "next/link";
+import Image from "next/image";
 import { products, categories, brands } from "@/data/products";
 import LeadFormButton from "@/components/LeadFormButton";
 import type { Metadata } from "next";
@@ -99,8 +100,12 @@ export default async function ProductsPage({
                 <Link key={p.id} href={`/san-pham/${p.id}`}
                   style={{ background: "#fff", border: "1px solid var(--border)", borderRadius: 10, overflow: "hidden", textDecoration: "none", display: "block", position: "relative" }}>
                   {/* Image area */}
-                  <div style={{ background: "var(--brand-light)", height: 160, display: "flex", alignItems: "center", justifyContent: "center", fontSize: "3.5rem", position: "relative" }}>
-                    {p.icon}
+                  <div style={{ background: "#fff", borderBottom: "1px solid var(--border)", height: 160, display: "flex", alignItems: "center", justifyContent: "center", fontSize: "3.5rem", position: "relative", overflow: "hidden" }}>
+                    {p.imageUrl ? (
+                      <Image src={p.imageUrl} alt={p.name} fill style={{ objectFit: "contain", padding: "0.75rem" }} />
+                    ) : (
+                      p.icon
+                    )}
                     <span style={{ position: "absolute", top: 10, left: 10, background: "#F07B20", color: "#fff", fontSize: "0.7rem", fontWeight: 700, padding: "3px 9px", borderRadius: 4 }}>
                       -{discountPct(p.originalPrice, p.price)}%
                     </span>
