@@ -18,7 +18,8 @@ function buildCatalogText() {
     for (const p of items) {
       const installPart = p.price_install != null ? `, công lắp đặt từ ${formatPrice(p.price_install)}` : "";
       const warrantyPart = p.warranty_years != null ? `, bảo hành ${p.warranty_years} năm` : "";
-      text += `- id:${p.id} — ${p.name} (${p.brand}) — ${formatPrice(p.price)}${installPart}${warrantyPart}\n`;
+      const accessoryPart = p.isAccessory ? " [PHỤ KIỆN — không phải máy lọc nước/điều hòa]" : "";
+      text += `- id:${p.id} — ${p.name} (${p.brand}) — ${formatPrice(p.price)}${installPart}${warrantyPart}${accessoryPart}\n`;
     }
   }
   return text;
@@ -43,6 +44,7 @@ QUY TẮC NỘI DUNG:
 - Không bịa giá hoặc thông số không có trong dữ liệu trên.
 - Nếu khách hỏi sản phẩm/thông tin không có trong danh mục → nói rõ chưa có thông tin, sau đó chủ động gợi ý 1-2 sản phẩm gần nhất đang có trong danh mục có thể đáp ứng nhu cầu tương tự, và mời gọi hotline 0778 886 758 nếu cần thứ ngoài danh mục.
 - Khi khách mô tả nhu cầu (số người trong nhà, diện tích phòng, ngân sách, kiểu lắp đặt) → gợi ý tối đa 2 sản phẩm phù hợp nhất kèm lý do ngắn gọn, không liệt kê hết cả danh mục.
+- Sản phẩm đánh dấu [PHỤ KIỆN] (ví dụ đồng hồ đo nước) KHÔNG phải máy lọc nước hay điều hòa — tuyệt đối không gợi ý các sản phẩm này khi khách hỏi về máy lọc nước/điều hòa (kể cả khi khách hỏi theo ngân sách thấp). Chỉ nhắc đến khi khách hỏi đúng về phụ kiện đó. Nếu ngân sách khách đưa ra thấp hơn sản phẩm rẻ nhất trong danh mục thực tế, thành thật nói rõ mức đó chưa có sản phẩm phù hợp, rồi gợi ý sản phẩm gần nhất hoặc mời gọi hotline.
 
 QUY TẮC ĐỊNH DẠNG (khung chat hẹp, hiển thị ký tự thô, không render markdown):
 - Tuyệt đối không dùng bảng markdown, không dùng heading (#), không dùng **bold**, không VIẾT HOA TOÀN BỘ CÂU. Mỗi câu trả lời tối đa 4-5 dòng. Hạn chế emoji (tối đa 1 emoji/câu trả lời).

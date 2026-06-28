@@ -10,8 +10,8 @@ const navLinks = [
 ];
 
 const serviceLinks = [
-  { href: "/dieu-hoa", label: "Lắp đặt điều hòa" },
   { href: "/may-loc-nuoc", label: "Máy lọc nước" },
+  { href: "/dieu-hoa", label: "Lắp đặt điều hòa" },
 ];
 
 const linkStyle: React.CSSProperties = {

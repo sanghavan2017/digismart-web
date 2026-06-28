@@ -86,12 +86,19 @@ export default function MayLocNuocPage() {
       {/* Công nghệ lọc */}
       <section style={{ padding: "3.5rem 0", background: "#fff" }}>
         <div className="container">
-          <h2 style={{ fontFamily: "'Trebuchet MS', sans-serif", fontSize: "1.4rem", color: "var(--brand)", textAlign: "center", marginBottom: "0.75rem" }}>
-            Công nghệ lọc nước Nhật Bản
-          </h2>
-          <p style={{ fontFamily: "Calibri, sans-serif", fontSize: "0.92rem", color: "var(--muted)", textAlign: "center", maxWidth: 640, margin: "0 auto 2.5rem" }}>
-            Các dòng máy Cleansui và Kitz Micro Filter DigiSmart phân phối đều dùng công nghệ lọc đa cấp của Nhật Bản: loại bỏ vi khuẩn, tạp chất, kim loại nặng mà vẫn giữ lại khoáng chất tự nhiên có lợi cho cơ thể.
-          </p>
+          <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fit, minmax(280px, 1fr))", gap: "2rem", alignItems: "center", marginBottom: "2.5rem" }}>
+            <div>
+              <h2 style={{ fontFamily: "'Trebuchet MS', sans-serif", fontSize: "1.4rem", color: "var(--brand)", marginBottom: "0.75rem" }}>
+                Công nghệ lọc nước Nhật Bản
+              </h2>
+              <p style={{ fontFamily: "Calibri, sans-serif", fontSize: "0.92rem", color: "var(--muted)" }}>
+                Các dòng máy Cleansui và Kitz Micro Filter DigiSmart phân phối đều dùng công nghệ lọc đa cấp của Nhật Bản, lõi lọc là màng sợi rỗng (hollow fiber membrane): loại bỏ vi khuẩn, tạp chất, kim loại nặng mà vẫn giữ lại khoáng chất tự nhiên có lợi cho cơ thể.
+              </p>
+            </div>
+            <div style={{ borderRadius: 12, overflow: "hidden", border: "1px solid var(--border)" }}>
+              <Image src="/images/tech/cong-nghe-mang-soi-rong.jpg" alt="Công nghệ màng lọc sợi rỗng" width={640} height={360} style={{ width: "100%", height: "auto", display: "block" }} />
+            </div>
+          </div>
 
           {/* 4 cấp lọc */}
           <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fit, minmax(200px, 1fr))", gap: "1.25rem", marginBottom: "2.5rem" }}>
@@ -125,6 +132,42 @@ export default function MayLocNuocPage() {
                 </div>
               </div>
             ))}
+          </div>
+
+          {/* Ảnh minh hoạ cấu trúc màng lọc */}
+          <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fit, minmax(260px, 1fr))", gap: "1.25rem", marginTop: "2.5rem" }}>
+            <div>
+              <div style={{ borderRadius: 12, overflow: "hidden", border: "1px solid var(--border)" }}>
+                <Image src="/images/tech/cau-truc-soi-rong.jpg" alt="Cấu trúc màng sợi rỗng" width={500} height={400} style={{ width: "100%", height: "auto", display: "block" }} />
+              </div>
+              <p style={{ fontFamily: "Calibri, sans-serif", fontSize: "0.78rem", color: "var(--muted)", textAlign: "center", marginTop: "0.5rem" }}>
+                Cấu trúc bó sợi rỗng — diện tích bề mặt lọc lớn, lưu lượng nước ổn định
+              </p>
+            </div>
+            <div>
+              <div style={{ borderRadius: 12, overflow: "hidden", border: "1px solid var(--border)" }}>
+                <Image src="/images/tech/chan-vi-khuan-sem.jpg" alt="Màng lọc chặn vi khuẩn ở cấp độ micromet" width={500} height={400} style={{ width: "100%", height: "auto", display: "block" }} />
+              </div>
+              <p style={{ fontFamily: "Calibri, sans-serif", fontSize: "0.78rem", color: "var(--muted)", textAlign: "center", marginTop: "0.5rem" }}>
+                Ảnh kính hiển vi: lỗ lọc cấp độ micromet chặn vi khuẩn mà không cần hóa chất
+              </p>
+            </div>
+          </div>
+
+          {/* Video minh hoạ */}
+          <div style={{ marginTop: "2.5rem", maxWidth: 640, marginLeft: "auto", marginRight: "auto" }}>
+            <h3 style={{ fontFamily: "'Trebuchet MS', sans-serif", fontSize: "1.05rem", color: "var(--brand)", textAlign: "center", marginBottom: "1rem" }}>
+              Video: Công nghệ màng lọc sợi rỗng hoạt động như thế nào
+            </h3>
+            <div style={{ position: "relative", paddingBottom: "56.25%", borderRadius: 12, overflow: "hidden", border: "1px solid var(--border)" }}>
+              <iframe
+                src="https://www.youtube.com/embed/8Ejncdl2Tg0"
+                title="Công nghệ màng lọc sợi rỗng"
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                allowFullScreen
+                style={{ position: "absolute", top: 0, left: 0, width: "100%", height: "100%", border: "none" }}
+              />
+            </div>
           </div>
         </div>
       </section>

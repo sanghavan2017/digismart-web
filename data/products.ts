@@ -22,113 +22,18 @@ export type Product = {
   // Chung cho dịch vụ lắp đặt
   price_install?: number;
   warranty_years?: number;
+  // true nếu là phụ kiện đi kèm (không phải thiết bị lọc nước/làm lạnh chính) — dùng để chatbot không gợi ý nhầm khi khách hỏi máy lọc nước/điều hòa
+  isAccessory?: boolean;
 };
 
 export const categories = [
-  { name: "Điều hòa", icon: "❄️", desc: "Điều hòa Inverter chính hãng, lắp đặt tận nơi", slug: "dieu-hoa" },
   { name: "Máy lọc nước", icon: "💧", desc: "Máy lọc nước RO, nóng lạnh, nhiều cấp lọc", slug: "may-loc-nuoc" },
+  { name: "Điều hòa", icon: "❄️", desc: "Điều hòa Inverter chính hãng, lắp đặt tận nơi", slug: "dieu-hoa" },
 ];
 
 export const brands = ["Mitsubishi", "Daikin", "Cleansui", "Kitz"];
 
 export const products: Product[] = [
-  // ------- Điều hòa -------
-  {
-    id: "dieu-hoa-mitsubishi-inverter-1hp",
-    name: "Điều Hòa Mitsubishi Inverter 1HP (9.000 BTU)",
-    brand: "Mitsubishi",
-    category: "Điều hòa",
-    price: 8990000,
-    originalPrice: 10490000,
-    icon: "❄️",
-    description:
-      "Điều hòa Mitsubishi Inverter 1HP tiết kiệm điện, làm lạnh nhanh, vận hành êm ái, phù hợp phòng 9-15m². Công nghệ lọc không khí kháng khuẩn, điều khiển từ xa thông minh.",
-    specs: [
-      "Công suất lạnh 9.000 BTU",
-      "Inverter tiết kiệm điện đến 60%",
-      "Phù hợp phòng 9-15m²",
-      "Lọc không khí kháng khuẩn",
-      "Vận hành êm chỉ từ 19dB",
-    ],
-    inStock: true,
-    btu: 9000,
-    power_kw: 0.85,
-    inverter: true,
-    price_install: 1200000,
-    warranty_years: 3,
-  },
-  {
-    id: "dieu-hoa-daikin-inverter-1.5hp",
-    name: "Điều Hòa Daikin Inverter 1.5HP (12.000 BTU)",
-    brand: "Daikin",
-    category: "Điều hòa",
-    price: 12990000,
-    originalPrice: 14990000,
-    icon: "❄️",
-    description:
-      "Điều hòa Daikin Inverter 1.5HP công nghệ Nhật Bản, làm lạnh sâu, độ bền cao, tiết kiệm điện vượt trội. Phù hợp phòng khách, phòng ngủ 15-20m².",
-    specs: [
-      "Công suất lạnh 12.000 BTU",
-      "Inverter công nghệ Nhật Bản",
-      "Phù hợp phòng 15-20m²",
-      "Gas R32 thân thiện môi trường",
-      "Cánh đảo gió 3D linh hoạt",
-    ],
-    inStock: true,
-    btu: 12000,
-    power_kw: 1.15,
-    inverter: true,
-    price_install: 1500000,
-    warranty_years: 5,
-  },
-  {
-    id: "dieu-hoa-mitsubishi-inverter-2hp",
-    name: "Điều Hòa Mitsubishi Inverter 2HP (18.000 BTU)",
-    brand: "Mitsubishi",
-    category: "Điều hòa",
-    price: 17990000,
-    originalPrice: 20490000,
-    icon: "❄️",
-    description:
-      "Điều hòa Mitsubishi Inverter 2HP công suất lớn, làm lạnh nhanh cho không gian rộng 20-30m², tiết kiệm điện, độ bền cao, bảo hành chính hãng.",
-    specs: [
-      "Công suất lạnh 18.000 BTU",
-      "Inverter tiết kiệm điện",
-      "Phù hợp phòng 20-30m²",
-      "Chế độ ngủ thông minh",
-      "Tự làm sạch dàn lạnh",
-    ],
-    inStock: true,
-    btu: 18000,
-    power_kw: 1.7,
-    inverter: true,
-    price_install: 1800000,
-    warranty_years: 3,
-  },
-  {
-    id: "dieu-hoa-daikin-thuong-1hp",
-    name: "Điều Hòa Daikin Thường 1HP (9.000 BTU)",
-    brand: "Daikin",
-    category: "Điều hòa",
-    price: 6990000,
-    originalPrice: 7990000,
-    icon: "❄️",
-    description:
-      "Điều hòa Daikin 1HP dòng phổ thông, giá tốt, làm lạnh ổn định, phù hợp phòng nhỏ 9-12m². Lựa chọn kinh tế cho gia đình.",
-    specs: [
-      "Công suất lạnh 9.000 BTU",
-      "Block thường, giá tốt",
-      "Phù hợp phòng 9-12m²",
-      "Chế độ làm lạnh nhanh",
-      "Lưới lọc bụi mịn",
-    ],
-    inStock: true,
-    btu: 9000,
-    power_kw: 0.95,
-    inverter: false,
-    price_install: 1200000,
-    warranty_years: 2,
-  },
   // ------- Máy lọc nước: Cleansui (Mitsubishi Chemical) -------
   // Nguồn: catalog B2B "251031) CM catalog_8%_EU103-B2B.pdf", giá bán lẻ NPP, 24/06/2026
   // Bảo hành (theo chính sách hãng Cleansui, cập nhật 27/06/2026): vòi dòng CM (EU301/EU201/EU202/EU101/EU103) 5 năm,
@@ -511,5 +416,103 @@ export const products: Product[] = [
       "Lưu lượng sử dụng thời gian thực",
     ],
     inStock: true,
+    isAccessory: true,
+  },
+  // ------- Điều hòa -------
+  {
+    id: "dieu-hoa-mitsubishi-inverter-1hp",
+    name: "Điều Hòa Mitsubishi Inverter 1HP (9.000 BTU)",
+    brand: "Mitsubishi",
+    category: "Điều hòa",
+    price: 8990000,
+    originalPrice: 10490000,
+    icon: "❄️",
+    description:
+      "Điều hòa Mitsubishi Inverter 1HP tiết kiệm điện, làm lạnh nhanh, vận hành êm ái, phù hợp phòng 9-15m². Công nghệ lọc không khí kháng khuẩn, điều khiển từ xa thông minh.",
+    specs: [
+      "Công suất lạnh 9.000 BTU",
+      "Inverter tiết kiệm điện đến 60%",
+      "Phù hợp phòng 9-15m²",
+      "Lọc không khí kháng khuẩn",
+      "Vận hành êm chỉ từ 19dB",
+    ],
+    inStock: true,
+    btu: 9000,
+    power_kw: 0.85,
+    inverter: true,
+    price_install: 1200000,
+    warranty_years: 3,
+  },
+  {
+    id: "dieu-hoa-daikin-inverter-1.5hp",
+    name: "Điều Hòa Daikin Inverter 1.5HP (12.000 BTU)",
+    brand: "Daikin",
+    category: "Điều hòa",
+    price: 12990000,
+    originalPrice: 14990000,
+    icon: "❄️",
+    description:
+      "Điều hòa Daikin Inverter 1.5HP công nghệ Nhật Bản, làm lạnh sâu, độ bền cao, tiết kiệm điện vượt trội. Phù hợp phòng khách, phòng ngủ 15-20m².",
+    specs: [
+      "Công suất lạnh 12.000 BTU",
+      "Inverter công nghệ Nhật Bản",
+      "Phù hợp phòng 15-20m²",
+      "Gas R32 thân thiện môi trường",
+      "Cánh đảo gió 3D linh hoạt",
+    ],
+    inStock: true,
+    btu: 12000,
+    power_kw: 1.15,
+    inverter: true,
+    price_install: 1500000,
+    warranty_years: 5,
+  },
+  {
+    id: "dieu-hoa-mitsubishi-inverter-2hp",
+    name: "Điều Hòa Mitsubishi Inverter 2HP (18.000 BTU)",
+    brand: "Mitsubishi",
+    category: "Điều hòa",
+    price: 17990000,
+    originalPrice: 20490000,
+    icon: "❄️",
+    description:
+      "Điều hòa Mitsubishi Inverter 2HP công suất lớn, làm lạnh nhanh cho không gian rộng 20-30m², tiết kiệm điện, độ bền cao, bảo hành chính hãng.",
+    specs: [
+      "Công suất lạnh 18.000 BTU",
+      "Inverter tiết kiệm điện",
+      "Phù hợp phòng 20-30m²",
+      "Chế độ ngủ thông minh",
+      "Tự làm sạch dàn lạnh",
+    ],
+    inStock: true,
+    btu: 18000,
+    power_kw: 1.7,
+    inverter: true,
+    price_install: 1800000,
+    warranty_years: 3,
+  },
+  {
+    id: "dieu-hoa-daikin-thuong-1hp",
+    name: "Điều Hòa Daikin Thường 1HP (9.000 BTU)",
+    brand: "Daikin",
+    category: "Điều hòa",
+    price: 6990000,
+    originalPrice: 7990000,
+    icon: "❄️",
+    description:
+      "Điều hòa Daikin 1HP dòng phổ thông, giá tốt, làm lạnh ổn định, phù hợp phòng nhỏ 9-12m². Lựa chọn kinh tế cho gia đình.",
+    specs: [
+      "Công suất lạnh 9.000 BTU",
+      "Block thường, giá tốt",
+      "Phù hợp phòng 9-12m²",
+      "Chế độ làm lạnh nhanh",
+      "Lưới lọc bụi mịn",
+    ],
+    inStock: true,
+    btu: 9000,
+    power_kw: 0.95,
+    inverter: false,
+    price_install: 1200000,
+    warranty_years: 2,
   },
 ];
