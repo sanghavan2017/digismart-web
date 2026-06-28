@@ -179,6 +179,7 @@ export const products: Product[] = [
     originalPrice: 20490000,
     icon: "💧",
     imageUrl: "/images/products/cleansui-cwmf-500e.jpg",
+    videoId: "XuLfCXsFuHI",
     features: [
       { image: "/images/products/cleansui-cwmf-500e.jpg", caption: "Sử dụng bộ lọc EUC3000 sản xuất 100% tại Nhật Bản, nóng 80-90°C / lạnh 4-10°C." },
       { image: "/images/tech/chan-vi-khuan-sem.jpg", caption: "Màng lọc sợi rỗng loại bỏ tạp chất nhỏ tới 0,01 micromet, vẫn giữ khoáng tự nhiên." },
@@ -265,6 +266,7 @@ export const products: Product[] = [
     originalPrice: 233690000,
     icon: "💧",
     imageUrl: "/images/products/cleansui-mpoe-s4.jpg",
+    videoId: "TSZDa0qC-eY",
     features: [
       { image: "/images/products/cleansui-mpoe-s4.jpg", caption: "Bao gồm 4 bộ lọc MPOE050E sản xuất 100% tại Nhật Bản, tuổi thọ tới 500.000 lít/bộ lọc." },
       { image: "/images/tech/chan-vi-khuan-sem.jpg", caption: "Màng lọc sợi rỗng loại bỏ vi khuẩn tới 0,01 micromet, giữ khoáng tự nhiên cho toàn bộ ngôi nhà." },
@@ -294,6 +296,7 @@ export const products: Product[] = [
     originalPrice: 194490000,
     icon: "💧",
     imageUrl: "/images/products/cleansui-mpoe-p.jpg",
+    videoId: "TSZDa0qC-eY",
     features: [
       { image: "/images/products/cleansui-mpoe-p.jpg", caption: "Màn hình điều khiển cảm ứng TFT 8,4 inch, dễ điều khiển ở mọi vị trí." },
       { image: "/images/tech/chan-vi-khuan-sem.jpg", caption: "Màng lọc sợi rỗng loại bỏ vi khuẩn tới 0,01 micromet, giữ khoáng tự nhiên và Clo kháng khuẩn." },
@@ -323,6 +326,7 @@ export const products: Product[] = [
     originalPrice: 145290000,
     icon: "💧",
     imageUrl: "/images/products/cleansui-mpoe-s.jpg",
+    videoId: "TSZDa0qC-eY",
     features: [
       { image: "/images/products/cleansui-mpoe-s.jpg", caption: "Thiết kế tinh gọn, nhỏ nhất thị trường trong dòng MPOE, tiết kiệm không gian lắp đặt." },
       { image: "/images/tech/chan-vi-khuan-sem.jpg", caption: "Màng lọc sợi rỗng loại bỏ vi khuẩn tới 0,01 micromet, giữ khoáng tự nhiên." },
