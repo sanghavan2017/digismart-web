@@ -1,10 +1,11 @@
 import Link from "next/link";
+import Image from "next/image";
 import { products, categories } from "@/data/products";
 import type { Metadata } from "next";
 
 export const metadata: Metadata = {
-  title: "DigiSmart — Phụ kiện điện tử chính hãng",
-  description: "DigiSmart cung cấp phụ kiện điện tử chính hãng: chuột, bàn phím, tai nghe, SSD, sạc nhanh. Giao toàn quốc, bảo hành đầy đủ.",
+  title: "DigiSmart — Điều hòa & Máy lọc nước chính hãng",
+  description: "DigiSmart cung cấp & lắp đặt Điều hòa, Máy lọc nước (Cleansui, Kitz Micro Filter, Mitsubishi, Daikin) chính hãng tại TPHCM. Tư vấn miễn phí, bảo hành đầy đủ.",
 };
 
 function formatPrice(n: number) {
@@ -24,7 +25,7 @@ export default function HomePage() {
         <div className="container" style={{ display: "flex", alignItems: "center", justifyContent: "space-between", gap: "2rem", flexWrap: "wrap" }}>
           <div style={{ color: "#fff", maxWidth: 560 }}>
             <div style={{ background: "rgba(255,255,255,0.12)", border: "1px solid rgba(255,255,255,0.25)", color: "rgba(255,255,255,0.9)", fontSize: "0.8rem", padding: "4px 14px", borderRadius: 20, display: "inline-block", marginBottom: "1.25rem", fontWeight: 500 }}>
-              ✦ Phụ kiện điện tử chính hãng — Bảo hành đầy đủ
+              ✦ Điều hòa & Máy lọc nước chính hãng — Lắp đặt tận nơi
             </div>
             <h1 style={{ fontFamily: "'Trebuchet MS', sans-serif", fontSize: "clamp(2rem, 4vw, 2.8rem)", lineHeight: 1.2, marginBottom: "0.75rem" }}>
               Công nghệ chính hãng<br />
@@ -34,7 +35,7 @@ export default function HomePage() {
               "Mua thông minh — Sống tiện nghi"
             </p>
             <p style={{ fontFamily: "Calibri, sans-serif", fontSize: "0.9rem", opacity: 0.75, lineHeight: 1.7, marginBottom: "2rem" }}>
-              Điều hòa, máy lọc nước chính hãng — lắp đặt tận nơi tại TPHCM.
+              Điều hòa, máy lọc nước Cleansui, Kitz Micro Filter — chính hãng, lắp đặt tận nơi tại TPHCM.
             </p>
             <div style={{ display: "flex", gap: "1rem", flexWrap: "wrap" }}>
               <Link href="/san-pham" style={{ background: "#F07B20", color: "#fff", padding: "12px 28px", borderRadius: 6, fontSize: "0.95rem", fontWeight: 700, textDecoration: "none", fontFamily: "Trebuchet MS, sans-serif" }}>
@@ -48,10 +49,10 @@ export default function HomePage() {
 
           <div style={{ display: "flex", gap: "2.5rem", flexWrap: "wrap" }}>
             {[
-              { num: "50+", label: "Sản phẩm" },
-              { num: "10K+", label: "Khách hàng" },
-              { num: "4", label: "Sàn TMĐT" },
+              { num: "18+", label: "Sản phẩm" },
+              { num: "2", label: "Ngành hàng" },
               { num: "100%", label: "Chính hãng" },
+              { num: "Tận nơi", label: "Lắp đặt" },
             ].map(s => (
               <div key={s.label} style={{ textAlign: "center" }}>
                 <div style={{ fontFamily: "'Trebuchet MS', sans-serif", fontSize: "2rem", color: "#F07B20", fontWeight: 700 }}>{s.num}</div>
@@ -94,8 +95,12 @@ export default function HomePage() {
             {featured.map(p => (
               <Link key={p.id} href={`/san-pham/${p.id}`}
                 style={{ background: "#fff", border: "1px solid var(--border)", borderRadius: 8, overflow: "hidden", textDecoration: "none", display: "block" }}>
-                <div style={{ background: "var(--brand-light)", height: 150, display: "flex", alignItems: "center", justifyContent: "center", fontSize: "3rem", position: "relative" }}>
-                  {p.icon}
+                <div style={{ background: "#fff", borderBottom: "1px solid var(--border)", height: 150, display: "flex", alignItems: "center", justifyContent: "center", fontSize: "3rem", position: "relative", overflow: "hidden" }}>
+                  {p.imageUrl ? (
+                    <Image src={p.imageUrl} alt={p.name} fill style={{ objectFit: "contain", padding: "0.75rem" }} />
+                  ) : (
+                    p.icon
+                  )}
                   <span style={{ position: "absolute", top: 8, left: 8, background: "#F07B20", color: "#fff", fontSize: "0.7rem", fontWeight: 700, padding: "3px 8px", borderRadius: 4 }}>
                     -{discountPct(p.originalPrice, p.price)}%
                   </span>
@@ -128,9 +133,9 @@ export default function HomePage() {
           <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fit, minmax(180px, 1fr))", gap: "1.5rem" }}>
             {[
               { icon: "✅", title: "Hàng chính hãng", desc: "Nguồn gốc rõ ràng, bảo hành đầy đủ" },
-              { icon: "🚀", title: "Giao hàng nhanh", desc: "Toàn quốc qua Shopee, Lazada, TikTok" },
-              { icon: "💬", title: "Tư vấn 24/7", desc: "Hỗ trợ qua Zalo & điện thoại" },
-              { icon: "🔄", title: "Đổi trả dễ dàng", desc: "Theo chính sách sàn TMĐT" },
+              { icon: "🔧", title: "Lắp đặt tận nơi", desc: "Kỹ thuật DigiSmart lắp đặt trực tiếp tại TPHCM" },
+              { icon: "💬", title: "Tư vấn miễn phí", desc: "Hỗ trợ qua hotline & Zalo" },
+              { icon: "💰", title: "Giá minh bạch", desc: "Báo giá rõ ràng trọn gói, không phát sinh" },
             ].map(b => (
               <div key={b.title} style={{ display: "flex", gap: "0.875rem", alignItems: "flex-start" }}>
                 <span style={{ fontSize: "1.5rem", flexShrink: 0 }}>{b.icon}</span>
