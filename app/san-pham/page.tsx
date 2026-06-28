@@ -6,7 +6,7 @@ import type { Metadata } from "next";
 
 export const metadata: Metadata = {
   title: "Sản phẩm — DigiSmart",
-  description: "Phụ kiện điện tử chính hãng: chuột, bàn phím, tai nghe, SSD, sạc nhanh. Bảo hành đầy đủ, giao toàn quốc.",
+  description: "Điều hòa, máy lọc nước chính hãng (Cleansui, Kitz Micro Filter, Mitsubishi, Daikin). Tư vấn miễn phí, lắp đặt tận nơi tại TPHCM.",
 };
 
 function formatPrice(n: number) {

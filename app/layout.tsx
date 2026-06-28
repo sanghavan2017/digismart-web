@@ -5,8 +5,8 @@ import Footer from "@/components/Footer";
 import Chatbot from "@/components/Chatbot";
 
 export const metadata: Metadata = {
-  title: "DigiSmart — Phụ kiện điện tử chính hãng",
-  description: "DigiSmart cung cấp phụ kiện điện tử chính hãng tại Việt Nam. Chuột, bàn phím, tai nghe, SSD, sạc nhanh — bảo hành đầy đủ, giao toàn quốc.",
+  title: "DigiSmart — Điều hòa & Máy lọc nước chính hãng",
+  description: "DigiSmart cung cấp & lắp đặt Điều hòa, Máy lọc nước chính hãng tại TPHCM. Cleansui, Kitz Micro Filter, Mitsubishi, Daikin — bảo hành đầy đủ.",
 };
 
 export default function RootLayout({

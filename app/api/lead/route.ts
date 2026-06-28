@@ -1,6 +1,8 @@
 import { NextRequest, NextResponse } from "next/server";
 
-const LEAD_RECIPIENTS = ["digismart606@gmail.com", "sang.havan2017@gmail.com"];
+// Resend ở chế độ test (chưa verify domain riêng) chỉ gửi được tới email đã đăng ký tài khoản Resend.
+// Verify domain tại resend.com/domains để gửi được nhiều địa chỉ nhận.
+const LEAD_RECIPIENTS = ["digismart606@gmail.com"];
 
 export async function POST(req: NextRequest) {
   try {

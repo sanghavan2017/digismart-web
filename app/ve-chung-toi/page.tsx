@@ -2,21 +2,21 @@ import type { Metadata } from "next";
 
 export const metadata: Metadata = {
   title: "Về chúng tôi — DigiSmart",
-  description: "DigiSmart — nhà phân phối phụ kiện điện tử chính hãng tại Việt Nam. Sản phẩm đa dạng, bảo hành đầy đủ, giao hàng toàn quốc.",
+  description: "DigiSmart — chuyên cung cấp & lắp đặt Điều hòa, Máy lọc nước chính hãng tại TPHCM. Ngoài ra phân phối phụ kiện điện tử qua Shopee, Lazada, TikTok Shop.",
 };
 
 const values = [
   { icon: "✅", title: "Hàng chính hãng 100%", desc: "Mỗi sản phẩm đều có tem nhập khẩu, nguồn gốc rõ ràng, được kiểm định trước khi đến tay khách hàng." },
-  { icon: "🚀", title: "Giao hàng toàn quốc", desc: "Phủ sóng toàn quốc qua Shopee, Lazada, TikTok Shop. Đơn hàng được xử lý trong ngày làm việc." },
+  { icon: "🔧", title: "Lắp đặt tận nơi", desc: "Điều hòa, máy lọc nước được kỹ thuật DigiSmart tư vấn và lắp đặt trực tiếp tại TPHCM." },
   { icon: "💬", title: "Tư vấn tận tâm", desc: "Đội ngũ tư vấn nhiệt tình, am hiểu sản phẩm, hỗ trợ qua Zalo và điện thoại mọi ngày." },
-  { icon: "🔄", title: "Đổi trả minh bạch", desc: "Chính sách đổi trả theo tiêu chuẩn sàn thương mại điện tử, bảo vệ quyền lợi người mua." },
+  { icon: "🛍️", title: "Phụ kiện đa kênh", desc: "Ngoài điều hòa & máy lọc nước, phụ kiện điện tử được phân phối qua Shopee, Lazada, TikTok Shop." },
 ];
 
 const milestones = [
   { year: "2022", event: "Thành lập DigiSmart, bắt đầu kinh doanh trên Shopee" },
   { year: "2023", event: "Mở rộng sang Lazada và TikTok Shop, đạt 1.000+ đơn hàng" },
-  { year: "2024", event: "Trở thành nhà phân phối chính thức thương hiệu Logitech & Anker" },
-  { year: "2025", event: "Ra mắt website digismartvn.vn, phục vụ hơn 10.000 khách hàng" },
+  { year: "2024", event: "Mở rộng sang lĩnh vực Điều hòa & Máy lọc nước, trở thành đại lý Cleansui & Kitz Micro Filter" },
+  { year: "2025", event: "Ra mắt website digismartvn.vn" },
 ];
 
 export default function AboutPage() {
@@ -46,7 +46,7 @@ export default function AboutPage() {
                 Sứ mệnh của chúng tôi
               </h2>
               <p style={{ fontFamily: "Calibri, sans-serif", fontSize: "1rem", color: "var(--text)", lineHeight: 1.8, marginBottom: "1rem" }}>
-                DigiSmart ra đời với sứ mệnh đưa các phụ kiện điện tử chính hãng — chuột, bàn phím, tai nghe, ổ cứng, sạc — đến tay người dùng Việt Nam với giá hợp lý nhất có thể.
+                DigiSmart ra đời với sứ mệnh đưa Điều hòa và Máy lọc nước chính hãng — Cleansui, Kitz Micro Filter, Mitsubishi, Daikin — đến tay người dùng Việt Nam với giá hợp lý nhất, cùng dịch vụ lắp đặt tận nơi tận tâm.
               </p>
               <p style={{ fontFamily: "Calibri, sans-serif", fontSize: "1rem", color: "var(--text)", lineHeight: 1.8 }}>
                 Chúng tôi làm việc trực tiếp với nhà phân phối uy tín, loại bỏ các khâu trung gian không cần thiết để mang lại giá trị thực sự cho khách hàng.

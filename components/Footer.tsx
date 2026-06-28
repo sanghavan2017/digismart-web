@@ -22,7 +22,7 @@ export default function Footer() {
               "Mua thông minh — Sống tiện nghi"
             </p>
             <p style={{ fontFamily: "Calibri, sans-serif", fontSize: "0.82rem", lineHeight: 1.6 }}>
-              Phụ kiện Remax chính hãng tại Việt Nam.
+              Điều hòa, máy lọc nước chính hãng — lắp đặt tận nơi.
             </p>
           </div>
 
