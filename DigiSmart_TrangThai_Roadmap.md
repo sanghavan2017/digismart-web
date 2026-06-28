@@ -46,3 +46,30 @@ Mô hình thật: khách bỏ SP vào giỏ → đặt lịch lắp đặt → *
 ## Cách dùng file này
 - Đầu mỗi phiên làm việc mới với Claude: yêu cầu đọc file này trước để nắm tình trạng, tránh phải kể lại từ đầu.
 - Sau khi xử lý xong 1 việc trong mục "Đang chặn", cập nhật lại mục đó (xoá hoặc đánh dấu xong) — giữ file này luôn khớp thực tế, không để cũ như lần trước.
+
+## Hướng dẫn tự cập nhật (không cần AI)
+Mọi việc dưới đây là code/file thường — không có gì "chỉ AI mới làm được". Bất kỳ ai biết sửa text file đều làm được; nếu cần code thật (component, route) thì cần biết chút Next.js/React hoặc thuê freelancer, không bắt buộc phải dùng Claude.
+
+**1. Thêm/đổi ảnh sản phẩm:**
+- Đặt file ảnh (nền trắng, vuông, khoảng 1000×1000px là đẹp nhất) vào `public/images/products/`, đặt tên theo `id` sản phẩm, ví dụ `cleansui-eu202.jpg`.
+- Mở `data/products.ts`, tìm đúng sản phẩm theo `id`, thêm/sửa dòng `imageUrl: "/images/products/cleansui-eu202.jpg",` (đường dẫn bắt đầu bằng `/images/...`, không có `public`).
+- Lưu file, chạy `npm run dev` xem lại — không cần sửa gì khác.
+
+**2. Đổi banner/hero (ảnh lớn ở đầu trang):**
+- Tìm trong file trang tương ứng (`app/page.tsx` cho trang chủ, `app/may-loc-nuoc/page.tsx`, `app/dieu-hoa/page.tsx`...) đoạn comment `{/* Hero */}`.
+- Nếu đang là emoji/icon (`<div>💧</div>`) → thay bằng `<Image src="/images/..." alt="..." width={500} height={500} style={{ width: "100%", height: "auto" }} />` (cần `import Image from "next/image";` ở đầu file nếu chưa có).
+- Ảnh banner đặt ở `public/images/` (có thể tạo thư mục con tuỳ ý, ví dụ `public/images/banners/`).
+
+**3. Thêm video (YouTube):**
+- Lấy ID video từ link YouTube (`youtube.com/watch?v=XXXXXXXXXXX` → ID là phần sau `v=`).
+- Chèn đoạn sau vào trang muốn hiển thị: `<iframe src="https://www.youtube.com/embed/XXXXXXXXXXX" allowFullScreen style={{ width: "100%", aspectRatio: "16/9", border: "none" }} />`.
+- Không cần tải video về, chỉ nhúng link — an toàn về bản quyền, nhẹ cho web.
+
+**4. Thêm/sửa thông tin sản phẩm (giá, mô tả, bảo hành):**
+- Mọi thông tin sản phẩm nằm hết trong `data/products.ts` — sửa trực tiếp các field `price`, `description`, `specs`, `warranty_years`... theo đúng sản phẩm.
+- Chatbot (`app/api/chat/route.ts`) tự đọc lại từ file này mỗi lần trả lời — sửa data xong là chatbot tự cập nhật theo, không cần sửa thêm gì ở phần chatbot.
+
+**Quy trình chạy thử trước khi đưa lên web thật:**
+1. Sửa file ở `C:\Users\HP\projects\digismart-web` (xem mục môi trường chạy code ở trên — không sửa trực tiếp trên ổ G: rồi chạy npm).
+2. Chạy `npm run dev`, mở `http://localhost:3000` xem thử.
+3. Ổn rồi thì `git add`, `git commit`, `git push origin master` — Vercel tự deploy lên `digismartvn.com` sau khoảng 1-2 phút.

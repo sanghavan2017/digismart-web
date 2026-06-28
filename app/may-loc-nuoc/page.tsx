@@ -57,7 +57,9 @@ export default function MayLocNuocPage() {
               📩 Nhận báo giá ngay
             </LeadFormButton>
           </div>
-          <div style={{ fontSize: "8rem", textAlign: "center" }}>💧</div>
+          <div style={{ borderRadius: 16, overflow: "hidden", boxShadow: "0 12px 32px rgba(0,0,0,0.25)" }}>
+            <Image src="/images/products/cleansui-cwmf-500e.jpg" alt="Máy lọc nước Cleansui CWMF-500E" width={500} height={500} style={{ width: "100%", height: "auto", display: "block", background: "#fff" }} />
+          </div>
         </div>
       </section>
 
