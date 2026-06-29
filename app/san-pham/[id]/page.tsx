@@ -45,8 +45,29 @@ export default async function ProductDetailPage({
     .filter(p => p.category === product.category && p.id !== product.id)
     .slice(0, 3);
 
+  const productJsonLd = {
+    "@context": "https://schema.org",
+    "@type": "Product",
+    name: product.name,
+    image: product.images?.length ? product.images : product.imageUrl ? [product.imageUrl] : undefined,
+    description: product.description,
+    brand: { "@type": "Brand", name: product.brand },
+    offers: {
+      "@type": "Offer",
+      url: `https://digismartvn.com/san-pham/${product.id}`,
+      priceCurrency: "VND",
+      price: product.price,
+      availability: product.inStock ? "https://schema.org/InStock" : "https://schema.org/OutOfStock",
+      seller: { "@type": "Organization", name: "DigiSmart" },
+    },
+  };
+
   return (
     <>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(productJsonLd) }}
+      />
       {/* Breadcrumb */}
       <div style={{ background: "#fff", borderBottom: "1px solid var(--border)", padding: "0.75rem 0" }}>
         <div className="container" style={{ display: "flex", gap: "0.5rem", fontFamily: "Calibri, sans-serif", fontSize: "0.85rem", color: "var(--muted)", flexWrap: "wrap" }}>
