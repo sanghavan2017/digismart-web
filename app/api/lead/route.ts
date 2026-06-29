@@ -1,4 +1,5 @@
 import { NextRequest, NextResponse } from "next/server";
+import { kvPushLead } from "@/lib/kv";
 
 // Resend ở chế độ test (chưa verify domain riêng) chỉ gửi được tới email đã đăng ký tài khoản Resend.
 // Verify domain tại resend.com/domains để gửi được nhiều địa chỉ nhận.
@@ -38,6 +39,13 @@ export async function POST(req: NextRequest) {
       const errText = await res.text();
       console.error("Resend API error:", errText);
       return NextResponse.json({ error: "Đã có lỗi xảy ra. Vui lòng gọi 0778 886 758." }, { status: 500 });
+    }
+
+    // Lưu lại lead để tổng hợp báo cáo hàng tuần — không chặn phản hồi nếu lỗi
+    try {
+      await kvPushLead({ name, phone, productName: productName || null, createdAt: new Date().toISOString() });
+    } catch (kvErr) {
+      console.error("KV push lead error:", kvErr);
     }
 
     return NextResponse.json({ ok: true });
