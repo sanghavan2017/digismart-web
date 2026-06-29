@@ -1,28 +1,11 @@
 import LeadFormButton from "@/components/LeadFormButton";
+import { articles } from "@/data/kienthuc";
 import type { Metadata } from "next";
 
 export const metadata: Metadata = {
   title: "Kiến thức nước sạch — DigiSmart",
   description: "Chỉ số chất lượng nước, TDS bao nhiêu là an toàn, cách khắc phục vấn đề nguồn nước sinh hoạt — kiến thức hữu ích từ Mitsubishi Cleansui, tổng hợp bởi DigiSmart.",
 };
-
-const articles = [
-  {
-    videoId: "WiBF4sjVU9Y",
-    title: "Đánh giá chất lượng nguồn nước qua những chỉ số nào?",
-    desc: "Tìm hiểu các chỉ số quan trọng để đánh giá nước sinh hoạt có đạt chuẩn an toàn hay không.",
-  },
-  {
-    videoId: "h2MnPGIEFYY",
-    title: "Nước uống có TDS bao nhiêu là an toàn?",
-    desc: "Giải thích chỉ số TDS (tổng chất rắn hòa tan) và mức TDS phù hợp cho nước uống hàng ngày.",
-  },
-  {
-    videoId: "3mbNiH2zZQs",
-    title: "Hướng dẫn khắc phục các vấn đề thường gặp với nguồn nước sinh hoạt",
-    desc: "Nhận biết và xử lý các vấn đề phổ biến về nước sinh hoạt tại nhà.",
-  },
-];
 
 export default function KienThucPage() {
   return (
