@@ -18,9 +18,9 @@ Mục này để nhìn toàn cảnh 1 lần, không cần đoán hay chờ gợi
 
 ### C. SEO & khả năng được tìm thấy
 - ✅ `sitemap.xml`, `robots.txt`
-- ❌ **Google Analytics — CHƯA CÓ.** Không biết web có bao nhiêu khách, từ đâu, xem trang nào — không đo được hiệu quả bất kỳ việc gì đã làm
+- ✅ **Google Analytics (GA4)** — đã gắn vào `app/layout.tsx`, Measurement ID `G-YNQSD9M50Q`, đã verify nhận dữ liệu thật trên production
 - ❌ **Google Search Console — CHƯA ĐĂNG KÝ.** Không submit được sitemap cho Google, không biết web có lỗi index hay không, không thấy từ khoá khách đang tìm ra web
-- ❌ **Structured Data (Schema.org Product)** cho trang sản phẩm — thiếu thì Google khó hiện giá/đánh giá ngay trên kết quả tìm kiếm
+- ✅ **Structured Data (Schema.org Product)** — đã thêm JSON-LD vào `app/san-pham/[id]/page.tsx` (tên, ảnh, giá, brand, tình trạng còn hàng)
 
 ### D. Pháp lý
 - ❌ **Chính sách bảo mật thông tin khách hàng — CHƯA CÓ.** Form lead đang thu tên/SĐT khách mà chưa có trang nào giải thích dùng thông tin đó để làm gì — rủi ro pháp lý + mất tin tưởng khách
