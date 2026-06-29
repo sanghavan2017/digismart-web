@@ -1,5 +1,41 @@
 # DigiSmart Website — Trạng thái & Roadmap
-(Cập nhật: 28/06/2026 — đây là nguồn sự thật duy nhất về tình trạng project. Đọc file này trước khi bắt đầu mỗi phiên làm việc mới.)
+(Cập nhật: 29/06/2026 — đây là nguồn sự thật duy nhất về tình trạng project. Đọc file này trước khi bắt đầu mỗi phiên làm việc mới.)
+
+## 🗺️ Checklist tổng thể — web đã "xong" chưa?
+Mục này để nhìn toàn cảnh 1 lần, không cần đoán hay chờ gợi ý từng phần. Cập nhật trạng thái mỗi khi xử lý xong 1 dòng.
+
+### A. Nội dung & Catalog
+- ✅ Máy lọc nước: 18 SKU thật (Cleansui + Kitz), giá/thông số/bảo hành/ảnh/carousel/video đầy đủ cho phần lớn model
+- ❌ **Điều hòa: vẫn 100% data giả** — việc lớn nhất còn lại, cần bạn gửi SKU thật
+- ✅ Trang `/kien-thuc` (SEO content giáo dục nước sạch)
+- ⚠️ Mốc lịch sử công ty (`/ve-chung-toi`, mục "Cột mốc") — 2023 "1.000+ đơn hàng" **chưa xác minh**, có thể cũng là claim cũ chưa kiểm tra như 2 mốc đã sửa
+
+### B. Chuyển đổi khách hàng (Conversion)
+- ✅ Form lead → email + lưu KV → tổng hợp tuần
+- ✅ Chatbot AI tư vấn theo data thật
+- ✅ Hotline, Zalo, Shopee/TikTok link
+- ❌ **Giỏ hàng/đặt lịch lắp đặt nhiều sản phẩm cùng lúc** — hiện mỗi sản phẩm có nút riêng, khách muốn hỏi 2-3 món phải gửi form nhiều lần (xem Giai đoạn 2 ở Roadmap)
+
+### C. SEO & khả năng được tìm thấy
+- ✅ `sitemap.xml`, `robots.txt`
+- ❌ **Google Analytics — CHƯA CÓ.** Không biết web có bao nhiêu khách, từ đâu, xem trang nào — không đo được hiệu quả bất kỳ việc gì đã làm
+- ❌ **Google Search Console — CHƯA ĐĂNG KÝ.** Không submit được sitemap cho Google, không biết web có lỗi index hay không, không thấy từ khoá khách đang tìm ra web
+- ❌ **Structured Data (Schema.org Product)** cho trang sản phẩm — thiếu thì Google khó hiện giá/đánh giá ngay trên kết quả tìm kiếm
+
+### D. Pháp lý
+- ❌ **Chính sách bảo mật thông tin khách hàng — CHƯA CÓ.** Form lead đang thu tên/SĐT khách mà chưa có trang nào giải thích dùng thông tin đó để làm gì — rủi ro pháp lý + mất tin tưởng khách
+- ❌ **Điều khoản sử dụng / Chính sách bảo hành công khai** — đang chỉ nói miệng qua chatbot, chưa có trang chính thức
+
+### E. Kỹ thuật & vận hành
+- ✅ Vercel Cron: check video mới hàng tháng, tổng hợp lead hàng tuần (cả 2 đã test pass trên production)
+- ✅ Domain, SSL, branch production — ổn định
+- ⚠️ **Chưa test responsive/mobile thật** trong suốt quá trình làm — chỉ xem qua desktop
+- ⚠️ **Chưa đo tốc độ tải trang** (Core Web Vitals/PageSpeed) — ảnh nhiều có thể làm trang chậm trên mobile/mạng yếu
+
+### F. Thương hiệu/hình ảnh
+- ⚠️ Favicon và vài icon trong `public/` vẫn là mặc định của Next.js/Vercel (`next.svg`, `vercel.svg`...) — chưa đổi sang logo DigiSmart
+
+**Tóm lại: phần "khách thấy được" (catalog, chatbot, lead form) đã khá hoàn chỉnh cho Máy lọc nước. Phần "nền tảng để web sống lâu dài và đo được hiệu quả" (Analytics, Search Console, pháp lý) — hoàn toàn chưa làm, và đây là nhóm việc không ai tự nhớ ra nếu không có checklist như này.**
 
 ## Repo & môi trường chạy code
 - Repo: github.com/sanghavan2017/digismart-web — branch đang làm việc: `cleansui-wip`
