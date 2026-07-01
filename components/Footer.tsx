@@ -22,7 +22,7 @@ export default function Footer() {
               "Mua thông minh — Sống tiện nghi"
             </p>
             <p style={{ fontFamily: "Calibri, sans-serif", fontSize: "0.82rem", lineHeight: 1.6 }}>
-              Phụ kiện Remax chính hãng tại Việt Nam.
+              Điều hòa, máy lọc nước chính hãng — lắp đặt tận nơi.
             </p>
           </div>
 
@@ -70,7 +70,10 @@ export default function Footer() {
 
         <div style={{ borderTop: "1px solid rgba(255,255,255,0.12)", paddingTop: "1.25rem", display: "flex", justifyContent: "space-between", flexWrap: "wrap", gap: "0.5rem", fontSize: "0.8rem", fontFamily: "Calibri, sans-serif" }}>
           <span>© 2026 DigiSmart. All rights reserved.</span>
-          <span style={{ color: "rgba(255,255,255,0.5)" }}>digismartvn.vn</span>
+          <div style={{ display: "flex", gap: "1.25rem" }}>
+            <Link href="/chinh-sach-bao-mat" style={{ color: "rgba(255,255,255,0.5)", textDecoration: "none" }}>Chính sách bảo mật</Link>
+            <span style={{ color: "rgba(255,255,255,0.5)" }}>digismartvn.vn</span>
+          </div>
         </div>
       </div>
     </footer>
