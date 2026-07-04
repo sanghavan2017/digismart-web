@@ -33,7 +33,7 @@ Mục này để nhìn toàn cảnh 1 lần, không cần đoán hay chờ gợi
 - ✅ **Đã đo Core Web Vitals** (04/07/2026, Lighthouse mobile trên production): Trang chủ 75/100 (LCP 4,5s), /san-pham 81/100 (LCP 3,5s), CLS và TBT đều tốt, TTFB 50ms. Nguyên nhân LCP chậm: (1) redirect `digismartvn.com → www.digismartvn.com` tốn ~0,9s — cân nhắc đổi primary domain trên Vercel; (2) ảnh thiếu `sizes`/`priority` — đã sửa cho `/san-pham`, các trang khác sửa sau khi task badge xong.
 
 ### F. Thương hiệu/hình ảnh
-- ⚠️ Favicon và vài icon trong `public/` vẫn là mặc định của Next.js/Vercel (`next.svg`, `vercel.svg`...) — chưa đổi sang logo DigiSmart
+- ✅ **Favicon logo DigiSmart** (04/07/2026) — `app/icon.svg` vẽ brand mark 4 ô vuông (3 trắng + 1 cam trên nền navy, khớp logo Navbar/Footer). Đã xóa favicon.ico + svg mặc định Next/Vercel trong `public/`. Logo gốc đầy đủ ở `G:\My Drive\DS\` (bản mới nhất: `digismart_logo v2.png`, `DS logo 2.svg`).
 
 **Tóm lại: phần "khách thấy được" (catalog, chatbot, lead form) đã khá hoàn chỉnh cho Máy lọc nước. Phần "nền tảng để web sống lâu dài và đo được hiệu quả" (Analytics, Search Console, pháp lý) — hoàn toàn chưa làm, và đây là nhóm việc không ai tự nhớ ra nếu không có checklist như này.**
 
