@@ -4,9 +4,11 @@ import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import Chatbot from "@/components/Chatbot";
 
+const GA_MEASUREMENT_ID = "G-YNQSD9M50Q";
+
 export const metadata: Metadata = {
-  title: "DigiSmart — Phụ kiện điện tử chính hãng",
-  description: "DigiSmart cung cấp phụ kiện điện tử chính hãng tại Việt Nam. Chuột, bàn phím, tai nghe, SSD, sạc nhanh — bảo hành đầy đủ, giao toàn quốc.",
+  title: "DigiSmart — Điều hòa & Máy lọc nước chính hãng",
+  description: "DigiSmart cung cấp & lắp đặt Điều hòa, Máy lọc nước chính hãng tại TPHCM. Cleansui, Kitz Micro Filter, Mitsubishi, Daikin — bảo hành đầy đủ.",
 };
 
 export default function RootLayout({
@@ -16,6 +18,20 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="vi" className="h-full">
+      <head>
+        {/* Đặt trực tiếp trong <head> (không dùng next/script) để Google Search Console xác minh được qua Google Analytics */}
+        <script async src={`https://www.googletagmanager.com/gtag/js?id=${GA_MEASUREMENT_ID}`} />
+        <script
+          dangerouslySetInnerHTML={{
+            __html: `
+              window.dataLayer = window.dataLayer || [];
+              function gtag(){dataLayer.push(arguments);}
+              gtag('js', new Date());
+              gtag('config', '${GA_MEASUREMENT_ID}');
+            `,
+          }}
+        />
+      </head>
       <body style={{ minHeight: "100vh", display: "flex", flexDirection: "column" }}>
         <Navbar />
         <main style={{ flex: 1 }}>{children}</main>

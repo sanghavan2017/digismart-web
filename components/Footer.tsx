@@ -72,6 +72,7 @@ export default function Footer() {
           <span>© 2026 DigiSmart. All rights reserved.</span>
           <div style={{ display: "flex", gap: "1.25rem" }}>
             <Link href="/chinh-sach-bao-mat" style={{ color: "rgba(255,255,255,0.5)", textDecoration: "none" }}>Chính sách bảo mật</Link>
+            <Link href="/bao-hanh-dieu-khoan" style={{ color: "rgba(255,255,255,0.5)", textDecoration: "none" }}>Bảo hành &amp; Điều khoản</Link>
             <span style={{ color: "rgba(255,255,255,0.5)" }}>digismartvn.vn</span>
           </div>
         </div>

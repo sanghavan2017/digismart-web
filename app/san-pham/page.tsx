@@ -1,11 +1,12 @@
 import Link from "next/link";
+import Image from "next/image";
 import { products, categories, brands } from "@/data/products";
 import LeadFormButton from "@/components/LeadFormButton";
 import type { Metadata } from "next";
 
 export const metadata: Metadata = {
   title: "Sản phẩm — DigiSmart",
-  description: "Phụ kiện điện tử chính hãng: chuột, bàn phím, tai nghe, SSD, sạc nhanh. Bảo hành đầy đủ, giao toàn quốc.",
+  description: "Điều hòa, máy lọc nước chính hãng (Cleansui, Kitz Micro Filter, Mitsubishi, Daikin). Tư vấn miễn phí, lắp đặt tận nơi tại TPHCM.",
 };
 
 function formatPrice(n: number) {
@@ -95,15 +96,21 @@ export default async function ProductsPage({
             </div>
           ) : (
             <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fill, minmax(240px, 1fr))", gap: "1rem" }}>
-              {filtered.map(p => (
+              {filtered.map((p, idx) => (
                 <Link key={p.id} href={`/san-pham/${p.id}`}
                   style={{ background: "#fff", border: "1px solid var(--border)", borderRadius: 10, overflow: "hidden", textDecoration: "none", display: "block", position: "relative" }}>
                   {/* Image area */}
-                  <div style={{ background: "var(--brand-light)", height: 160, display: "flex", alignItems: "center", justifyContent: "center", fontSize: "3.5rem", position: "relative" }}>
-                    {p.icon}
-                    <span style={{ position: "absolute", top: 10, left: 10, background: "#F07B20", color: "#fff", fontSize: "0.7rem", fontWeight: 700, padding: "3px 9px", borderRadius: 4 }}>
-                      -{discountPct(p.originalPrice, p.price)}%
-                    </span>
+                  <div style={{ background: "#fff", borderBottom: "1px solid var(--border)", height: 160, display: "flex", alignItems: "center", justifyContent: "center", fontSize: "3.5rem", position: "relative", overflow: "hidden" }}>
+                    {p.imageUrl ? (
+                      <Image src={p.imageUrl} alt={p.name} fill sizes="(max-width: 768px) 90vw, 240px" priority={idx < 4} style={{ objectFit: "contain", padding: "0.75rem" }} />
+                    ) : (
+                      p.icon
+                    )}
+                    {discountPct(p.originalPrice, p.price) > 0 && (
+                      <span style={{ position: "absolute", top: 10, left: 10, background: "#F07B20", color: "#fff", fontSize: "0.7rem", fontWeight: 700, padding: "3px 9px", borderRadius: 4 }}>
+                        -{discountPct(p.originalPrice, p.price)}%
+                      </span>
+                    )}
                     {!p.inStock && (
                       <span style={{ position: "absolute", top: 10, right: 10, background: "var(--muted)", color: "#fff", fontSize: "0.65rem", fontWeight: 700, padding: "3px 8px", borderRadius: 4 }}>
                         Hết hàng

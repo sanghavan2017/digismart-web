@@ -1,6 +1,8 @@
 import Link from "next/link";
+import Image from "next/image";
 import { products } from "@/data/products";
 import LeadFormButton from "@/components/LeadFormButton";
+import ProductGallery from "@/components/ProductGallery";
 import { notFound } from "next/navigation";
 import type { Metadata } from "next";
 
@@ -43,8 +45,29 @@ export default async function ProductDetailPage({
     .filter(p => p.category === product.category && p.id !== product.id)
     .slice(0, 3);
 
+  const productJsonLd = {
+    "@context": "https://schema.org",
+    "@type": "Product",
+    name: product.name,
+    image: product.images?.length ? product.images : product.imageUrl ? [product.imageUrl] : undefined,
+    description: product.description,
+    brand: { "@type": "Brand", name: product.brand },
+    offers: {
+      "@type": "Offer",
+      url: `https://digismartvn.com/san-pham/${product.id}`,
+      priceCurrency: "VND",
+      price: product.price,
+      availability: product.inStock ? "https://schema.org/InStock" : "https://schema.org/OutOfStock",
+      seller: { "@type": "Organization", name: "DigiSmart" },
+    },
+  };
+
   return (
     <>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(productJsonLd) }}
+      />
       {/* Breadcrumb */}
       <div style={{ background: "#fff", borderBottom: "1px solid var(--border)", padding: "0.75rem 0" }}>
         <div className="container" style={{ display: "flex", gap: "0.5rem", fontFamily: "Calibri, sans-serif", fontSize: "0.85rem", color: "var(--muted)", flexWrap: "wrap" }}>
@@ -64,13 +87,23 @@ export default async function ProductDetailPage({
           <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fit, minmax(280px, 1fr))", gap: "2.5rem" }}>
             {/* Left: Image */}
             <div>
-              <div style={{ background: "var(--brand-light)", borderRadius: 12, padding: "3rem", display: "flex", alignItems: "center", justifyContent: "center", fontSize: "8rem", border: "1px solid var(--border)", minHeight: 280, position: "relative" }}>
-                {product.icon}
-                <span style={{ position: "absolute", top: 14, left: 14, background: "#F07B20", color: "#fff", fontSize: "0.8rem", fontWeight: 700, padding: "4px 12px", borderRadius: 6 }}>
+              <div style={{ background: "#fff", borderRadius: 12, border: "1px solid var(--border)", minHeight: 280, position: "relative", overflow: "hidden" }}>
+                {product.images && product.images.length > 0 ? (
+                  <ProductGallery images={product.images} alt={product.name} />
+                ) : product.imageUrl ? (
+                  <div style={{ position: "relative", width: "100%", aspectRatio: "1 / 1" }}>
+                    <Image src={product.imageUrl} alt={product.name} fill style={{ objectFit: "contain", padding: "2rem" }} />
+                  </div>
+                ) : (
+                  <div style={{ display: "flex", alignItems: "center", justifyContent: "center", fontSize: "8rem", minHeight: 280 }}>
+                    {product.icon}
+                  </div>
+                )}
+                <span style={{ position: "absolute", top: 14, left: 14, background: "#F07B20", color: "#fff", fontSize: "0.8rem", fontWeight: 700, padding: "4px 12px", borderRadius: 6, zIndex: 2 }}>
                   -{discountPct(product.originalPrice, product.price)}%
                 </span>
                 {!product.inStock && (
-                  <span style={{ position: "absolute", top: 14, right: 14, background: "var(--muted)", color: "#fff", fontSize: "0.75rem", fontWeight: 700, padding: "4px 10px", borderRadius: 6 }}>
+                  <span style={{ position: "absolute", top: 14, right: 14, background: "var(--muted)", color: "#fff", fontSize: "0.75rem", fontWeight: 700, padding: "4px 10px", borderRadius: 6, zIndex: 2 }}>
                     Hết hàng
                   </span>
                 )}
@@ -150,6 +183,49 @@ export default async function ProductDetailPage({
         </div>
       </section>
 
+      {/* Đặc điểm nổi bật */}
+      {product.features && product.features.length > 0 && (
+        <section style={{ background: "#fff", padding: "3rem 0", borderTop: "1px solid var(--border)" }}>
+          <div className="container">
+            <h2 style={{ fontFamily: "'Trebuchet MS', sans-serif", fontSize: "1.3rem", color: "var(--brand)", textAlign: "center", marginBottom: "1.75rem" }}>
+              Đặc điểm nổi bật
+            </h2>
+            <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fit, minmax(220px, 1fr))", gap: "1.25rem" }}>
+              {product.features.map((f, i) => (
+                <div key={i} style={{ borderRadius: 12, overflow: "hidden", border: "1px solid var(--border)" }}>
+                  <div style={{ position: "relative", width: "100%", aspectRatio: "1 / 1" }}>
+                    <Image src={f.image} alt={f.caption} fill style={{ objectFit: "cover" }} />
+                  </div>
+                  <p style={{ fontFamily: "Calibri, sans-serif", fontSize: "0.85rem", color: "var(--text)", lineHeight: 1.6, padding: "0.875rem" }}>
+                    {f.caption}
+                  </p>
+                </div>
+              ))}
+            </div>
+          </div>
+        </section>
+      )}
+
+      {/* Video giới thiệu */}
+      {product.videoId && (
+        <section style={{ background: "var(--bg)", padding: "3rem 0", borderTop: "1px solid var(--border)" }}>
+          <div className="container" style={{ maxWidth: 640, margin: "0 auto" }}>
+            <h2 style={{ fontFamily: "'Trebuchet MS', sans-serif", fontSize: "1.2rem", color: "var(--brand)", textAlign: "center", marginBottom: "1rem" }}>
+              Video giới thiệu sản phẩm
+            </h2>
+            <div style={{ position: "relative", paddingBottom: "56.25%", borderRadius: 12, overflow: "hidden", border: "1px solid var(--border)" }}>
+              <iframe
+                src={`https://www.youtube.com/embed/${product.videoId}`}
+                title={`Video giới thiệu ${product.name}`}
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                allowFullScreen
+                style={{ position: "absolute", top: 0, left: 0, width: "100%", height: "100%", border: "none" }}
+              />
+            </div>
+          </div>
+        </section>
+      )}
+
       {/* Related Products */}
       {related.length > 0 && (
         <section style={{ background: "#fff", padding: "3rem 0", borderTop: "1px solid var(--border)" }}>
@@ -161,8 +237,12 @@ export default async function ProductDetailPage({
               {related.map(p => (
                 <Link key={p.id} href={`/san-pham/${p.id}`}
                   style={{ background: "var(--bg)", border: "1px solid var(--border)", borderRadius: 8, overflow: "hidden", textDecoration: "none", display: "block" }}>
-                  <div style={{ background: "var(--brand-light)", height: 130, display: "flex", alignItems: "center", justifyContent: "center", fontSize: "3rem" }}>
-                    {p.icon}
+                  <div style={{ background: "#fff", borderBottom: "1px solid var(--border)", height: 130, display: "flex", alignItems: "center", justifyContent: "center", fontSize: "3rem", position: "relative", overflow: "hidden" }}>
+                    {p.imageUrl ? (
+                      <Image src={p.imageUrl} alt={p.name} fill style={{ objectFit: "contain", padding: "0.5rem" }} />
+                    ) : (
+                      p.icon
+                    )}
                   </div>
                   <div style={{ padding: "0.875rem" }}>
                     <div style={{ fontFamily: "'Trebuchet MS', sans-serif", fontWeight: 700, fontSize: "0.82rem", color: "var(--text)", lineHeight: 1.4, marginBottom: "0.4rem" }}>{p.name}</div>

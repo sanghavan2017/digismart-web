@@ -39,3 +39,19 @@ yarn-error.log*
 # typescript
 *.tsbuildinfo
 next-env.d.ts
+
+# private/credentials — never commit
+Quanr tri Web digismartvn.vn/
+API Console Web.txt
+
+# local tooling & scratch
+.playwright-mcp/
+.codegraph/
+.claude/settings.local.json
+dev_*.log
+test_output.md
+exclude.txt
+*.xlsx
+
+# QA screenshots at repo root
+/*.jpeg

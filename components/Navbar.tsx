@@ -5,13 +5,14 @@ import { useState } from "react";
 const navLinks = [
   { href: "/", label: "Trang chủ" },
   { href: "/san-pham", label: "Sản phẩm" },
+  { href: "/kien-thuc", label: "Kiến thức nước sạch" },
   { href: "/ve-chung-toi", label: "Về chúng tôi" },
   { href: "/lien-he", label: "Liên hệ" },
 ];
 
 const serviceLinks = [
-  { href: "/dieu-hoa", label: "Lắp đặt điều hòa" },
   { href: "/may-loc-nuoc", label: "Máy lọc nước" },
+  { href: "/dieu-hoa", label: "Lắp đặt điều hòa" },
 ];
 
 const linkStyle: React.CSSProperties = {
