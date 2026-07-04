@@ -47,7 +47,7 @@ export default function HomePage() {
             </div>
           </div>
 
-          <div style={{ display: "flex", gap: "2.5rem", flexWrap: "wrap" }}>
+          <div style={{ display: "grid", gridTemplateColumns: "repeat(2, minmax(110px, 1fr))", gap: "1.5rem 2.5rem" }}>
             {[
               { num: "18+", label: "Sản phẩm" },
               { num: "2", label: "Ngành hàng" },
@@ -92,18 +92,20 @@ export default function HomePage() {
             </Link>
           </div>
           <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fill, minmax(240px, 1fr))", gap: "1rem" }}>
-            {featured.map(p => (
+            {featured.map((p, idx) => (
               <Link key={p.id} href={`/san-pham/${p.id}`}
                 style={{ background: "#fff", border: "1px solid var(--border)", borderRadius: 8, overflow: "hidden", textDecoration: "none", display: "block" }}>
                 <div style={{ background: "#fff", borderBottom: "1px solid var(--border)", height: 150, display: "flex", alignItems: "center", justifyContent: "center", fontSize: "3rem", position: "relative", overflow: "hidden" }}>
                   {p.imageUrl ? (
-                    <Image src={p.imageUrl} alt={p.name} fill style={{ objectFit: "contain", padding: "0.75rem" }} />
+                    <Image src={p.imageUrl} alt={p.name} fill sizes="(max-width: 768px) 90vw, 240px" priority={idx < 4} style={{ objectFit: "contain", padding: "0.75rem" }} />
                   ) : (
                     p.icon
                   )}
-                  <span style={{ position: "absolute", top: 8, left: 8, background: "#F07B20", color: "#fff", fontSize: "0.7rem", fontWeight: 700, padding: "3px 8px", borderRadius: 4 }}>
-                    -{discountPct(p.originalPrice, p.price)}%
-                  </span>
+                  {discountPct(p.originalPrice, p.price) > 0 && (
+                    <span style={{ position: "absolute", top: 8, left: 8, background: "#F07B20", color: "#fff", fontSize: "0.7rem", fontWeight: 700, padding: "3px 8px", borderRadius: 4 }}>
+                      -{discountPct(p.originalPrice, p.price)}%
+                    </span>
+                  )}
                 </div>
                 <div style={{ padding: "1rem" }}>
                   <div style={{ fontFamily: "Calibri, sans-serif", fontSize: "0.7rem", color: "var(--muted)", textTransform: "uppercase", letterSpacing: 0.5, marginBottom: 4 }}>

@@ -14,7 +14,7 @@ export default function ProductGallery({ images, alt }: { images: string[]; alt:
 
   return (
     <div style={{ position: "relative" }}>
-      <Image src={images[index]} alt={alt} width={500} height={500} style={{ width: "100%", height: "auto", display: "block" }} />
+      <Image src={images[index]} alt={alt} width={500} height={500} sizes="(max-width: 768px) 100vw, 500px" priority={index === 0} style={{ width: "100%", height: "auto", display: "block" }} />
       {images.length > 1 && (
         <>
           <button onClick={prev} aria-label="Ảnh trước"

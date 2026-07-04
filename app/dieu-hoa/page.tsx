@@ -80,9 +80,11 @@ export default function DieuHoaPage() {
                 <Link href={`/san-pham/${p.id}`} style={{ textDecoration: "none", display: "block" }}>
                   <div style={{ background: "var(--brand-light)", height: 150, display: "flex", alignItems: "center", justifyContent: "center", fontSize: "3.5rem", position: "relative" }}>
                     {p.icon}
-                    <span style={{ position: "absolute", top: 10, left: 10, background: "#F07B20", color: "#fff", fontSize: "0.7rem", fontWeight: 700, padding: "3px 9px", borderRadius: 4 }}>
-                      -{discountPct(p.originalPrice, p.price)}%
-                    </span>
+                    {discountPct(p.originalPrice, p.price) > 0 && (
+                      <span style={{ position: "absolute", top: 10, left: 10, background: "#F07B20", color: "#fff", fontSize: "0.7rem", fontWeight: 700, padding: "3px 9px", borderRadius: 4 }}>
+                        -{discountPct(p.originalPrice, p.price)}%
+                      </span>
+                    )}
                   </div>
                   <div style={{ padding: "1rem 1rem 0" }}>
                     <div style={{ fontFamily: "Calibri, sans-serif", fontSize: "0.68rem", color: "var(--muted)", textTransform: "uppercase", letterSpacing: 0.6, marginBottom: 4 }}>

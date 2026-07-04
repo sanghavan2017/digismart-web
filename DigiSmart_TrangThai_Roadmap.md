@@ -29,8 +29,8 @@ Mục này để nhìn toàn cảnh 1 lần, không cần đoán hay chờ gợi
 ### E. Kỹ thuật & vận hành
 - ✅ Vercel Cron: check video mới hàng tháng, tổng hợp lead hàng tuần (cả 2 đã test pass trên production)
 - ✅ Domain, SSL, branch production — ổn định
-- ✅ **Đã test responsive/mobile** (04/07/2026, viewport 375px): 10/10 trang không tràn ngang, menu hamburger hoạt động đúng, ảnh hiển thị đủ. Còn 1 lỗi cosmetic: hàng thống kê hero trang chủ ("18+ / 2 / 100% / Tận nơi") gãy dòng xấu trên mobile — chưa sửa vì `app/page.tsx` đang được task khác xử lý (badge -0%), sửa sau khi task đó xong.
-- ✅ **Đã đo Core Web Vitals** (04/07/2026, Lighthouse mobile trên production): Trang chủ 75/100 (LCP 4,5s), /san-pham 81/100 (LCP 3,5s), CLS và TBT đều tốt, TTFB 50ms. Nguyên nhân LCP chậm: (1) redirect `digismartvn.com → www.digismartvn.com` tốn ~0,9s — cân nhắc đổi primary domain trên Vercel; (2) ảnh thiếu `sizes`/`priority` — đã sửa cho `/san-pham`, các trang khác sửa sau khi task badge xong.
+- ✅ **Đã test responsive/mobile** (04/07/2026, viewport 375px): 10/10 trang không tràn ngang, menu hamburger hoạt động đúng, ảnh hiển thị đủ. Lỗi hàng thống kê hero trang chủ gãy dòng xấu **đã sửa** (04/07/2026): chuyển sang lưới 2×2 cố định, đã verify trên viewport 375px.
+- ✅ **Đã đo Core Web Vitals** (04/07/2026, Lighthouse mobile trên production): Trang chủ 75/100 (LCP 4,5s), /san-pham 81/100 (LCP 3,5s), CLS và TBT đều tốt, TTFB 50ms. Nguyên nhân LCP chậm: (1) redirect `digismartvn.com → www.digismartvn.com` tốn ~0,9s — cân nhắc đổi primary domain trên Vercel; (2) ảnh thiếu `sizes`/`priority` — **đã sửa xong tất cả trang** (04/07/2026): `/san-pham`, `/`, `/may-loc-nuoc`, `/san-pham/[id]` + `ProductGallery`.
 
 ### F. Thương hiệu/hình ảnh
 - ✅ **Favicon logo DigiSmart** (04/07/2026) — `app/icon.svg` vẽ brand mark 4 ô vuông (3 trắng + 1 cam trên nền navy, khớp logo Navbar/Footer). Đã xóa favicon.ico + svg mặc định Next/Vercel trong `public/`. Logo gốc đầy đủ ở `G:\My Drive\DS\` (bản mới nhất: `digismart_logo v2.png`, `DS logo 2.svg`).
@@ -71,7 +71,7 @@ Mục này để nhìn toàn cảnh 1 lần, không cần đoán hay chờ gợi
 
 ## Đã xử lý gần đây
 - ✅ (04/07/2026) **Ảnh EU202** — tải ảnh chính hãng nền trắng từ mitsubishicleansui.vn, gắn vào `data/products.ts`. 18/18 sản phẩm máy lọc nước đã có ảnh thật.
-- ✅ (04/07/2026) **Badge giảm giá "-0%"** — trang `/san-pham` chỉ hiện badge khi discount > 0. Cùng lỗi ở 4 trang khác (`/`, `/dieu-hoa`, `/may-loc-nuoc`, `/san-pham/[id]`) đang xử lý ở task riêng (đã bấm chạy, chờ xong).
+- ✅ (04/07/2026) **Badge giảm giá "-0%" — đã sửa xong CẢ 5 trang** (`/san-pham`, `/`, `/dieu-hoa`, `/may-loc-nuoc`, `/san-pham/[id]`): chỉ hiện badge khi discount > 0. Đã verify trên dev server: trang máy lọc nước (đồng giá) không còn badge nào, trang điều hòa (có giảm thật) vẫn hiện đúng -14%/-13%/-12%.
 - ✅ Domain, branch production, 2 API key (Anthropic + Resend) — tất cả đã xong, web thật `digismartvn.com` đã chạy đúng data + chatbot + form lead.
 - ✅ 2 claim sai trên `/ve-chung-toi` đã sửa: bỏ "Logitech & Anker" (không đúng), bỏ "10.000 khách hàng" (không có số liệu thật).
 - ✅ Chatbot không còn gợi ý nhầm đồng hồ đo nước khi khách hỏi máy lọc nước theo ngân sách thấp.

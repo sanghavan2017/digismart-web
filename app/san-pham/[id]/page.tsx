@@ -92,16 +92,18 @@ export default async function ProductDetailPage({
                   <ProductGallery images={product.images} alt={product.name} />
                 ) : product.imageUrl ? (
                   <div style={{ position: "relative", width: "100%", aspectRatio: "1 / 1" }}>
-                    <Image src={product.imageUrl} alt={product.name} fill style={{ objectFit: "contain", padding: "2rem" }} />
+                    <Image src={product.imageUrl} alt={product.name} fill sizes="(max-width: 768px) 100vw, 50vw" priority style={{ objectFit: "contain", padding: "2rem" }} />
                   </div>
                 ) : (
                   <div style={{ display: "flex", alignItems: "center", justifyContent: "center", fontSize: "8rem", minHeight: 280 }}>
                     {product.icon}
                   </div>
                 )}
-                <span style={{ position: "absolute", top: 14, left: 14, background: "#F07B20", color: "#fff", fontSize: "0.8rem", fontWeight: 700, padding: "4px 12px", borderRadius: 6, zIndex: 2 }}>
-                  -{discountPct(product.originalPrice, product.price)}%
-                </span>
+                {discountPct(product.originalPrice, product.price) > 0 && (
+                  <span style={{ position: "absolute", top: 14, left: 14, background: "#F07B20", color: "#fff", fontSize: "0.8rem", fontWeight: 700, padding: "4px 12px", borderRadius: 6, zIndex: 2 }}>
+                    -{discountPct(product.originalPrice, product.price)}%
+                  </span>
+                )}
                 {!product.inStock && (
                   <span style={{ position: "absolute", top: 14, right: 14, background: "var(--muted)", color: "#fff", fontSize: "0.75rem", fontWeight: 700, padding: "4px 10px", borderRadius: 6, zIndex: 2 }}>
                     Hết hàng
