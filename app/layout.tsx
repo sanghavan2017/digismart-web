@@ -9,7 +9,7 @@ const GA_MEASUREMENT_ID = "G-YNQSD9M50Q";
 
 export const metadata: Metadata = {
   title: "DigiSmart — Điều hòa & Máy lọc nước chính hãng",
-  description: "DigiSmart cung cấp & lắp đặt Điều hòa, Máy lọc nước chính hãng tại TPHCM. Cleansui, Kitz Micro Filter, Mitsubishi, Daikin — bảo hành đầy đủ.",
+  description: "DigiSmart cung cấp & lắp đặt Điều hòa, Máy lọc nước chính hãng tại TPHCM. Cleansui, Kitz Micro Filter, Mitsubishi Electric — bảo hành đầy đủ.",
 };
 
 export default function RootLayout({

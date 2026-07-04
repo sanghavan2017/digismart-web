@@ -1,4 +1,5 @@
 import Link from "next/link";
+import Image from "next/image";
 import { products } from "@/data/products";
 import LeadFormButton from "@/components/LeadFormButton";
 import AddToCartButton from "@/components/AddToCartButton";
@@ -7,7 +8,7 @@ import type { Metadata } from "next";
 export const metadata: Metadata = {
   title: "Lắp đặt điều hòa chính hãng tại TPHCM — DigiSmart",
   description:
-    "Lắp đặt điều hòa Mitsubishi, Daikin chính hãng tại TPHCM. Đội ngũ kỹ thuật chuyên nghiệp, bảo hành dài hạn, giá tốt nhất thị trường.",
+    "Lắp đặt điều hòa Mitsubishi Electric chính hãng tại TPHCM. Đội ngũ kỹ thuật chuyên nghiệp, bảo hành dài hạn, giá tốt nhất thị trường.",
 };
 
 function formatPrice(n: number) {
@@ -19,7 +20,7 @@ function discountPct(orig: number, price: number) {
 
 const benefits = [
   { icon: "🛠️", title: "Kỹ thuật chuyên nghiệp", desc: "Đội ngũ kỹ thuật viên tay nghề cao, thi công nhanh gọn, đúng kỹ thuật." },
-  { icon: "🏷️", title: "Hàng chính hãng 100%", desc: "Phân phối trực tiếp từ Mitsubishi, Daikin — đầy đủ tem, phiếu bảo hành." },
+  { icon: "🏷️", title: "Hàng chính hãng 100%", desc: "Phân phối trực tiếp từ Mitsubishi Electric — đầy đủ tem, phiếu bảo hành." },
   { icon: "🔧", title: "Bảo hành dài hạn", desc: "Bảo hành chính hãng đến 5 năm, hỗ trợ bảo trì tận nơi sau lắp đặt." },
   { icon: "💰", title: "Giá tốt, minh bạch", desc: "Báo giá rõ ràng trọn gói máy + công lắp đặt, không phát sinh chi phí." },
 ];
@@ -37,7 +38,7 @@ export default function DieuHoaPage() {
               Lắp đặt điều hòa <span style={{ color: "#F07B20" }}>chính hãng</span> tại TPHCM
             </h1>
             <p style={{ fontFamily: "Calibri, sans-serif", color: "rgba(255,255,255,0.85)", fontSize: "1rem", lineHeight: 1.7, marginBottom: "1.5rem" }}>
-              DigiSmart cung cấp & lắp đặt điều hòa Mitsubishi, Daikin Inverter chính hãng — tư vấn công suất phù hợp, thi công nhanh chóng, bảo hành dài hạn.
+              DigiSmart cung cấp & lắp đặt điều hòa Mitsubishi Electric Inverter chính hãng — tư vấn công suất phù hợp, thi công nhanh chóng, bảo hành dài hạn.
             </p>
             <LeadFormButton productName="Dịch vụ lắp đặt điều hòa" style={{ padding: "14px 32px", borderRadius: 8, fontSize: "1rem", background: "#F07B20" }}>
               📩 Nhận báo giá ngay
@@ -79,8 +80,12 @@ export default function DieuHoaPage() {
             {items.map(p => (
               <div key={p.id} style={{ background: "var(--bg)", border: "1px solid var(--border)", borderRadius: 10, overflow: "hidden" }}>
                 <Link href={`/san-pham/${p.id}`} style={{ textDecoration: "none", display: "block" }}>
-                  <div style={{ background: "var(--brand-light)", height: 150, display: "flex", alignItems: "center", justifyContent: "center", fontSize: "3.5rem", position: "relative" }}>
-                    {p.icon}
+                  <div style={{ background: "#fff", borderBottom: "1px solid var(--border)", height: 150, display: "flex", alignItems: "center", justifyContent: "center", fontSize: "3.5rem", position: "relative", overflow: "hidden" }}>
+                    {p.imageUrl ? (
+                      <Image src={p.imageUrl} alt={p.name} fill sizes="(max-width: 768px) 90vw, 260px" style={{ objectFit: "contain", padding: "0.75rem" }} />
+                    ) : (
+                      p.icon
+                    )}
                     {discountPct(p.originalPrice, p.price) > 0 && (
                       <span style={{ position: "absolute", top: 10, left: 10, background: "#F07B20", color: "#fff", fontSize: "0.7rem", fontWeight: 700, padding: "3px 9px", borderRadius: 4 }}>
                         -{discountPct(p.originalPrice, p.price)}%

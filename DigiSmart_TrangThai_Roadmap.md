@@ -6,7 +6,7 @@ Mục này để nhìn toàn cảnh 1 lần, không cần đoán hay chờ gợi
 
 ### A. Nội dung & Catalog
 - ✅ Máy lọc nước: 18 SKU thật (Cleansui + Kitz), giá/thông số/bảo hành/ảnh/carousel/video đầy đủ cho phần lớn model
-- ❌ **Điều hòa: vẫn 100% data giả** — việc lớn nhất còn lại, cần bạn gửi SKU thật
+- ✅ **Điều hòa: 22 SKU THẬT Mitsubishi Electric** (04/07/2026) — lấy toàn bộ từ web hãng mitsubishi-electric.vn (API GetDetailDto): 6 dòng MSY-JY/JA/GR (inverter 1 chiều), MSZ-HT/LN (inverter 2 chiều), MS-JS (tiêu chuẩn); đủ tên, model dàn nóng, thông số kỹ thuật, mô tả, 4 ảnh chính hãng/model (88 ảnh), video YouTube (dòng GR + LN), bảo hành thân máy 2 năm/máy nén 5 năm, gas R32. Đã xóa hết data giả Mitsubishi/Daikin, mọi chỗ nhắc "Daikin" trên web đã đổi thành "Mitsubishi Electric". ⚠️ **Giá đang là GIÁ NIÊM YẾT hãng** (không có badge giảm giá) — bạn cần update giá bán DigiSmart trong `data/products.ts` (field `price`, giữ `originalPrice` = giá niêm yết để hiện badge giảm giá).
 - ✅ Trang `/kien-thuc` (SEO content giáo dục nước sạch)
 - ⚠️ Mốc lịch sử công ty (`/ve-chung-toi`, mục "Cột mốc") — 2023 "1.000+ đơn hàng" **chưa xác minh**, có thể cũng là claim cũ chưa kiểm tra như 2 mốc đã sửa
 
@@ -35,7 +35,7 @@ Mục này để nhìn toàn cảnh 1 lần, không cần đoán hay chờ gợi
 ### F. Thương hiệu/hình ảnh
 - ✅ **Favicon logo DigiSmart** (04/07/2026) — `app/icon.svg` vẽ brand mark 4 ô vuông (3 trắng + 1 cam trên nền navy, khớp logo Navbar/Footer). Đã xóa favicon.ico + svg mặc định Next/Vercel trong `public/`. Logo gốc đầy đủ ở `G:\My Drive\DS\` (bản mới nhất: `digismart_logo v2.png`, `DS logo 2.svg`).
 
-**Tóm lại: phần "khách thấy được" (catalog, chatbot, lead form) đã khá hoàn chỉnh cho Máy lọc nước. Phần "nền tảng để web sống lâu dài và đo được hiệu quả" (Analytics, Search Console, pháp lý) — hoàn toàn chưa làm, và đây là nhóm việc không ai tự nhớ ra nếu không có checklist như này.**
+**Tóm lại: catalog đã đủ data thật cho CẢ 2 danh mục (18 máy lọc nước + 22 điều hòa), giỏ hàng + đặt lịch đã chạy. Việc lớn còn lại cần bạn: update giá bán điều hòa, đăng ký Google Search Console, 2 ảnh Kitz.**
 
 ## Repo & môi trường chạy code
 - Repo: github.com/sanghavan2017/digismart-web — branch đang làm việc: `cleansui-wip`
@@ -62,7 +62,7 @@ Mục này để nhìn toàn cảnh 1 lần, không cần đoán hay chờ gợi
 - **Vercel Environment Variables đã cấu hình đủ**: `ANTHROPIC_API_KEY` (đã có sẵn từ trước) + `RESEND_API_KEY` (vừa thêm) — chatbot và form lead đã test pass trên cả local và production.
 
 ## ⚠️ Đang chặn / cần bạn xử lý (xem Task List trong Claude Code để theo dõi)
-1. **Data Điều hòa vẫn 100% giả** (Mitsubishi/Daikin placeholder, giá bịa) — cần SKU thật (brand đang bán, ví dụ Unimax) để làm tương tự Cleansui/Kitz. Đây là việc lớn cuối cùng còn lại trước khi web "xong" hoàn toàn.
+1. **Update giá bán 22 SKU điều hòa** — data thật Mitsubishi Electric đã lên đủ (04/07/2026) nhưng `price` đang bằng giá niêm yết hãng. Bạn gửi bảng giá bán → sửa field `price` từng sản phẩm trong `data/products.ts` (giữ `originalPrice` nguyên để hiện % giảm).
 2. **Resend đang ở chế độ test** (chưa verify domain riêng) — chỉ gửi email lead tới đúng 1 địa chỉ đã đăng ký tài khoản Resend (`digismart606@gmail.com`). Muốn gửi thêm tới `sang.havan2017@gmail.com` hoặc địa chỉ khác, cần verify 1 domain tại resend.com/domains (không gấp, chỉ cần khi muốn nhận lead về nhiều email).
 3. **2 ảnh Kitz còn lại cần bạn xử lý** (ảnh 10 Inch đã thay bằng ảnh chính hãng MOF254BW từ kitzmf.vn 04/07/2026 — model khớp cả giá 5tr):
    - `kitz-bo-loc-tong-2-coc`: kitzmf.vn KHÔNG có ảnh bộ 2 cốc lắp sẵn (đây là bộ DigiSmart tự ghép) → cần bạn chụp 1 tấm bộ thật, nền càng trơn càng tốt.
