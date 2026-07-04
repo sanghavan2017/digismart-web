@@ -2,6 +2,7 @@ import Link from "next/link";
 import Image from "next/image";
 import { products } from "@/data/products";
 import LeadFormButton from "@/components/LeadFormButton";
+import AddToCartButton from "@/components/AddToCartButton";
 import ProductGallery from "@/components/ProductGallery";
 import { notFound } from "next/navigation";
 import type { Metadata } from "next";
@@ -161,6 +162,10 @@ export default async function ProductDetailPage({
                 </LeadFormButton>
                 {product.inStock ? (
                   <>
+                    <AddToCartButton
+                      product={{ id: product.id, name: product.name, price: product.price, imageUrl: product.imageUrl, icon: product.icon }}
+                      style={{ padding: "12px 24px", borderRadius: 8, fontSize: "0.95rem" }}
+                    />
                     <a href="https://shopee.vn/digismart85" target="_blank" rel="noopener noreferrer"
                       style={{ background: "#F07B20", color: "#fff", padding: "13px 24px", borderRadius: 8, textAlign: "center", fontFamily: "Trebuchet MS, sans-serif", fontWeight: 700, fontSize: "0.95rem", textDecoration: "none" }}>
                       🛍️ Mua trên Shopee

@@ -2,6 +2,7 @@ import Link from "next/link";
 import Image from "next/image";
 import { products, categories, brands } from "@/data/products";
 import LeadFormButton from "@/components/LeadFormButton";
+import AddToCartButton from "@/components/AddToCartButton";
 import type { Metadata } from "next";
 
 export const metadata: Metadata = {
@@ -136,6 +137,12 @@ export default async function ProductsPage({
                     <LeadFormButton productName={p.name} style={{ width: "100%", padding: "9px 0", borderRadius: 6, fontSize: "0.8rem" }}>
                       Nhận báo giá
                     </LeadFormButton>
+                    {p.inStock && (
+                      <AddToCartButton
+                        product={{ id: p.id, name: p.name, price: p.price, imageUrl: p.imageUrl, icon: p.icon }}
+                        style={{ width: "100%", padding: "8px 0", borderRadius: 6, fontSize: "0.8rem", marginTop: 8 }}
+                      />
+                    )}
                   </div>
                 </Link>
               ))}

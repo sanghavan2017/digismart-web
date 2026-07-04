@@ -14,7 +14,7 @@ Mục này để nhìn toàn cảnh 1 lần, không cần đoán hay chờ gợi
 - ✅ Form lead → email + lưu KV → tổng hợp tuần
 - ✅ Chatbot AI tư vấn theo data thật
 - ✅ Hotline, Zalo, Shopee/TikTok link
-- ❌ **Giỏ hàng/đặt lịch lắp đặt nhiều sản phẩm cùng lúc** — hiện mỗi sản phẩm có nút riêng, khách muốn hỏi 2-3 món phải gửi form nhiều lần (xem Giai đoạn 2 ở Roadmap)
+- ✅ **Giỏ hàng + đặt lịch lắp đặt nhiều sản phẩm** (04/07/2026, Giai đoạn 2 xong): nút "🛒 Thêm vào giỏ" trên card (`/san-pham`, `/may-loc-nuoc`, `/dieu-hoa`) + trang chi tiết, icon giỏ + badge trên Navbar, trang `/gio-hang` (chỉnh số lượng, xoá, tổng tiền, form đặt lịch), `/api/lead` mở rộng nhận `items` + `address` (email dạng bảng, subject "Đặt lịch lắp đặt", vẫn tương thích form báo giá cũ). Giỏ lưu localStorage, không cần backend. Spec: `specs/2026-07-04-gio-hang-dat-lich.md`. Đã test end-to-end trên dev server: thêm 2 SP → chỉnh qty → gửi form → email đi (API 200) → giỏ tự xoá → màn hình cảm ơn; mobile 375px không tràn ngang.
 
 ### C. SEO & khả năng được tìm thấy
 - ✅ `sitemap.xml`, `robots.txt`
@@ -82,7 +82,7 @@ Mô hình thật: khách bỏ SP vào giỏ → đặt lịch lắp đặt → *
 ## Roadmap
 1. **Giai đoạn 1 — Brand/content + chatbot (gần xong):** còn data Điều hòa thật + xử lý 5 việc đang chặn ở trên.
 2. **Giai đoạn 1.5 — Ổn định quy trình dev (nên làm sớm):** chuyển hẳn việc đồng bộ code khỏi Google Drive sang git thuần (clone repo trực tiếp ở mỗi máy, `git pull`/`git push` để sync) — tránh phải copy tay giữa ổ G: và C: như hiện tại, giảm rủi ro quên đồng bộ.
-3. **Giai đoạn 2 — Giỏ hàng nhẹ + đặt lịch lắp đặt:** cart bằng React state (không cần DB/backend riêng) → khách chọn SP → gửi qua API lead đã có sẵn (`app/api/lead/route.ts`), mở rộng thêm field danh sách SP đã chọn.
+3. ✅ **Giai đoạn 2 — Giỏ hàng nhẹ + đặt lịch lắp đặt: XONG 04/07/2026** (xem mục B checklist ở trên). Chưa lên production — cần merge `cleansui-wip` → `master`.
 4. **Giai đoạn 3 — Cổng thanh toán (tuỳ chọn):** VNPay/MoMo/ZaloPay để khách đặt cọc trước khi lắp đặt.
 5. **Giai đoạn 4 — CMS (Strapi/Directus), làm sau khi cần:** chỉ làm khi tần suất đổi nội dung/sản phẩm đủ nhiều để đáng công setup riêng 1 backend.
 

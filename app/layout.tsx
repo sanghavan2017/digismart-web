@@ -3,6 +3,7 @@ import "./globals.css";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import Chatbot from "@/components/Chatbot";
+import { CartProvider } from "@/components/CartContext";
 
 const GA_MEASUREMENT_ID = "G-YNQSD9M50Q";
 
@@ -33,10 +34,12 @@ export default function RootLayout({
         />
       </head>
       <body style={{ minHeight: "100vh", display: "flex", flexDirection: "column" }}>
-        <Navbar />
-        <main style={{ flex: 1 }}>{children}</main>
-        <Footer />
-        <Chatbot />
+        <CartProvider>
+          <Navbar />
+          <main style={{ flex: 1 }}>{children}</main>
+          <Footer />
+          <Chatbot />
+        </CartProvider>
       </body>
     </html>
   );

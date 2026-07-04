@@ -3,8 +3,8 @@
   "configurations": [
     {
       "name": "digismart-dev",
-      "runtimeExecutable": "node",
-      "runtimeArgs": ["node_modules/next/dist/bin/next", "dev"],
+      "runtimeExecutable": "npm",
+      "runtimeArgs": ["--prefix", "C:\\Users\\HP\\projects\\digismart-web", "run", "dev"],
       "port": 3000,
       "autoPort": true
     }

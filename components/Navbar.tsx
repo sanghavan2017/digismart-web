@@ -1,6 +1,27 @@
 "use client";
 import Link from "next/link";
 import { useState } from "react";
+import { useCart } from "./CartContext";
+
+function CartLink({ onNavigate }: { onNavigate?: () => void }) {
+  const { count } = useCart();
+  return (
+    <Link href="/gio-hang" onClick={onNavigate} aria-label="Giỏ hàng"
+      style={{ position: "relative", textDecoration: "none", fontSize: "1.25rem", lineHeight: 1, padding: "4px 2px", flexShrink: 0 }}>
+      🛒
+      {count > 0 && (
+        <span style={{
+          position: "absolute", top: -6, right: -10, background: "var(--accent)", color: "#fff",
+          fontSize: "0.65rem", fontWeight: 700, fontFamily: "Trebuchet MS, sans-serif",
+          minWidth: 17, height: 17, borderRadius: 9, display: "inline-flex",
+          alignItems: "center", justifyContent: "center", padding: "0 4px",
+        }}>
+          {count}
+        </span>
+      )}
+    </Link>
+  );
+}
 
 const navLinks = [
   { href: "/", label: "Trang chủ" },
@@ -83,12 +104,17 @@ export default function Navbar() {
           </a>
         </div>
 
-        {/* Hamburger */}
-        <button className="nav-hamburger" onClick={() => setMenuOpen(o => !o)} aria-label="Toggle menu">
-          <span style={{ display: "block", width: 22, height: 2, background: "#fff", borderRadius: 2, transition: "transform 0.2s", transform: menuOpen ? "rotate(45deg) translate(5px, 5px)" : "none" }} />
-          <span style={{ display: "block", width: 22, height: 2, background: "#fff", borderRadius: 2, opacity: menuOpen ? 0 : 1, transition: "opacity 0.2s" }} />
-          <span style={{ display: "block", width: 22, height: 2, background: "#fff", borderRadius: 2, transition: "transform 0.2s", transform: menuOpen ? "rotate(-45deg) translate(5px, -5px)" : "none" }} />
-        </button>
+        {/* Giỏ hàng — hiện cả desktop lẫn mobile */}
+        <div style={{ display: "flex", alignItems: "center", gap: 14, marginLeft: 14 }}>
+          <CartLink onNavigate={() => setMenuOpen(false)} />
+
+          {/* Hamburger */}
+          <button className="nav-hamburger" onClick={() => setMenuOpen(o => !o)} aria-label="Toggle menu">
+            <span style={{ display: "block", width: 22, height: 2, background: "#fff", borderRadius: 2, transition: "transform 0.2s", transform: menuOpen ? "rotate(45deg) translate(5px, 5px)" : "none" }} />
+            <span style={{ display: "block", width: 22, height: 2, background: "#fff", borderRadius: 2, opacity: menuOpen ? 0 : 1, transition: "opacity 0.2s" }} />
+            <span style={{ display: "block", width: 22, height: 2, background: "#fff", borderRadius: 2, transition: "transform 0.2s", transform: menuOpen ? "rotate(-45deg) translate(5px, -5px)" : "none" }} />
+          </button>
+        </div>
       </div>
 
       {/* Mobile menu */}
