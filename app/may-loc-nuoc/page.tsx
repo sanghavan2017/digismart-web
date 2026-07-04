@@ -209,9 +209,11 @@ export default function MayLocNuocPage() {
                       <span style={{ fontFamily: "'Trebuchet MS', sans-serif", fontSize: "1.05rem", fontWeight: 700, color: "var(--brand2)" }}>
                         {formatPrice(p.price)}
                       </span>
-                      <span style={{ fontFamily: "Calibri, sans-serif", fontSize: "0.78rem", color: "var(--muted)", textDecoration: "line-through" }}>
-                        {formatPrice(p.originalPrice)}
-                      </span>
+                      {p.originalPrice > p.price && (
+                        <span style={{ fontFamily: "Calibri, sans-serif", fontSize: "0.78rem", color: "var(--muted)", textDecoration: "line-through" }}>
+                          {formatPrice(p.originalPrice)}
+                        </span>
+                      )}
                     </div>
                     {p.price_install != null && (
                       <p style={{ fontFamily: "Calibri, sans-serif", fontSize: "0.78rem", color: "var(--muted)", marginBottom: "0.6rem" }}>

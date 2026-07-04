@@ -5,7 +5,7 @@ import type { Metadata } from "next";
 
 export const metadata: Metadata = {
   title: "DigiSmart — Điều hòa & Máy lọc nước chính hãng",
-  description: "DigiSmart cung cấp & lắp đặt Điều hòa, Máy lọc nước (Cleansui, Kitz Micro Filter, Mitsubishi Electric) chính hãng tại TPHCM. Tư vấn miễn phí, bảo hành đầy đủ.",
+  description: "DigiSmart cung cấp & lắp đặt Điều hòa, Máy lọc nước (Cleansui, Kitz Micro Filter, Mitsubishi Electric, Daikin) chính hãng tại TPHCM. Tư vấn miễn phí, bảo hành đầy đủ.",
 };
 
 function formatPrice(n: number) {
@@ -118,9 +118,11 @@ export default function HomePage() {
                     <span style={{ fontFamily: "'Trebuchet MS', sans-serif", fontSize: "1.05rem", fontWeight: 700, color: "var(--brand2)" }}>
                       {formatPrice(p.price)}
                     </span>
-                    <span style={{ fontFamily: "Calibri, sans-serif", fontSize: "0.8rem", color: "var(--muted)", textDecoration: "line-through" }}>
-                      {formatPrice(p.originalPrice)}
-                    </span>
+                    {p.originalPrice > p.price && (
+                      <span style={{ fontFamily: "Calibri, sans-serif", fontSize: "0.8rem", color: "var(--muted)", textDecoration: "line-through" }}>
+                        {formatPrice(p.originalPrice)}
+                      </span>
+                    )}
                   </div>
                 </div>
               </Link>

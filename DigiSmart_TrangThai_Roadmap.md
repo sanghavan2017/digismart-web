@@ -6,7 +6,10 @@ Mục này để nhìn toàn cảnh 1 lần, không cần đoán hay chờ gợi
 
 ### A. Nội dung & Catalog
 - ✅ Máy lọc nước: 18 SKU thật (Cleansui + Kitz), giá/thông số/bảo hành/ảnh/carousel/video đầy đủ cho phần lớn model
-- ✅ **Điều hòa: 22 SKU THẬT Mitsubishi Electric** (04/07/2026) — lấy toàn bộ từ web hãng mitsubishi-electric.vn (API GetDetailDto): 6 dòng MSY-JY/JA/GR (inverter 1 chiều), MSZ-HT/LN (inverter 2 chiều), MS-JS (tiêu chuẩn); đủ tên, model dàn nóng, thông số kỹ thuật, mô tả, 4 ảnh chính hãng/model (88 ảnh), video YouTube (dòng GR + LN), bảo hành thân máy 2 năm/máy nén 5 năm, gas R32. Đã xóa hết data giả Mitsubishi/Daikin, mọi chỗ nhắc "Daikin" trên web đã đổi thành "Mitsubishi Electric". ⚠️ **Giá đang là GIÁ NIÊM YẾT hãng** (không có badge giảm giá) — bạn cần update giá bán DigiSmart trong `data/products.ts` (field `price`, giữ `originalPrice` = giá niêm yết để hiện badge giảm giá).
+- ✅ **Điều hòa: 68 SKU THẬT — 22 Mitsubishi Electric + 46 Daikin** (04/07/2026), giá bán lẻ hiển thị theo đúng web hãng (quyết định của bạn 04/07/2026):
+  - **Mitsubishi Electric** (mitsubishi-electric.vn, API GetDetailDto): 6 dòng MSY-JY/JA/GR, MSZ-HT/LN, MS-JS; giá niêm yết hãng (đồng giá, không badge); 88 ảnh; video YouTube dòng GR + LN; bảo hành thân 2 năm/nén 5 năm.
+  - **Daikin** (daikin.com.vn/shop, loại 2 dàn rời, Magento): 10 dòng FTKB/FTKF/FTKY/FTKM/FTKZ (inverter 1 chiều), FTHB (1 chiều + sưởi), FTHF/FTXV/FTXM (2 chiều), FTF (tiêu chuẩn); `price` = giá bán lẻ E-Shop, `originalPrice` = giá niêm yết → badge giảm 12–17% thật; 166 ảnh (đã nén 55MB→16MB); thông số từ tab specs (CSPF, model dàn nóng, độ ồn, kích thước...).
+  - Giá gạch ngang + chip "Tiết kiệm" giờ chỉ hiện khi có giảm giá thật (sửa cả 5 trang — trước đây sản phẩm đồng giá hiện giá gạch trùng giá bán).
 - ✅ Trang `/kien-thuc` (SEO content giáo dục nước sạch)
 - ⚠️ Mốc lịch sử công ty (`/ve-chung-toi`, mục "Cột mốc") — 2023 "1.000+ đơn hàng" **chưa xác minh**, có thể cũng là claim cũ chưa kiểm tra như 2 mốc đã sửa
 
@@ -62,7 +65,7 @@ Mục này để nhìn toàn cảnh 1 lần, không cần đoán hay chờ gợi
 - **Vercel Environment Variables đã cấu hình đủ**: `ANTHROPIC_API_KEY` (đã có sẵn từ trước) + `RESEND_API_KEY` (vừa thêm) — chatbot và form lead đã test pass trên cả local và production.
 
 ## ⚠️ Đang chặn / cần bạn xử lý (xem Task List trong Claude Code để theo dõi)
-1. **Update giá bán 22 SKU điều hòa** — data thật Mitsubishi Electric đã lên đủ (04/07/2026) nhưng `price` đang bằng giá niêm yết hãng. Bạn gửi bảng giá bán → sửa field `price` từng sản phẩm trong `data/products.ts` (giữ `originalPrice` nguyên để hiện % giảm).
+1. ~~Update giá bán điều hòa~~ — **đã chốt 04/07/2026: hiển thị giá bán lẻ theo đúng web hãng** (Mitsubishi = giá niêm yết, Daikin = giá E-Shop + badge giảm so với niêm yết). Nếu sau này muốn giá riêng DigiSmart thì sửa `price` trong `data/products.ts`.
 2. **Resend đang ở chế độ test** (chưa verify domain riêng) — chỉ gửi email lead tới đúng 1 địa chỉ đã đăng ký tài khoản Resend (`digismart606@gmail.com`). Muốn gửi thêm tới `sang.havan2017@gmail.com` hoặc địa chỉ khác, cần verify 1 domain tại resend.com/domains (không gấp, chỉ cần khi muốn nhận lead về nhiều email).
 3. **2 ảnh Kitz còn lại cần bạn xử lý** (ảnh 10 Inch đã thay bằng ảnh chính hãng MOF254BW từ kitzmf.vn 04/07/2026 — model khớp cả giá 5tr):
    - `kitz-bo-loc-tong-2-coc`: kitzmf.vn KHÔNG có ảnh bộ 2 cốc lắp sẵn (đây là bộ DigiSmart tự ghép) → cần bạn chụp 1 tấm bộ thật, nền càng trơn càng tốt.

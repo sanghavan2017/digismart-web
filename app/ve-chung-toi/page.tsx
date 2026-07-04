@@ -46,7 +46,7 @@ export default function AboutPage() {
                 Sứ mệnh của chúng tôi
               </h2>
               <p style={{ fontFamily: "Calibri, sans-serif", fontSize: "1rem", color: "var(--text)", lineHeight: 1.8, marginBottom: "1rem" }}>
-                DigiSmart ra đời với sứ mệnh đưa Điều hòa và Máy lọc nước chính hãng — Cleansui, Kitz Micro Filter, Mitsubishi Electric — đến tay người dùng Việt Nam với giá hợp lý nhất, cùng dịch vụ lắp đặt tận nơi tận tâm.
+                DigiSmart ra đời với sứ mệnh đưa Điều hòa và Máy lọc nước chính hãng — Cleansui, Kitz Micro Filter, Mitsubishi Electric, Daikin — đến tay người dùng Việt Nam với giá hợp lý nhất, cùng dịch vụ lắp đặt tận nơi tận tâm.
               </p>
               <p style={{ fontFamily: "Calibri, sans-serif", fontSize: "1rem", color: "var(--text)", lineHeight: 1.8 }}>
                 Chúng tôi làm việc trực tiếp với nhà phân phối uy tín, loại bỏ các khâu trung gian không cần thiết để mang lại giá trị thực sự cho khách hàng.

@@ -8,7 +8,7 @@ import type { Metadata } from "next";
 export const metadata: Metadata = {
   title: "Lắp đặt điều hòa chính hãng tại TPHCM — DigiSmart",
   description:
-    "Lắp đặt điều hòa Mitsubishi Electric chính hãng tại TPHCM. Đội ngũ kỹ thuật chuyên nghiệp, bảo hành dài hạn, giá tốt nhất thị trường.",
+    "Lắp đặt điều hòa Mitsubishi Electric, Daikin chính hãng tại TPHCM. Đội ngũ kỹ thuật chuyên nghiệp, bảo hành dài hạn, giá tốt nhất thị trường.",
 };
 
 function formatPrice(n: number) {
@@ -20,7 +20,7 @@ function discountPct(orig: number, price: number) {
 
 const benefits = [
   { icon: "🛠️", title: "Kỹ thuật chuyên nghiệp", desc: "Đội ngũ kỹ thuật viên tay nghề cao, thi công nhanh gọn, đúng kỹ thuật." },
-  { icon: "🏷️", title: "Hàng chính hãng 100%", desc: "Phân phối trực tiếp từ Mitsubishi Electric — đầy đủ tem, phiếu bảo hành." },
+  { icon: "🏷️", title: "Hàng chính hãng 100%", desc: "Phân phối trực tiếp từ Mitsubishi Electric, Daikin — đầy đủ tem, phiếu bảo hành." },
   { icon: "🔧", title: "Bảo hành dài hạn", desc: "Bảo hành chính hãng đến 5 năm, hỗ trợ bảo trì tận nơi sau lắp đặt." },
   { icon: "💰", title: "Giá tốt, minh bạch", desc: "Báo giá rõ ràng trọn gói máy + công lắp đặt, không phát sinh chi phí." },
 ];
@@ -38,7 +38,7 @@ export default function DieuHoaPage() {
               Lắp đặt điều hòa <span style={{ color: "#F07B20" }}>chính hãng</span> tại TPHCM
             </h1>
             <p style={{ fontFamily: "Calibri, sans-serif", color: "rgba(255,255,255,0.85)", fontSize: "1rem", lineHeight: 1.7, marginBottom: "1.5rem" }}>
-              DigiSmart cung cấp & lắp đặt điều hòa Mitsubishi Electric Inverter chính hãng — tư vấn công suất phù hợp, thi công nhanh chóng, bảo hành dài hạn.
+              DigiSmart cung cấp & lắp đặt điều hòa Mitsubishi Electric, Daikin Inverter chính hãng — tư vấn công suất phù hợp, thi công nhanh chóng, bảo hành dài hạn.
             </p>
             <LeadFormButton productName="Dịch vụ lắp đặt điều hòa" style={{ padding: "14px 32px", borderRadius: 8, fontSize: "1rem", background: "#F07B20" }}>
               📩 Nhận báo giá ngay
@@ -103,9 +103,11 @@ export default function DieuHoaPage() {
                       <span style={{ fontFamily: "'Trebuchet MS', sans-serif", fontSize: "1.05rem", fontWeight: 700, color: "var(--brand2)" }}>
                         {formatPrice(p.price)}
                       </span>
-                      <span style={{ fontFamily: "Calibri, sans-serif", fontSize: "0.78rem", color: "var(--muted)", textDecoration: "line-through" }}>
-                        {formatPrice(p.originalPrice)}
-                      </span>
+                      {p.originalPrice > p.price && (
+                        <span style={{ fontFamily: "Calibri, sans-serif", fontSize: "0.78rem", color: "var(--muted)", textDecoration: "line-through" }}>
+                          {formatPrice(p.originalPrice)}
+                        </span>
+                      )}
                     </div>
                     {p.price_install != null && (
                       <p style={{ fontFamily: "Calibri, sans-serif", fontSize: "0.78rem", color: "var(--muted)", marginBottom: "0.6rem" }}>

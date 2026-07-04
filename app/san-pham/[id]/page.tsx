@@ -127,12 +127,16 @@ export default async function ProductDetailPage({
                 <span style={{ fontFamily: "'Trebuchet MS', sans-serif", fontSize: "1.75rem", fontWeight: 700, color: "#F07B20" }}>
                   {formatPrice(product.price)}
                 </span>
-                <span style={{ fontFamily: "Calibri, sans-serif", fontSize: "1rem", color: "var(--muted)", textDecoration: "line-through" }}>
-                  {formatPrice(product.originalPrice)}
-                </span>
-                <span style={{ background: "#FEF0E3", color: "#F07B20", fontFamily: "Trebuchet MS, sans-serif", fontWeight: 700, fontSize: "0.8rem", padding: "2px 8px", borderRadius: 4 }}>
-                  Tiết kiệm {formatPrice(product.originalPrice - product.price)}
-                </span>
+                {product.originalPrice > product.price && (
+                  <>
+                    <span style={{ fontFamily: "Calibri, sans-serif", fontSize: "1rem", color: "var(--muted)", textDecoration: "line-through" }}>
+                      {formatPrice(product.originalPrice)}
+                    </span>
+                    <span style={{ background: "#FEF0E3", color: "#F07B20", fontFamily: "Trebuchet MS, sans-serif", fontWeight: 700, fontSize: "0.8rem", padding: "2px 8px", borderRadius: 4 }}>
+                      Tiết kiệm {formatPrice(product.originalPrice - product.price)}
+                    </span>
+                  </>
+                )}
               </div>
 
               {/* Description */}

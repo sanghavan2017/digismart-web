@@ -7,7 +7,7 @@ import type { Metadata } from "next";
 
 export const metadata: Metadata = {
   title: "Sản phẩm — DigiSmart",
-  description: "Điều hòa, máy lọc nước chính hãng (Cleansui, Kitz Micro Filter, Mitsubishi Electric). Tư vấn miễn phí, lắp đặt tận nơi tại TPHCM.",
+  description: "Điều hòa, máy lọc nước chính hãng (Cleansui, Kitz Micro Filter, Mitsubishi Electric, Daikin). Tư vấn miễn phí, lắp đặt tận nơi tại TPHCM.",
 };
 
 function formatPrice(n: number) {
@@ -130,9 +130,11 @@ export default async function ProductsPage({
                       <span style={{ fontFamily: "'Trebuchet MS', sans-serif", fontSize: "1.05rem", fontWeight: 700, color: "var(--brand2)" }}>
                         {formatPrice(p.price)}
                       </span>
-                      <span style={{ fontFamily: "Calibri, sans-serif", fontSize: "0.8rem", color: "var(--muted)", textDecoration: "line-through" }}>
-                        {formatPrice(p.originalPrice)}
-                      </span>
+                      {p.originalPrice > p.price && (
+                        <span style={{ fontFamily: "Calibri, sans-serif", fontSize: "0.8rem", color: "var(--muted)", textDecoration: "line-through" }}>
+                          {formatPrice(p.originalPrice)}
+                        </span>
+                      )}
                     </div>
                     <LeadFormButton productName={p.name} style={{ width: "100%", padding: "9px 0", borderRadius: 6, fontSize: "0.8rem" }}>
                       Nhận báo giá
