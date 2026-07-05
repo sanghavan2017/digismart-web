@@ -16,6 +16,13 @@ const contactMethods = [
     desc: "Gọi trực tiếp — hỗ trợ 8h–21h mỗi ngày",
   },
   {
+    icon: "📍",
+    label: "Địa chỉ",
+    value: "606/145/3C Đường Ba Tháng Hai, P. Diên Hồng, TP.HCM",
+    href: "https://maps.google.com/?q=606/145/3C+%C4%90%C6%B0%E1%BB%9Dng+Ba+Th%C3%A1ng+Hai,+TP.HCM",
+    desc: "Hộ Kinh Doanh Digismart — lắp đặt tận nơi toàn TPHCM",
+  },
+  {
     icon: "💬",
     label: "Zalo",
     value: "0778 886 758",

@@ -1,5 +1,6 @@
 import { MetadataRoute } from "next";
 import { products } from "@/data/products";
+import { posts } from "@/data/kienthuc";
 
 const BASE_URL = "https://www.digismartvn.com";
 
@@ -22,5 +23,11 @@ export default function sitemap(): MetadataRoute.Sitemap {
     priority: 0.8,
   }));
 
-  return [...staticPages, ...productPages];
+  const postPages = posts.map(p => ({
+    url: `${BASE_URL}/kien-thuc/${p.slug}`,
+    lastModified: new Date(p.date),
+    priority: 0.6,
+  }));
+
+  return [...staticPages, ...productPages, ...postPages];
 }

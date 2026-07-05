@@ -21,8 +21,12 @@ export default function Footer() {
             <p style={{ fontFamily: "var(--font-sans)", fontSize: "0.85rem", lineHeight: 1.7, marginBottom: "0.5rem" }}>
               "Mua thông minh — Sống tiện nghi"
             </p>
-            <p style={{ fontFamily: "var(--font-sans)", fontSize: "0.82rem", lineHeight: 1.6 }}>
+            <p style={{ fontFamily: "var(--font-sans)", fontSize: "0.82rem", lineHeight: 1.6, marginBottom: "0.5rem" }}>
               Điều hòa, máy lọc nước chính hãng — lắp đặt tận nơi.
+            </p>
+            <p style={{ fontFamily: "var(--font-sans)", fontSize: "0.78rem", lineHeight: 1.6, color: "rgba(255,255,255,0.6)" }}>
+              Hộ Kinh Doanh Digismart<br />
+              📍 606/145/3C Đường Ba Tháng Hai, P. Diên Hồng, TP.HCM
             </p>
           </div>
 

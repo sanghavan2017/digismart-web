@@ -16,10 +16,22 @@ const GA_MEASUREMENT_ID = "G-YNQSD9M50Q";
 
 const organizationJsonLd = {
   "@context": "https://schema.org",
-  "@type": "Organization",
+  "@type": "LocalBusiness",
   name: "DigiSmart",
+  legalName: "Hộ Kinh Doanh Digismart",
   url: "https://www.digismartvn.com",
   logo: "https://www.digismartvn.com/images/og-banner.png",
+  image: "https://www.digismartvn.com/images/og-banner.png",
+  telephone: "+84-778-886-758",
+  address: {
+    "@type": "PostalAddress",
+    streetAddress: "606/145/3C Đường Ba Tháng Hai",
+    addressLocality: "Phường Diên Hồng",
+    addressRegion: "TP. Hồ Chí Minh",
+    addressCountry: "VN",
+  },
+  openingHours: "Mo-Su 08:00-21:00",
+  priceRange: "₫₫",
   contactPoint: {
     "@type": "ContactPoint",
     telephone: "+84-778-886-758",
