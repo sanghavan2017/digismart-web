@@ -9,6 +9,7 @@ export const metadata: Metadata = {
   title: "Máy lọc nước chính hãng, lắp đặt tận nơi tại TPHCM — DigiSmart",
   description:
     "Máy lọc nước Cleansui (Mitsubishi Chemical), Kitz Micro Filter chính hãng — công nghệ Nhật Bản, nhiều cấp lọc, nóng lạnh tiện lợi. Tư vấn miễn phí, lắp đặt tận nơi tại TPHCM.",
+  alternates: { canonical: "/may-loc-nuoc" },
 };
 
 function formatPrice(n: number) {

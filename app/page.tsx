@@ -6,6 +6,7 @@ import type { Metadata } from "next";
 export const metadata: Metadata = {
   title: "DigiSmart — Điều hòa & Máy lọc nước chính hãng",
   description: "DigiSmart cung cấp & lắp đặt Điều hòa, Máy lọc nước (Cleansui, Kitz Micro Filter, Mitsubishi Electric, Daikin) chính hãng tại TPHCM. Tư vấn miễn phí, bảo hành đầy đủ.",
+  alternates: { canonical: "/" },
 };
 
 function formatPrice(n: number) {

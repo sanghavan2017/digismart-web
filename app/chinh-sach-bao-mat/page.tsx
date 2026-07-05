@@ -3,6 +3,7 @@ import type { Metadata } from "next";
 export const metadata: Metadata = {
   title: "Chính sách bảo mật — DigiSmart",
   description: "Chính sách bảo mật thông tin khách hàng của DigiSmart. Chúng tôi cam kết bảo vệ thông tin cá nhân của bạn.",
+  alternates: { canonical: "/chinh-sach-bao-mat" },
 };
 
 export default function ChinhSachBaoMatPage() {

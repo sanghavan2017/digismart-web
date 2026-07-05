@@ -9,6 +9,7 @@ export const metadata: Metadata = {
   title: "Lắp đặt điều hòa chính hãng tại TPHCM — DigiSmart",
   description:
     "Lắp đặt điều hòa Mitsubishi Electric, Daikin chính hãng tại TPHCM. Đội ngũ kỹ thuật chuyên nghiệp, bảo hành dài hạn, giá tốt nhất thị trường.",
+  alternates: { canonical: "/dieu-hoa" },
 };
 
 function formatPrice(n: number) {

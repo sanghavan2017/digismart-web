@@ -26,6 +26,7 @@ Mục này để nhìn toàn cảnh 1 lần, không cần đoán hay chờ gợi
 - ✅ **Structured Data (Schema.org Product)** — đã thêm JSON-LD vào `app/san-pham/[id]/page.tsx` (tên, ảnh, giá, brand, tình trạng còn hàng). 05/07/2026: sửa URL ảnh + offer thành tuyệt đối (www) theo chuẩn schema.org.
 - ✅ **Open Graph tags** (05/07/2026) — share link lên Zalo/Facebook/Messenger giờ có ảnh + tiêu đề đẹp: banner brand `public/images/og-banner.png` (1200×630, vẽ bằng sharp theo brand mark) cho mọi trang, riêng trang sản phẩm dùng đúng ảnh + tên sản phẩm đó. `metadataBase` đã khai báo trong `app/layout.tsx`.
 - ✅ **Trang 404 riêng** (05/07/2026) — `app/not-found.tsx` theo brand, có nút về trang chủ + xem sản phẩm.
+- ✅ **SEO on-page hoàn chỉnh** (05/07/2026): canonical URL cho mọi trang (kể cả 86 trang sản phẩm), `/gio-hang` noindex, Organization JSON-LD (tên/logo/SĐT) trong layout, BreadcrumbList JSON-LD trang sản phẩm, sửa description trang Liên hệ (còn ghi "phụ kiện điện tử" cũ), title `/san-pham` thêm từ khóa. Đã pass: title/description riêng 12 trang, 1 H1/trang, 13/13 ảnh có alt.
 
 ### D. Pháp lý
 - ✅ **Chính sách bảo mật thông tin khách hàng** — đã có trang `/chinh-sach-bao-mat` (commit `dc16639`), link ở footer

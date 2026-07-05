@@ -6,8 +6,9 @@ import AddToCartButton from "@/components/AddToCartButton";
 import type { Metadata } from "next";
 
 export const metadata: Metadata = {
-  title: "Sản phẩm — DigiSmart",
+  title: "Sản phẩm: Điều hòa & Máy lọc nước chính hãng — DigiSmart",
   description: "Điều hòa, máy lọc nước chính hãng (Cleansui, Kitz Micro Filter, Mitsubishi Electric, Daikin). Tư vấn miễn phí, lắp đặt tận nơi tại TPHCM.",
+  alternates: { canonical: "/san-pham" },
 };
 
 function formatPrice(n: number) {

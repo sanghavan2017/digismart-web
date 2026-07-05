@@ -14,6 +14,21 @@ import { CartProvider } from "@/components/CartContext";
 
 const GA_MEASUREMENT_ID = "G-YNQSD9M50Q";
 
+const organizationJsonLd = {
+  "@context": "https://schema.org",
+  "@type": "Organization",
+  name: "DigiSmart",
+  url: "https://www.digismartvn.com",
+  logo: "https://www.digismartvn.com/images/og-banner.png",
+  contactPoint: {
+    "@type": "ContactPoint",
+    telephone: "+84-778-886-758",
+    contactType: "customer service",
+    areaServed: "VN",
+    availableLanguage: "Vietnamese",
+  },
+};
+
 export const metadata: Metadata = {
   metadataBase: new URL("https://www.digismartvn.com"),
   title: "DigiSmart — Điều hòa & Máy lọc nước chính hãng",
@@ -50,6 +65,10 @@ export default function RootLayout({
               gtag('config', '${GA_MEASUREMENT_ID}');
             `,
           }}
+        />
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(organizationJsonLd) }}
         />
       </head>
       <body style={{ minHeight: "100vh", display: "flex", flexDirection: "column" }}>

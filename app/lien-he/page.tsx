@@ -3,7 +3,8 @@ import ContactForm from "./_components/ContactForm";
 
 export const metadata: Metadata = {
   title: "Liên hệ — DigiSmart",
-  description: "Liên hệ với DigiSmart để được tư vấn phụ kiện điện tử chính hãng. Gọi điện, nhắn Zalo hoặc gửi form — chúng tôi phản hồi trong ngày.",
+  description: "Liên hệ DigiSmart để được tư vấn điều hòa, máy lọc nước chính hãng và đặt lịch lắp đặt tại TPHCM. Gọi điện, nhắn Zalo hoặc gửi form — phản hồi trong ngày.",
+  alternates: { canonical: "/lien-he" },
 };
 
 const contactMethods = [

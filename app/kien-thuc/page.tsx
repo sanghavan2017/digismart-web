@@ -5,6 +5,7 @@ import type { Metadata } from "next";
 export const metadata: Metadata = {
   title: "Kiến thức nước sạch — DigiSmart",
   description: "Chỉ số chất lượng nước, TDS bao nhiêu là an toàn, cách khắc phục vấn đề nguồn nước sinh hoạt — kiến thức hữu ích từ Mitsubishi Cleansui, tổng hợp bởi DigiSmart.",
+  alternates: { canonical: "/kien-thuc" },
 };
 
 export default function KienThucPage() {

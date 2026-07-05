@@ -4,6 +4,7 @@ export const metadata: Metadata = {
   title: "Chính sách bảo hành & Điều khoản — DigiSmart",
   description:
     "Chính sách bảo hành chính hãng Cleansui, Kitz Micro Filter và điều khoản sử dụng dịch vụ của DigiSmart. Lắp đặt và bảo hành tận nơi tại TPHCM.",
+  alternates: { canonical: "/bao-hanh-dieu-khoan" },
 };
 
 export default function BaoHanhDieuKhoanPage() {

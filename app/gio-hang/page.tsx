@@ -4,6 +4,7 @@ import CartPage from "@/components/CartPage";
 export const metadata: Metadata = {
   title: "Giỏ hàng & Đặt lịch lắp đặt — DigiSmart",
   description: "Chọn nhiều sản phẩm, đặt lịch lắp đặt một lần — DigiSmart lắp tận nơi tại TPHCM, thanh toán khi lắp đặt.",
+  robots: { index: false },
 };
 
 export default function GioHangPage() {

@@ -29,6 +29,7 @@ export async function generateMetadata({
   return {
     title: `${product.name} — DigiSmart`,
     description: product.description,
+    alternates: { canonical: `/san-pham/${product.id}` },
     openGraph: {
       type: "website",
       title: `${product.name} — DigiSmart`,
@@ -73,11 +74,25 @@ export default async function ProductDetailPage({
     },
   };
 
+  const breadcrumbJsonLd = {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    itemListElement: [
+      { "@type": "ListItem", position: 1, name: "Trang chủ", item: BASE_URL },
+      { "@type": "ListItem", position: 2, name: "Sản phẩm", item: `${BASE_URL}/san-pham` },
+      { "@type": "ListItem", position: 3, name: product.name },
+    ],
+  };
+
   return (
     <>
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(productJsonLd) }}
+      />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbJsonLd) }}
       />
       {/* Breadcrumb */}
       <div style={{ background: "#fff", borderBottom: "1px solid var(--border)", padding: "0.75rem 0" }}>
