@@ -1,4 +1,5 @@
 import Link from "next/link";
+import Image from "next/image";
 import { notFound } from "next/navigation";
 import { posts } from "@/data/kienthuc";
 import LeadFormButton from "@/components/LeadFormButton";
@@ -97,6 +98,24 @@ export default async function KienThucPostPage({
                   <h2 style={{ fontFamily: "var(--font-sans)", fontSize: "1.15rem", color: "var(--brand)", marginBottom: "0.75rem" }}>
                     {s.heading}
                   </h2>
+                )}
+                {s.image && (
+                  <figure style={{ margin: "0 0 1.25rem" }}>
+                    <div style={{ position: "relative", width: "100%", aspectRatio: "4/3", maxWidth: 420, margin: "0 auto", borderRadius: 10, overflow: "hidden", background: "var(--bg)" }}>
+                      <Image
+                        src={s.image.src}
+                        alt={s.image.alt}
+                        fill
+                        sizes="(max-width: 600px) 90vw, 420px"
+                        style={{ objectFit: "contain" }}
+                      />
+                    </div>
+                    {s.image.caption && (
+                      <figcaption style={{ fontFamily: "var(--font-sans)", fontSize: "0.8rem", color: "var(--muted)", textAlign: "center", marginTop: "0.5rem" }}>
+                        {s.image.caption}
+                      </figcaption>
+                    )}
+                  </figure>
                 )}
                 {s.paragraphs?.map((p, j) => (
                   <p key={j} style={{ fontFamily: "var(--font-sans)", fontSize: "0.95rem", color: "var(--text)", lineHeight: 1.8, marginBottom: "0.75rem" }}>
