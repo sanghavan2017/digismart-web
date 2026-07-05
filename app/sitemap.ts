@@ -13,6 +13,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
     { url: `${BASE_URL}/ve-chung-toi`, priority: 0.5 },
     { url: `${BASE_URL}/lien-he`, priority: 0.5 },
     { url: `${BASE_URL}/chinh-sach-bao-mat`, priority: 0.3 },
+    { url: `${BASE_URL}/bao-hanh-dieu-khoan`, priority: 0.3 },
   ].map(p => ({ ...p, lastModified: new Date() }));
 
   const productPages = products.map(p => ({

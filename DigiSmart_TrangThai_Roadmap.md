@@ -22,7 +22,7 @@ Mục này để nhìn toàn cảnh 1 lần, không cần đoán hay chờ gợi
 ### C. SEO & khả năng được tìm thấy
 - ✅ `sitemap.xml`, `robots.txt`
 - ✅ **Google Analytics (GA4)** — đã gắn vào `app/layout.tsx`, Measurement ID `G-YNQSD9M50Q`, đã verify nhận dữ liệu thật trên production
-- ❌ **Google Search Console — CHƯA ĐĂNG KÝ.** Không submit được sitemap cho Google, không biết web có lỗi index hay không, không thấy từ khoá khách đang tìm ra web
+- ✅ **Google Search Console — ĐÃ ĐĂNG KÝ** (property `https://www.digismartvn.com/`, xác minh qua GA). 05/07/2026: sitemap.xml đã submit lại (bản 95 URL, thêm `/bao-hanh-dieu-khoan`), yêu cầu lập chỉ mục thủ công cho 4 trang chính (`/`, `/may-loc-nuoc`, `/dieu-hoa`, `/san-pham`). Trạng thái 5 trang "Đã thu thập – chưa lập chỉ mục" là bình thường với site mới, chờ Google xử lý (kiểm tra lại sau ~1-2 tuần).
 - ✅ **Structured Data (Schema.org Product)** — đã thêm JSON-LD vào `app/san-pham/[id]/page.tsx` (tên, ảnh, giá, brand, tình trạng còn hàng)
 
 ### D. Pháp lý
