@@ -1,11 +1,14 @@
 import type { Metadata } from "next";
+import { warrantyPolicies } from "@/data/warranty";
 
 export const metadata: Metadata = {
   title: "Chính sách bảo hành & Điều khoản — DigiSmart",
   description:
-    "Chính sách bảo hành chính hãng Cleansui, Kitz Micro Filter và điều khoản sử dụng dịch vụ của DigiSmart. Lắp đặt và bảo hành tận nơi tại TPHCM.",
+    "Chính sách bảo hành chính hãng Cleansui, Kitz Micro Filter, Mitsubishi Electric, Daikin và điều khoản sử dụng dịch vụ của DigiSmart. Lắp đặt và bảo hành tận nơi tại TPHCM.",
   alternates: { canonical: "/bao-hanh-dieu-khoan" },
 };
+
+const brandPolicy = (brand: string) => warrantyPolicies.find(w => w.brand === brand)!;
 
 export default function BaoHanhDieuKhoanPage() {
   return (
@@ -15,15 +18,13 @@ export default function BaoHanhDieuKhoanPage() {
           Chính sách bảo hành &amp; Điều khoản
         </h1>
         <p style={{ color: "#666", fontFamily: "var(--font-sans)", marginBottom: "2.5rem" }}>
-          Cập nhật lần cuối: 04/07/2026
+          Cập nhật lần cuối: 05/07/2026
         </p>
 
         <Section title="1. Bảo hành sản phẩm Cleansui (Mitsubishi Chemical)">
           <p>Theo chính sách chính hãng Cleansui áp dụng cho các sản phẩm DigiSmart phân phối:</p>
           <ul>
-            <li><strong>Vòi lọc dòng CM</strong> (EU301, EU201, EU202, EU101, EU103): bảo hành <strong>5 năm</strong></li>
-            <li><strong>Thân máy / bo mạch</strong>: bảo hành <strong>2 năm</strong></li>
-            <li><strong>Lõi lọc</strong>: đổi mới trong <strong>6 tháng</strong> nếu có lỗi kỹ thuật từ nhà sản xuất</li>
+            {brandPolicy("Cleansui").details.map(d => <li key={d}>{d}</li>)}
           </ul>
           <p>
             DigiSmart <strong>hỗ trợ đăng ký bảo hành với hãng cho khách khi mua hàng</strong> — bạn không cần tự
@@ -33,13 +34,37 @@ export default function BaoHanhDieuKhoanPage() {
 
         <Section title="2. Bảo hành sản phẩm Kitz Micro Filter">
           <ul>
-            <li><strong>Thiết bị</strong>: bảo hành <strong>24 tháng</strong></li>
-            <li><strong>Lõi lọc</strong>: bảo hành <strong>12 tháng</strong></li>
+            {brandPolicy("Kitz").details.map(d => <li key={d}>{d}</li>)}
           </ul>
           <p>Việc lắp đặt và bảo hành do đội ngũ DigiSmart trực tiếp thực hiện.</p>
         </Section>
 
-        <Section title="3. Điều kiện bảo hành">
+        <Section title="3. Bảo hành điều hòa Mitsubishi Electric">
+          <p>Theo chính sách chính hãng Mitsubishi Electric Việt Nam:</p>
+          <ul>
+            {brandPolicy("Mitsubishi Electric").details.map(d => <li key={d}>{d}</li>)}
+          </ul>
+          <p>
+            Nguồn: <a href={brandPolicy("Mitsubishi Electric").sourceUrl} target="_blank" rel="noopener noreferrer" style={{ color: "#042C53" }}>
+              {brandPolicy("Mitsubishi Electric").sourceLabel}
+            </a>
+          </p>
+        </Section>
+
+        <Section title="4. Bảo hành điều hòa Daikin">
+          <p>Theo chính sách chính hãng Daikin Việt Nam:</p>
+          <ul>
+            {brandPolicy("Daikin").details.map(d => <li key={d}>{d}</li>)}
+          </ul>
+          <p style={{ fontStyle: "italic", color: "#666" }}>{brandPolicy("Daikin").note}</p>
+          <p>
+            Nguồn: <a href={brandPolicy("Daikin").sourceUrl} target="_blank" rel="noopener noreferrer" style={{ color: "#042C53" }}>
+              {brandPolicy("Daikin").sourceLabel}
+            </a>
+          </p>
+        </Section>
+
+        <Section title="5. Điều kiện bảo hành">
           <p>Bảo hành áp dụng khi:</p>
           <ul>
             <li>Sản phẩm mua tại DigiSmart (website, Shopee, TikTok Shop hoặc hotline)</li>
@@ -53,7 +78,7 @@ export default function BaoHanhDieuKhoanPage() {
           </ul>
         </Section>
 
-        <Section title="4. Đặt hàng, lắp đặt và thanh toán">
+        <Section title="6. Đặt hàng, lắp đặt và thanh toán">
           <ul>
             <li>Website này là kênh giới thiệu sản phẩm và nhận yêu cầu tư vấn — <strong>không thu tiền online</strong></li>
             <li>Sau khi bạn gửi yêu cầu, DigiSmart liên hệ xác nhận sản phẩm, báo giá cuối cùng và hẹn lịch lắp đặt</li>
@@ -63,7 +88,7 @@ export default function BaoHanhDieuKhoanPage() {
           </ul>
         </Section>
 
-        <Section title="5. Liên hệ bảo hành">
+        <Section title="7. Liên hệ bảo hành">
           <ul>
             <li>Hotline: <a href="tel:0778886758" style={{ color: "#042C53" }}>0778 886 758</a></li>
             <li>Zalo: <a href="https://zalo.me/0778886758" target="_blank" rel="noopener noreferrer" style={{ color: "#042C53" }}>0778 886 758</a></li>

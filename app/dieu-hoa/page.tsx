@@ -18,6 +18,12 @@ function formatPrice(n: number) {
 function discountPct(orig: number, price: number) {
   return Math.round((1 - price / orig) * 100);
 }
+// Mitsubishi Electric/Daikin: bảo hành thân máy và máy nén khác nhau — số hiển thị là máy nén, ghi rõ để không gây hiểu lầm
+function warrantyLabel(brand: string, years?: number) {
+  if (years == null) return null;
+  const isSplitWarranty = brand === "Mitsubishi Electric" || brand === "Daikin";
+  return isSplitWarranty ? `Bảo hành máy nén ${years} năm` : `Bảo hành ${years} năm`;
+}
 
 const benefits = [
   { icon: "🛠️", title: "Kỹ thuật chuyên nghiệp", desc: "Đội ngũ kỹ thuật viên tay nghề cao, thi công nhanh gọn, đúng kỹ thuật." },
@@ -112,7 +118,8 @@ export default function DieuHoaPage() {
                     </div>
                     {p.price_install != null && (
                       <p style={{ fontFamily: "var(--font-sans)", fontSize: "0.78rem", color: "var(--muted)", marginBottom: "0.6rem" }}>
-                        + Công lắp đặt từ {formatPrice(p.price_install)} · Bảo hành {p.warranty_years} năm
+                        + Công lắp đặt từ {formatPrice(p.price_install)}
+                        {warrantyLabel(p.brand, p.warranty_years) && ` · ${warrantyLabel(p.brand, p.warranty_years)}`}
                       </p>
                     )}
                   </div>

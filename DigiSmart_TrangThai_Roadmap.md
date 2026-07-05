@@ -31,7 +31,7 @@ Mục này để nhìn toàn cảnh 1 lần, không cần đoán hay chờ gợi
 
 ### D. Pháp lý
 - ✅ **Chính sách bảo mật thông tin khách hàng** — đã có trang `/chinh-sach-bao-mat` (commit `dc16639`), link ở footer
-- ✅ **Chính sách bảo hành & Điều khoản** — đã có trang `/bao-hanh-dieu-khoan` (04/07/2026): bảo hành Cleansui (vòi 5 năm/thân 2 năm/lõi 6 tháng), Kitz (24/12 tháng), điều kiện bảo hành, quy trình đặt hàng-thanh toán khi lắp. Link ở footer.
+- ✅ **Chính sách bảo hành & Điều khoản** — trang `/bao-hanh-dieu-khoan`. **05/07/2026: sửa lỗi bảo hành sai/thiếu theo brand** (phát hiện qua chatbot trả lời chung chung "bảo hành 5 năm" khi so Mitsubishi Electric vs Daikin): tạo `data/warranty.ts` làm nguồn dữ liệu bảo hành duy nhất theo từng hãng (có nguồn tham khảo chính thức), dùng chung cho chatbot + trang pháp lý + trang chi tiết sản phẩm. Nội dung đầy đủ 4 hãng: Cleansui (vòi 5 năm/thân 2 năm/lõi 6 tháng), Kitz (24/12 tháng), **Mitsubishi Electric (thân máy 24 tháng/máy nén 60 tháng — trước đây chưa có trong trang pháp lý dù chiếm 22 SKU)**, **Daikin (thân máy 12 tháng/máy nén 60 tháng, cộng chương trình mở rộng 3 năm cho 1 số dòng treo tường cần khách tự đăng ký — trước đây 0/46 SKU Daikin có dữ liệu bảo hành)**. Chatbot giờ trả lời tách rõ thân máy vs máy nén, không áp dụng chéo giữa các hãng. ⚠️ Danh sách dòng Daikin được hưởng ưu đãi 3 năm (FTKY/FTKF/FTKB/FTF/FTHF/FTHB...) lấy từ 1 bài tin tức, có thể chưa đầy đủ 100% — nên xác nhận lại với Daikin nếu muốn quảng bá con số 3 năm rộng rãi hơn.
 
 ### E. Kỹ thuật & vận hành
 - ✅ Vercel Cron: check video mới hàng tháng, tổng hợp lead hàng tuần (cả 2 đã test pass trên production)

@@ -1,8 +1,15 @@
 import { NextRequest, NextResponse } from "next/server";
 import { products } from "@/data/products";
+import { warrantyPolicies } from "@/data/warranty";
 
 function formatPrice(n: number) {
   return n.toLocaleString("vi-VN") + "đ";
+}
+
+function buildWarrantyText() {
+  return warrantyPolicies
+    .map(w => `- ${w.brand}: ${w.chatbotSummary}`)
+    .join("\n");
 }
 
 function buildCatalogText() {
@@ -17,9 +24,8 @@ function buildCatalogText() {
     text += `\n### ${category}\n`;
     for (const p of items) {
       const installPart = p.price_install != null ? `, công lắp đặt từ ${formatPrice(p.price_install)}` : "";
-      const warrantyPart = p.warranty_years != null ? `, bảo hành ${p.warranty_years} năm` : "";
       const accessoryPart = p.isAccessory ? " [PHỤ KIỆN — không phải máy lọc nước/điều hòa]" : "";
-      text += `- id:${p.id} — ${p.name} (${p.brand}) — ${formatPrice(p.price)}${installPart}${warrantyPart}${accessoryPart}\n`;
+      text += `- id:${p.id} — ${p.name} (${p.brand}) — ${formatPrice(p.price)}${installPart}${accessoryPart}\n`;
     }
   }
   return text;
@@ -32,7 +38,10 @@ THÔNG TIN SHOP:
 - Email: digismart606@gmail.com
 - Địa chỉ: 606/145/3C Đường 3/2, Phường Diên Hồng, TP. Hồ Chí Minh (văn phòng & showroom DigiSmart)
 - Website: digismartvn.vn
-- Bảo hành: theo từng sản phẩm (số năm ghi kèm bên dưới). DigiSmart hỗ trợ đăng ký bảo hành cho khách khi mua hàng, không cần khách tự đăng ký với hãng.
+
+CHÍNH SÁCH BẢO HÀNH THEO TỪNG HÃNG (mỗi hãng có điều khoản riêng — dùng ĐÚNG NGUYÊN VĂN bên dưới theo brand của sản phẩm khách đang hỏi, TUYỆT ĐỐI không lấy chính sách của hãng này áp cho hãng khác, không làm tròn hay gộp chung thành một con số duy nhất):
+${buildWarrantyText()}
+Với Mitsubishi Electric và Daikin: nếu khách hỏi chung chung "bảo hành mấy năm", trả lời tách rõ thân máy vs máy nén (block) vì hai con số khác nhau — không nói gộp "bảo hành X năm" mập mờ. Với chương trình 3 năm của Daikin: chỉ nhắc khi khách hỏi đúng dòng máy treo tường liên quan, và nói rõ đây là chương trình cần khách tự đăng ký qua app Daikin, DigiSmart hỗ trợ hướng dẫn chứ không tự động áp dụng.
 
 CÁCH TRẢ LỜI:
 Xưng "bên mình", gọi khách "anh/chị". Thân thiện như người quen tư vấn (không chèo kéo), rõ ràng/minh bạch về giá và thông số, chân thực (không cường điệu, không hứa hẹn ảo, không viết hoa toàn bộ câu, hạn chế emoji), luôn đưa lý do mua cụ thể. Không bịa giá hoặc thông tin không có trong dữ liệu — nếu không chắc, hướng khách gọi hotline. Không so sánh trực tiếp với brand đối thủ ngoài Cleansui/Kitz/Mitsubishi Electric/Daikin.

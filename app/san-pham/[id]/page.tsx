@@ -1,6 +1,7 @@
 import Link from "next/link";
 import Image from "next/image";
 import { products } from "@/data/products";
+import { warrantyPolicies } from "@/data/warranty";
 import LeadFormButton from "@/components/LeadFormButton";
 import AddToCartButton from "@/components/AddToCartButton";
 import ProductGallery from "@/components/ProductGallery";
@@ -183,6 +184,32 @@ export default async function ProductDetailPage({
                   ))}
                 </ul>
               </div>
+
+              {/* Warranty */}
+              {(() => {
+                const warranty = warrantyPolicies.find(w => w.brand === product.brand);
+                if (!warranty) return null;
+                return (
+                  <div style={{ background: "var(--brand-light)", borderRadius: 8, padding: "1.25rem", border: "1px solid var(--border)", marginBottom: "1.5rem" }}>
+                    <div style={{ fontFamily: "var(--font-sans)", fontWeight: 700, fontSize: "0.85rem", color: "var(--brand)", marginBottom: "0.6rem" }}>
+                      🛡️ Chính sách bảo hành {product.brand}
+                    </div>
+                    <ul style={{ listStyle: "none", display: "flex", flexDirection: "column", gap: "0.35rem", marginBottom: warranty.note ? "0.6rem" : 0 }}>
+                      {warranty.details.map(d => (
+                        <li key={d} style={{ fontFamily: "var(--font-sans)", fontSize: "0.85rem", color: "var(--text)", display: "flex", gap: 8, lineHeight: 1.5 }}>
+                          <span style={{ color: "var(--brand2)", flexShrink: 0 }}>✓</span>
+                          {d}
+                        </li>
+                      ))}
+                    </ul>
+                    {warranty.note && (
+                      <p style={{ fontFamily: "var(--font-sans)", fontSize: "0.78rem", color: "var(--muted)", fontStyle: "italic", margin: 0 }}>
+                        {warranty.note}
+                      </p>
+                    )}
+                  </div>
+                );
+              })()}
 
               {/* CTA Buttons */}
               <div style={{ display: "flex", flexDirection: "column", gap: "0.75rem" }}>
