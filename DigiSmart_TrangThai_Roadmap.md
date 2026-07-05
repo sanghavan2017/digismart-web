@@ -42,7 +42,11 @@ Mục này để nhìn toàn cảnh 1 lần, không cần đoán hay chờ gợi
 ### F. Thương hiệu/hình ảnh
 - ✅ **Favicon logo DigiSmart** (04/07/2026) — `app/icon.svg` vẽ brand mark 4 ô vuông (3 trắng + 1 cam trên nền navy, khớp logo Navbar/Footer). Đã xóa favicon.ico + svg mặc định Next/Vercel trong `public/`. Logo gốc đầy đủ ở `G:\My Drive\DS\` (bản mới nhất: `digismart_logo v2.png`, `DS logo 2.svg`).
 
-**Tóm lại: catalog đã đủ data thật cho CẢ 2 danh mục (18 máy lọc nước + 68 điều hòa), giá bán đã chốt (Mitsubishi −10%, Daikin theo E-Shop), giỏ hàng + đặt lịch đã chạy. Việc lớn còn lại cần bạn: đăng ký Google Search Console, 2 ảnh Kitz.**
+**Tóm lại: catalog đã đủ data thật cho CẢ 2 danh mục (18 máy lọc nước + 68 điều hòa), giá bán đã chốt (Mitsubishi −10%, Daikin theo E-Shop), giỏ hàng + đặt lịch đã chạy, trang chi tiết Mitsubishi Electric/Daikin/Kitz giờ có mục "Điểm nổi bật" như trang hãng. Việc lớn còn lại cần bạn: đăng ký Google Business Profile, 2 ảnh Kitz.**
+
+- ✅ **Trang chi tiết sản phẩm — bổ sung mục "Điểm nổi bật" (features)** (05/07/2026): phát hiện 0/68 sản phẩm Mitsubishi Electric + Daikin có mục này (khác với Cleansui đã có từ trước) — khi so với trang hãng thật (mitsubishi-electric.vn) thấy thiếu hẳn phần feature card (Mát lạnh siêu tốc, Tiết kiệm điện, Khử mùi kháng khuẩn...). Đã viết bổ sung cho toàn bộ 6 dòng Mitsubishi Electric (MSY-JY/JA/GR, MSZ-HT/LN, MS-JS) + 10 dòng Daikin (FTKB/FTKF/FTKY/FTKM/FTKZ/FTHB/FTHF/FTXV/FTXM/FTF), dựa trên specs/thông số **đã xác minh sẵn trong data** (không bịa thêm claim mới) — riêng dòng MS-JS dùng đúng nội dung từ screenshot trang thật bạn gửi. ⚠️ Không tự truy cập lại được trang marketing SPA của hãng trong phiên này (WebFetch không render được JS, trình duyệt bị chặn domain ngoài) nên nội dung không phải chép nguyên văn 100% — nếu muốn khớp chính xác câu chữ marketing mới nhất của hãng, cần chụp màn hình gửi thêm hoặc mở quyền truy cập domain đó cho trình duyệt.
+- ✅ Bổ sung "Điểm nổi bật" cho `kitz-micro-filter-10inch` (dựa trên specs có sẵn).
+- ⚠️ **Kitz vẫn thiếu ảnh thật ở 4/8 SKU** (chỉ 1 ảnh: oss-t7, micro-filter-10inch, bo-loc-tong-2-coc, dong-ho-do-nuoc-thong-minh) — đã thử tìm thêm ảnh cho oss-t7 trên kitzmf.vn nhưng ảnh phụ tìm được là lõi lọc thay thế (OSSC-7), không phải ảnh máy chính nên không dùng. 2 sản phẩm bo-loc-tong-2-coc/dong-ho-do-nuoc vẫn chờ bạn xử lý như đã ghi ở mục "Đang chặn".
 
 ## Repo & môi trường chạy code
 - Repo: github.com/sanghavan2017/digismart-web — branch đang làm việc: `cleansui-wip`

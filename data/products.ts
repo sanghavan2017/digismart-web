@@ -544,6 +544,11 @@ export const products: Product[] = [
     originalPrice: 5000000,
     icon: "💧",
     imageUrl: "/images/products/kitz-micro-filter-10inch.jpg",
+    features: [
+      { image: "/images/products/kitz-micro-filter-10inch.jpg", caption: "Lõi lọc màng sợi rỗng — loại bỏ cặn bẩn, gỉ sét, vi khuẩn kích thước lớn ngay từ đầu nguồn, trước khi nước chảy vào các thiết bị trong nhà." },
+      { image: "/images/tech/cau-truc-soi-rong.jpg", caption: "Lắp đầu nguồn đường ống nước sinh hoạt — bảo vệ máy giặt, bình nóng lạnh, vòi sen khỏi cặn bẩn tích tụ theo thời gian." },
+      { image: "/images/tech/chan-vi-khuan-sem.jpg", caption: "Bảo hành thiết bị 24 tháng, lõi lọc 12 tháng — lắp đặt và bảo hành do DigiSmart thực hiện." },
+    ],
     description:
       "Bộ lọc tổng Kitz Micro Filter 10 inch, công nghệ màng lọc sợi rỗng, lắp đầu nguồn đường ống nước sinh hoạt.",
     specs: [
@@ -612,6 +617,12 @@ export const products: Product[] = [
       "/images/products/mitsubishi-msy-jy25vf-gallery-3.jpg",
       "/images/products/mitsubishi-msy-jy25vf-gallery-4.jpg",
     ],
+    features: [
+      { image: "/images/products/mitsubishi-msy-jy25vf.jpg", caption: "Công nghệ PAM Inverter giúp máy nén điều chỉnh công suất linh hoạt, làm lạnh nhanh và vận hành êm ái hơn máy thường." },
+      { image: "/images/products/mitsubishi-msy-jy25vf-gallery-2.jpg", caption: "Chức năng Fuzzy Logic \"I Feel\" tự động điều chỉnh nhiệt độ theo cảm nhận thực tế trong phòng, không chỉ theo nhiệt độ cài trên điều khiển." },
+      { image: "/images/products/mitsubishi-msy-jy25vf-gallery-3.jpg", caption: "Màng lọc chống nấm mốc và lớp phủ kép chống bám bẩn trên dàn lạnh — hạn chế vi khuẩn tích tụ, dễ vệ sinh hơn." },
+      { image: "/images/products/mitsubishi-msy-jy25vf-gallery-4.jpg", caption: "Bảo hành chính hãng: thân máy 2 năm, máy nén 5 năm." },
+    ],
     description:
       "Máy lạnh MSY-JY25VF nằm trong dòng sản phẩm Inverter Một Chiều Sang Trọng MSY-JY series của Mitsubishi Electric, giúp tiết kiệm năng lượng tối đa và vận hành cực kỳ êm ái, giúp mang lại sự thoải mái cho không gian sống và đáp ứng nhu cầu điều hòa không khí của người dùng. Bảo hành: - Thân máy: 2 năm - Máy nén: 5 năm",
     specs: [
@@ -647,6 +658,12 @@ export const products: Product[] = [
       "/images/products/mitsubishi-msy-jy35vf-gallery-2.jpg",
       "/images/products/mitsubishi-msy-jy35vf-gallery-3.jpg",
       "/images/products/mitsubishi-msy-jy35vf-gallery-4.jpg",
+    ],
+    features: [
+      { image: "/images/products/mitsubishi-msy-jy35vf.jpg", caption: "Công nghệ PAM Inverter giúp máy nén điều chỉnh công suất linh hoạt, làm lạnh nhanh và vận hành êm ái hơn máy thường." },
+      { image: "/images/products/mitsubishi-msy-jy35vf-gallery-2.jpg", caption: "Chức năng Fuzzy Logic \"I Feel\" tự động điều chỉnh nhiệt độ theo cảm nhận thực tế trong phòng, không chỉ theo nhiệt độ cài trên điều khiển." },
+      { image: "/images/products/mitsubishi-msy-jy35vf-gallery-3.jpg", caption: "Màng lọc chống nấm mốc và lớp phủ kép chống bám bẩn trên dàn lạnh — hạn chế vi khuẩn tích tụ, dễ vệ sinh hơn." },
+      { image: "/images/products/mitsubishi-msy-jy35vf-gallery-4.jpg", caption: "Bảo hành chính hãng: thân máy 2 năm, máy nén 5 năm." },
     ],
     description:
       "Máy lạnh MSY-JY35VF nằm trong dòng sản phẩm Inverter Một Chiều Sang Trọng MSY-JY series của Mitsubishi Electric, giúp tiết kiệm năng lượng tối đa và vận hành cực kỳ êm ái, giúp mang lại sự thoải mái cho không gian sống và đáp ứng nhu cầu điều hòa không khí của người dùng. Bảo hành: - Thân máy: 2 năm - Máy nén: 5 năm",
@@ -684,6 +701,12 @@ export const products: Product[] = [
       "/images/products/mitsubishi-msy-jy50vf-gallery-3.jpg",
       "/images/products/mitsubishi-msy-jy50vf-gallery-4.jpg",
     ],
+    features: [
+      { image: "/images/products/mitsubishi-msy-jy50vf.jpg", caption: "Công nghệ PAM Inverter giúp máy nén điều chỉnh công suất linh hoạt, làm lạnh nhanh và vận hành êm ái hơn máy thường." },
+      { image: "/images/products/mitsubishi-msy-jy50vf-gallery-2.jpg", caption: "Chức năng Fuzzy Logic \"I Feel\" tự động điều chỉnh nhiệt độ theo cảm nhận thực tế trong phòng, không chỉ theo nhiệt độ cài trên điều khiển." },
+      { image: "/images/products/mitsubishi-msy-jy50vf-gallery-3.jpg", caption: "Màng lọc chống nấm mốc và lớp phủ kép chống bám bẩn trên dàn lạnh — hạn chế vi khuẩn tích tụ, dễ vệ sinh hơn." },
+      { image: "/images/products/mitsubishi-msy-jy50vf-gallery-4.jpg", caption: "Bảo hành chính hãng: thân máy 2 năm, máy nén 5 năm." },
+    ],
     description:
       "Máy lạnh MSY-JY50VF nằm trong dòng sản phẩm Inverter Một Chiều Sang Trọng MSY-JY series của Mitsubishi Electric, giúp tiết kiệm năng lượng tối đa và vận hành cực kỳ êm ái, giúp mang lại sự thoải mái cho không gian sống và đáp ứng nhu cầu điều hòa không khí của người dùng. Bảo hành: - Thân máy: 2 năm - Máy nén: 5 năm",
     specs: [
@@ -719,6 +742,12 @@ export const products: Product[] = [
       "/images/products/mitsubishi-msy-jy60vf-gallery-2.jpg",
       "/images/products/mitsubishi-msy-jy60vf-gallery-3.jpg",
       "/images/products/mitsubishi-msy-jy60vf-gallery-4.jpg",
+    ],
+    features: [
+      { image: "/images/products/mitsubishi-msy-jy60vf.jpg", caption: "Công nghệ PAM Inverter giúp máy nén điều chỉnh công suất linh hoạt, làm lạnh nhanh và vận hành êm ái hơn máy thường." },
+      { image: "/images/products/mitsubishi-msy-jy60vf-gallery-2.jpg", caption: "Chức năng Fuzzy Logic \"I Feel\" tự động điều chỉnh nhiệt độ theo cảm nhận thực tế trong phòng, không chỉ theo nhiệt độ cài trên điều khiển." },
+      { image: "/images/products/mitsubishi-msy-jy60vf-gallery-3.jpg", caption: "Màng lọc chống nấm mốc và lớp phủ kép chống bám bẩn trên dàn lạnh — hạn chế vi khuẩn tích tụ, dễ vệ sinh hơn." },
+      { image: "/images/products/mitsubishi-msy-jy60vf-gallery-4.jpg", caption: "Bảo hành chính hãng: thân máy 2 năm, máy nén 5 năm." },
     ],
     description:
       "Máy lạnh MSY-JW60VF nằm trong dòng sản phẩm Inverter Một Chiều Sang Trọng MSY-JY series của Mitsubishi Electric, giúp tiết kiệm năng lượng tối đa và vận hành cực kỳ êm ái, giúp mang lại sự thoải mái cho không gian sống và đáp ứng nhu cầu điều hòa không khí của người dùng. Bảo hành: - Thân máy: 2 năm - Máy nén: 5 năm",
@@ -756,6 +785,12 @@ export const products: Product[] = [
       "/images/products/mitsubishi-msy-ja25vf-gallery-3.jpg",
       "/images/products/mitsubishi-msy-ja25vf-gallery-4.jpg",
     ],
+    features: [
+      { image: "/images/products/mitsubishi-msy-ja25vf.jpg", caption: "Công nghệ PAM Inverter, làm lạnh nhanh, vận hành êm ái." },
+      { image: "/images/products/mitsubishi-msy-ja25vf-gallery-2.jpg", caption: "Hẹn giờ bật/tắt 12 tiếng và tự khởi động lại sau mất điện — không cần cài lại chế độ mỗi lần cúp điện." },
+      { image: "/images/products/mitsubishi-msy-ja25vf-gallery-3.jpg", caption: "Lớp phủ tăng khả năng kháng ăn mòn bởi hơi muối biển — phù hợp nhà ở gần biển hoặc khu vực ẩm mặn." },
+      { image: "/images/products/mitsubishi-msy-ja25vf-gallery-4.jpg", caption: "Bảo hành chính hãng: thân máy 2 năm, máy nén 5 năm." },
+    ],
     description:
       "Máy lạnh MSY-JA25VF nằm trong dòng sản phẩm Inverter Một chiều Tiện nghi MSY-JA series của Mitsubishi Electric, giúp tiết kiệm năng lượng tối đa và vận hành cực kỳ êm ái, giúp mang lại sự thoải mái cho không gian sống và đáp ứng nhu cầu điều hòa không khí của người dùng. Bảo hành: - Thân máy: 2 năm - Máy nén: 5 năm",
     specs: [
@@ -791,6 +826,12 @@ export const products: Product[] = [
       "/images/products/mitsubishi-msy-ja35vf-gallery-2.jpg",
       "/images/products/mitsubishi-msy-ja35vf-gallery-3.jpg",
       "/images/products/mitsubishi-msy-ja35vf-gallery-4.jpg",
+    ],
+    features: [
+      { image: "/images/products/mitsubishi-msy-ja35vf.jpg", caption: "Công nghệ PAM Inverter, làm lạnh nhanh, vận hành êm ái." },
+      { image: "/images/products/mitsubishi-msy-ja35vf-gallery-2.jpg", caption: "Hẹn giờ bật/tắt 12 tiếng và tự khởi động lại sau mất điện — không cần cài lại chế độ mỗi lần cúp điện." },
+      { image: "/images/products/mitsubishi-msy-ja35vf-gallery-3.jpg", caption: "Lớp phủ tăng khả năng kháng ăn mòn bởi hơi muối biển — phù hợp nhà ở gần biển hoặc khu vực ẩm mặn." },
+      { image: "/images/products/mitsubishi-msy-ja35vf-gallery-4.jpg", caption: "Bảo hành chính hãng: thân máy 2 năm, máy nén 5 năm." },
     ],
     description:
       "Máy lạnh MSY-JA35VF nằm trong dòng sản phẩm Inverter Một chiều Tiện nghi MSY-JA series của Mitsubishi Electric, giúp tiết kiệm năng lượng tối đa và vận hành cực kỳ êm ái, giúp mang lại sự thoải mái cho không gian sống và đáp ứng nhu cầu điều hòa không khí của người dùng. Bảo hành: - Thân máy: 2 năm - Máy nén: 5 năm",
@@ -828,6 +869,12 @@ export const products: Product[] = [
       "/images/products/mitsubishi-msy-ja50vf-gallery-3.jpg",
       "/images/products/mitsubishi-msy-ja50vf-gallery-4.jpg",
     ],
+    features: [
+      { image: "/images/products/mitsubishi-msy-ja50vf.jpg", caption: "Công nghệ PAM Inverter, làm lạnh nhanh, vận hành êm ái." },
+      { image: "/images/products/mitsubishi-msy-ja50vf-gallery-2.jpg", caption: "Hẹn giờ bật/tắt 12 tiếng và tự khởi động lại sau mất điện — không cần cài lại chế độ mỗi lần cúp điện." },
+      { image: "/images/products/mitsubishi-msy-ja50vf-gallery-3.jpg", caption: "Lớp phủ tăng khả năng kháng ăn mòn bởi hơi muối biển — phù hợp nhà ở gần biển hoặc khu vực ẩm mặn." },
+      { image: "/images/products/mitsubishi-msy-ja50vf-gallery-4.jpg", caption: "Bảo hành chính hãng: thân máy 2 năm, máy nén 5 năm." },
+    ],
     description:
       "Máy lạnh MSY-JA50VF nằm trong dòng sản phẩm Inverter Một chiều Tiện nghi MSY-JA series của Mitsubishi Electric, giúp tiết kiệm năng lượng tối đa và vận hành cực kỳ êm ái, giúp mang lại sự thoải mái cho không gian sống và đáp ứng nhu cầu điều hòa không khí của người dùng. Bảo hành: - Thân máy: 2 năm - Máy nén: 5 năm",
     specs: [
@@ -864,6 +911,12 @@ export const products: Product[] = [
       "/images/products/mitsubishi-msy-ja60vf-gallery-3.jpg",
       "/images/products/mitsubishi-msy-ja60vf-gallery-4.jpg",
     ],
+    features: [
+      { image: "/images/products/mitsubishi-msy-ja60vf.jpg", caption: "Công nghệ PAM Inverter, làm lạnh nhanh, vận hành êm ái." },
+      { image: "/images/products/mitsubishi-msy-ja60vf-gallery-2.jpg", caption: "Hẹn giờ bật/tắt 12 tiếng và tự khởi động lại sau mất điện — không cần cài lại chế độ mỗi lần cúp điện." },
+      { image: "/images/products/mitsubishi-msy-ja60vf-gallery-3.jpg", caption: "Lớp phủ tăng khả năng kháng ăn mòn bởi hơi muối biển — phù hợp nhà ở gần biển hoặc khu vực ẩm mặn." },
+      { image: "/images/products/mitsubishi-msy-ja60vf-gallery-4.jpg", caption: "Bảo hành chính hãng: thân máy 2 năm, máy nén 5 năm." },
+    ],
     description:
       "Máy lạnh MSY-JA60VF nằm trong dòng sản phẩm Inverter Một chiều Tiện nghi MSY-JA series của Mitsubishi Electric, giúp tiết kiệm năng lượng tối đa và vận hành cực kỳ êm ái, giúp mang lại sự thoải mái cho không gian sống và đáp ứng nhu cầu điều hòa không khí của người dùng. Bảo hành: - Thân máy: 2 năm - Máy nén: 5 năm",
     specs: [
@@ -899,6 +952,12 @@ export const products: Product[] = [
       "/images/products/mitsubishi-msy-gr25vf-gallery-2.png",
       "/images/products/mitsubishi-msy-gr25vf-gallery-3.png",
       "/images/products/mitsubishi-msy-gr25vf-gallery-4.png",
+    ],
+    features: [
+      { image: "/images/products/mitsubishi-msy-gr25vf.png", caption: "Dòng cao cấp nhất trong nhóm 1 chiều Mitsubishi Electric — hiệu suất năng lượng đến 6,38, độ ồn dàn lạnh chỉ từ 18dB ở mức thấp nhất." },
+      { image: "/images/products/mitsubishi-msy-gr25vf-gallery-2.png", caption: "Luồng gió thổi xa và rộng hơn, làm mát đều khắp phòng thay vì chỉ tập trung một hướng." },
+      { image: "/images/products/mitsubishi-msy-gr25vf-gallery-3.png", caption: "Màng lọc chống nấm mốc, lớp phủ kép chống bám bẩn — dễ vệ sinh, hạn chế vi khuẩn." },
+      { image: "/images/products/mitsubishi-msy-gr25vf-gallery-4.png", caption: "Bảo hành chính hãng: thân máy 2 năm, máy nén 5 năm." },
     ],
     videoId: "lCQ0f7x8RAU",
     description:
@@ -937,6 +996,12 @@ export const products: Product[] = [
       "/images/products/mitsubishi-msy-gr35vf-gallery-3.png",
       "/images/products/mitsubishi-msy-gr35vf-gallery-4.png",
     ],
+    features: [
+      { image: "/images/products/mitsubishi-msy-gr35vf.png", caption: "Dòng cao cấp nhất trong nhóm 1 chiều Mitsubishi Electric — hiệu suất năng lượng đến 6,38, độ ồn dàn lạnh chỉ từ 18dB ở mức thấp nhất." },
+      { image: "/images/products/mitsubishi-msy-gr35vf-gallery-2.png", caption: "Luồng gió thổi xa và rộng hơn, làm mát đều khắp phòng thay vì chỉ tập trung một hướng." },
+      { image: "/images/products/mitsubishi-msy-gr35vf-gallery-3.png", caption: "Màng lọc chống nấm mốc, lớp phủ kép chống bám bẩn — dễ vệ sinh, hạn chế vi khuẩn." },
+      { image: "/images/products/mitsubishi-msy-gr35vf-gallery-4.png", caption: "Bảo hành chính hãng: thân máy 2 năm, máy nén 5 năm." },
+    ],
     videoId: "lCQ0f7x8RAU",
     description:
       "Máy lạnh MSY-GR35VF nằm trong dòng sản phẩm Inverter Một chiều Siêu Sang Trọng MSY-GR series của Mitsubishi Electric, giúp tiết kiệm năng lượng tối đa và vận hành cực kỳ êm ái, giúp mang lại sự thoải mái cho không gian sống và đáp ứng nhu cầu điều hòa không khí của người dùng. Bảo hành: - Thân máy: 2 năm - Máy nén: 5 năm",
@@ -973,6 +1038,12 @@ export const products: Product[] = [
       "/images/products/mitsubishi-msy-gr50vf-gallery-2.png",
       "/images/products/mitsubishi-msy-gr50vf-gallery-3.png",
       "/images/products/mitsubishi-msy-gr50vf-gallery-4.png",
+    ],
+    features: [
+      { image: "/images/products/mitsubishi-msy-gr50vf.png", caption: "Dòng cao cấp nhất trong nhóm 1 chiều Mitsubishi Electric — hiệu suất năng lượng đến 6,38, độ ồn dàn lạnh chỉ từ 18dB ở mức thấp nhất." },
+      { image: "/images/products/mitsubishi-msy-gr50vf-gallery-2.png", caption: "Luồng gió thổi xa và rộng hơn, làm mát đều khắp phòng thay vì chỉ tập trung một hướng." },
+      { image: "/images/products/mitsubishi-msy-gr50vf-gallery-3.png", caption: "Màng lọc chống nấm mốc, lớp phủ kép chống bám bẩn — dễ vệ sinh, hạn chế vi khuẩn." },
+      { image: "/images/products/mitsubishi-msy-gr50vf-gallery-4.png", caption: "Bảo hành chính hãng: thân máy 2 năm, máy nén 5 năm." },
     ],
     videoId: "lCQ0f7x8RAU",
     description:
@@ -1011,6 +1082,12 @@ export const products: Product[] = [
       "/images/products/mitsubishi-msy-gr60vf-gallery-3.png",
       "/images/products/mitsubishi-msy-gr60vf-gallery-4.png",
     ],
+    features: [
+      { image: "/images/products/mitsubishi-msy-gr60vf.png", caption: "Dòng cao cấp nhất trong nhóm 1 chiều Mitsubishi Electric — hiệu suất năng lượng đến 6,38, độ ồn dàn lạnh chỉ từ 18dB ở mức thấp nhất." },
+      { image: "/images/products/mitsubishi-msy-gr60vf-gallery-2.png", caption: "Luồng gió thổi xa và rộng hơn, làm mát đều khắp phòng thay vì chỉ tập trung một hướng." },
+      { image: "/images/products/mitsubishi-msy-gr60vf-gallery-3.png", caption: "Màng lọc chống nấm mốc, lớp phủ kép chống bám bẩn — dễ vệ sinh, hạn chế vi khuẩn." },
+      { image: "/images/products/mitsubishi-msy-gr60vf-gallery-4.png", caption: "Bảo hành chính hãng: thân máy 2 năm, máy nén 5 năm." },
+    ],
     videoId: "lCQ0f7x8RAU",
     description:
       "Máy lạnh MSY-GR60VF nằm trong dòng sản phẩm Inverter Một chiều Siêu Sang Trọng MSY-GR series của Mitsubishi Electric, giúp tiết kiệm năng lượng tối đa và vận hành cực kỳ êm ái, giúp mang lại sự thoải mái cho không gian sống và đáp ứng nhu cầu điều hòa không khí của người dùng. Bảo hành: - Thân máy: 2 năm - Máy nén: 5 năm",
@@ -1047,6 +1124,12 @@ export const products: Product[] = [
       "/images/products/mitsubishi-msy-gr71vf-gallery-2.png",
       "/images/products/mitsubishi-msy-gr71vf-gallery-3.png",
       "/images/products/mitsubishi-msy-gr71vf-gallery-4.png",
+    ],
+    features: [
+      { image: "/images/products/mitsubishi-msy-gr71vf.png", caption: "Dòng cao cấp nhất trong nhóm 1 chiều Mitsubishi Electric — hiệu suất năng lượng đến 6,38, độ ồn dàn lạnh chỉ từ 18dB ở mức thấp nhất." },
+      { image: "/images/products/mitsubishi-msy-gr71vf-gallery-2.png", caption: "Luồng gió thổi xa và rộng hơn, làm mát đều khắp phòng thay vì chỉ tập trung một hướng." },
+      { image: "/images/products/mitsubishi-msy-gr71vf-gallery-3.png", caption: "Màng lọc chống nấm mốc, lớp phủ kép chống bám bẩn — dễ vệ sinh, hạn chế vi khuẩn." },
+      { image: "/images/products/mitsubishi-msy-gr71vf-gallery-4.png", caption: "Bảo hành chính hãng: thân máy 2 năm, máy nén 5 năm." },
     ],
     videoId: "lCQ0f7x8RAU",
     description:
@@ -1085,6 +1168,12 @@ export const products: Product[] = [
       "/images/products/mitsubishi-msz-ht25vf-gallery-3.jpg",
       "/images/products/mitsubishi-msz-ht25vf-gallery-4.JPG",
     ],
+    features: [
+      { image: "/images/products/mitsubishi-msz-ht25vf.jpg", caption: "Dòng 2 chiều — vừa làm lạnh vừa sưởi ấm, phù hợp khu vực có mùa lạnh hoặc gia đình có người già/trẻ nhỏ." },
+      { image: "/images/products/mitsubishi-msz-ht25vf-gallery-2.jpg", caption: "Công nghệ PAM Inverter, màng lọc chống nấm mốc, lớp phủ chống bám bẩn." },
+      { image: "/images/products/mitsubishi-msz-ht25vf-gallery-3.jpg", caption: "Hẹn giờ bật/tắt 24 tiếng và tự khởi động lại sau khi mất điện." },
+      { image: "/images/products/mitsubishi-msz-ht25vf-gallery-4.JPG", caption: "Bảo hành chính hãng: thân máy 2 năm, máy nén 5 năm." },
+    ],
     description:
       "Máy lạnh MSZ-HT25VF nằm trong dòng sản phẩm Inverter Hai chiều MSZ-HT series của Mitsubishi Electric, giúp tiết kiệm năng lượng tối đa và vận hành cực kỳ êm ái, giúp mang lại sự thoải mái cho không gian sống và đáp ứng nhu cầu điều hòa không khí của người dùng.",
     specs: [
@@ -1120,6 +1209,12 @@ export const products: Product[] = [
       "/images/products/mitsubishi-msz-ht35vf-gallery-2.jpg",
       "/images/products/mitsubishi-msz-ht35vf-gallery-3.jpg",
       "/images/products/mitsubishi-msz-ht35vf-gallery-4.JPG",
+    ],
+    features: [
+      { image: "/images/products/mitsubishi-msz-ht35vf.jpg", caption: "Dòng 2 chiều — vừa làm lạnh vừa sưởi ấm, phù hợp khu vực có mùa lạnh hoặc gia đình có người già/trẻ nhỏ." },
+      { image: "/images/products/mitsubishi-msz-ht35vf-gallery-2.jpg", caption: "Công nghệ PAM Inverter, màng lọc chống nấm mốc, lớp phủ chống bám bẩn." },
+      { image: "/images/products/mitsubishi-msz-ht35vf-gallery-3.jpg", caption: "Hẹn giờ bật/tắt 24 tiếng và tự khởi động lại sau khi mất điện." },
+      { image: "/images/products/mitsubishi-msz-ht35vf-gallery-4.JPG", caption: "Bảo hành chính hãng: thân máy 2 năm, máy nén 5 năm." },
     ],
     description:
       "Máy lạnh MSZ-HT35VFnằm trong dòng sản phẩm Inverter Hai chiều MSZ-HT series của Mitsubishi Electric, giúp tiết kiệm năng lượng tối đa và vận hành cực kỳ êm ái, giúp mang lại sự thoải mái cho không gian sống và đáp ứng nhu cầu điều hòa không khí của người dùng. Bảo hành: - Thân máy: 2 năm - Máy nén: 5 năm",
@@ -1157,6 +1252,12 @@ export const products: Product[] = [
       "/images/products/mitsubishi-msz-ht50vf-gallery-3.jpg",
       "/images/products/mitsubishi-msz-ht50vf-gallery-4.JPG",
     ],
+    features: [
+      { image: "/images/products/mitsubishi-msz-ht50vf.jpg", caption: "Dòng 2 chiều — vừa làm lạnh vừa sưởi ấm, phù hợp khu vực có mùa lạnh hoặc gia đình có người già/trẻ nhỏ." },
+      { image: "/images/products/mitsubishi-msz-ht50vf-gallery-2.jpg", caption: "Công nghệ PAM Inverter, màng lọc chống nấm mốc, lớp phủ chống bám bẩn." },
+      { image: "/images/products/mitsubishi-msz-ht50vf-gallery-3.jpg", caption: "Hẹn giờ bật/tắt 24 tiếng và tự khởi động lại sau khi mất điện." },
+      { image: "/images/products/mitsubishi-msz-ht50vf-gallery-4.JPG", caption: "Bảo hành chính hãng: thân máy 2 năm, máy nén 5 năm." },
+    ],
     description:
       "Máy lạnh MSZ-HT50VFnằm trong dòng sản phẩm Inverter Hai chiều MSZ-HT series của Mitsubishi Electric, giúp tiết kiệm năng lượng tối đa và vận hành cực kỳ êm ái, giúp mang lại sự thoải mái cho không gian sống và đáp ứng nhu cầu điều hòa không khí của người dùng. Bảo hành: - Thân máy: 2 năm - Máy nén: 5 năm",
     specs: [
@@ -1192,6 +1293,12 @@ export const products: Product[] = [
       "/images/products/mitsubishi-msz-ln25vfr-gallery-2.png",
       "/images/products/mitsubishi-msz-ln25vfr-gallery-3.png",
       "/images/products/mitsubishi-msz-ln25vfr-gallery-4.png",
+    ],
+    features: [
+      { image: "/images/products/mitsubishi-msz-ln25vfr.png", caption: "Dòng 2 chiều cao cấp nhất — hiệu suất năng lượng (CSPF) lên đến 7,51, tiết kiệm điện vượt trội khi dùng lâu dài." },
+      { image: "/images/products/mitsubishi-msz-ln25vfr-gallery-2.png", caption: "Mắt thần cảm biến \"I-see\" nhận diện vùng có người để điều chỉnh luồng gió, tránh thổi thẳng liên tục vào người." },
+      { image: "/images/products/mitsubishi-msz-ln25vfr-gallery-3.png", caption: "Màng lọc Plasma kết hợp chức năng Fuzzy Logic \"I Feel\" — lọc không khí và tự điều chỉnh nhiệt độ theo cảm nhận thực tế." },
+      { image: "/images/products/mitsubishi-msz-ln25vfr-gallery-4.png", caption: "Bảo hành chính hãng: thân máy 2 năm, máy nén 5 năm." },
     ],
     videoId: "YwhC4c9qJis",
     description:
@@ -1230,6 +1337,12 @@ export const products: Product[] = [
       "/images/products/mitsubishi-msz-ln25vfb-gallery-3.png",
       "/images/products/mitsubishi-msz-ln25vfb-gallery-4.png",
     ],
+    features: [
+      { image: "/images/products/mitsubishi-msz-ln25vfb.png", caption: "Dòng 2 chiều cao cấp nhất — hiệu suất năng lượng (CSPF) lên đến 7,51, tiết kiệm điện vượt trội khi dùng lâu dài." },
+      { image: "/images/products/mitsubishi-msz-ln25vfb-gallery-2.png", caption: "Mắt thần cảm biến \"I-see\" nhận diện vùng có người để điều chỉnh luồng gió, tránh thổi thẳng liên tục vào người." },
+      { image: "/images/products/mitsubishi-msz-ln25vfb-gallery-3.png", caption: "Màng lọc Plasma kết hợp chức năng Fuzzy Logic \"I Feel\" — lọc không khí và tự điều chỉnh nhiệt độ theo cảm nhận thực tế." },
+      { image: "/images/products/mitsubishi-msz-ln25vfb-gallery-4.png", caption: "Bảo hành chính hãng: thân máy 2 năm, máy nén 5 năm." },
+    ],
     videoId: "YwhC4c9qJis",
     description:
       "Máy lạnh MSZ-LN25VFB nằm trong dòng sản phẩm Inverter Hai chiều sang trọng MSZ-LN series của Mitsubishi Electric, giúp tiết kiệm năng lượng tối đa và vận hành cực kỳ êm ái, giúp mang lại sự thoải mái cho không gian sống và đáp ứng nhu cầu điều hòa không khí của người dùng. Bảo hành: - Thân máy: 2 năm - Máy nén: 5 năm",
@@ -1267,6 +1380,13 @@ export const products: Product[] = [
       "/images/products/mitsubishi-ms-js25vf-gallery-3.png",
       "/images/products/mitsubishi-ms-js25vf-gallery-4.PNG",
     ],
+    features: [
+      { image: "/images/products/mitsubishi-ms-js25vf.png", caption: "Mát lạnh siêu tốc — luồng gió mát tỏa ra gần như tức thì ngay sau khi bật máy (theo công bố của Mitsubishi Electric)." },
+      { image: "/images/products/mitsubishi-ms-js25vf-gallery-2.png", caption: "Tiết kiệm điện thông minh — theo công bố của hãng, tiết kiệm khoảng 20% điện năng tiêu thụ so với vận hành thông thường." },
+      { image: "/images/products/mitsubishi-ms-js25vf-gallery-3.png", caption: "Màng lọc tiên tiến giúp lọc sạch không khí, kháng khuẩn, khử mùi hiệu quả." },
+      { image: "/images/products/mitsubishi-ms-js25vf-gallery-4.PNG", caption: "Thiết kế dễ tháo lắp để tự vệ sinh dàn lạnh, cánh đảo gió tại nhà giữa các lần bảo dưỡng." },
+      { image: "/images/products/mitsubishi-ms-js25vf.png", caption: "Vận hành bền bỉ trong điều kiện môi trường khắc nghiệt." },
+    ],
     description:
       "Máy lạnh MS-JS25VF nằm trong dòng sản phẩm Dòng Một Chiều Sang Trọng MS-JS series của Mitsubishi Electric, giúp tiết kiệm năng lượng tối đa và vận hành cực kỳ êm ái, giúp mang lại sự thoải mái cho không gian sống và đáp ứng nhu cầu điều hòa không khí của người dùng. Bảo hành: - Thân máy: 2 năm - Máy nén: 5 năm",
     specs: [
@@ -1302,6 +1422,13 @@ export const products: Product[] = [
       "/images/products/mitsubishi-ms-js35vf-gallery-2.png",
       "/images/products/mitsubishi-ms-js35vf-gallery-3.png",
       "/images/products/mitsubishi-ms-js35vf-gallery-4.PNG",
+    ],
+    features: [
+      { image: "/images/products/mitsubishi-ms-js35vf.png", caption: "Mát lạnh siêu tốc — luồng gió mát tỏa ra gần như tức thì ngay sau khi bật máy (theo công bố của Mitsubishi Electric)." },
+      { image: "/images/products/mitsubishi-ms-js35vf-gallery-2.png", caption: "Tiết kiệm điện thông minh — theo công bố của hãng, tiết kiệm khoảng 20% điện năng tiêu thụ so với vận hành thông thường." },
+      { image: "/images/products/mitsubishi-ms-js35vf-gallery-3.png", caption: "Màng lọc tiên tiến giúp lọc sạch không khí, kháng khuẩn, khử mùi hiệu quả." },
+      { image: "/images/products/mitsubishi-ms-js35vf-gallery-4.PNG", caption: "Thiết kế dễ tháo lắp để tự vệ sinh dàn lạnh, cánh đảo gió tại nhà giữa các lần bảo dưỡng." },
+      { image: "/images/products/mitsubishi-ms-js35vf.png", caption: "Vận hành bền bỉ trong điều kiện môi trường khắc nghiệt." },
     ],
     description:
       "Máy lạnh MS-JS35VF nằm trong dòng sản phẩm Dòng Một Chiều Sang Trọng MS-JS series của Mitsubishi Electric, giúp tiết kiệm năng lượng tối đa và vận hành cực kỳ êm ái, giúp mang lại sự thoải mái cho không gian sống và đáp ứng nhu cầu điều hòa không khí của người dùng. Bảo hành: - Thân máy: 2 năm - Máy nén: 5 năm",
@@ -1339,6 +1466,13 @@ export const products: Product[] = [
       "/images/products/mitsubishi-ms-js50vf-gallery-3.png",
       "/images/products/mitsubishi-ms-js50vf-gallery-4.PNG",
     ],
+    features: [
+      { image: "/images/products/mitsubishi-ms-js50vf.png", caption: "Mát lạnh siêu tốc — luồng gió mát tỏa ra gần như tức thì ngay sau khi bật máy (theo công bố của Mitsubishi Electric)." },
+      { image: "/images/products/mitsubishi-ms-js50vf-gallery-2.png", caption: "Tiết kiệm điện thông minh — theo công bố của hãng, tiết kiệm khoảng 20% điện năng tiêu thụ so với vận hành thông thường." },
+      { image: "/images/products/mitsubishi-ms-js50vf-gallery-3.png", caption: "Màng lọc tiên tiến giúp lọc sạch không khí, kháng khuẩn, khử mùi hiệu quả." },
+      { image: "/images/products/mitsubishi-ms-js50vf-gallery-4.PNG", caption: "Thiết kế dễ tháo lắp để tự vệ sinh dàn lạnh, cánh đảo gió tại nhà giữa các lần bảo dưỡng." },
+      { image: "/images/products/mitsubishi-ms-js50vf.png", caption: "Vận hành bền bỉ trong điều kiện môi trường khắc nghiệt." },
+    ],
     description:
       "Máy lạnh MS-JS50VF nằm trong dòng sản phẩm Dòng Một Chiều Sang Trọng MS-JS series của Mitsubishi Electric, giúp tiết kiệm năng lượng tối đa và vận hành cực kỳ êm ái, giúp mang lại sự thoải mái cho không gian sống và đáp ứng nhu cầu điều hòa không khí của người dùng. Bảo hành: - Thân máy: 2 năm - Máy nén: 5 năm",
     specs: [
@@ -1374,6 +1508,13 @@ export const products: Product[] = [
       "/images/products/mitsubishi-ms-js60vf-gallery-2.png",
       "/images/products/mitsubishi-ms-js60vf-gallery-3.png",
       "/images/products/mitsubishi-ms-js60vf-gallery-4.PNG",
+    ],
+    features: [
+      { image: "/images/products/mitsubishi-ms-js60vf.png", caption: "Mát lạnh siêu tốc — luồng gió mát tỏa ra gần như tức thì ngay sau khi bật máy (theo công bố của Mitsubishi Electric)." },
+      { image: "/images/products/mitsubishi-ms-js60vf-gallery-2.png", caption: "Tiết kiệm điện thông minh — theo công bố của hãng, tiết kiệm khoảng 20% điện năng tiêu thụ so với vận hành thông thường." },
+      { image: "/images/products/mitsubishi-ms-js60vf-gallery-3.png", caption: "Màng lọc tiên tiến giúp lọc sạch không khí, kháng khuẩn, khử mùi hiệu quả." },
+      { image: "/images/products/mitsubishi-ms-js60vf-gallery-4.PNG", caption: "Thiết kế dễ tháo lắp để tự vệ sinh dàn lạnh, cánh đảo gió tại nhà giữa các lần bảo dưỡng." },
+      { image: "/images/products/mitsubishi-ms-js60vf.png", caption: "Vận hành bền bỉ trong điều kiện môi trường khắc nghiệt." },
     ],
     description:
       "Máy lạnh MS-JS60VF nằm trong dòng sản phẩm Dòng Một Chiều Sang Trọng MS-JS series của Mitsubishi Electric, giúp tiết kiệm năng lượng tối đa và vận hành cực kỳ êm ái, giúp mang lại sự thoải mái cho không gian sống và đáp ứng nhu cầu điều hòa không khí của người dùng. Bảo hành: - Thân máy: 2 năm - Máy nén: 5 năm",
@@ -1414,6 +1555,11 @@ export const products: Product[] = [
       "/images/products/daikin-ftkb25zvmv-gallery-3.png",
       "/images/products/daikin-ftkb25zvmv-gallery-4.png",
     ],
+    features: [
+      { image: "/images/products/daikin-ftkb25zvmv.png", caption: "Dòng Inverter phổ thông, lựa chọn tiết kiệm chi phí nhất trong nhóm Inverter Daikin, vẫn có công nghệ biến tần tiết kiệm điện hơn máy thường." },
+      { image: "/images/products/daikin-ftkb25zvmv-gallery-2.png", caption: "Hiệu suất năng lượng (CSPF) 5.38 — mức khá trong phân khúc giá." },
+      { image: "/images/products/daikin-ftkb25zvmv-gallery-3.png", caption: "Gas R32 thân thiện môi trường hơn, độ bền dàn nóng/dàn lạnh theo tiêu chuẩn Daikin." },
+    ],
     description:
       "Điều hòa Daikin FTKB25ZVMV (1HP) thuộc dòng Inverter 1 chiều phổ thông, lựa chọn tiết kiệm nhất trong các dòng Inverter Daikin. Sản phẩm chính hãng Daikin Việt Nam, giá bán lẻ theo niêm yết trên Daikin E-Shop (daikin.com.vn). Phù hợp phòng dưới 15m².",
     specs: [
@@ -1448,6 +1594,11 @@ export const products: Product[] = [
       "/images/products/daikin-ftkb35zvmv-gallery-2.png",
       "/images/products/daikin-ftkb35zvmv-gallery-3.png",
       "/images/products/daikin-ftkb35zvmv-gallery-4.png",
+    ],
+    features: [
+      { image: "/images/products/daikin-ftkb35zvmv.png", caption: "Dòng Inverter phổ thông, lựa chọn tiết kiệm chi phí nhất trong nhóm Inverter Daikin, vẫn có công nghệ biến tần tiết kiệm điện hơn máy thường." },
+      { image: "/images/products/daikin-ftkb35zvmv-gallery-2.png", caption: "Hiệu suất năng lượng (CSPF) 5.38 — mức khá trong phân khúc giá." },
+      { image: "/images/products/daikin-ftkb35zvmv-gallery-3.png", caption: "Gas R32 thân thiện môi trường hơn, độ bền dàn nóng/dàn lạnh theo tiêu chuẩn Daikin." },
     ],
     description:
       "Điều hòa Daikin FTKB35ZVMV (1.5HP) thuộc dòng Inverter 1 chiều phổ thông, lựa chọn tiết kiệm nhất trong các dòng Inverter Daikin. Sản phẩm chính hãng Daikin Việt Nam, giá bán lẻ theo niêm yết trên Daikin E-Shop (daikin.com.vn). Phù hợp phòng 15-20m².",
@@ -1484,6 +1635,11 @@ export const products: Product[] = [
       "/images/products/daikin-ftkb50zvmv-gallery-3.png",
       "/images/products/daikin-ftkb50zvmv-gallery-4.png",
     ],
+    features: [
+      { image: "/images/products/daikin-ftkb50zvmv.png", caption: "Dòng Inverter phổ thông, lựa chọn tiết kiệm chi phí nhất trong nhóm Inverter Daikin, vẫn có công nghệ biến tần tiết kiệm điện hơn máy thường." },
+      { image: "/images/products/daikin-ftkb50zvmv-gallery-2.png", caption: "Hiệu suất năng lượng (CSPF) 5.38 — mức khá trong phân khúc giá." },
+      { image: "/images/products/daikin-ftkb50zvmv-gallery-3.png", caption: "Gas R32 thân thiện môi trường hơn, độ bền dàn nóng/dàn lạnh theo tiêu chuẩn Daikin." },
+    ],
     description:
       "Điều hòa Daikin FTKB50ZVMV (2HP) thuộc dòng Inverter 1 chiều phổ thông, lựa chọn tiết kiệm nhất trong các dòng Inverter Daikin. Sản phẩm chính hãng Daikin Việt Nam, giá bán lẻ theo niêm yết trên Daikin E-Shop (daikin.com.vn). Phù hợp phòng 20-30m².",
     specs: [
@@ -1518,6 +1674,11 @@ export const products: Product[] = [
       "/images/products/daikin-ftkb60zvmv-gallery-2.png",
       "/images/products/daikin-ftkb60zvmv-gallery-3.png",
       "/images/products/daikin-ftkb60zvmv-gallery-4.png",
+    ],
+    features: [
+      { image: "/images/products/daikin-ftkb60zvmv.png", caption: "Dòng Inverter phổ thông, lựa chọn tiết kiệm chi phí nhất trong nhóm Inverter Daikin, vẫn có công nghệ biến tần tiết kiệm điện hơn máy thường." },
+      { image: "/images/products/daikin-ftkb60zvmv-gallery-2.png", caption: "Hiệu suất năng lượng (CSPF) 5.38 — mức khá trong phân khúc giá." },
+      { image: "/images/products/daikin-ftkb60zvmv-gallery-3.png", caption: "Gas R32 thân thiện môi trường hơn, độ bền dàn nóng/dàn lạnh theo tiêu chuẩn Daikin." },
     ],
     description:
       "Điều hòa Daikin FTKB60ZVMV (2.5HP) thuộc dòng Inverter 1 chiều phổ thông, lựa chọn tiết kiệm nhất trong các dòng Inverter Daikin. Sản phẩm chính hãng Daikin Việt Nam, giá bán lẻ theo niêm yết trên Daikin E-Shop (daikin.com.vn). Phù hợp phòng 30-40m².",
@@ -1554,6 +1715,11 @@ export const products: Product[] = [
       "/images/products/daikin-ftkf25zvmv-gallery-3.png",
       "/images/products/daikin-ftkf25zvmv-gallery-4.png",
     ],
+    features: [
+      { image: "/images/products/daikin-ftkf25zvmv.png", caption: "Dòng Inverter tầm trung, cân bằng giữa giá và hiệu suất." },
+      { image: "/images/products/daikin-ftkf25zvmv-gallery-2.png", caption: "Hiệu suất năng lượng (CSPF) 5.38, dàn nóng kích thước lớn hơn dòng FTKB giúp tản nhiệt tốt hơn." },
+      { image: "/images/products/daikin-ftkf25zvmv-gallery-3.png", caption: "Gas R32, vận hành ổn định cho nhu cầu sử dụng hàng ngày." },
+    ],
     description:
       "Điều hòa Daikin FTKF25ZVMV (1HP) thuộc dòng Inverter 1 chiều tầm trung. Sản phẩm chính hãng Daikin Việt Nam, giá bán lẻ theo niêm yết trên Daikin E-Shop (daikin.com.vn). Phù hợp phòng dưới 15m².",
     specs: [
@@ -1588,6 +1754,11 @@ export const products: Product[] = [
       "/images/products/daikin-ftkf35zvmv-gallery-2.png",
       "/images/products/daikin-ftkf35zvmv-gallery-3.png",
       "/images/products/daikin-ftkf35zvmv-gallery-4.png",
+    ],
+    features: [
+      { image: "/images/products/daikin-ftkf35zvmv.png", caption: "Dòng Inverter tầm trung, cân bằng giữa giá và hiệu suất." },
+      { image: "/images/products/daikin-ftkf35zvmv-gallery-2.png", caption: "Hiệu suất năng lượng (CSPF) 5.38, dàn nóng kích thước lớn hơn dòng FTKB giúp tản nhiệt tốt hơn." },
+      { image: "/images/products/daikin-ftkf35zvmv-gallery-3.png", caption: "Gas R32, vận hành ổn định cho nhu cầu sử dụng hàng ngày." },
     ],
     description:
       "Điều hòa Daikin FTKF35ZVMV (1.5HP) thuộc dòng Inverter 1 chiều tầm trung. Sản phẩm chính hãng Daikin Việt Nam, giá bán lẻ theo niêm yết trên Daikin E-Shop (daikin.com.vn). Phù hợp phòng 15-20m².",
@@ -1624,6 +1795,11 @@ export const products: Product[] = [
       "/images/products/daikin-ftkf50zvmv-gallery-3.png",
       "/images/products/daikin-ftkf50zvmv-gallery-4.png",
     ],
+    features: [
+      { image: "/images/products/daikin-ftkf50zvmv.png", caption: "Dòng Inverter tầm trung, cân bằng giữa giá và hiệu suất." },
+      { image: "/images/products/daikin-ftkf50zvmv-gallery-2.png", caption: "Hiệu suất năng lượng (CSPF) 5.38, dàn nóng kích thước lớn hơn dòng FTKB giúp tản nhiệt tốt hơn." },
+      { image: "/images/products/daikin-ftkf50zvmv-gallery-3.png", caption: "Gas R32, vận hành ổn định cho nhu cầu sử dụng hàng ngày." },
+    ],
     description:
       "Điều hòa Daikin FTKF50ZVMV (2HP) thuộc dòng Inverter 1 chiều tầm trung. Sản phẩm chính hãng Daikin Việt Nam, giá bán lẻ theo niêm yết trên Daikin E-Shop (daikin.com.vn). Phù hợp phòng 20-30m².",
     specs: [
@@ -1658,6 +1834,11 @@ export const products: Product[] = [
       "/images/products/daikin-ftkf60zvmv-gallery-2.png",
       "/images/products/daikin-ftkf60zvmv-gallery-3.png",
       "/images/products/daikin-ftkf60zvmv-gallery-4.png",
+    ],
+    features: [
+      { image: "/images/products/daikin-ftkf60zvmv.png", caption: "Dòng Inverter tầm trung, cân bằng giữa giá và hiệu suất." },
+      { image: "/images/products/daikin-ftkf60zvmv-gallery-2.png", caption: "Hiệu suất năng lượng (CSPF) 5.38, dàn nóng kích thước lớn hơn dòng FTKB giúp tản nhiệt tốt hơn." },
+      { image: "/images/products/daikin-ftkf60zvmv-gallery-3.png", caption: "Gas R32, vận hành ổn định cho nhu cầu sử dụng hàng ngày." },
     ],
     description:
       "Điều hòa Daikin FTKF60ZVMV (2.5HP) thuộc dòng Inverter 1 chiều tầm trung. Sản phẩm chính hãng Daikin Việt Nam, giá bán lẻ theo niêm yết trên Daikin E-Shop (daikin.com.vn). Phù hợp phòng 30-40m².",
@@ -1694,6 +1875,11 @@ export const products: Product[] = [
       "/images/products/daikin-ftkf71zvmv-gallery-3.png",
       "/images/products/daikin-ftkf71zvmv-gallery-4.png",
     ],
+    features: [
+      { image: "/images/products/daikin-ftkf71zvmv.png", caption: "Dòng Inverter tầm trung, cân bằng giữa giá và hiệu suất." },
+      { image: "/images/products/daikin-ftkf71zvmv-gallery-2.png", caption: "Hiệu suất năng lượng (CSPF) 5.38, dàn nóng kích thước lớn hơn dòng FTKB giúp tản nhiệt tốt hơn." },
+      { image: "/images/products/daikin-ftkf71zvmv-gallery-3.png", caption: "Gas R32, vận hành ổn định cho nhu cầu sử dụng hàng ngày." },
+    ],
     description:
       "Điều hòa Daikin FTKF71ZVMV (3HP) thuộc dòng Inverter 1 chiều tầm trung. Sản phẩm chính hãng Daikin Việt Nam, giá bán lẻ theo niêm yết trên Daikin E-Shop (daikin.com.vn). Phù hợp phòng trên 40m².",
     specs: [
@@ -1728,6 +1914,11 @@ export const products: Product[] = [
       "/images/products/daikin-ftky25zvmv-gallery-2.png",
       "/images/products/daikin-ftky25zvmv-gallery-3.png",
       "/images/products/daikin-ftky25zvmv-gallery-4.png",
+    ],
+    features: [
+      { image: "/images/products/daikin-ftky25zvmv.png", caption: "Dòng Inverter cao cấp — hiệu suất năng lượng (CSPF) 6.28, cao hơn đáng kể so với dòng phổ thông/tầm trung." },
+      { image: "/images/products/daikin-ftky25zvmv-gallery-2.png", caption: "Độ ồn dàn lạnh thấp, mức thấp nhất chỉ 18dB — gần như không nghe thấy khi ngủ." },
+      { image: "/images/products/daikin-ftky25zvmv-gallery-3.png", caption: "Gas R32, thiết kế dàn lạnh mỏng, hiện đại." },
     ],
     description:
       "Điều hòa Daikin FTKY25ZVMV (1HP) thuộc dòng Inverter 1 chiều cao cấp. Sản phẩm chính hãng Daikin Việt Nam, giá bán lẻ theo niêm yết trên Daikin E-Shop (daikin.com.vn). Phù hợp phòng dưới 15m².",
@@ -1764,6 +1955,11 @@ export const products: Product[] = [
       "/images/products/daikin-ftky35zvmv-gallery-3.png",
       "/images/products/daikin-ftky35zvmv-gallery-4.png",
     ],
+    features: [
+      { image: "/images/products/daikin-ftky35zvmv.png", caption: "Dòng Inverter cao cấp — hiệu suất năng lượng (CSPF) 6.28, cao hơn đáng kể so với dòng phổ thông/tầm trung." },
+      { image: "/images/products/daikin-ftky35zvmv-gallery-2.png", caption: "Độ ồn dàn lạnh thấp, mức thấp nhất chỉ 18dB — gần như không nghe thấy khi ngủ." },
+      { image: "/images/products/daikin-ftky35zvmv-gallery-3.png", caption: "Gas R32, thiết kế dàn lạnh mỏng, hiện đại." },
+    ],
     description:
       "Điều hòa Daikin FTKY35ZVMV (1.5HP) thuộc dòng Inverter 1 chiều cao cấp. Sản phẩm chính hãng Daikin Việt Nam, giá bán lẻ theo niêm yết trên Daikin E-Shop (daikin.com.vn). Phù hợp phòng 15-20m².",
     specs: [
@@ -1798,6 +1994,11 @@ export const products: Product[] = [
       "/images/products/daikin-ftky50zvmv-gallery-2.png",
       "/images/products/daikin-ftky50zvmv-gallery-3.png",
       "/images/products/daikin-ftky50zvmv-gallery-4.png",
+    ],
+    features: [
+      { image: "/images/products/daikin-ftky50zvmv.png", caption: "Dòng Inverter cao cấp — hiệu suất năng lượng (CSPF) 6.28, cao hơn đáng kể so với dòng phổ thông/tầm trung." },
+      { image: "/images/products/daikin-ftky50zvmv-gallery-2.png", caption: "Độ ồn dàn lạnh thấp, mức thấp nhất chỉ 18dB — gần như không nghe thấy khi ngủ." },
+      { image: "/images/products/daikin-ftky50zvmv-gallery-3.png", caption: "Gas R32, thiết kế dàn lạnh mỏng, hiện đại." },
     ],
     description:
       "Điều hòa Daikin FTKY50ZVMV (2HP) thuộc dòng Inverter 1 chiều cao cấp. Sản phẩm chính hãng Daikin Việt Nam, giá bán lẻ theo niêm yết trên Daikin E-Shop (daikin.com.vn). Phù hợp phòng 20-30m².",
@@ -1834,6 +2035,11 @@ export const products: Product[] = [
       "/images/products/daikin-ftky60zvmv-gallery-3.png",
       "/images/products/daikin-ftky60zvmv-gallery-4.png",
     ],
+    features: [
+      { image: "/images/products/daikin-ftky60zvmv.png", caption: "Dòng Inverter cao cấp — hiệu suất năng lượng (CSPF) 6.28, cao hơn đáng kể so với dòng phổ thông/tầm trung." },
+      { image: "/images/products/daikin-ftky60zvmv-gallery-2.png", caption: "Độ ồn dàn lạnh thấp, mức thấp nhất chỉ 18dB — gần như không nghe thấy khi ngủ." },
+      { image: "/images/products/daikin-ftky60zvmv-gallery-3.png", caption: "Gas R32, thiết kế dàn lạnh mỏng, hiện đại." },
+    ],
     description:
       "Điều hòa Daikin FTKY60ZVMV (2.5HP) thuộc dòng Inverter 1 chiều cao cấp. Sản phẩm chính hãng Daikin Việt Nam, giá bán lẻ theo niêm yết trên Daikin E-Shop (daikin.com.vn). Phù hợp phòng 30-40m².",
     specs: [
@@ -1868,6 +2074,11 @@ export const products: Product[] = [
       "/images/products/daikin-ftky71zvmv-gallery-2.png",
       "/images/products/daikin-ftky71zvmv-gallery-3.png",
       "/images/products/daikin-ftky71zvmv-gallery-4.png",
+    ],
+    features: [
+      { image: "/images/products/daikin-ftky71zvmv.png", caption: "Dòng Inverter cao cấp — hiệu suất năng lượng (CSPF) 6.28, cao hơn đáng kể so với dòng phổ thông/tầm trung." },
+      { image: "/images/products/daikin-ftky71zvmv-gallery-2.png", caption: "Độ ồn dàn lạnh thấp, mức thấp nhất chỉ 18dB — gần như không nghe thấy khi ngủ." },
+      { image: "/images/products/daikin-ftky71zvmv-gallery-3.png", caption: "Gas R32, thiết kế dàn lạnh mỏng, hiện đại." },
     ],
     description:
       "Điều hòa Daikin FTKY71ZVMV (3HP) thuộc dòng Inverter 1 chiều cao cấp. Sản phẩm chính hãng Daikin Việt Nam, giá bán lẻ theo niêm yết trên Daikin E-Shop (daikin.com.vn). Phù hợp phòng trên 40m².",
@@ -1904,6 +2115,11 @@ export const products: Product[] = [
       "/images/products/daikin-ftkm25avmv-gallery-3.png",
       "/images/products/daikin-ftkm25avmv-gallery-4.png",
     ],
+    features: [
+      { image: "/images/products/daikin-ftkm25avmv.png", caption: "Hiệu suất năng lượng (CSPF) 6.70 — thuộc nhóm tiết kiệm điện tốt nhất trong dòng 1 chiều Daikin tại DigiSmart." },
+      { image: "/images/products/daikin-ftkm25avmv-gallery-2.png", caption: "Độ ồn thấp nhất chỉ 18dB, phù hợp lắp phòng ngủ." },
+      { image: "/images/products/daikin-ftkm25avmv-gallery-3.png", caption: "Gas R32, dàn lạnh thiết kế mỏng gọn." },
+    ],
     description:
       "Điều hòa Daikin FTKM25AVMV (1HP) thuộc dòng Inverter 1 chiều cao cấp với hiệu suất năng lượng cao. Sản phẩm chính hãng Daikin Việt Nam, giá bán lẻ theo niêm yết trên Daikin E-Shop (daikin.com.vn). Phù hợp phòng dưới 15m².",
     specs: [
@@ -1938,6 +2154,11 @@ export const products: Product[] = [
       "/images/products/daikin-ftkm35avmv-gallery-2.png",
       "/images/products/daikin-ftkm35avmv-gallery-3.png",
       "/images/products/daikin-ftkm35avmv-gallery-4.png",
+    ],
+    features: [
+      { image: "/images/products/daikin-ftkm35avmv.png", caption: "Hiệu suất năng lượng (CSPF) 6.70 — thuộc nhóm tiết kiệm điện tốt nhất trong dòng 1 chiều Daikin tại DigiSmart." },
+      { image: "/images/products/daikin-ftkm35avmv-gallery-2.png", caption: "Độ ồn thấp nhất chỉ 18dB, phù hợp lắp phòng ngủ." },
+      { image: "/images/products/daikin-ftkm35avmv-gallery-3.png", caption: "Gas R32, dàn lạnh thiết kế mỏng gọn." },
     ],
     description:
       "Điều hòa Daikin FTKM35AVMV (1.5HP) thuộc dòng Inverter 1 chiều cao cấp với hiệu suất năng lượng cao. Sản phẩm chính hãng Daikin Việt Nam, giá bán lẻ theo niêm yết trên Daikin E-Shop (daikin.com.vn). Phù hợp phòng 15-20m².",
@@ -1974,6 +2195,11 @@ export const products: Product[] = [
       "/images/products/daikin-ftkm50avmv-gallery-3.png",
       "/images/products/daikin-ftkm50avmv-gallery-4.png",
     ],
+    features: [
+      { image: "/images/products/daikin-ftkm50avmv.png", caption: "Hiệu suất năng lượng (CSPF) 6.70 — thuộc nhóm tiết kiệm điện tốt nhất trong dòng 1 chiều Daikin tại DigiSmart." },
+      { image: "/images/products/daikin-ftkm50avmv-gallery-2.png", caption: "Độ ồn thấp nhất chỉ 18dB, phù hợp lắp phòng ngủ." },
+      { image: "/images/products/daikin-ftkm50avmv-gallery-3.png", caption: "Gas R32, dàn lạnh thiết kế mỏng gọn." },
+    ],
     description:
       "Điều hòa Daikin FTKM50AVMV (2HP) thuộc dòng Inverter 1 chiều cao cấp với hiệu suất năng lượng cao. Sản phẩm chính hãng Daikin Việt Nam, giá bán lẻ theo niêm yết trên Daikin E-Shop (daikin.com.vn). Phù hợp phòng 20-30m².",
     specs: [
@@ -2008,6 +2234,11 @@ export const products: Product[] = [
       "/images/products/daikin-ftkm60avmv-gallery-2.png",
       "/images/products/daikin-ftkm60avmv-gallery-3.png",
       "/images/products/daikin-ftkm60avmv-gallery-4.png",
+    ],
+    features: [
+      { image: "/images/products/daikin-ftkm60avmv.png", caption: "Hiệu suất năng lượng (CSPF) 6.70 — thuộc nhóm tiết kiệm điện tốt nhất trong dòng 1 chiều Daikin tại DigiSmart." },
+      { image: "/images/products/daikin-ftkm60avmv-gallery-2.png", caption: "Độ ồn thấp nhất chỉ 18dB, phù hợp lắp phòng ngủ." },
+      { image: "/images/products/daikin-ftkm60avmv-gallery-3.png", caption: "Gas R32, dàn lạnh thiết kế mỏng gọn." },
     ],
     description:
       "Điều hòa Daikin FTKM60AVMV (2.5HP) thuộc dòng Inverter 1 chiều cao cấp với hiệu suất năng lượng cao. Sản phẩm chính hãng Daikin Việt Nam, giá bán lẻ theo niêm yết trên Daikin E-Shop (daikin.com.vn). Phù hợp phòng 30-40m².",
@@ -2044,6 +2275,11 @@ export const products: Product[] = [
       "/images/products/daikin-ftkm71avmv-gallery-3.png",
       "/images/products/daikin-ftkm71avmv-gallery-4.jpg",
     ],
+    features: [
+      { image: "/images/products/daikin-ftkm71avmv.png", caption: "Hiệu suất năng lượng (CSPF) 6.70 — thuộc nhóm tiết kiệm điện tốt nhất trong dòng 1 chiều Daikin tại DigiSmart." },
+      { image: "/images/products/daikin-ftkm71avmv-gallery-2.png", caption: "Độ ồn thấp nhất chỉ 18dB, phù hợp lắp phòng ngủ." },
+      { image: "/images/products/daikin-ftkm71avmv-gallery-3.png", caption: "Gas R32, dàn lạnh thiết kế mỏng gọn." },
+    ],
     description:
       "Điều hòa Daikin FTKM71AVMV (3HP) thuộc dòng Inverter 1 chiều cao cấp với hiệu suất năng lượng cao. Sản phẩm chính hãng Daikin Việt Nam, giá bán lẻ theo niêm yết trên Daikin E-Shop (daikin.com.vn). Phù hợp phòng trên 40m².",
     specs: [
@@ -2078,6 +2314,11 @@ export const products: Product[] = [
       "/images/products/daikin-ftkz25vvmv-gallery-2.png",
       "/images/products/daikin-ftkz25vvmv-gallery-3.png",
       "/images/products/daikin-ftkz25vvmv-gallery-4.png",
+    ],
+    features: [
+      { image: "/images/products/daikin-ftkz25vvmv.png", caption: "Dòng Inverter cao cấp nhất trong nhóm 1 chiều Daikin — hiệu suất năng lượng (CSPF) 7.24, tiết kiệm điện hàng đầu trong catalog DigiSmart." },
+      { image: "/images/products/daikin-ftkz25vvmv-gallery-2.png", caption: "Điện năng tiêu thụ định mức tối thiểu chỉ 160W ở chế độ tiết kiệm — linh hoạt theo nhu cầu làm lạnh thực tế." },
+      { image: "/images/products/daikin-ftkz25vvmv-gallery-3.png", caption: "Gas R32, thiết kế dàn lạnh cao cấp, kích thước lớn hơn giúp làm lạnh đều khắp phòng." },
     ],
     description:
       "Điều hòa Daikin FTKZ25VVMV (1HP) thuộc dòng Inverter 1 chiều cao cấp nhất của Daikin, hiệu suất năng lượng (CSPF) hàng đầu. Sản phẩm chính hãng Daikin Việt Nam, giá bán lẻ theo niêm yết trên Daikin E-Shop (daikin.com.vn). Phù hợp phòng dưới 15m².",
@@ -2114,6 +2355,11 @@ export const products: Product[] = [
       "/images/products/daikin-ftkz35vvmv-gallery-3.png",
       "/images/products/daikin-ftkz35vvmv-gallery-4.png",
     ],
+    features: [
+      { image: "/images/products/daikin-ftkz35vvmv.png", caption: "Dòng Inverter cao cấp nhất trong nhóm 1 chiều Daikin — hiệu suất năng lượng (CSPF) 7.24, tiết kiệm điện hàng đầu trong catalog DigiSmart." },
+      { image: "/images/products/daikin-ftkz35vvmv-gallery-2.png", caption: "Điện năng tiêu thụ định mức tối thiểu chỉ 160W ở chế độ tiết kiệm — linh hoạt theo nhu cầu làm lạnh thực tế." },
+      { image: "/images/products/daikin-ftkz35vvmv-gallery-3.png", caption: "Gas R32, thiết kế dàn lạnh cao cấp, kích thước lớn hơn giúp làm lạnh đều khắp phòng." },
+    ],
     description:
       "Điều hòa Daikin FTKZ35VVMV (1.5HP) thuộc dòng Inverter 1 chiều cao cấp nhất của Daikin, hiệu suất năng lượng (CSPF) hàng đầu. Sản phẩm chính hãng Daikin Việt Nam, giá bán lẻ theo niêm yết trên Daikin E-Shop (daikin.com.vn). Phù hợp phòng 15-20m².",
     specs: [
@@ -2148,6 +2394,11 @@ export const products: Product[] = [
       "/images/products/daikin-ftkz50vvmv-gallery-2.png",
       "/images/products/daikin-ftkz50vvmv-gallery-3.png",
       "/images/products/daikin-ftkz50vvmv-gallery-4.png",
+    ],
+    features: [
+      { image: "/images/products/daikin-ftkz50vvmv.png", caption: "Dòng Inverter cao cấp nhất trong nhóm 1 chiều Daikin — hiệu suất năng lượng (CSPF) 7.24, tiết kiệm điện hàng đầu trong catalog DigiSmart." },
+      { image: "/images/products/daikin-ftkz50vvmv-gallery-2.png", caption: "Điện năng tiêu thụ định mức tối thiểu chỉ 160W ở chế độ tiết kiệm — linh hoạt theo nhu cầu làm lạnh thực tế." },
+      { image: "/images/products/daikin-ftkz50vvmv-gallery-3.png", caption: "Gas R32, thiết kế dàn lạnh cao cấp, kích thước lớn hơn giúp làm lạnh đều khắp phòng." },
     ],
     description:
       "Điều hòa Daikin FTKZ50VVMV (2HP) thuộc dòng Inverter 1 chiều cao cấp nhất của Daikin, hiệu suất năng lượng (CSPF) hàng đầu. Sản phẩm chính hãng Daikin Việt Nam, giá bán lẻ theo niêm yết trên Daikin E-Shop (daikin.com.vn). Phù hợp phòng 20-30m².",
@@ -2184,6 +2435,11 @@ export const products: Product[] = [
       "/images/products/daikin-ftkz60vvmv-gallery-3.png",
       "/images/products/daikin-ftkz60vvmv-gallery-4.png",
     ],
+    features: [
+      { image: "/images/products/daikin-ftkz60vvmv.png", caption: "Dòng Inverter cao cấp nhất trong nhóm 1 chiều Daikin — hiệu suất năng lượng (CSPF) 7.24, tiết kiệm điện hàng đầu trong catalog DigiSmart." },
+      { image: "/images/products/daikin-ftkz60vvmv-gallery-2.png", caption: "Điện năng tiêu thụ định mức tối thiểu chỉ 160W ở chế độ tiết kiệm — linh hoạt theo nhu cầu làm lạnh thực tế." },
+      { image: "/images/products/daikin-ftkz60vvmv-gallery-3.png", caption: "Gas R32, thiết kế dàn lạnh cao cấp, kích thước lớn hơn giúp làm lạnh đều khắp phòng." },
+    ],
     description:
       "Điều hòa Daikin FTKZ60VVMV (2.5HP) thuộc dòng Inverter 1 chiều cao cấp nhất của Daikin, hiệu suất năng lượng (CSPF) hàng đầu. Sản phẩm chính hãng Daikin Việt Nam, giá bán lẻ theo niêm yết trên Daikin E-Shop (daikin.com.vn). Phù hợp phòng 30-40m².",
     specs: [
@@ -2218,6 +2474,11 @@ export const products: Product[] = [
       "/images/products/daikin-ftkz71vvmv-gallery-2.png",
       "/images/products/daikin-ftkz71vvmv-gallery-3.png",
       "/images/products/daikin-ftkz71vvmv-gallery-4.png",
+    ],
+    features: [
+      { image: "/images/products/daikin-ftkz71vvmv.png", caption: "Dòng Inverter cao cấp nhất trong nhóm 1 chiều Daikin — hiệu suất năng lượng (CSPF) 7.24, tiết kiệm điện hàng đầu trong catalog DigiSmart." },
+      { image: "/images/products/daikin-ftkz71vvmv-gallery-2.png", caption: "Điện năng tiêu thụ định mức tối thiểu chỉ 160W ở chế độ tiết kiệm — linh hoạt theo nhu cầu làm lạnh thực tế." },
+      { image: "/images/products/daikin-ftkz71vvmv-gallery-3.png", caption: "Gas R32, thiết kế dàn lạnh cao cấp, kích thước lớn hơn giúp làm lạnh đều khắp phòng." },
     ],
     description:
       "Điều hòa Daikin FTKZ71VVMV (3HP) thuộc dòng Inverter 1 chiều cao cấp nhất của Daikin, hiệu suất năng lượng (CSPF) hàng đầu. Sản phẩm chính hãng Daikin Việt Nam, giá bán lẻ theo niêm yết trên Daikin E-Shop (daikin.com.vn). Phù hợp phòng trên 40m².",
@@ -2254,6 +2515,11 @@ export const products: Product[] = [
       "/images/products/daikin-fthb25zvmv-gallery-3.png",
       "/images/products/daikin-fthb25zvmv-gallery-4.png",
     ],
+    features: [
+      { image: "/images/products/daikin-fthb25zvmv.png", caption: "Ngoài làm lạnh, có thêm chế độ sưởi ấm dịu nhẹ — phù hợp những ngày se lạnh mà không cần đầu tư máy 2 chiều đầy đủ." },
+      { image: "/images/products/daikin-fthb25zvmv-gallery-2.png", caption: "Hiệu suất năng lượng (CSPF) 5.4, dùng gas R32." },
+      { image: "/images/products/daikin-fthb25zvmv-gallery-3.png", caption: "Độ ồn chế độ sưởi tương đương chế độ lạnh, không phát sinh tiếng ồn khi chuyển chế độ." },
+    ],
     description:
       "Điều hòa Daikin FTHB25ZVMV (1HP) thuộc dòng Inverter 1 chiều có thêm tính năng sưởi ấm dịu nhẹ. Sản phẩm chính hãng Daikin Việt Nam, giá bán lẻ theo niêm yết trên Daikin E-Shop (daikin.com.vn). Phù hợp phòng dưới 15m².",
     specs: [
@@ -2288,6 +2554,11 @@ export const products: Product[] = [
       "/images/products/daikin-fthb35zvmv-gallery-2.png",
       "/images/products/daikin-fthb35zvmv-gallery-3.png",
       "/images/products/daikin-fthb35zvmv-gallery-4.png",
+    ],
+    features: [
+      { image: "/images/products/daikin-fthb35zvmv.png", caption: "Ngoài làm lạnh, có thêm chế độ sưởi ấm dịu nhẹ — phù hợp những ngày se lạnh mà không cần đầu tư máy 2 chiều đầy đủ." },
+      { image: "/images/products/daikin-fthb35zvmv-gallery-2.png", caption: "Hiệu suất năng lượng (CSPF) 5.4, dùng gas R32." },
+      { image: "/images/products/daikin-fthb35zvmv-gallery-3.png", caption: "Độ ồn chế độ sưởi tương đương chế độ lạnh, không phát sinh tiếng ồn khi chuyển chế độ." },
     ],
     description:
       "Điều hòa Daikin FTHB35ZVMV (1.5HP) thuộc dòng Inverter 1 chiều có thêm tính năng sưởi ấm dịu nhẹ. Sản phẩm chính hãng Daikin Việt Nam, giá bán lẻ theo niêm yết trên Daikin E-Shop (daikin.com.vn). Phù hợp phòng 15-20m².",
@@ -2324,6 +2595,11 @@ export const products: Product[] = [
       "/images/products/daikin-fthb50zvmv-gallery-3.png",
       "/images/products/daikin-fthb50zvmv-gallery-4.png",
     ],
+    features: [
+      { image: "/images/products/daikin-fthb50zvmv.png", caption: "Ngoài làm lạnh, có thêm chế độ sưởi ấm dịu nhẹ — phù hợp những ngày se lạnh mà không cần đầu tư máy 2 chiều đầy đủ." },
+      { image: "/images/products/daikin-fthb50zvmv-gallery-2.png", caption: "Hiệu suất năng lượng (CSPF) 5.4, dùng gas R32." },
+      { image: "/images/products/daikin-fthb50zvmv-gallery-3.png", caption: "Độ ồn chế độ sưởi tương đương chế độ lạnh, không phát sinh tiếng ồn khi chuyển chế độ." },
+    ],
     description:
       "Điều hòa Daikin FTHB50ZVMV (2HP) thuộc dòng Inverter 1 chiều có thêm tính năng sưởi ấm dịu nhẹ. Sản phẩm chính hãng Daikin Việt Nam, giá bán lẻ theo niêm yết trên Daikin E-Shop (daikin.com.vn). Phù hợp phòng 20-30m².",
     specs: [
@@ -2358,6 +2634,11 @@ export const products: Product[] = [
       "/images/products/daikin-fthb60zvmv-gallery-2.png",
       "/images/products/daikin-fthb60zvmv-gallery-3.png",
       "/images/products/daikin-fthb60zvmv-gallery-4.png",
+    ],
+    features: [
+      { image: "/images/products/daikin-fthb60zvmv.png", caption: "Ngoài làm lạnh, có thêm chế độ sưởi ấm dịu nhẹ — phù hợp những ngày se lạnh mà không cần đầu tư máy 2 chiều đầy đủ." },
+      { image: "/images/products/daikin-fthb60zvmv-gallery-2.png", caption: "Hiệu suất năng lượng (CSPF) 5.4, dùng gas R32." },
+      { image: "/images/products/daikin-fthb60zvmv-gallery-3.png", caption: "Độ ồn chế độ sưởi tương đương chế độ lạnh, không phát sinh tiếng ồn khi chuyển chế độ." },
     ],
     description:
       "Điều hòa Daikin FTHB60ZVMV (2.5HP) thuộc dòng Inverter 1 chiều có thêm tính năng sưởi ấm dịu nhẹ. Sản phẩm chính hãng Daikin Việt Nam, giá bán lẻ theo niêm yết trên Daikin E-Shop (daikin.com.vn). Phù hợp phòng 30-40m².",
@@ -2394,6 +2675,11 @@ export const products: Product[] = [
       "/images/products/daikin-fthf25xvmv-gallery-3.png",
       "/images/products/daikin-fthf25xvmv-gallery-4.png",
     ],
+    features: [
+      { image: "/images/products/daikin-fthf25xvmv.png", caption: "Dòng 2 chiều — vừa làm lạnh vừa sưởi ấm đầy đủ, hiệu suất năng lượng (CSPF) 6.5." },
+      { image: "/images/products/daikin-fthf25xvmv-gallery-2.png", caption: "Phù hợp gia đình cần dùng quanh năm, kể cả mùa lạnh (miền Bắc, Đà Lạt) hoặc nhà có người lớn tuổi/trẻ nhỏ." },
+      { image: "/images/products/daikin-fthf25xvmv-gallery-3.png", caption: "Gas R32, vận hành ổn định cả 2 chế độ lạnh và sưởi." },
+    ],
     description:
       "Điều hòa Daikin FTHF25XVMV (1HP) thuộc dòng Inverter 2 chiều (làm lạnh & sưởi ấm) tầm trung. Sản phẩm chính hãng Daikin Việt Nam, giá bán lẻ theo niêm yết trên Daikin E-Shop (daikin.com.vn). Phù hợp phòng dưới 15m².",
     specs: [
@@ -2428,6 +2714,11 @@ export const products: Product[] = [
       "/images/products/daikin-fthf35xvmv-gallery-2.png",
       "/images/products/daikin-fthf35xvmv-gallery-3.png",
       "/images/products/daikin-fthf35xvmv-gallery-4.png",
+    ],
+    features: [
+      { image: "/images/products/daikin-fthf35xvmv.png", caption: "Dòng 2 chiều — vừa làm lạnh vừa sưởi ấm đầy đủ, hiệu suất năng lượng (CSPF) 6.5." },
+      { image: "/images/products/daikin-fthf35xvmv-gallery-2.png", caption: "Phù hợp gia đình cần dùng quanh năm, kể cả mùa lạnh (miền Bắc, Đà Lạt) hoặc nhà có người lớn tuổi/trẻ nhỏ." },
+      { image: "/images/products/daikin-fthf35xvmv-gallery-3.png", caption: "Gas R32, vận hành ổn định cả 2 chế độ lạnh và sưởi." },
     ],
     description:
       "Điều hòa Daikin FTHF35XVMV (1.5HP) thuộc dòng Inverter 2 chiều (làm lạnh & sưởi ấm) tầm trung. Sản phẩm chính hãng Daikin Việt Nam, giá bán lẻ theo niêm yết trên Daikin E-Shop (daikin.com.vn). Phù hợp phòng 15-20m².",
@@ -2464,6 +2755,11 @@ export const products: Product[] = [
       "/images/products/daikin-fthf50vavmv-gallery-3.png",
       "/images/products/daikin-fthf50vavmv-gallery-4.png",
     ],
+    features: [
+      { image: "/images/products/daikin-fthf50vavmv.png", caption: "Dòng 2 chiều — vừa làm lạnh vừa sưởi ấm đầy đủ, hiệu suất năng lượng (CSPF) 6.5." },
+      { image: "/images/products/daikin-fthf50vavmv-gallery-2.png", caption: "Phù hợp gia đình cần dùng quanh năm, kể cả mùa lạnh (miền Bắc, Đà Lạt) hoặc nhà có người lớn tuổi/trẻ nhỏ." },
+      { image: "/images/products/daikin-fthf50vavmv-gallery-3.png", caption: "Gas R32, vận hành ổn định cả 2 chế độ lạnh và sưởi." },
+    ],
     description:
       "Điều hòa Daikin FTHF50VAVMV (2HP) thuộc dòng Inverter 2 chiều (làm lạnh & sưởi ấm) tầm trung. Sản phẩm chính hãng Daikin Việt Nam, giá bán lẻ theo niêm yết trên Daikin E-Shop (daikin.com.vn). Phù hợp phòng 20-30m².",
     specs: [
@@ -2498,6 +2794,11 @@ export const products: Product[] = [
       "/images/products/daikin-fthf60vavmv-gallery-2.png",
       "/images/products/daikin-fthf60vavmv-gallery-3.png",
       "/images/products/daikin-fthf60vavmv-gallery-4.png",
+    ],
+    features: [
+      { image: "/images/products/daikin-fthf60vavmv.png", caption: "Dòng 2 chiều — vừa làm lạnh vừa sưởi ấm đầy đủ, hiệu suất năng lượng (CSPF) 6.5." },
+      { image: "/images/products/daikin-fthf60vavmv-gallery-2.png", caption: "Phù hợp gia đình cần dùng quanh năm, kể cả mùa lạnh (miền Bắc, Đà Lạt) hoặc nhà có người lớn tuổi/trẻ nhỏ." },
+      { image: "/images/products/daikin-fthf60vavmv-gallery-3.png", caption: "Gas R32, vận hành ổn định cả 2 chế độ lạnh và sưởi." },
     ],
     description:
       "Điều hòa Daikin FTHF60VAVMV (2.5HP) thuộc dòng Inverter 2 chiều (làm lạnh & sưởi ấm) tầm trung. Sản phẩm chính hãng Daikin Việt Nam, giá bán lẻ theo niêm yết trên Daikin E-Shop (daikin.com.vn). Phù hợp phòng 30-40m².",
@@ -2534,6 +2835,11 @@ export const products: Product[] = [
       "/images/products/daikin-fthf71vavmv-gallery-3.png",
       "/images/products/daikin-fthf71vavmv-gallery-4.png",
     ],
+    features: [
+      { image: "/images/products/daikin-fthf71vavmv.png", caption: "Dòng 2 chiều — vừa làm lạnh vừa sưởi ấm đầy đủ, hiệu suất năng lượng (CSPF) 6.5." },
+      { image: "/images/products/daikin-fthf71vavmv-gallery-2.png", caption: "Phù hợp gia đình cần dùng quanh năm, kể cả mùa lạnh (miền Bắc, Đà Lạt) hoặc nhà có người lớn tuổi/trẻ nhỏ." },
+      { image: "/images/products/daikin-fthf71vavmv-gallery-3.png", caption: "Gas R32, vận hành ổn định cả 2 chế độ lạnh và sưởi." },
+    ],
     description:
       "Điều hòa Daikin FTHF71VAVMV (3HP) thuộc dòng Inverter 2 chiều (làm lạnh & sưởi ấm) tầm trung. Sản phẩm chính hãng Daikin Việt Nam, giá bán lẻ theo niêm yết trên Daikin E-Shop (daikin.com.vn). Phù hợp phòng trên 40m².",
     specs: [
@@ -2563,6 +2869,11 @@ export const products: Product[] = [
     originalPrice: 16081000,
     icon: "❄️",
     imageUrl: "/images/products/daikin-ftxv25qvmv.png",
+    features: [
+      { image: "/images/products/daikin-ftxv25qvmv.png", caption: "Dòng 2 chiều, hiệu suất năng lượng (CSPF) 6.21." },
+      { image: "/images/products/daikin-ftxv25qvmv.png", caption: "Dàn lạnh mỏng (223mm), thiết kế gọn cho không gian lắp đặt hẹp." },
+      { image: "/images/products/daikin-ftxv25qvmv.png", caption: "Gas R32, vận hành ổn định cả 2 chế độ lạnh và sưởi." },
+    ],
     description:
       "Điều hòa Daikin FTXV25QVMV (1HP) thuộc dòng Inverter 2 chiều (làm lạnh & sưởi ấm). Sản phẩm chính hãng Daikin Việt Nam, giá bán lẻ theo niêm yết trên Daikin E-Shop (daikin.com.vn). Phù hợp phòng dưới 15m².",
     specs: [
@@ -2592,6 +2903,11 @@ export const products: Product[] = [
     originalPrice: 19624000,
     icon: "❄️",
     imageUrl: "/images/products/daikin-ftxv35qvmv.png",
+    features: [
+      { image: "/images/products/daikin-ftxv35qvmv.png", caption: "Dòng 2 chiều, hiệu suất năng lượng (CSPF) 6.21." },
+      { image: "/images/products/daikin-ftxv35qvmv.png", caption: "Dàn lạnh mỏng (223mm), thiết kế gọn cho không gian lắp đặt hẹp." },
+      { image: "/images/products/daikin-ftxv35qvmv.png", caption: "Gas R32, vận hành ổn định cả 2 chế độ lạnh và sưởi." },
+    ],
     description:
       "Điều hòa Daikin FTXV35QVMV (1.5HP) thuộc dòng Inverter 2 chiều (làm lạnh & sưởi ấm). Sản phẩm chính hãng Daikin Việt Nam, giá bán lẻ theo niêm yết trên Daikin E-Shop (daikin.com.vn). Phù hợp phòng 15-20m².",
     specs: [
@@ -2621,6 +2937,11 @@ export const products: Product[] = [
     originalPrice: 30283000,
     icon: "❄️",
     imageUrl: "/images/products/daikin-ftxv50qvmv.png",
+    features: [
+      { image: "/images/products/daikin-ftxv50qvmv.png", caption: "Dòng 2 chiều, hiệu suất năng lượng (CSPF) 6.21." },
+      { image: "/images/products/daikin-ftxv50qvmv.png", caption: "Dàn lạnh mỏng (223mm), thiết kế gọn cho không gian lắp đặt hẹp." },
+      { image: "/images/products/daikin-ftxv50qvmv.png", caption: "Gas R32, vận hành ổn định cả 2 chế độ lạnh và sưởi." },
+    ],
     description:
       "Điều hòa Daikin FTXV50QVMV (2HP) thuộc dòng Inverter 2 chiều (làm lạnh & sưởi ấm). Sản phẩm chính hãng Daikin Việt Nam, giá bán lẻ theo niêm yết trên Daikin E-Shop (daikin.com.vn). Phù hợp phòng 20-30m².",
     specs: [
@@ -2650,6 +2971,11 @@ export const products: Product[] = [
     originalPrice: 44864000,
     icon: "❄️",
     imageUrl: "/images/products/daikin-ftxv60qvmv.png",
+    features: [
+      { image: "/images/products/daikin-ftxv60qvmv.png", caption: "Dòng 2 chiều, hiệu suất năng lượng (CSPF) 6.21." },
+      { image: "/images/products/daikin-ftxv60qvmv.png", caption: "Dàn lạnh mỏng (223mm), thiết kế gọn cho không gian lắp đặt hẹp." },
+      { image: "/images/products/daikin-ftxv60qvmv.png", caption: "Gas R32, vận hành ổn định cả 2 chế độ lạnh và sưởi." },
+    ],
     description:
       "Điều hòa Daikin FTXV60QVMV (2.5HP) thuộc dòng Inverter 2 chiều (làm lạnh & sưởi ấm). Sản phẩm chính hãng Daikin Việt Nam, giá bán lẻ theo niêm yết trên Daikin E-Shop (daikin.com.vn). Phù hợp phòng 30-40m².",
     specs: [
@@ -2679,6 +3005,11 @@ export const products: Product[] = [
     originalPrice: 49016000,
     icon: "❄️",
     imageUrl: "/images/products/daikin-ftxv71qvmv.png",
+    features: [
+      { image: "/images/products/daikin-ftxv71qvmv.png", caption: "Dòng 2 chiều, hiệu suất năng lượng (CSPF) 6.21." },
+      { image: "/images/products/daikin-ftxv71qvmv.png", caption: "Dàn lạnh mỏng (223mm), thiết kế gọn cho không gian lắp đặt hẹp." },
+      { image: "/images/products/daikin-ftxv71qvmv.png", caption: "Gas R32, vận hành ổn định cả 2 chế độ lạnh và sưởi." },
+    ],
     description:
       "Điều hòa Daikin FTXV71QVMV (3HP) thuộc dòng Inverter 2 chiều (làm lạnh & sưởi ấm). Sản phẩm chính hãng Daikin Việt Nam, giá bán lẻ theo niêm yết trên Daikin E-Shop (daikin.com.vn). Phù hợp phòng trên 40m².",
     specs: [
@@ -2713,6 +3044,11 @@ export const products: Product[] = [
       "/images/products/daikin-ftxm25xvmv-gallery-2.png",
       "/images/products/daikin-ftxm25xvmv-gallery-3.png",
       "/images/products/daikin-ftxm25xvmv-gallery-4.png",
+    ],
+    features: [
+      { image: "/images/products/daikin-ftxm25xvmv.png", caption: "Dòng 2 chiều cao cấp nhất tại DigiSmart — hiệu suất năng lượng (CSPF) 7.6, cao nhất trong toàn bộ catalog điều hòa Daikin đang bán." },
+      { image: "/images/products/daikin-ftxm25xvmv-gallery-2.png", caption: "Dàn nóng và dàn lạnh kích thước lớn hơn các dòng khác, tản nhiệt tốt hơn khi chạy liên tục." },
+      { image: "/images/products/daikin-ftxm25xvmv-gallery-3.png", caption: "Gas R32, phù hợp gia đình muốn đầu tư dài hạn, ưu tiên tiết kiệm điện tối đa." },
     ],
     description:
       "Điều hòa Daikin FTXM25XVMV (1HP) thuộc dòng Inverter 2 chiều (làm lạnh & sưởi ấm) cao cấp. Sản phẩm chính hãng Daikin Việt Nam, giá bán lẻ theo niêm yết trên Daikin E-Shop (daikin.com.vn). Phù hợp phòng dưới 15m².",
@@ -2749,6 +3085,11 @@ export const products: Product[] = [
       "/images/products/daikin-ftxm35xvmv-gallery-3.png",
       "/images/products/daikin-ftxm35xvmv-gallery-4.png",
     ],
+    features: [
+      { image: "/images/products/daikin-ftxm35xvmv.png", caption: "Dòng 2 chiều cao cấp nhất tại DigiSmart — hiệu suất năng lượng (CSPF) 7.6, cao nhất trong toàn bộ catalog điều hòa Daikin đang bán." },
+      { image: "/images/products/daikin-ftxm35xvmv-gallery-2.png", caption: "Dàn nóng và dàn lạnh kích thước lớn hơn các dòng khác, tản nhiệt tốt hơn khi chạy liên tục." },
+      { image: "/images/products/daikin-ftxm35xvmv-gallery-3.png", caption: "Gas R32, phù hợp gia đình muốn đầu tư dài hạn, ưu tiên tiết kiệm điện tối đa." },
+    ],
     description:
       "Điều hòa Daikin FTXM35XVMV (1.5HP) thuộc dòng Inverter 2 chiều (làm lạnh & sưởi ấm) cao cấp. Sản phẩm chính hãng Daikin Việt Nam, giá bán lẻ theo niêm yết trên Daikin E-Shop (daikin.com.vn). Phù hợp phòng 15-20m².",
     specs: [
@@ -2784,6 +3125,11 @@ export const products: Product[] = [
       "/images/products/daikin-ftxm50xvmv-gallery-3.png",
       "/images/products/daikin-ftxm50xvmv-gallery-4.png",
     ],
+    features: [
+      { image: "/images/products/daikin-ftxm50xvmv.png", caption: "Dòng 2 chiều cao cấp nhất tại DigiSmart — hiệu suất năng lượng (CSPF) 7.6, cao nhất trong toàn bộ catalog điều hòa Daikin đang bán." },
+      { image: "/images/products/daikin-ftxm50xvmv-gallery-2.png", caption: "Dàn nóng và dàn lạnh kích thước lớn hơn các dòng khác, tản nhiệt tốt hơn khi chạy liên tục." },
+      { image: "/images/products/daikin-ftxm50xvmv-gallery-3.png", caption: "Gas R32, phù hợp gia đình muốn đầu tư dài hạn, ưu tiên tiết kiệm điện tối đa." },
+    ],
     description:
       "Điều hòa Daikin FTXM50XVMV (2HP) thuộc dòng Inverter 2 chiều (làm lạnh & sưởi ấm) cao cấp. Sản phẩm chính hãng Daikin Việt Nam, giá bán lẻ theo niêm yết trên Daikin E-Shop (daikin.com.vn). Phù hợp phòng 20-30m².",
     specs: [
@@ -2813,6 +3159,11 @@ export const products: Product[] = [
     originalPrice: 46537000,
     icon: "❄️",
     imageUrl: "/images/products/daikin-ftxm60xvmv.png",
+    features: [
+      { image: "/images/products/daikin-ftxm60xvmv.png", caption: "Dòng 2 chiều cao cấp nhất tại DigiSmart — hiệu suất năng lượng (CSPF) 7.6, cao nhất trong toàn bộ catalog điều hòa Daikin đang bán." },
+      { image: "/images/products/daikin-ftxm60xvmv.png", caption: "Dàn nóng và dàn lạnh kích thước lớn hơn các dòng khác, tản nhiệt tốt hơn khi chạy liên tục." },
+      { image: "/images/products/daikin-ftxm60xvmv.png", caption: "Gas R32, phù hợp gia đình muốn đầu tư dài hạn, ưu tiên tiết kiệm điện tối đa." },
+    ],
     description:
       "Điều hòa Daikin FTXM60XVMV (2.5HP) thuộc dòng Inverter 2 chiều (làm lạnh & sưởi ấm) cao cấp. Sản phẩm chính hãng Daikin Việt Nam, giá bán lẻ theo niêm yết trên Daikin E-Shop (daikin.com.vn). Phù hợp phòng 30-40m².",
     specs: [
@@ -2847,6 +3198,11 @@ export const products: Product[] = [
       "/images/products/daikin-ftxm71xvmv-gallery-2.png",
       "/images/products/daikin-ftxm71xvmv-gallery-3.png",
       "/images/products/daikin-ftxm71xvmv-gallery-4.png",
+    ],
+    features: [
+      { image: "/images/products/daikin-ftxm71xvmv.png", caption: "Dòng 2 chiều cao cấp nhất tại DigiSmart — hiệu suất năng lượng (CSPF) 7.6, cao nhất trong toàn bộ catalog điều hòa Daikin đang bán." },
+      { image: "/images/products/daikin-ftxm71xvmv-gallery-2.png", caption: "Dàn nóng và dàn lạnh kích thước lớn hơn các dòng khác, tản nhiệt tốt hơn khi chạy liên tục." },
+      { image: "/images/products/daikin-ftxm71xvmv-gallery-3.png", caption: "Gas R32, phù hợp gia đình muốn đầu tư dài hạn, ưu tiên tiết kiệm điện tối đa." },
     ],
     description:
       "Điều hòa Daikin FTXM71XVMV (3HP) thuộc dòng Inverter 2 chiều (làm lạnh & sưởi ấm) cao cấp. Sản phẩm chính hãng Daikin Việt Nam, giá bán lẻ theo niêm yết trên Daikin E-Shop (daikin.com.vn). Phù hợp phòng trên 40m².",
@@ -2883,6 +3239,11 @@ export const products: Product[] = [
       "/images/products/daikin-ftf25xav1v-gallery-3.jpg",
       "/images/products/daikin-ftf25xav1v-gallery-4.jpg",
     ],
+    features: [
+      { image: "/images/products/daikin-ftf25xav1v.jpg", caption: "Dòng tiêu chuẩn (non-inverter), giá tốt nhất trong catalog điều hòa Daikin tại DigiSmart." },
+      { image: "/images/products/daikin-ftf25xav1v-gallery-2.jpg", caption: "Phù hợp nhu cầu dùng ít giờ mỗi ngày — nơi công nghệ Inverter khó phát huy hết lợi thế tiết kiệm điện." },
+      { image: "/images/products/daikin-ftf25xav1v-gallery-3.jpg", caption: "Gas R32, độ bền ổn định theo tiêu chuẩn Daikin dù không dùng biến tần." },
+    ],
     description:
       "Điều hòa Daikin FTF25XAV1V (1HP) thuộc dòng tiêu chuẩn (non-inverter) giá tốt. Sản phẩm chính hãng Daikin Việt Nam, giá bán lẻ theo niêm yết trên Daikin E-Shop (daikin.com.vn). Phù hợp phòng dưới 15m².",
     specs: [
@@ -2918,6 +3279,11 @@ export const products: Product[] = [
       "/images/products/daikin-ftf35xav1v-gallery-3.jpg",
       "/images/products/daikin-ftf35xav1v-gallery-4.jpg",
     ],
+    features: [
+      { image: "/images/products/daikin-ftf35xav1v.jpg", caption: "Dòng tiêu chuẩn (non-inverter), giá tốt nhất trong catalog điều hòa Daikin tại DigiSmart." },
+      { image: "/images/products/daikin-ftf35xav1v-gallery-2.jpg", caption: "Phù hợp nhu cầu dùng ít giờ mỗi ngày — nơi công nghệ Inverter khó phát huy hết lợi thế tiết kiệm điện." },
+      { image: "/images/products/daikin-ftf35xav1v-gallery-3.jpg", caption: "Gas R32, độ bền ổn định theo tiêu chuẩn Daikin dù không dùng biến tần." },
+    ],
     description:
       "Điều hòa Daikin FTF35XAV1V (1.5HP) thuộc dòng tiêu chuẩn (non-inverter) giá tốt. Sản phẩm chính hãng Daikin Việt Nam, giá bán lẻ theo niêm yết trên Daikin E-Shop (daikin.com.vn). Phù hợp phòng 15-20m².",
     specs: [
@@ -2952,6 +3318,11 @@ export const products: Product[] = [
       "/images/products/daikin-ftf50xv1v-gallery-2.png",
       "/images/products/daikin-ftf50xv1v-gallery-3.png",
       "/images/products/daikin-ftf50xv1v-gallery-4.png",
+    ],
+    features: [
+      { image: "/images/products/daikin-ftf50xv1v.png", caption: "Dòng tiêu chuẩn (non-inverter), giá tốt nhất trong catalog điều hòa Daikin tại DigiSmart." },
+      { image: "/images/products/daikin-ftf50xv1v-gallery-2.png", caption: "Phù hợp nhu cầu dùng ít giờ mỗi ngày — nơi công nghệ Inverter khó phát huy hết lợi thế tiết kiệm điện." },
+      { image: "/images/products/daikin-ftf50xv1v-gallery-3.png", caption: "Gas R32, độ bền ổn định theo tiêu chuẩn Daikin dù không dùng biến tần." },
     ],
     description:
       "Điều hòa Daikin FTF50XV1V (2HP) thuộc dòng tiêu chuẩn (non-inverter) giá tốt. Sản phẩm chính hãng Daikin Việt Nam, giá bán lẻ theo niêm yết trên Daikin E-Shop (daikin.com.vn). Phù hợp phòng 20-30m².",
