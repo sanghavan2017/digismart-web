@@ -15,7 +15,7 @@ const values = [
 
 const milestones = [
   { year: "2022", event: "Thành lập DigiSmart, bắt đầu kinh doanh trên Shopee" },
-  { year: "2023", event: "Mở rộng sang Lazada và TikTok Shop, đạt 1.000+ đơn hàng" },
+  { year: "2023", event: "Mở rộng sang Lazada và TikTok Shop" },
   { year: "2024", event: "Mở rộng sang lĩnh vực Điều hòa & Máy lọc nước, trở thành đại lý Cleansui & Kitz Micro Filter" },
   { year: "2025", event: "Ra mắt website digismartvn.vn" },
 ];
@@ -58,10 +58,10 @@ export default function AboutPage() {
                 Con số nổi bật
               </div>
               {[
-                { num: "10.000+", label: "Khách hàng hài lòng" },
-                { num: "50+", label: "Sản phẩm chính hãng" },
-                { num: "4", label: "Sàn thương mại điện tử" },
-                { num: "4.9⭐", label: "Đánh giá trung bình" },
+                { num: "86+", label: "Sản phẩm chính hãng" },
+                { num: "4", label: "Thương hiệu đối tác chính hãng" },
+                { num: "2", label: "Ngành hàng: Điều hòa & Máy lọc nước" },
+                { num: "100%", label: "Hàng chính hãng, có bảo hành" },
               ].map(s => (
                 <div key={s.label} style={{ display: "flex", justifyContent: "space-between", padding: "0.6rem 0", borderBottom: "1px solid var(--border)" }}>
                   <span style={{ fontFamily: "var(--font-sans)", color: "var(--muted)", fontSize: "0.9rem" }}>{s.label}</span>
