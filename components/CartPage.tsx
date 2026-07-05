@@ -15,7 +15,7 @@ const inputStyle: React.CSSProperties = {
   padding: "10px 14px",
   border: "1.5px solid var(--border)",
   borderRadius: 8,
-  fontFamily: "Calibri, sans-serif",
+  fontFamily: "var(--font-sans)",
   fontSize: "0.95rem",
   color: "var(--text)",
   background: "#fff",
@@ -24,7 +24,7 @@ const inputStyle: React.CSSProperties = {
 };
 
 const labelStyle: React.CSSProperties = {
-  fontFamily: "'Trebuchet MS', sans-serif",
+  fontFamily: "var(--font-sans)",
   fontSize: "0.82rem",
   fontWeight: 600,
   color: "var(--brand)",
@@ -65,15 +65,15 @@ export default function CartPage() {
     return (
       <div style={{ textAlign: "center", padding: "4rem 1rem" }}>
         <div style={{ fontSize: "3rem", marginBottom: "1rem" }}>✅</div>
-        <h2 style={{ fontFamily: "'Trebuchet MS', sans-serif", fontSize: "1.3rem", color: "var(--brand)", marginBottom: "0.75rem" }}>
+        <h2 style={{ fontFamily: "var(--font-sans)", fontSize: "1.3rem", color: "var(--brand)", marginBottom: "0.75rem" }}>
           Đã nhận yêu cầu đặt lịch lắp đặt!
         </h2>
-        <p style={{ fontFamily: "Calibri, sans-serif", color: "var(--text)", fontSize: "0.95rem", maxWidth: 440, margin: "0 auto 1.5rem" }}>
+        <p style={{ fontFamily: "var(--font-sans)", color: "var(--text)", fontSize: "0.95rem", maxWidth: 440, margin: "0 auto 1.5rem" }}>
           DigiSmart sẽ gọi lại xác nhận lịch trong thời gian sớm nhất. Thanh toán khi lắp đặt.
           Cần gấp? Gọi ngay <strong>0778 886 758</strong>.
         </p>
         <Link href="/san-pham"
-          style={{ display: "inline-block", background: "var(--brand)", color: "#fff", padding: "11px 28px", borderRadius: 8, textDecoration: "none", fontFamily: "Trebuchet MS, sans-serif", fontWeight: 700, fontSize: "0.9rem" }}>
+          style={{ display: "inline-block", background: "var(--brand)", color: "#fff", padding: "11px 28px", borderRadius: 8, textDecoration: "none", fontFamily: "var(--font-sans)", fontWeight: 700, fontSize: "0.9rem" }}>
           Tiếp tục xem sản phẩm
         </Link>
       </div>
@@ -84,14 +84,14 @@ export default function CartPage() {
     return (
       <div style={{ textAlign: "center", padding: "4rem 1rem" }}>
         <div style={{ fontSize: "3rem", marginBottom: "1rem" }}>🛒</div>
-        <h2 style={{ fontFamily: "'Trebuchet MS', sans-serif", fontSize: "1.2rem", color: "var(--brand)", marginBottom: "0.75rem" }}>
+        <h2 style={{ fontFamily: "var(--font-sans)", fontSize: "1.2rem", color: "var(--brand)", marginBottom: "0.75rem" }}>
           Giỏ hàng đang trống
         </h2>
-        <p style={{ fontFamily: "Calibri, sans-serif", color: "var(--muted)", fontSize: "0.95rem", marginBottom: "1.5rem" }}>
+        <p style={{ fontFamily: "var(--font-sans)", color: "var(--muted)", fontSize: "0.95rem", marginBottom: "1.5rem" }}>
           Thêm sản phẩm vào giỏ để đặt lịch lắp đặt — thanh toán khi lắp, không cần trả trước.
         </p>
         <Link href="/san-pham"
-          style={{ display: "inline-block", background: "var(--accent)", color: "#fff", padding: "11px 28px", borderRadius: 8, textDecoration: "none", fontFamily: "Trebuchet MS, sans-serif", fontWeight: 700, fontSize: "0.9rem" }}>
+          style={{ display: "inline-block", background: "var(--accent)", color: "#fff", padding: "11px 28px", borderRadius: 8, textDecoration: "none", fontFamily: "var(--font-sans)", fontWeight: 700, fontSize: "0.9rem" }}>
           Xem sản phẩm
         </Link>
       </div>
@@ -116,10 +116,10 @@ export default function CartPage() {
               </Link>
               <div style={{ flex: 1, minWidth: 0 }}>
                 <Link href={`/san-pham/${item.id}`}
-                  style={{ fontFamily: "'Trebuchet MS', sans-serif", fontWeight: 700, fontSize: "0.85rem", color: "var(--text)", lineHeight: 1.35, textDecoration: "none", display: "block", marginBottom: 4 }}>
+                  style={{ fontFamily: "var(--font-sans)", fontWeight: 700, fontSize: "0.85rem", color: "var(--text)", lineHeight: 1.35, textDecoration: "none", display: "block", marginBottom: 4 }}>
                   {item.name}
                 </Link>
-                <div style={{ fontFamily: "'Trebuchet MS', sans-serif", fontWeight: 700, fontSize: "0.9rem", color: "var(--brand2)" }}>
+                <div style={{ fontFamily: "var(--font-sans)", fontWeight: 700, fontSize: "0.9rem", color: "var(--brand2)" }}>
                   {formatPrice(item.price)}
                 </div>
               </div>
@@ -128,7 +128,7 @@ export default function CartPage() {
                   style={{ width: 28, height: 28, borderRadius: 6, border: "1.5px solid var(--border)", background: "#fff", color: "var(--brand)", fontWeight: 700, cursor: "pointer", lineHeight: 1 }}>
                   −
                 </button>
-                <span style={{ fontFamily: "'Trebuchet MS', sans-serif", fontWeight: 700, fontSize: "0.9rem", color: "var(--text)", minWidth: 20, textAlign: "center" }}>
+                <span style={{ fontFamily: "var(--font-sans)", fontWeight: 700, fontSize: "0.9rem", color: "var(--text)", minWidth: 20, textAlign: "center" }}>
                   {item.qty}
                 </span>
                 <button type="button" onClick={() => setQty(item.id, item.qty + 1)} aria-label="Tăng số lượng"
@@ -145,22 +145,22 @@ export default function CartPage() {
         </div>
 
         <div style={{ display: "flex", justifyContent: "space-between", alignItems: "baseline", padding: "1rem 0.25rem 0" }}>
-          <span style={{ fontFamily: "Calibri, sans-serif", fontSize: "0.95rem", color: "var(--text)" }}>Tạm tính:</span>
-          <span style={{ fontFamily: "'Trebuchet MS', sans-serif", fontWeight: 700, fontSize: "1.3rem", color: "#F07B20" }}>
+          <span style={{ fontFamily: "var(--font-sans)", fontSize: "0.95rem", color: "var(--text)" }}>Tạm tính:</span>
+          <span style={{ fontFamily: "var(--font-sans)", fontWeight: 700, fontSize: "1.3rem", color: "#F07B20" }}>
             {formatPrice(total)}
           </span>
         </div>
-        <p style={{ fontFamily: "Calibri, sans-serif", fontSize: "0.82rem", color: "var(--muted)", padding: "0 0.25rem" }}>
+        <p style={{ fontFamily: "var(--font-sans)", fontSize: "0.82rem", color: "var(--muted)", padding: "0 0.25rem" }}>
           Giá đã gồm VAT. Phí lắp đặt (nếu có) sẽ được báo khi xác nhận lịch. <strong>Thanh toán khi lắp đặt</strong> — không cần trả trước.
         </p>
       </div>
 
       {/* Form đặt lịch lắp đặt */}
       <div style={{ background: "#fff", border: "1px solid var(--border)", borderRadius: 12, padding: "1.5rem" }}>
-        <h2 style={{ fontFamily: "'Trebuchet MS', sans-serif", fontWeight: 700, fontSize: "1.1rem", color: "var(--brand)", marginBottom: "0.4rem" }}>
+        <h2 style={{ fontFamily: "var(--font-sans)", fontWeight: 700, fontSize: "1.1rem", color: "var(--brand)", marginBottom: "0.4rem" }}>
           Đặt lịch lắp đặt
         </h2>
-        <p style={{ fontFamily: "Calibri, sans-serif", fontSize: "0.85rem", color: "var(--muted)", marginBottom: "1.25rem" }}>
+        <p style={{ fontFamily: "var(--font-sans)", fontSize: "0.85rem", color: "var(--muted)", marginBottom: "1.25rem" }}>
           Để lại thông tin, DigiSmart sẽ gọi xác nhận lịch lắp đặt cho {items.length} sản phẩm trong giỏ.
         </p>
         <form onSubmit={handleSubmit} style={{ display: "flex", flexDirection: "column", gap: "1rem" }}>
@@ -181,14 +181,14 @@ export default function CartPage() {
             <textarea name="note" value={form.note} onChange={handleChange} rows={3} placeholder="Thời gian mong muốn, tầng lầu, chung cư..." style={{ ...inputStyle, resize: "vertical" }} />
           </div>
           {state === "error" && (
-            <p style={{ fontFamily: "Calibri, sans-serif", fontSize: "0.85rem", color: "#D64545" }}>
+            <p style={{ fontFamily: "var(--font-sans)", fontSize: "0.85rem", color: "#D64545" }}>
               Gửi yêu cầu thất bại. Vui lòng thử lại hoặc gọi 0778 886 758.
             </p>
           )}
           <button
             type="submit"
             disabled={state === "sending"}
-            style={{ background: "#F07B20", color: "#fff", padding: "12px 24px", borderRadius: 8, fontFamily: "Trebuchet MS, sans-serif", fontWeight: 700, fontSize: "0.95rem", border: "none", cursor: state === "sending" ? "wait" : "pointer", opacity: state === "sending" ? 0.7 : 1 }}
+            style={{ background: "#F07B20", color: "#fff", padding: "12px 24px", borderRadius: 8, fontFamily: "var(--font-sans)", fontWeight: 700, fontSize: "0.95rem", border: "none", cursor: state === "sending" ? "wait" : "pointer", opacity: state === "sending" ? 0.7 : 1 }}
           >
             {state === "sending" ? "Đang gửi..." : "Gửi yêu cầu đặt lịch"}
           </button>

@@ -46,10 +46,10 @@ export default async function ProductsPage({
       {/* Header */}
       <section style={{ background: "linear-gradient(135deg, #042C53 0%, #185FA5 100%)", padding: "2.5rem 0" }}>
         <div className="container">
-          <h1 style={{ fontFamily: "'Trebuchet MS', sans-serif", fontSize: "clamp(1.5rem, 3vw, 2rem)", color: "#fff", marginBottom: "0.5rem" }}>
+          <h1 style={{ fontFamily: "var(--font-sans)", fontSize: "clamp(1.5rem, 3vw, 2rem)", color: "#fff", marginBottom: "0.5rem" }}>
             Sản phẩm <span style={{ color: "#F07B20" }}>chính hãng</span>
           </h1>
-          <p style={{ fontFamily: "Calibri, sans-serif", color: "rgba(255,255,255,0.8)", fontSize: "0.95rem" }}>
+          <p style={{ fontFamily: "var(--font-sans)", color: "rgba(255,255,255,0.8)", fontSize: "0.95rem" }}>
             {filtered.length} sản phẩm
             {activeCat ? ` trong danh mục "${activeCat}"` : ""}
             {activeBrand ? ` · thương hiệu "${activeBrand}"` : ""}
@@ -62,12 +62,12 @@ export default async function ProductsPage({
           {/* Category Filters */}
           <div style={{ display: "flex", gap: "0.6rem", flexWrap: "wrap", marginBottom: "1rem" }}>
             <Link href={buildHref({ cat: "" })}
-              style={{ padding: "7px 18px", borderRadius: 20, textDecoration: "none", fontFamily: "Trebuchet MS, sans-serif", fontSize: "0.85rem", fontWeight: 600, background: !activeCat ? "var(--brand)" : "#fff", color: !activeCat ? "#fff" : "var(--brand)", border: `1.5px solid ${!activeCat ? "var(--brand)" : "var(--border)"}` }}>
+              style={{ padding: "7px 18px", borderRadius: 20, textDecoration: "none", fontFamily: "var(--font-sans)", fontSize: "0.85rem", fontWeight: 600, background: !activeCat ? "var(--brand)" : "#fff", color: !activeCat ? "#fff" : "var(--brand)", border: `1.5px solid ${!activeCat ? "var(--brand)" : "var(--border)"}` }}>
               Tất cả danh mục
             </Link>
             {categories.map(c => (
               <Link key={c.name} href={buildHref({ cat: c.name })}
-                style={{ padding: "7px 18px", borderRadius: 20, textDecoration: "none", fontFamily: "Trebuchet MS, sans-serif", fontSize: "0.85rem", fontWeight: 600, background: activeCat === c.name ? "var(--brand)" : "#fff", color: activeCat === c.name ? "#fff" : "var(--brand)", border: `1.5px solid ${activeCat === c.name ? "var(--brand)" : "var(--border)"}` }}>
+                style={{ padding: "7px 18px", borderRadius: 20, textDecoration: "none", fontFamily: "var(--font-sans)", fontSize: "0.85rem", fontWeight: 600, background: activeCat === c.name ? "var(--brand)" : "#fff", color: activeCat === c.name ? "#fff" : "var(--brand)", border: `1.5px solid ${activeCat === c.name ? "var(--brand)" : "var(--border)"}` }}>
                 {c.icon} {c.name}
               </Link>
             ))}
@@ -75,16 +75,16 @@ export default async function ProductsPage({
 
           {/* Brand Filters */}
           <div style={{ display: "flex", alignItems: "center", gap: "0.6rem", flexWrap: "wrap", marginBottom: "2rem" }}>
-            <span style={{ fontFamily: "Calibri, sans-serif", fontSize: "0.82rem", color: "var(--muted)", marginRight: 4 }}>
+            <span style={{ fontFamily: "var(--font-sans)", fontSize: "0.82rem", color: "var(--muted)", marginRight: 4 }}>
               Thương hiệu:
             </span>
             <Link href={buildHref({ brand: "" })}
-              style={{ padding: "5px 14px", borderRadius: 16, textDecoration: "none", fontFamily: "Trebuchet MS, sans-serif", fontSize: "0.78rem", fontWeight: 600, background: !activeBrand ? "var(--accent)" : "#fff", color: !activeBrand ? "#fff" : "var(--text)", border: `1.5px solid ${!activeBrand ? "var(--accent)" : "var(--border)"}` }}>
+              style={{ padding: "5px 14px", borderRadius: 16, textDecoration: "none", fontFamily: "var(--font-sans)", fontSize: "0.78rem", fontWeight: 600, background: !activeBrand ? "var(--accent)" : "#fff", color: !activeBrand ? "#fff" : "var(--text)", border: `1.5px solid ${!activeBrand ? "var(--accent)" : "var(--border)"}` }}>
               Tất cả
             </Link>
             {brands.map(b => (
               <Link key={b} href={buildHref({ brand: b })}
-                style={{ padding: "5px 14px", borderRadius: 16, textDecoration: "none", fontFamily: "Trebuchet MS, sans-serif", fontSize: "0.78rem", fontWeight: 600, background: activeBrand === b ? "var(--accent)" : "#fff", color: activeBrand === b ? "#fff" : "var(--text)", border: `1.5px solid ${activeBrand === b ? "var(--accent)" : "var(--border)"}` }}>
+                style={{ padding: "5px 14px", borderRadius: 16, textDecoration: "none", fontFamily: "var(--font-sans)", fontSize: "0.78rem", fontWeight: 600, background: activeBrand === b ? "var(--accent)" : "#fff", color: activeBrand === b ? "#fff" : "var(--text)", border: `1.5px solid ${activeBrand === b ? "var(--accent)" : "var(--border)"}` }}>
                 {b}
               </Link>
             ))}
@@ -92,7 +92,7 @@ export default async function ProductsPage({
 
           {/* Product Grid */}
           {filtered.length === 0 ? (
-            <div style={{ textAlign: "center", padding: "4rem 0", color: "var(--muted)", fontFamily: "Calibri, sans-serif" }}>
+            <div style={{ textAlign: "center", padding: "4rem 0", color: "var(--muted)", fontFamily: "var(--font-sans)" }}>
               Không tìm thấy sản phẩm trong danh mục này.
             </div>
           ) : (
@@ -120,18 +120,18 @@ export default async function ProductsPage({
                   </div>
                   {/* Info */}
                   <div style={{ padding: "1rem" }}>
-                    <div style={{ fontFamily: "Calibri, sans-serif", fontSize: "0.68rem", color: "var(--muted)", textTransform: "uppercase", letterSpacing: 0.6, marginBottom: 4 }}>
+                    <div style={{ fontFamily: "var(--font-sans)", fontSize: "0.68rem", color: "var(--muted)", textTransform: "uppercase", letterSpacing: 0.6, marginBottom: 4 }}>
                       {p.brand} · {p.category}
                     </div>
-                    <div style={{ fontFamily: "'Trebuchet MS', sans-serif", fontWeight: 700, fontSize: "0.88rem", color: "var(--text)", lineHeight: 1.4, marginBottom: "0.6rem", minHeight: 40 }}>
+                    <div style={{ fontFamily: "var(--font-sans)", fontWeight: 700, fontSize: "0.88rem", color: "var(--text)", lineHeight: 1.4, marginBottom: "0.6rem", minHeight: 40 }}>
                       {p.name}
                     </div>
                     <div style={{ display: "flex", alignItems: "center", gap: 8, marginBottom: "0.75rem" }}>
-                      <span style={{ fontFamily: "'Trebuchet MS', sans-serif", fontSize: "1.05rem", fontWeight: 700, color: "var(--brand2)" }}>
+                      <span style={{ fontFamily: "var(--font-sans)", fontSize: "1.05rem", fontWeight: 700, color: "var(--brand2)" }}>
                         {formatPrice(p.price)}
                       </span>
                       {p.originalPrice > p.price && (
-                        <span style={{ fontFamily: "Calibri, sans-serif", fontSize: "0.8rem", color: "var(--muted)", textDecoration: "line-through" }}>
+                        <span style={{ fontFamily: "var(--font-sans)", fontSize: "0.8rem", color: "var(--muted)", textDecoration: "line-through" }}>
                           {formatPrice(p.originalPrice)}
                         </span>
                       )}

@@ -1,5 +1,12 @@
 import type { Metadata } from "next";
+import { Montserrat } from "next/font/google";
 import "./globals.css";
+
+const montserrat = Montserrat({
+  subsets: ["latin", "vietnamese"],
+  variable: "--font-geo",
+  display: "swap",
+});
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import Chatbot from "@/components/Chatbot";
@@ -18,7 +25,7 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="vi" className="h-full">
+    <html lang="vi" className={`h-full ${montserrat.variable}`}>
       <head>
         {/* Đặt trực tiếp trong <head> (không dùng next/script) để Google Search Console xác minh được qua Google Analytics */}
         <script async src={`https://www.googletagmanager.com/gtag/js?id=${GA_MEASUREMENT_ID}`} />

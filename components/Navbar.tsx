@@ -12,7 +12,7 @@ function CartLink({ onNavigate }: { onNavigate?: () => void }) {
       {count > 0 && (
         <span style={{
           position: "absolute", top: -6, right: -10, background: "var(--accent)", color: "#fff",
-          fontSize: "0.65rem", fontWeight: 700, fontFamily: "Trebuchet MS, sans-serif",
+          fontSize: "0.65rem", fontWeight: 700, fontFamily: "var(--font-sans)",
           minWidth: 17, height: 17, borderRadius: 9, display: "inline-flex",
           alignItems: "center", justifyContent: "center", padding: "0 4px",
         }}>
@@ -41,7 +41,7 @@ const linkStyle: React.CSSProperties = {
   textDecoration: "none",
   fontSize: "0.88rem",
   fontWeight: 500,
-  fontFamily: "Trebuchet MS, sans-serif",
+  fontFamily: "var(--font-sans)",
   whiteSpace: "nowrap",
 };
 
@@ -60,7 +60,7 @@ export default function Navbar() {
               <div key={i} style={{ borderRadius: 2, background: i === 3 ? "var(--accent)" : "rgba(255,255,255,0.85)" }} />
             ))}
           </div>
-          <span style={{ fontFamily: "'Trebuchet MS', sans-serif", fontSize: "1.35rem", color: "#fff", fontWeight: 700, letterSpacing: 0.3 }}>
+          <span style={{ fontFamily: "var(--font-sans)", fontSize: "1.35rem", color: "#fff", fontWeight: 700, letterSpacing: 0.3 }}>
             Digi<span style={{ color: "var(--accent)" }}>Smart</span>
           </span>
         </Link>
@@ -90,7 +90,7 @@ export default function Navbar() {
               }}>
                 {serviceLinks.map(item => (
                   <Link key={item.href} href={item.href}
-                    style={{ display: "block", padding: "10px 16px", color: "var(--brand)", textDecoration: "none", fontSize: "0.85rem", fontWeight: 500, fontFamily: "Trebuchet MS, sans-serif", borderBottom: "1px solid var(--border)" }}>
+                    style={{ display: "block", padding: "10px 16px", color: "var(--brand)", textDecoration: "none", fontSize: "0.85rem", fontWeight: 500, fontFamily: "var(--font-sans)", borderBottom: "1px solid var(--border)" }}>
                     {item.label}
                   </Link>
                 ))}
@@ -99,7 +99,7 @@ export default function Navbar() {
           </div>
 
           <a href="tel:0778886758"
-            style={{ background: "var(--accent)", color: "#fff", padding: "8px 18px", borderRadius: 20, fontSize: "0.85rem", fontWeight: 700, textDecoration: "none", whiteSpace: "nowrap", fontFamily: "Trebuchet MS, sans-serif" }}>
+            style={{ background: "var(--accent)", color: "#fff", padding: "8px 18px", borderRadius: 20, fontSize: "0.85rem", fontWeight: 700, textDecoration: "none", whiteSpace: "nowrap", fontFamily: "var(--font-sans)" }}>
             📞 0778 886 758
           </a>
         </div>
@@ -123,7 +123,7 @@ export default function Navbar() {
           {navLinks.map(item => (
             <Link key={item.href} href={item.href}
               onClick={() => setMenuOpen(false)}
-              style={{ display: "block", color: "rgba(255,255,255,0.85)", textDecoration: "none", fontSize: "0.92rem", fontWeight: 500, padding: "0.75rem 0", borderBottom: "1px solid rgba(255,255,255,0.08)", fontFamily: "Trebuchet MS, sans-serif" }}>
+              style={{ display: "block", color: "rgba(255,255,255,0.85)", textDecoration: "none", fontSize: "0.92rem", fontWeight: 500, padding: "0.75rem 0", borderBottom: "1px solid rgba(255,255,255,0.08)", fontFamily: "var(--font-sans)" }}>
               {item.label}
             </Link>
           ))}
@@ -132,7 +132,7 @@ export default function Navbar() {
           <div style={{ borderBottom: "1px solid rgba(255,255,255,0.08)" }}>
             <button
               onClick={() => setMobileServiceOpen(o => !o)}
-              style={{ width: "100%", textAlign: "left", background: "none", border: "none", color: "rgba(255,255,255,0.85)", fontSize: "0.92rem", fontWeight: 500, padding: "0.75rem 0", fontFamily: "Trebuchet MS, sans-serif", cursor: "pointer", display: "flex", justifyContent: "space-between", alignItems: "center" }}>
+              style={{ width: "100%", textAlign: "left", background: "none", border: "none", color: "rgba(255,255,255,0.85)", fontSize: "0.92rem", fontWeight: 500, padding: "0.75rem 0", fontFamily: "var(--font-sans)", cursor: "pointer", display: "flex", justifyContent: "space-between", alignItems: "center" }}>
               Dịch vụ <span style={{ fontSize: "0.7rem" }}>{mobileServiceOpen ? "▴" : "▾"}</span>
             </button>
             {mobileServiceOpen && (
@@ -140,7 +140,7 @@ export default function Navbar() {
                 {serviceLinks.map(item => (
                   <Link key={item.href} href={item.href}
                     onClick={() => { setMenuOpen(false); setMobileServiceOpen(false); }}
-                    style={{ display: "block", color: "rgba(255,255,255,0.7)", textDecoration: "none", fontSize: "0.88rem", padding: "0.5rem 0", fontFamily: "Trebuchet MS, sans-serif" }}>
+                    style={{ display: "block", color: "rgba(255,255,255,0.7)", textDecoration: "none", fontSize: "0.88rem", padding: "0.5rem 0", fontFamily: "var(--font-sans)" }}>
                     {item.label}
                   </Link>
                 ))}
@@ -149,7 +149,7 @@ export default function Navbar() {
           </div>
 
           <a href="tel:0778886758"
-            style={{ display: "block", marginTop: "1rem", background: "var(--accent)", color: "#fff", padding: "11px 0", borderRadius: 8, fontSize: "0.9rem", fontWeight: 700, textDecoration: "none", textAlign: "center", fontFamily: "Trebuchet MS, sans-serif" }}>
+            style={{ display: "block", marginTop: "1rem", background: "var(--accent)", color: "#fff", padding: "11px 0", borderRadius: 8, fontSize: "0.9rem", fontWeight: 700, textDecoration: "none", textAlign: "center", fontFamily: "var(--font-sans)" }}>
             📞 0778 886 758
           </a>
         </div>

@@ -24,7 +24,7 @@ export default function LeadFormButton({
         }}
         style={{
           background: "var(--brand)", color: "#fff", border: "none", cursor: "pointer",
-          fontFamily: "Trebuchet MS, sans-serif", fontWeight: 700,
+          fontFamily: "var(--font-sans)", fontWeight: 700,
           ...style,
         }}
       >

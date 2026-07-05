@@ -11,10 +11,10 @@ export default function GioHangPage() {
     <>
       <section style={{ background: "linear-gradient(135deg, #042C53 0%, #185FA5 100%)", padding: "2.5rem 0" }}>
         <div className="container">
-          <h1 style={{ fontFamily: "'Trebuchet MS', sans-serif", fontSize: "clamp(1.5rem, 3vw, 2rem)", color: "#fff", marginBottom: "0.5rem" }}>
+          <h1 style={{ fontFamily: "var(--font-sans)", fontSize: "clamp(1.5rem, 3vw, 2rem)", color: "#fff", marginBottom: "0.5rem" }}>
             Giỏ hàng & <span style={{ color: "#F07B20" }}>Đặt lịch lắp đặt</span>
           </h1>
-          <p style={{ fontFamily: "Calibri, sans-serif", color: "rgba(255,255,255,0.8)", fontSize: "0.95rem" }}>
+          <p style={{ fontFamily: "var(--font-sans)", color: "rgba(255,255,255,0.8)", fontSize: "0.95rem" }}>
             Chọn sản phẩm, để lại thông tin — DigiSmart gọi xác nhận lịch, thanh toán khi lắp đặt.
           </p>
         </div>

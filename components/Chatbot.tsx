@@ -153,7 +153,7 @@ export default function Chatbot() {
   }
 
   return (
-    <div style={{ position: "fixed", bottom: 20, right: 20, zIndex: 1000, fontFamily: "Calibri, sans-serif" }}>
+    <div style={{ position: "fixed", bottom: 20, right: 20, zIndex: 1000, fontFamily: "var(--font-sans)" }}>
       <style>{`
         .dgs-pc { display:flex; gap:10px; align-items:center; background:var(--brand-light); border:1px solid #cfe3f5; border-radius:14px; padding:8px; margin:8px 0; }
         .dgs-pc-img { width:48px; height:48px; flex-shrink:0; border-radius:10px; background:#fff; display:flex; align-items:center; justify-content:center; overflow:hidden; border:1px solid #e0ecf8; }

@@ -46,10 +46,10 @@ export default function ContactPage() {
           <div style={{ background: "rgba(255,255,255,0.12)", border: "1px solid rgba(255,255,255,0.25)", color: "rgba(255,255,255,0.9)", fontSize: "0.8rem", padding: "4px 14px", borderRadius: 20, display: "inline-block", marginBottom: "1.25rem", fontWeight: 500 }}>
             ✦ Chúng tôi luôn sẵn sàng hỗ trợ
           </div>
-          <h1 style={{ fontFamily: "'Trebuchet MS', sans-serif", fontSize: "clamp(1.8rem, 4vw, 2.5rem)", marginBottom: "1rem" }}>
+          <h1 style={{ fontFamily: "var(--font-sans)", fontSize: "clamp(1.8rem, 4vw, 2.5rem)", marginBottom: "1rem" }}>
             Liên hệ với <span style={{ color: "#F07B20" }}>DigiSmart</span>
           </h1>
-          <p style={{ fontFamily: "Calibri, sans-serif", fontSize: "1.05rem", opacity: 0.85, maxWidth: 500, margin: "0 auto", lineHeight: 1.7 }}>
+          <p style={{ fontFamily: "var(--font-sans)", fontSize: "1.05rem", opacity: 0.85, maxWidth: 500, margin: "0 auto", lineHeight: 1.7 }}>
             Cần tư vấn sản phẩm hoặc hỗ trợ sau bán hàng? Liên hệ ngay — chúng tôi phản hồi trong ngày.
           </p>
         </div>
@@ -61,7 +61,7 @@ export default function ContactPage() {
           <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fit, minmax(300px, 1fr))", gap: "2.5rem" }}>
             {/* Left: Contact methods */}
             <div>
-              <h2 style={{ fontFamily: "'Trebuchet MS', sans-serif", fontSize: "1.3rem", color: "var(--brand)", marginBottom: "1.5rem" }}>
+              <h2 style={{ fontFamily: "var(--font-sans)", fontSize: "1.3rem", color: "var(--brand)", marginBottom: "1.5rem" }}>
                 Kênh liên hệ
               </h2>
               <div style={{ display: "flex", flexDirection: "column", gap: "1rem" }}>
@@ -70,9 +70,9 @@ export default function ContactPage() {
                     style={{ background: "#fff", borderRadius: 10, padding: "1.25rem", border: "1px solid var(--border)", textDecoration: "none", display: "flex", gap: "1rem", alignItems: "flex-start", transition: "border-color 0.2s" }}>
                     <span style={{ fontSize: "1.6rem", flexShrink: 0 }}>{m.icon}</span>
                     <div>
-                      <div style={{ fontFamily: "'Trebuchet MS', sans-serif", fontWeight: 700, fontSize: "0.85rem", color: "var(--muted)", textTransform: "uppercase", letterSpacing: 0.5, marginBottom: 2 }}>{m.label}</div>
-                      <div style={{ fontFamily: "'Trebuchet MS', sans-serif", fontWeight: 700, fontSize: "1rem", color: "var(--brand)", marginBottom: 4 }}>{m.value}</div>
-                      <div style={{ fontFamily: "Calibri, sans-serif", fontSize: "0.82rem", color: "var(--muted)" }}>{m.desc}</div>
+                      <div style={{ fontFamily: "var(--font-sans)", fontWeight: 700, fontSize: "0.85rem", color: "var(--muted)", textTransform: "uppercase", letterSpacing: 0.5, marginBottom: 2 }}>{m.label}</div>
+                      <div style={{ fontFamily: "var(--font-sans)", fontWeight: 700, fontSize: "1rem", color: "var(--brand)", marginBottom: 4 }}>{m.value}</div>
+                      <div style={{ fontFamily: "var(--font-sans)", fontSize: "0.82rem", color: "var(--muted)" }}>{m.desc}</div>
                     </div>
                   </a>
                 ))}
@@ -81,7 +81,7 @@ export default function ContactPage() {
 
             {/* Right: Form */}
             <div>
-              <h2 style={{ fontFamily: "'Trebuchet MS', sans-serif", fontSize: "1.3rem", color: "var(--brand)", marginBottom: "1.5rem" }}>
+              <h2 style={{ fontFamily: "var(--font-sans)", fontSize: "1.3rem", color: "var(--brand)", marginBottom: "1.5rem" }}>
                 Gửi yêu cầu tư vấn
               </h2>
               <ContactForm />
@@ -93,7 +93,7 @@ export default function ContactPage() {
       {/* Quick links */}
       <section style={{ background: "#fff", padding: "3rem 0", borderTop: "1px solid var(--border)" }}>
         <div className="container" style={{ textAlign: "center" }}>
-          <p style={{ fontFamily: "'Trebuchet MS', sans-serif", fontWeight: 700, color: "var(--brand)", marginBottom: "1.25rem", fontSize: "1rem" }}>
+          <p style={{ fontFamily: "var(--font-sans)", fontWeight: 700, color: "var(--brand)", marginBottom: "1.25rem", fontSize: "1rem" }}>
             Hoặc mua ngay trên sàn thương mại điện tử
           </p>
           <div style={{ display: "flex", gap: "1rem", justifyContent: "center", flexWrap: "wrap" }}>
@@ -102,7 +102,7 @@ export default function ContactPage() {
               { icon: "🎵", label: "TikTok Shop DigiSmart", href: "https://tiktok.com/@digismart85" },
             ].map(s => (
               <a key={s.label} href={s.href} target="_blank"
-                style={{ display: "flex", alignItems: "center", gap: 8, padding: "10px 22px", border: "1.5px solid var(--border)", borderRadius: 8, textDecoration: "none", fontFamily: "Trebuchet MS, sans-serif", fontWeight: 600, fontSize: "0.9rem", color: "var(--brand)" }}>
+                style={{ display: "flex", alignItems: "center", gap: 8, padding: "10px 22px", border: "1.5px solid var(--border)", borderRadius: 8, textDecoration: "none", fontFamily: "var(--font-sans)", fontWeight: 600, fontSize: "0.9rem", color: "var(--brand)" }}>
                 {s.icon} {s.label}
               </a>
             ))}

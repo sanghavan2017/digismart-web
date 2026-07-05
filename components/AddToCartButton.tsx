@@ -27,7 +27,7 @@ export default function AddToCartButton({
         color: added ? "#1E7B3C" : "var(--brand)",
         border: `1.5px solid ${added ? "#1E7B3C" : "var(--brand)"}`,
         cursor: "pointer",
-        fontFamily: "Trebuchet MS, sans-serif",
+        fontFamily: "var(--font-sans)",
         fontWeight: 700,
         transition: "all 0.15s",
         ...style,

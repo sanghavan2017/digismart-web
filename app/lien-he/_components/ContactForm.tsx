@@ -22,7 +22,7 @@ export default function ContactForm() {
     padding: "10px 14px",
     border: "1.5px solid var(--border)",
     borderRadius: 8,
-    fontFamily: "Calibri, sans-serif",
+    fontFamily: "var(--font-sans)",
     fontSize: "0.95rem",
     color: "var(--text)",
     background: "#fff",
@@ -34,10 +34,10 @@ export default function ContactForm() {
     return (
       <div style={{ background: "#E6F8F0", border: "1.5px solid #52C98A", borderRadius: 10, padding: "2rem", textAlign: "center" }}>
         <div style={{ fontSize: "2.5rem", marginBottom: "0.75rem" }}>✅</div>
-        <div style={{ fontFamily: "'Trebuchet MS', sans-serif", fontWeight: 700, fontSize: "1.1rem", color: "#1A6640", marginBottom: "0.5rem" }}>
+        <div style={{ fontFamily: "var(--font-sans)", fontWeight: 700, fontSize: "1.1rem", color: "#1A6640", marginBottom: "0.5rem" }}>
           Đã nhận yêu cầu!
         </div>
-        <p style={{ fontFamily: "Calibri, sans-serif", color: "#1A6640", fontSize: "0.9rem" }}>
+        <p style={{ fontFamily: "var(--font-sans)", color: "#1A6640", fontSize: "0.9rem" }}>
           Chúng tôi sẽ liên hệ lại với bạn sớm nhất. Hoặc gọi ngay <strong>0778 886 758</strong> để được hỗ trợ nhanh hơn.
         </p>
       </div>
@@ -47,7 +47,7 @@ export default function ContactForm() {
   return (
     <form onSubmit={handleSubmit} style={{ display: "flex", flexDirection: "column", gap: "1rem" }}>
       <div>
-        <label style={{ fontFamily: "'Trebuchet MS', sans-serif", fontSize: "0.82rem", fontWeight: 600, color: "var(--brand)", display: "block", marginBottom: 6 }}>
+        <label style={{ fontFamily: "var(--font-sans)", fontSize: "0.82rem", fontWeight: 600, color: "var(--brand)", display: "block", marginBottom: 6 }}>
           Họ và tên *
         </label>
         <input
@@ -60,7 +60,7 @@ export default function ContactForm() {
         />
       </div>
       <div>
-        <label style={{ fontFamily: "'Trebuchet MS', sans-serif", fontSize: "0.82rem", fontWeight: 600, color: "var(--brand)", display: "block", marginBottom: 6 }}>
+        <label style={{ fontFamily: "var(--font-sans)", fontSize: "0.82rem", fontWeight: 600, color: "var(--brand)", display: "block", marginBottom: 6 }}>
           Số điện thoại *
         </label>
         <input
@@ -74,7 +74,7 @@ export default function ContactForm() {
         />
       </div>
       <div>
-        <label style={{ fontFamily: "'Trebuchet MS', sans-serif", fontSize: "0.82rem", fontWeight: 600, color: "var(--brand)", display: "block", marginBottom: 6 }}>
+        <label style={{ fontFamily: "var(--font-sans)", fontSize: "0.82rem", fontWeight: 600, color: "var(--brand)", display: "block", marginBottom: 6 }}>
           Nội dung cần tư vấn *
         </label>
         <textarea
@@ -90,7 +90,7 @@ export default function ContactForm() {
       <button
         type="submit"
         disabled={state === "sending"}
-        style={{ background: "#F07B20", color: "#fff", padding: "12px 24px", borderRadius: 8, fontFamily: "Trebuchet MS, sans-serif", fontWeight: 700, fontSize: "0.95rem", border: "none", cursor: state === "sending" ? "wait" : "pointer", opacity: state === "sending" ? 0.7 : 1 }}
+        style={{ background: "#F07B20", color: "#fff", padding: "12px 24px", borderRadius: 8, fontFamily: "var(--font-sans)", fontWeight: 700, fontSize: "0.95rem", border: "none", cursor: state === "sending" ? "wait" : "pointer", opacity: state === "sending" ? 0.7 : 1 }}
       >
         {state === "sending" ? "Đang gửi..." : "Gửi yêu cầu tư vấn"}
       </button>

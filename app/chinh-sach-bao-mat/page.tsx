@@ -9,10 +9,10 @@ export default function ChinhSachBaoMatPage() {
   return (
     <main style={{ padding: "4rem 0" }}>
       <div className="container" style={{ maxWidth: 760 }}>
-        <h1 style={{ fontFamily: "'Trebuchet MS', sans-serif", fontSize: "2rem", color: "#042C53", marginBottom: "0.5rem" }}>
+        <h1 style={{ fontFamily: "var(--font-sans)", fontSize: "2rem", color: "#042C53", marginBottom: "0.5rem" }}>
           Chính sách bảo mật thông tin
         </h1>
-        <p style={{ color: "#666", fontFamily: "Calibri, sans-serif", marginBottom: "2.5rem" }}>
+        <p style={{ color: "#666", fontFamily: "var(--font-sans)", marginBottom: "2.5rem" }}>
           Cập nhật lần cuối: 01/07/2026
         </p>
 
@@ -61,7 +61,7 @@ export default function ChinhSachBaoMatPage() {
         </Section>
 
         <div style={{ marginTop: "2.5rem", padding: "1.25rem 1.5rem", background: "#f5f8fc", borderRadius: 8, borderLeft: "4px solid #042C53" }}>
-          <p style={{ fontFamily: "Calibri, sans-serif", color: "#333", margin: 0 }}>
+          <p style={{ fontFamily: "var(--font-sans)", color: "#333", margin: 0 }}>
             Nếu có thắc mắc về chính sách bảo mật, vui lòng liên hệ DigiSmart qua hotline{" "}
             <a href="tel:0778886758" style={{ color: "#042C53", fontWeight: 600 }}>0778 886 758</a>.
           </p>
@@ -74,10 +74,10 @@ export default function ChinhSachBaoMatPage() {
 function Section({ title, children }: { title: string; children: React.ReactNode }) {
   return (
     <section style={{ marginBottom: "2rem" }}>
-      <h2 style={{ fontFamily: "'Trebuchet MS', sans-serif", fontSize: "1.15rem", color: "#042C53", marginBottom: "0.75rem" }}>
+      <h2 style={{ fontFamily: "var(--font-sans)", fontSize: "1.15rem", color: "#042C53", marginBottom: "0.75rem" }}>
         {title}
       </h2>
-      <div style={{ fontFamily: "Calibri, sans-serif", fontSize: "1rem", color: "#333", lineHeight: 1.75 }}>
+      <div style={{ fontFamily: "var(--font-sans)", fontSize: "1rem", color: "#333", lineHeight: 1.75 }}>
         {children}
       </div>
     </section>

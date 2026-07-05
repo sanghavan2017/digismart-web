@@ -47,7 +47,7 @@ Mục này để nhìn toàn cảnh 1 lần, không cần đoán hay chờ gợi
 - **Quy trình hiện tại**: sửa code ở `G:\...` (bản chính/sync nhiều máy) → copy file đã sửa sang `C:\Users\HP\projects\digismart-web` → chạy `npm run dev` ở đó để xem demo local → commit/push từ bản C:.
 - ⚠️ Đây là quy trình tạm, dễ quên đồng bộ 2 chiều. Về lâu dài nên chuyển hẳn sang dùng git để sync (clone về máy công ty qua `git clone`/`git pull` thay vì Google Drive) — xem mục Roadmap.
 - Stack: Next.js 16 (App Router, Turbopack), deploy Vercel
-- Brand: Navy #042C53, Cam #F07B20, font Trebuchet MS (heading) + Calibri (body)
+- Brand: Navy #042C53, Cam #F07B20, font **Montserrat** (geometric sans-serif, toàn bộ heading + body — đổi 05/07/2026 theo yêu cầu, thay Trebuchet MS/Calibri của guideline cũ). Nạp qua `next/font/google` trong `app/layout.tsx` (subset latin + vietnamese, self-host lúc build), biến CSS `--font-sans` trong `app/globals.css`. Muốn đổi font khác: sửa import trong `layout.tsx` là xong — mọi chỗ khác đều dùng `var(--font-sans)`.
 
 ## Đã làm xong
 - Trang: `/`, `/san-pham`, `/san-pham/[id]`, `/dieu-hoa`, `/may-loc-nuoc`, `/ve-chung-toi`, `/lien-he`

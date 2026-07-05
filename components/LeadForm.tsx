@@ -38,7 +38,7 @@ export default function LeadForm({
     padding: "10px 14px",
     border: "1.5px solid var(--border)",
     borderRadius: 8,
-    fontFamily: "Calibri, sans-serif",
+    fontFamily: "var(--font-sans)",
     fontSize: "0.95rem",
     color: "var(--text)",
     background: "#fff",
@@ -77,49 +77,49 @@ export default function LeadForm({
         {state === "sent" ? (
           <div style={{ textAlign: "center", padding: "1rem 0" }}>
             <div style={{ fontSize: "2.5rem", marginBottom: "0.75rem" }}>✅</div>
-            <div style={{ fontFamily: "'Trebuchet MS', sans-serif", fontWeight: 700, fontSize: "1.1rem", color: "var(--brand)", marginBottom: "0.5rem" }}>
+            <div style={{ fontFamily: "var(--font-sans)", fontWeight: 700, fontSize: "1.1rem", color: "var(--brand)", marginBottom: "0.5rem" }}>
               Đã nhận yêu cầu báo giá!
             </div>
-            <p style={{ fontFamily: "Calibri, sans-serif", color: "var(--text)", fontSize: "0.9rem" }}>
+            <p style={{ fontFamily: "var(--font-sans)", color: "var(--text)", fontSize: "0.9rem" }}>
               DigiSmart sẽ liên hệ lại với bạn sớm nhất. Hoặc gọi ngay <strong>0778 886 758</strong> để được tư vấn nhanh hơn.
             </p>
           </div>
         ) : (
           <>
-            <h3 style={{ fontFamily: "'Trebuchet MS', sans-serif", fontWeight: 700, fontSize: "1.15rem", color: "var(--brand)", marginBottom: "0.4rem" }}>
+            <h3 style={{ fontFamily: "var(--font-sans)", fontWeight: 700, fontSize: "1.15rem", color: "var(--brand)", marginBottom: "0.4rem" }}>
               Nhận báo giá
             </h3>
-            <p style={{ fontFamily: "Calibri, sans-serif", fontSize: "0.85rem", color: "var(--muted)", marginBottom: "1.25rem" }}>
+            <p style={{ fontFamily: "var(--font-sans)", fontSize: "0.85rem", color: "var(--muted)", marginBottom: "1.25rem" }}>
               {productName ? `Sản phẩm: ${productName}` : "Để lại thông tin, DigiSmart sẽ liên hệ báo giá cho bạn."}
             </p>
             <form onSubmit={handleSubmit} style={{ display: "flex", flexDirection: "column", gap: "1rem" }}>
               <div>
-                <label style={{ fontFamily: "'Trebuchet MS', sans-serif", fontSize: "0.82rem", fontWeight: 600, color: "var(--brand)", display: "block", marginBottom: 6 }}>
+                <label style={{ fontFamily: "var(--font-sans)", fontSize: "0.82rem", fontWeight: 600, color: "var(--brand)", display: "block", marginBottom: 6 }}>
                   Họ và tên *
                 </label>
                 <input name="name" value={form.name} onChange={handleChange} required placeholder="Nguyễn Văn A" style={inputStyle} />
               </div>
               <div>
-                <label style={{ fontFamily: "'Trebuchet MS', sans-serif", fontSize: "0.82rem", fontWeight: 600, color: "var(--brand)", display: "block", marginBottom: 6 }}>
+                <label style={{ fontFamily: "var(--font-sans)", fontSize: "0.82rem", fontWeight: 600, color: "var(--brand)", display: "block", marginBottom: 6 }}>
                   Số điện thoại *
                 </label>
                 <input name="phone" value={form.phone} onChange={handleChange} required type="tel" placeholder="0900 000 000" style={inputStyle} />
               </div>
               <div>
-                <label style={{ fontFamily: "'Trebuchet MS', sans-serif", fontSize: "0.82rem", fontWeight: 600, color: "var(--brand)", display: "block", marginBottom: 6 }}>
+                <label style={{ fontFamily: "var(--font-sans)", fontSize: "0.82rem", fontWeight: 600, color: "var(--brand)", display: "block", marginBottom: 6 }}>
                   Ghi chú
                 </label>
                 <textarea name="note" value={form.note} onChange={handleChange} rows={3} placeholder="Nhu cầu của bạn..." style={{ ...inputStyle, resize: "vertical" }} />
               </div>
               {state === "error" && (
-                <p style={{ fontFamily: "Calibri, sans-serif", fontSize: "0.85rem", color: "#D64545" }}>
+                <p style={{ fontFamily: "var(--font-sans)", fontSize: "0.85rem", color: "#D64545" }}>
                   Gửi yêu cầu thất bại. Vui lòng thử lại hoặc gọi 0778 886 758.
                 </p>
               )}
               <button
                 type="submit"
                 disabled={state === "sending"}
-                style={{ background: "#F07B20", color: "#fff", padding: "12px 24px", borderRadius: 8, fontFamily: "Trebuchet MS, sans-serif", fontWeight: 700, fontSize: "0.95rem", border: "none", cursor: state === "sending" ? "wait" : "pointer", opacity: state === "sending" ? 0.7 : 1 }}
+                style={{ background: "#F07B20", color: "#fff", padding: "12px 24px", borderRadius: 8, fontFamily: "var(--font-sans)", fontWeight: 700, fontSize: "0.95rem", border: "none", cursor: state === "sending" ? "wait" : "pointer", opacity: state === "sending" ? 0.7 : 1 }}
               >
                 {state === "sending" ? "Đang gửi..." : "Gửi yêu cầu báo giá"}
               </button>

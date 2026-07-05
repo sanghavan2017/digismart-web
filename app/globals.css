@@ -1,6 +1,7 @@
-@import url('https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:wght@300;400;500;600;700&display=swap');
-
 :root {
+  /* Geometric sans-serif (Montserrat, nạp qua next/font trong app/layout.tsx) */
+  --font-sans:   var(--font-geo), 'Segoe UI', sans-serif;
+
   --brand:       #042C53;
   --brand2:      #185FA5;
   --brand3:      #378ADD;
@@ -15,14 +16,16 @@
 
 * { box-sizing: border-box; margin: 0; padding: 0; }
 
+button, input, select, textarea { font-family: inherit; }
+
 body {
-  font-family: 'Be Vietnam Pro', Calibri, sans-serif;
+  font-family: var(--font-sans);
   background: var(--bg);
   color: var(--text);
 }
 
 h1, h2, h3, h4 {
-  font-family: 'Trebuchet MS', 'Be Vietnam Pro', sans-serif;
+  font-family: var(--font-sans);
 }
 
 .container { max-width: 1200px; margin: 0 auto; padding: 0 1.5rem; }
