@@ -15,8 +15,20 @@ import { CartProvider } from "@/components/CartContext";
 const GA_MEASUREMENT_ID = "G-YNQSD9M50Q";
 
 export const metadata: Metadata = {
+  metadataBase: new URL("https://www.digismartvn.com"),
   title: "DigiSmart — Điều hòa & Máy lọc nước chính hãng",
   description: "DigiSmart cung cấp & lắp đặt Điều hòa, Máy lọc nước chính hãng tại TPHCM. Cleansui, Kitz Micro Filter, Mitsubishi Electric, Daikin — bảo hành đầy đủ.",
+  openGraph: {
+    type: "website",
+    siteName: "DigiSmart",
+    locale: "vi_VN",
+    title: "DigiSmart — Điều hòa & Máy lọc nước chính hãng",
+    description: "Cung cấp & lắp đặt Điều hòa, Máy lọc nước chính hãng tại TPHCM. Cleansui, Kitz, Mitsubishi Electric, Daikin — bảo hành đầy đủ.",
+    images: [{ url: "/images/og-banner.png", width: 1200, height: 630, alt: "DigiSmart — Điều hòa & Máy lọc nước chính hãng" }],
+  },
+  twitter: {
+    card: "summary_large_image",
+  },
 };
 
 export default function RootLayout({

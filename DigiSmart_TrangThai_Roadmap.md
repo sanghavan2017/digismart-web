@@ -23,7 +23,9 @@ Mục này để nhìn toàn cảnh 1 lần, không cần đoán hay chờ gợi
 - ✅ `sitemap.xml`, `robots.txt`
 - ✅ **Google Analytics (GA4)** — đã gắn vào `app/layout.tsx`, Measurement ID `G-YNQSD9M50Q`, đã verify nhận dữ liệu thật trên production
 - ✅ **Google Search Console — ĐÃ ĐĂNG KÝ** (property `https://www.digismartvn.com/`, xác minh qua GA). 05/07/2026: sitemap.xml đã submit lại (bản 95 URL, thêm `/bao-hanh-dieu-khoan`), yêu cầu lập chỉ mục thủ công cho 4 trang chính (`/`, `/may-loc-nuoc`, `/dieu-hoa`, `/san-pham`). Trạng thái 5 trang "Đã thu thập – chưa lập chỉ mục" là bình thường với site mới, chờ Google xử lý (kiểm tra lại sau ~1-2 tuần).
-- ✅ **Structured Data (Schema.org Product)** — đã thêm JSON-LD vào `app/san-pham/[id]/page.tsx` (tên, ảnh, giá, brand, tình trạng còn hàng)
+- ✅ **Structured Data (Schema.org Product)** — đã thêm JSON-LD vào `app/san-pham/[id]/page.tsx` (tên, ảnh, giá, brand, tình trạng còn hàng). 05/07/2026: sửa URL ảnh + offer thành tuyệt đối (www) theo chuẩn schema.org.
+- ✅ **Open Graph tags** (05/07/2026) — share link lên Zalo/Facebook/Messenger giờ có ảnh + tiêu đề đẹp: banner brand `public/images/og-banner.png` (1200×630, vẽ bằng sharp theo brand mark) cho mọi trang, riêng trang sản phẩm dùng đúng ảnh + tên sản phẩm đó. `metadataBase` đã khai báo trong `app/layout.tsx`.
+- ✅ **Trang 404 riêng** (05/07/2026) — `app/not-found.tsx` theo brand, có nút về trang chủ + xem sản phẩm.
 
 ### D. Pháp lý
 - ✅ **Chính sách bảo mật thông tin khách hàng** — đã có trang `/chinh-sach-bao-mat` (commit `dc16639`), link ở footer
@@ -70,7 +72,8 @@ Mục này để nhìn toàn cảnh 1 lần, không cần đoán hay chờ gợi
 3. **2 ảnh Kitz còn lại cần bạn xử lý** (ảnh 10 Inch đã thay bằng ảnh chính hãng MOF254BW từ kitzmf.vn 04/07/2026 — model khớp cả giá 5tr):
    - `kitz-bo-loc-tong-2-coc`: kitzmf.vn KHÔNG có ảnh bộ 2 cốc lắp sẵn (đây là bộ DigiSmart tự ghép) → cần bạn chụp 1 tấm bộ thật, nền càng trơn càng tốt.
    - `kitz-dong-ho-do-nuoc-thong-minh`: ảnh hiện tại là sản phẩm brand **Callme** (callme.vn) — cần bạn xác nhận có đúng sản phẩm đang bán không rồi mới thay ảnh.
-4. **node_modules trên ổ G: (máy này) đã hỏng do Google Drive sync** (04/07/2026, `npm ci` thất bại lặp lại vì Drive khóa file, package `next` bị mất) — dev server không chạy trực tiếp từ thư mục project trên máy này. Cách xử lý: làm Giai đoạn 1.5 (clone repo bằng git ra ổ local), hoặc tạm dừng Drive sync rồi chạy `npm ci`. Trong lúc chưa xử lý, Claude verify bằng bản copy tạm ở ổ C: (scratchpad).
+4. **Link mạng xã hội/sàn TMĐT SAI — chờ bạn gửi link đúng** (phát hiện 05/07/2026): `shopee.vn/digismart85` (404, shop không tồn tại), `facebook.com/digismartvn`, `tiktok.com/@digismart85` — tổng 12 chỗ trong `components/Footer.tsx`, `app/lien-he/page.tsx`, `app/san-pham/[id]/page.tsx`. Khi có link đúng, Claude sẽ thay tất cả 1 lần (và gom về 1 file constants để sau này chỉ sửa 1 chỗ).
+5. **node_modules trên ổ G: (máy này) đã hỏng do Google Drive sync** (04/07/2026, `npm ci` thất bại lặp lại vì Drive khóa file, package `next` bị mất) — dev server không chạy trực tiếp từ thư mục project trên máy này. Cách xử lý: làm Giai đoạn 1.5 (clone repo bằng git ra ổ local), hoặc tạm dừng Drive sync rồi chạy `npm ci`. Trong lúc chưa xử lý, Claude verify bằng bản copy tạm ở ổ C: (scratchpad).
 
 ## Đã xử lý gần đây
 - ✅ (04/07/2026) **Ảnh EU202** — tải ảnh chính hãng nền trắng từ mitsubishicleansui.vn, gắn vào `data/products.ts`. 18/18 sản phẩm máy lọc nước đã có ảnh thật.

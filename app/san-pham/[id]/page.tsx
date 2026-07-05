@@ -29,6 +29,12 @@ export async function generateMetadata({
   return {
     title: `${product.name} — DigiSmart`,
     description: product.description,
+    openGraph: {
+      type: "website",
+      title: `${product.name} — DigiSmart`,
+      description: product.description,
+      images: product.imageUrl ? [{ url: product.imageUrl, alt: product.name }] : undefined,
+    },
   };
 }
 
@@ -46,16 +52,20 @@ export default async function ProductDetailPage({
     .filter(p => p.category === product.category && p.id !== product.id)
     .slice(0, 3);
 
+  const BASE_URL = "https://www.digismartvn.com";
+  const toAbsolute = (path: string) => (path.startsWith("http") ? path : `${BASE_URL}${path}`);
   const productJsonLd = {
     "@context": "https://schema.org",
     "@type": "Product",
     name: product.name,
-    image: product.images?.length ? product.images : product.imageUrl ? [product.imageUrl] : undefined,
+    image: product.images?.length
+      ? product.images.map(toAbsolute)
+      : product.imageUrl ? [toAbsolute(product.imageUrl)] : undefined,
     description: product.description,
     brand: { "@type": "Brand", name: product.brand },
     offers: {
       "@type": "Offer",
-      url: `https://digismartvn.com/san-pham/${product.id}`,
+      url: `${BASE_URL}/san-pham/${product.id}`,
       priceCurrency: "VND",
       price: product.price,
       availability: product.inStock ? "https://schema.org/InStock" : "https://schema.org/OutOfStock",
