@@ -52,10 +52,13 @@ Mục này để nhìn toàn cảnh 1 lần, không cần đoán hay chờ gợi
 
 ## Repo & môi trường chạy code
 - Repo: github.com/sanghavan2017/digismart-web — branch đang làm việc: `cleansui-wip`
-- **Code thật chạy ở ổ C:** `C:\Users\HP\projects\digismart-web` (clone riêng, không qua Google Drive)
+- **Code thật chạy ở ổ C: — mỗi máy có 1 clone riêng, không qua Google Drive:**
+  - Máy công ty (HP): `C:\Users\HP\projects\digismart-web`
+  - Máy này (06/07/2026, mới dựng): `C:\Users\ad\projects\digismart-web` — `git clone` từ GitHub, branch `cleansui-wip`, `npm ci` xong, đã copy `.env.local` sang.
 - **Lý do**: bản gốc ở `G:\My Drive\Hoc AI\digismart-web` (Google Drive "Stream files" mode) làm hỏng `node_modules` khi cài đặt — không thể chạy `npm install`/`next dev` trực tiếp trên ổ G:.
-- **Quy trình hiện tại**: sửa code ở `G:\...` (bản chính/sync nhiều máy) → copy file đã sửa sang `C:\Users\HP\projects\digismart-web` → chạy `npm run dev` ở đó để xem demo local → commit/push từ bản C:.
-- ⚠️ Đây là quy trình tạm, dễ quên đồng bộ 2 chiều. Về lâu dài nên chuyển hẳn sang dùng git để sync (clone về máy công ty qua `git clone`/`git pull` thay vì Google Drive) — xem mục Roadmap.
+- **Quy trình hiện tại (2 máy, cùng 1 kiểu)**: sửa code ở `G:\...` (bản chính/sync nhiều máy) → robocopy file đã sửa sang clone C: tương ứng của máy đang dùng (loại trừ `node_modules`/`.next`/`.git`/`.env.local`) → chạy `npm run dev` ở đó để xem demo local → commit/push từ bản C:.
+- `.claude/launch.json` trỏ `npm --prefix <đường dẫn clone C: của máy đang dùng>` — **đường dẫn này đặc thù theo máy, sửa cục bộ không commit** khi đổi máy (tránh ghi đè cấu hình máy khác).
+- ⚠️ Vẫn là quy trình 2 bước (sửa G: → robocopy → chạy C:), chưa phải "chuyển hẳn sang git thuần" như mục tiêu Giai đoạn 1.5 ban đầu — lý do: Claude Code session gắn với thư mục `G:\My Drive\Hoc AI\digismart-web` (nơi có CLAUDE.md/AGENTS.md của project), đổi hẳn sang C: sẽ cần mở lại session ở đường dẫn mới. Đã cải thiện so với trước: clone ở C: giờ **thường trực** (không tạo lại mỗi phiên như bản scratchpad tạm trước đây), nên chỉ cần robocopy nhanh (~4 giây, không cần `npm ci` lại) thay vì dựng lại từ đầu mỗi lần.
 - Stack: Next.js 16 (App Router, Turbopack), deploy Vercel
 - Brand: Navy #042C53, Cam #F07B20, font **Montserrat** (geometric sans-serif, toàn bộ heading + body — đổi 05/07/2026 theo yêu cầu, thay Trebuchet MS/Calibri của guideline cũ). Nạp qua `next/font/google` trong `app/layout.tsx` (subset latin + vietnamese, self-host lúc build), biến CSS `--font-sans` trong `app/globals.css`. Muốn đổi font khác: sửa import trong `layout.tsx` là xong — mọi chỗ khác đều dùng `var(--font-sans)`.
 
@@ -81,7 +84,7 @@ Mục này để nhìn toàn cảnh 1 lần, không cần đoán hay chờ gợi
    - `kitz-bo-loc-tong-2-coc`: kitzmf.vn KHÔNG có ảnh bộ 2 cốc lắp sẵn (đây là bộ DigiSmart tự ghép) → cần bạn chụp 1 tấm bộ thật, nền càng trơn càng tốt.
    - `kitz-dong-ho-do-nuoc-thong-minh`: ảnh hiện tại là sản phẩm brand **Callme** (callme.vn) — cần bạn xác nhận có đúng sản phẩm đang bán không rồi mới thay ảnh.
 4. **Link mạng xã hội/sàn TMĐT SAI — chờ bạn gửi link đúng** (phát hiện 05/07/2026): `shopee.vn/digismart85` (404, shop không tồn tại), `facebook.com/digismartvn`, `tiktok.com/@digismart85` — tổng 12 chỗ trong `components/Footer.tsx`, `app/lien-he/page.tsx`, `app/san-pham/[id]/page.tsx`. Khi có link đúng, Claude sẽ thay tất cả 1 lần (và gom về 1 file constants để sau này chỉ sửa 1 chỗ).
-5. **node_modules trên ổ G: (máy này) đã hỏng do Google Drive sync** (04/07/2026, `npm ci` thất bại lặp lại vì Drive khóa file, package `next` bị mất) — dev server không chạy trực tiếp từ thư mục project trên máy này. Cách xử lý: làm Giai đoạn 1.5 (clone repo bằng git ra ổ local), hoặc tạm dừng Drive sync rồi chạy `npm ci`. Trong lúc chưa xử lý, Claude verify bằng bản copy tạm ở ổ C: (scratchpad).
+5. ~~node_modules trên ổ G: (máy này) đã hỏng do Google Drive sync~~ — **đã xử lý 06/07/2026 (Giai đoạn 1.5)**: dựng clone thường trực tại `C:\Users\ad\projects\digismart-web`, `.claude\launch.json` trỏ vào đó, verify giỏ hàng end-to-end pass. Quy trình vẫn cần robocopy (G: → C:) trước khi chạy dev — xem mục "Repo & môi trường chạy code" ở trên.
 
 ## Đã xử lý gần đây
 - ✅ (04/07/2026) **Ảnh EU202** — tải ảnh chính hãng nền trắng từ mitsubishicleansui.vn, gắn vào `data/products.ts`. 18/18 sản phẩm máy lọc nước đã có ảnh thật.
@@ -95,7 +98,7 @@ Mô hình thật: khách bỏ SP vào giỏ → đặt lịch lắp đặt → *
 
 ## Roadmap
 1. **Giai đoạn 1 — Brand/content + chatbot (gần xong):** còn data Điều hòa thật + xử lý 5 việc đang chặn ở trên.
-2. **Giai đoạn 1.5 — Ổn định quy trình dev (nên làm sớm):** chuyển hẳn việc đồng bộ code khỏi Google Drive sang git thuần (clone repo trực tiếp ở mỗi máy, `git pull`/`git push` để sync) — tránh phải copy tay giữa ổ G: và C: như hiện tại, giảm rủi ro quên đồng bộ.
+2. ⚠️ **Giai đoạn 1.5 — Ổn định quy trình dev — MỘT PHẦN xong (06/07/2026)**: mỗi máy giờ có clone thường trực ở ổ C: (không cần `npm ci` lại mỗi phiên, chỉ robocopy nhanh ~4 giây từ G: trước khi chạy) — đỡ hẳn phần chậm/lỗi node_modules. Chưa xong phần "chuyển hẳn sang git thuần" (bỏ Google Drive làm nơi sửa code chính) vì Claude Code session vẫn gắn với thư mục `G:\My Drive\...`; muốn dứt điểm cần đổi nơi mở Claude Code sang thẳng clone C: — đây là quyết định của bạn (ảnh hưởng chỗ mở app/editor hàng ngày), chưa tự làm.
 3. ✅ **Giai đoạn 2 — Giỏ hàng nhẹ + đặt lịch lắp đặt: XONG 04/07/2026** (xem mục B checklist ở trên). Đã merge `cleansui-wip` → `master` (commit `a83fed0`, được duyệt 04/07/2026) — **đã live trên digismartvn.com**: `/gio-hang` trả 200, nút "Thêm vào giỏ" + icon giỏ Navbar đã hiện trên production.
 4. **Giai đoạn 3 — Cổng thanh toán (tuỳ chọn):** VNPay/MoMo/ZaloPay để khách đặt cọc trước khi lắp đặt.
 5. **Giai đoạn 4 — CMS (Strapi/Directus), làm sau khi cần:** chỉ làm khi tần suất đổi nội dung/sản phẩm đủ nhiều để đáng công setup riêng 1 backend.
