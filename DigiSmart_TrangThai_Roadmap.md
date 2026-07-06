@@ -6,6 +6,7 @@ Mục này để nhìn toàn cảnh 1 lần, không cần đoán hay chờ gợi
 
 ### A. Nội dung & Catalog
 - ✅ Máy lọc nước: 18 SKU thật (Cleansui + Kitz), giá/thông số/bảo hành/ảnh/carousel/video đầy đủ cho phần lớn model
+- ✅ **Ảnh 4 SKU Cleansui EU3xx/EU2xx đồng bộ kiểu "vòi+lõi lọc"** (06/07/2026, bạn phát hiện ảnh không đồng nhất so với web hãng): EU301/EU201/EU103 trước đó chỉ có ảnh vòi đơn lẻ (không có lõi lọc, khác kiểu EU202 đang dùng) — đã tìm đúng ảnh combo chính thức từ `mitsubishicleansui.vn` (trang danh mục sản phẩm) cho cả 3 SKU, thay vào `imageUrl`/ảnh đầu gallery trong `data/products.ts`. Cả 4 SKU giờ cùng kiểu ảnh trên lưới sản phẩm.
 - ✅ **Điều hòa: 68 SKU THẬT — 22 Mitsubishi Electric + 46 Daikin** (04/07/2026), giá bán lẻ hiển thị theo đúng web hãng (quyết định của bạn 04/07/2026):
   - **Mitsubishi Electric** (mitsubishi-electric.vn, API GetDetailDto): 6 dòng MSY-JY/JA/GR, MSZ-HT/LN, MS-JS; **giá bán DigiSmart = niêm yết −10%** (làm tròn xuống nghìn, quyết định 05/07/2026), `originalPrice` = giá niêm yết hãng → badge "Tiết kiệm 10%"; 88 ảnh; video YouTube dòng GR + LN; bảo hành thân 2 năm/nén 5 năm.
   - **Daikin** (daikin.com.vn/shop, loại 2 dàn rời, Magento): 10 dòng FTKB/FTKF/FTKY/FTKM/FTKZ (inverter 1 chiều), FTHB (1 chiều + sưởi), FTHF/FTXV/FTXM (2 chiều), FTF (tiêu chuẩn); `price` = giá bán lẻ E-Shop, `originalPrice` = giá niêm yết → badge giảm 12–17% thật; 166 ảnh (đã nén 55MB→16MB); thông số từ tab specs (CSPF, model dàn nóng, độ ồn, kích thước...).
