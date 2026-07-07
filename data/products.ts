@@ -35,8 +35,8 @@ export type Product = {
 };
 
 export const categories = [
-  { name: "Máy lọc nước", icon: "💧", desc: "Máy lọc nước RO, nóng lạnh, nhiều cấp lọc", slug: "may-loc-nuoc" },
-  { name: "Điều hòa", icon: "❄️", desc: "Điều hòa Inverter chính hãng, lắp đặt tận nơi", slug: "dieu-hoa" },
+  { name: "Máy lọc nước", icon: "💧", desc: "Cleansui, Kitz Micro Filter — công nghệ Nhật Bản, giữ khoáng tự nhiên", slug: "may-loc-nuoc" },
+  { name: "Điều hòa", icon: "❄️", desc: "Mitsubishi Electric, Daikin chính hãng, lắp đặt tận nơi", slug: "dieu-hoa" },
 ];
 
 export const brands = ["Cleansui", "Kitz", "Mitsubishi Electric", "Daikin"];
