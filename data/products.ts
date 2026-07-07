@@ -30,6 +30,8 @@ export type Product = {
   isAccessory?: boolean;
   // Ảnh + chú thích "Đặc điểm nổi bật" trên trang chi tiết sản phẩm (tham khảo bố cục trang chính hãng)
   features?: { image: string; caption: string }[];
+  // Bullet ngắn "Tính năng" hiện ngay trên card ở trang danh sách (tham khảo bố cục trang chính hãng mitsubishicleansui.vn)
+  highlights?: string[];
 };
 
 export const categories = [
@@ -60,6 +62,12 @@ export const products: Product[] = [
       "/images/products/cleansui-eu301-gallery-4.jpg",
     ],
     videoId: "P1vevIaQQJA",
+    highlights: [
+      "Nhập khẩu nguyên chiếc từ Nhật Bản",
+      "Tạo 6 chế độ nước, pH 5,0-10,5",
+      "Giữ khoáng tự nhiên có lợi",
+      "Kèm bộ lọc EUC3000 đầu tiên",
+    ],
     features: [
       { image: "/images/products/cleansui-eu301-feature-2.jpg", caption: "Tạo 6 chế độ nước với pH tương ứng từ 5,0 – 10,5, bao gồm 4 chế độ nước ion kiềm, 1 chế độ nước ion axit, 1 chế độ nước lọc giữ khoáng tự nhiên." },
       { image: "/images/products/cleansui-eu301-feature-1.jpg", caption: "Kiểu dáng hiện đại, nhỏ gọn cho không gian lắp đặt tối ưu. Vật liệu bền bỉ, kết hợp bề mặt mạ chrome sáng bóng mang lại vẻ ngoài tinh tế và dễ dàng vệ sinh." },
@@ -102,6 +110,12 @@ export const products: Product[] = [
       "/images/products/cleansui-eu201-gallery-3.jpg",
       "/images/products/cleansui-eu201-gallery-4.jpg",
     ],
+    highlights: [
+      "Nhập khẩu nguyên chiếc từ Nhật Bản",
+      "Công suất lọc 8.000 lít/năm",
+      "Giữ khoáng tự nhiên có lợi",
+      "Vòi xoay 120° tiện lợi",
+    ],
     features: [
       { image: "/images/products/cleansui-eu201.png", caption: "Sản xuất và nhập khẩu nguyên chiếc từ Nhật Bản, vòi xoay 120° tiện lợi." },
       { image: "/images/tech/chan-vi-khuan-sem.jpg", caption: "Công nghệ màng lọc sợi rỗng loại bỏ vi khuẩn, tạp chất nhỏ tới 0,01 micromet, vẫn giữ khoáng tự nhiên." },
@@ -130,6 +144,12 @@ export const products: Product[] = [
     originalPrice: 25990000,
     icon: "💧",
     imageUrl: "/images/products/cleansui-eu202.png",
+    highlights: [
+      "Nhập khẩu nguyên chiếc từ Nhật Bản",
+      "Công suất lọc 8.000 lít/năm",
+      "Giữ khoáng tự nhiên có lợi",
+      "Vòi xoay 100°, giá tốt hơn EU201",
+    ],
     features: [
       { image: "/images/tech/chan-vi-khuan-sem.jpg", caption: "Công nghệ màng lọc sợi rỗng loại bỏ vi khuẩn, tạp chất nhỏ tới 0,01 micromet, vẫn giữ khoáng tự nhiên." },
       { image: "/images/tech/cau-truc-soi-rong.jpg", caption: "Thiết kế hiện đại, thanh lịch, hệ thống chống rò rỉ nước an toàn." },
@@ -164,6 +184,12 @@ export const products: Product[] = [
       "/images/products/cleansui-eu103-gallery-3.jpg",
       "/images/products/cleansui-eu103-gallery-4.jpg",
     ],
+    highlights: [
+      "Nhập khẩu nguyên chiếc từ Nhật Bản",
+      "Công suất lọc 8.000 lít/năm",
+      "Giữ khoáng tự nhiên có lợi",
+      "Rẻ nhất dòng lắp dưới bồn rửa",
+    ],
     features: [
       { image: "/images/products/cleansui-eu103.png", caption: "Sản xuất và nhập khẩu nguyên chiếc từ Nhật Bản, mẫu rẻ nhất dòng lắp dưới bồn rửa." },
       { image: "/images/tech/chan-vi-khuan-sem.jpg", caption: "Công nghệ màng lọc sợi rỗng loại bỏ vi khuẩn, tạp chất nhỏ tới 0,01 micromet, vẫn giữ khoáng tự nhiên." },
@@ -193,6 +219,12 @@ export const products: Product[] = [
     icon: "💧",
     imageUrl: "/images/products/cleansui-cwmf-500e.jpg",
     videoId: "XuLfCXsFuHI",
+    highlights: [
+      "Nhập khẩu nguyên chiếc từ Nhật Bản",
+      "Nóng 80-90°C / lạnh 4-10°C",
+      "Giữ khoáng tự nhiên có lợi",
+      "Khóa trẻ em, chống rò rỉ an toàn",
+    ],
     features: [
       { image: "/images/products/cleansui-cwmf-500e.jpg", caption: "Sử dụng bộ lọc EUC3000 sản xuất 100% tại Nhật Bản, nóng 80-90°C / lạnh 4-10°C." },
       { image: "/images/tech/chan-vi-khuan-sem.jpg", caption: "Màng lọc sợi rỗng loại bỏ tạp chất nhỏ tới 0,01 micromet, vẫn giữ khoáng tự nhiên." },
@@ -228,6 +260,12 @@ export const products: Product[] = [
       "/images/products/cleansui-mp02-3-gallery-2.jpg",
       "/images/products/cleansui-mp02-3-gallery-3.jpg",
     ],
+    highlights: [
+      "Nhập khẩu nguyên chiếc từ Nhật Bản",
+      "Công suất lọc 150.000 lít/năm",
+      "Thân thép không gỉ cao cấp",
+      "Không dùng điện, không nước thải",
+    ],
     features: [
       { image: "/images/products/cleansui-mp02-3.jpg", caption: "Sản xuất và nhập khẩu nguyên chiếc từ Nhật Bản, thân thép không gỉ cao cấp." },
       { image: "/images/tech/chan-vi-khuan-sem.jpg", caption: "Bộ lọc UMC2150 2 cấp loại bỏ tạp chất, vi khuẩn, kim loại nặng, mùi Clo dư." },
@@ -260,6 +298,12 @@ export const products: Product[] = [
       "/images/products/cleansui-mp02-4.jpg",
       "/images/products/cleansui-mp02-4-gallery-2.jpg",
       "/images/products/cleansui-mp02-4-gallery-3.jpg",
+    ],
+    highlights: [
+      "Nhập khẩu nguyên chiếc từ Nhật Bản",
+      "Công suất lọc 50.000 lít/năm",
+      "Thân thép không gỉ cao cấp",
+      "Không dùng điện, không nước thải",
     ],
     features: [
       { image: "/images/products/cleansui-mp02-4.jpg", caption: "Sản xuất và nhập khẩu nguyên chiếc từ Nhật Bản, thân thép không gỉ cao cấp." },
@@ -295,6 +339,12 @@ export const products: Product[] = [
       "/images/products/cleansui-mpoe-s4-gallery-3.jpg",
     ],
     videoId: "TSZDa0qC-eY",
+    highlights: [
+      "4 bộ lọc MPOE050E, sản xuất tại Nhật",
+      "Tuổi thọ 500.000 lít/bộ lọc",
+      "Giữ khoáng tự nhiên cho cả nhà",
+      "Tự động làm sạch bộ lọc",
+    ],
     features: [
       { image: "/images/products/cleansui-mpoe-s4.jpg", caption: "Bao gồm 4 bộ lọc MPOE050E sản xuất 100% tại Nhật Bản, tuổi thọ tới 500.000 lít/bộ lọc." },
       { image: "/images/tech/chan-vi-khuan-sem.jpg", caption: "Màng lọc sợi rỗng loại bỏ vi khuẩn tới 0,01 micromet, giữ khoáng tự nhiên cho toàn bộ ngôi nhà." },
@@ -325,6 +375,12 @@ export const products: Product[] = [
     icon: "💧",
     imageUrl: "/images/products/cleansui-mpoe-p.jpg",
     videoId: "TSZDa0qC-eY",
+    highlights: [
+      "2 bộ lọc MPOE050E, tuổi thọ 500.000 lít",
+      "Màn hình cảm ứng TFT 8,4 inch",
+      "Giữ khoáng tự nhiên và Clo kháng khuẩn",
+      "Tự động làm sạch bộ lọc",
+    ],
     features: [
       { image: "/images/products/cleansui-mpoe-p.jpg", caption: "Màn hình điều khiển cảm ứng TFT 8,4 inch, dễ điều khiển ở mọi vị trí." },
       { image: "/images/tech/chan-vi-khuan-sem.jpg", caption: "Màng lọc sợi rỗng loại bỏ vi khuẩn tới 0,01 micromet, giữ khoáng tự nhiên và Clo kháng khuẩn." },
@@ -355,6 +411,12 @@ export const products: Product[] = [
     icon: "💧",
     imageUrl: "/images/products/cleansui-mpoe-s.jpg",
     videoId: "TSZDa0qC-eY",
+    highlights: [
+      "2 bộ lọc MPOE050E, tuổi thọ 500.000 lít",
+      "Nhỏ gọn nhất dòng MPOE",
+      "Giữ khoáng tự nhiên có lợi",
+      "Tự động làm sạch bộ lọc",
+    ],
     features: [
       { image: "/images/products/cleansui-mpoe-s.jpg", caption: "Thiết kế tinh gọn, nhỏ nhất thị trường trong dòng MPOE, tiết kiệm không gian lắp đặt." },
       { image: "/images/tech/chan-vi-khuan-sem.jpg", caption: "Màng lọc sợi rỗng loại bỏ vi khuẩn tới 0,01 micromet, giữ khoáng tự nhiên." },
@@ -392,6 +454,12 @@ export const products: Product[] = [
       "/images/products/kitz-purifree.jpg",
       "/images/products/kitz-purifree-gallery-2.jpg",
     ],
+    highlights: [
+      "Sản xuất 100% tại Nhật Bản",
+      "Lọc 4 cấp qua màng sợi rỗng",
+      "Vòi 3 chế độ nước tiện lợi",
+      "Không dùng điện, không nước thải",
+    ],
     features: [
       { image: "/images/products/kitz-purifree.jpg", caption: "Sản xuất 100% tại Nhật Bản bởi Kitz Group, lắp trực tiếp tại vòi." },
       { image: "/images/tech/chan-vi-khuan-sem.jpg", caption: "Lọc 4 cấp qua màng sợi rỗng, loại bỏ tạp chất mà vẫn giữ khoáng tự nhiên." },
@@ -425,6 +493,12 @@ export const products: Product[] = [
       "/images/products/kitz-oas-nts9.jpg",
       "/images/products/kitz-oas-nts9-gallery-2.jpg",
     ],
+    highlights: [
+      "Sản xuất 100% tại Nhật Bản",
+      "Đạt chuẩn ISO 9001:2015, ISO 14001:2015",
+      "Lắp linh hoạt tại vòi hoặc âm tủ",
+      "Không dùng điện, không nước thải",
+    ],
     features: [
       { image: "/images/products/kitz-oas-nts9.jpg", caption: "Sản xuất 100% tại Nhật Bản, lắp linh hoạt tại vòi hoặc âm tủ." },
       { image: "/images/tech/chan-vi-khuan-sem.jpg", caption: "Công nghệ màng lọc sợi rỗng tiên tiến, đạt chuẩn ISO 9001:2015 và ISO 14001:2015." },
@@ -453,6 +527,12 @@ export const products: Product[] = [
     originalPrice: 7700000,
     icon: "💧",
     imageUrl: "/images/products/kitz-oss-t7.jpg",
+    highlights: [
+      "Sản xuất 100% tại Nhật Bản",
+      "Công suất lọc 11.000 lít",
+      "Lọc 4 cấp qua màng sợi rỗng",
+      "Không dùng điện, không nước thải",
+    ],
     features: [
       { image: "/images/products/kitz-oss-t7.jpg", caption: "Sản xuất 100% tại Nhật Bản, lắp trực tiếp tại vòi." },
       { image: "/images/tech/chan-vi-khuan-sem.jpg", caption: "Lọc 4 cấp qua màng sợi rỗng, công suất lọc 11.000 lít." },
@@ -483,6 +563,12 @@ export const products: Product[] = [
     images: [
       "/images/products/kitz-oss-g4-e.jpg",
       "/images/products/kitz-oss-g4-e-gallery-2.jpg",
+    ],
+    highlights: [
+      "Sản xuất 100% tại Nhật Bản",
+      "Vòi chính hãng, bảo hành chống gỉ 5 năm",
+      "Giữ khoáng tự nhiên có lợi",
+      "Không dùng điện, không nước thải",
     ],
     features: [
       { image: "/images/products/kitz-oss-g4-e.jpg", caption: "Sản xuất 100% tại Nhật Bản, lắp âm tủ, vòi chính hãng bảo hành chống gỉ 5 năm." },
@@ -516,6 +602,12 @@ export const products: Product[] = [
       "/images/products/kitz-oas-9.jpg",
       "/images/products/kitz-oas-9-gallery-2.jpg",
     ],
+    highlights: [
+      "Sản xuất 100% tại Nhật Bản",
+      "Thân thép không gỉ SUS304",
+      "Công suất lọc 11.000 lít",
+      "Không dùng điện, không nước thải",
+    ],
     features: [
       { image: "/images/products/kitz-oas-9.jpg", caption: "Sản xuất 100% tại Nhật Bản, thân thép không gỉ SUS304 lắp âm tủ." },
       { image: "/images/tech/chan-vi-khuan-sem.jpg", caption: "Màng lọc sợi rỗng tiên tiến loại bỏ vi khuẩn, tạp chất nhỏ tới 0,1 micromet." },
@@ -544,6 +636,12 @@ export const products: Product[] = [
     originalPrice: 5000000,
     icon: "💧",
     imageUrl: "/images/products/kitz-micro-filter-10inch.jpg",
+    highlights: [
+      "Lõi lọc màng sợi rỗng 10 inch",
+      "Lắp đầu nguồn đường ống nước",
+      "Loại bỏ cặn, gỉ sét, vi khuẩn lớn",
+      "Bảo vệ máy giặt, bình nóng lạnh",
+    ],
     features: [
       { image: "/images/products/kitz-micro-filter-10inch.jpg", caption: "Lõi lọc màng sợi rỗng — loại bỏ cặn bẩn, gỉ sét, vi khuẩn kích thước lớn ngay từ đầu nguồn, trước khi nước chảy vào các thiết bị trong nhà." },
       { image: "/images/tech/cau-truc-soi-rong.jpg", caption: "Lắp đầu nguồn đường ống nước sinh hoạt — bảo vệ máy giặt, bình nóng lạnh, vòi sen khỏi cặn bẩn tích tụ theo thời gian." },
@@ -569,6 +667,11 @@ export const products: Product[] = [
     originalPrice: 9800000,
     icon: "💧",
     imageUrl: "/images/products/kitz-bo-loc-tong-2-coc.jpg",
+    highlights: [
+      "2 cốc lọc: PP + than hoạt tính nén",
+      "Lắp đầu nguồn đường ống nước",
+      "Khử mùi, clo dư, cặn thô",
+    ],
     description:
       "Bộ lọc tổng Kitz 2 cốc, kết hợp lõi PP lọc cặn thô và lõi than hoạt tính nén khử mùi, clo dư. Lắp đầu nguồn đường ống nước sinh hoạt.",
     specs: [
@@ -589,6 +692,11 @@ export const products: Product[] = [
     originalPrice: 1500000,
     icon: "💧",
     imageUrl: "/images/products/kitz-dong-ho-do-nuoc-thong-minh.jpg",
+    highlights: [
+      "Theo dõi lượng nước qua smartphone",
+      "Cảnh báo mức nước bất thường",
+      "Lưu lượng sử dụng thời gian thực",
+    ],
     description:
       "Đồng hồ đo nước thông minh, theo dõi lượng nước sử dụng qua smartphone, cảnh báo mức nước, lưu lượng sử dụng theo thời gian thực. Phân phối và lắp đặt bởi DigiSmart.",
     specs: [

@@ -200,12 +200,28 @@ export default function MayLocNuocPage() {
                   </div>
                   <div style={{ padding: "1rem 1rem 0" }}>
                     <div style={{ fontFamily: "var(--font-sans)", fontSize: "0.68rem", color: "var(--muted)", textTransform: "uppercase", letterSpacing: 0.6, marginBottom: 4 }}>
-                      {p.brand} · {p.capacity_lph} lít/giờ · {p.stages} cấp lọc
+                      {p.brand}
+                      {p.stages ? ` · ${p.stages} cấp lọc` : ""}
                       {p.has_hot && p.has_cold ? " · Nóng lạnh" : p.has_cold ? " · Có lạnh" : p.has_hot ? " · Có nóng" : ""}
                     </div>
                     <div style={{ fontFamily: "var(--font-sans)", fontWeight: 700, fontSize: "0.92rem", color: "var(--text)", lineHeight: 1.4, marginBottom: "0.6rem", minHeight: 40 }}>
                       {p.name}
                     </div>
+                    {p.highlights && p.highlights.length > 0 && (
+                      <div style={{ marginBottom: "0.75rem" }}>
+                        <div style={{ fontFamily: "var(--font-sans)", fontWeight: 700, fontSize: "0.68rem", color: "var(--brand)", textTransform: "uppercase", letterSpacing: 0.5, marginBottom: 4 }}>
+                          Tính năng
+                        </div>
+                        <ul style={{ margin: 0, padding: 0, listStyle: "none" }}>
+                          {p.highlights.map(h => (
+                            <li key={h} style={{ display: "flex", gap: 6, alignItems: "flex-start", fontFamily: "var(--font-sans)", fontSize: "0.78rem", color: "var(--text)", lineHeight: 1.5, marginBottom: 2 }}>
+                              <span style={{ color: "#F07B20", flexShrink: 0 }}>•</span>
+                              <span>{h}</span>
+                            </li>
+                          ))}
+                        </ul>
+                      </div>
+                    )}
                     <div style={{ display: "flex", alignItems: "baseline", gap: 8, marginBottom: "0.4rem" }}>
                       <span style={{ fontFamily: "var(--font-sans)", fontSize: "1.05rem", fontWeight: 700, color: "var(--brand2)" }}>
                         {formatPrice(p.price)}
