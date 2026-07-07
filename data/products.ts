@@ -60,6 +60,7 @@ export const products: Product[] = [
       "/images/products/cleansui-eu301-gallery-2.jpg",
       "/images/products/cleansui-eu301-gallery-3.jpg",
       "/images/products/cleansui-eu301-gallery-4.jpg",
+      "/images/products/cleansui-eu301-gallery-5.webp",
     ],
     videoId: "P1vevIaQQJA",
     highlights: [
@@ -109,6 +110,7 @@ export const products: Product[] = [
       "/images/products/cleansui-eu201-gallery-2.jpg",
       "/images/products/cleansui-eu201-gallery-3.jpg",
       "/images/products/cleansui-eu201-gallery-4.jpg",
+      "/images/products/cleansui-eu201-gallery-5.png",
     ],
     highlights: [
       "Nhập khẩu nguyên chiếc từ Nhật Bản",
@@ -144,6 +146,10 @@ export const products: Product[] = [
     originalPrice: 25990000,
     icon: "💧",
     imageUrl: "/images/products/cleansui-eu202.png",
+    images: [
+      "/images/products/cleansui-eu202.png",
+      "/images/products/cleansui-eu202-gallery-2.png",
+    ],
     highlights: [
       "Nhập khẩu nguyên chiếc từ Nhật Bản",
       "Công suất lọc 8.000 lít/năm",
@@ -183,6 +189,7 @@ export const products: Product[] = [
       "/images/products/cleansui-eu103-gallery-2.jpg",
       "/images/products/cleansui-eu103-gallery-3.jpg",
       "/images/products/cleansui-eu103-gallery-4.jpg",
+      "/images/products/cleansui-eu103-gallery-5.png",
     ],
     highlights: [
       "Nhập khẩu nguyên chiếc từ Nhật Bản",
@@ -563,6 +570,7 @@ export const products: Product[] = [
     images: [
       "/images/products/kitz-oss-g4-e.jpg",
       "/images/products/kitz-oss-g4-e-gallery-2.jpg",
+      "/images/products/kitz-oss-g4-e-gallery-3.jpg",
     ],
     highlights: [
       "Sản xuất 100% tại Nhật Bản",
@@ -601,6 +609,7 @@ export const products: Product[] = [
     images: [
       "/images/products/kitz-oas-9.jpg",
       "/images/products/kitz-oas-9-gallery-2.jpg",
+      "/images/products/kitz-oas-9-gallery-3.jpg",
     ],
     highlights: [
       "Sản xuất 100% tại Nhật Bản",
