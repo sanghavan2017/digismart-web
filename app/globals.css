@@ -1,5 +1,5 @@
 :root {
-  /* Geometric sans-serif (Montserrat, nạp qua next/font trong app/layout.tsx) */
+  /* Noto Sans JP (nạp qua next/font trong app/layout.tsx) — đồng bộ với font trang /may-loc-nuoc/cleansui */
   --font-sans:   var(--font-geo), 'Segoe UI', sans-serif;
 
   --brand:       #042C53;
