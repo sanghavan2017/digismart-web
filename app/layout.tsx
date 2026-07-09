@@ -11,6 +11,7 @@ const notoSansJP = Noto_Sans_JP({
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import Chatbot from "@/components/Chatbot";
+import ContactWidget from "@/components/ContactWidget";
 import { CartProvider } from "@/components/CartContext";
 
 const GA_MEASUREMENT_ID = "G-YNQSD9M50Q";
@@ -90,6 +91,7 @@ export default function RootLayout({
           <main style={{ flex: 1 }}>{children}</main>
           <Footer />
           <Chatbot />
+          <ContactWidget />
         </CartProvider>
       </body>
     </html>
