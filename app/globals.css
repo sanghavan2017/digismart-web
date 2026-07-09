@@ -12,6 +12,10 @@
   --text:        #2C2C2A;
   --muted:       #B4B2A9;
   --border:      #D6E4F0;
+
+  /* Màu phụ theo ngành hàng (category accent) — KHÔNG thay brand chính, chỉ dùng cho nhấn nhá riêng từng ngành */
+  --water:       #0891B2;
+  --water-tint:  #E0F5F7;
 }
 
 * { box-sizing: border-box; margin: 0; padding: 0; }

@@ -65,6 +65,24 @@ export default function MayLocNuocPage() {
         </div>
       </section>
 
+      {/* Banner sang trang riêng dòng Cleansui */}
+      <section style={{ padding: "1.5rem 0", background: "#fff", borderBottom: "1px solid var(--border)" }}>
+        <div className="container">
+          <Link href="/may-loc-nuoc/cleansui" style={{
+            display: "flex", alignItems: "center", justifyContent: "space-between", flexWrap: "wrap", gap: "1rem",
+            background: "var(--brand-light)", border: "1px solid var(--border)", borderRadius: 10,
+            padding: "1rem 1.5rem", textDecoration: "none",
+          }}>
+            <span style={{ fontFamily: "var(--font-sans)", fontSize: "0.92rem", color: "var(--brand)" }}>
+              <strong>Riêng dòng Cleansui:</strong> so sánh đầy đủ 10 model, cấu trúc lõi lọc 4 lớp, ảnh lắp đặt thực tế
+            </span>
+            <span style={{ fontFamily: "var(--font-sans)", fontWeight: 700, fontSize: "0.88rem", color: "var(--brand2)", whiteSpace: "nowrap" }}>
+              Xem chi tiết →
+            </span>
+          </Link>
+        </div>
+      </section>
+
       {/* Benefits */}
       <section style={{ padding: "3rem 0", background: "var(--bg)" }}>
         <div className="container">
