@@ -86,7 +86,16 @@ export async function POST(req: NextRequest) {
     });
 
     const data = await response.json();
-    const text = data.content?.[0]?.text || "Dạ mình không hiểu câu hỏi, anh/chị thử hỏi lại nhé.";
+
+    if (!response.ok) {
+      console.error("Anthropic API error", response.status, data);
+      return NextResponse.json(
+        { reply: "Dạ hiện hệ thống tư vấn đang gặp sự cố, anh/chị vui lòng thử lại sau ít phút hoặc gọi hotline 0778 886 758 để được hỗ trợ ngay ạ." },
+        { status: 502 }
+      );
+    }
+
+    const text = data.content?.[0]?.text || "Dạ mình chưa rõ ý anh/chị, anh/chị có thể hỏi lại cụ thể hơn được không ạ?";
 
     return NextResponse.json({ reply: text });
   } catch {

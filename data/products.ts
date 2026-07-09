@@ -225,6 +225,9 @@ export const products: Product[] = [
     originalPrice: 20490000,
     icon: "💧",
     imageUrl: "/images/products/cleansui-cwmf-500e.jpg",
+    images: [
+      "/images/products/cleansui-cwmf-500e.jpg",
+    ],
     videoId: "XuLfCXsFuHI",
     highlights: [
       "Nhập khẩu nguyên chiếc từ Nhật Bản",
@@ -381,6 +384,13 @@ export const products: Product[] = [
     originalPrice: 194490000,
     icon: "💧",
     imageUrl: "/images/products/cleansui-mpoe-p.jpg",
+    images: [
+      "/images/products/cleansui-mpoe-p.jpg",
+      "/images/products/cleansui-mpoe-p-gallery-2.png",
+      "/images/products/cleansui-mpoe-p-gallery-3.png",
+      "/images/products/cleansui-mpoe-p-gallery-4.png",
+      "/images/products/cleansui-mpoe-p-gallery-5.png",
+    ],
     videoId: "TSZDa0qC-eY",
     highlights: [
       "2 bộ lọc MPOE050E, tuổi thọ 500.000 lít",
@@ -417,6 +427,12 @@ export const products: Product[] = [
     originalPrice: 145290000,
     icon: "💧",
     imageUrl: "/images/products/cleansui-mpoe-s.jpg",
+    images: [
+      "/images/products/cleansui-mpoe-s.jpg",
+      "/images/products/cleansui-mpoe-s-gallery-2.png",
+      "/images/products/cleansui-mpoe-s-gallery-3.png",
+      "/images/products/cleansui-mpoe-s-gallery-4.png",
+    ],
     videoId: "TSZDa0qC-eY",
     highlights: [
       "2 bộ lọc MPOE050E, tuổi thọ 500.000 lít",
@@ -2986,6 +3002,9 @@ export const products: Product[] = [
     originalPrice: 16081000,
     icon: "❄️",
     imageUrl: "/images/products/daikin-ftxv25qvmv.png",
+    images: [
+      "/images/products/daikin-ftxv25qvmv.png",
+    ],
     features: [
       { image: "/images/products/daikin-ftxv25qvmv.png", caption: "Dòng 2 chiều, hiệu suất năng lượng (CSPF) 6.21." },
       { image: "/images/products/daikin-ftxv25qvmv.png", caption: "Dàn lạnh mỏng (223mm), thiết kế gọn cho không gian lắp đặt hẹp." },
@@ -3020,6 +3039,9 @@ export const products: Product[] = [
     originalPrice: 19624000,
     icon: "❄️",
     imageUrl: "/images/products/daikin-ftxv35qvmv.png",
+    images: [
+      "/images/products/daikin-ftxv35qvmv.png",
+    ],
     features: [
       { image: "/images/products/daikin-ftxv35qvmv.png", caption: "Dòng 2 chiều, hiệu suất năng lượng (CSPF) 6.21." },
       { image: "/images/products/daikin-ftxv35qvmv.png", caption: "Dàn lạnh mỏng (223mm), thiết kế gọn cho không gian lắp đặt hẹp." },
@@ -3054,6 +3076,9 @@ export const products: Product[] = [
     originalPrice: 30283000,
     icon: "❄️",
     imageUrl: "/images/products/daikin-ftxv50qvmv.png",
+    images: [
+      "/images/products/daikin-ftxv50qvmv.png",
+    ],
     features: [
       { image: "/images/products/daikin-ftxv50qvmv.png", caption: "Dòng 2 chiều, hiệu suất năng lượng (CSPF) 6.21." },
       { image: "/images/products/daikin-ftxv50qvmv.png", caption: "Dàn lạnh mỏng (223mm), thiết kế gọn cho không gian lắp đặt hẹp." },
@@ -3088,6 +3113,9 @@ export const products: Product[] = [
     originalPrice: 44864000,
     icon: "❄️",
     imageUrl: "/images/products/daikin-ftxv60qvmv.png",
+    images: [
+      "/images/products/daikin-ftxv60qvmv.png",
+    ],
     features: [
       { image: "/images/products/daikin-ftxv60qvmv.png", caption: "Dòng 2 chiều, hiệu suất năng lượng (CSPF) 6.21." },
       { image: "/images/products/daikin-ftxv60qvmv.png", caption: "Dàn lạnh mỏng (223mm), thiết kế gọn cho không gian lắp đặt hẹp." },
@@ -3122,6 +3150,9 @@ export const products: Product[] = [
     originalPrice: 49016000,
     icon: "❄️",
     imageUrl: "/images/products/daikin-ftxv71qvmv.png",
+    images: [
+      "/images/products/daikin-ftxv71qvmv.png",
+    ],
     features: [
       { image: "/images/products/daikin-ftxv71qvmv.png", caption: "Dòng 2 chiều, hiệu suất năng lượng (CSPF) 6.21." },
       { image: "/images/products/daikin-ftxv71qvmv.png", caption: "Dàn lạnh mỏng (223mm), thiết kế gọn cho không gian lắp đặt hẹp." },
@@ -3276,10 +3307,16 @@ export const products: Product[] = [
     originalPrice: 46537000,
     icon: "❄️",
     imageUrl: "/images/products/daikin-ftxm60xvmv.png",
+    images: [
+      "/images/products/daikin-ftxm60xvmv.png",
+      "/images/products/daikin-ftxm50xvmv-gallery-2.png",
+      "/images/products/daikin-ftxm50xvmv-gallery-3.png",
+      "/images/products/daikin-ftxm50xvmv-gallery-4.png",
+    ],
     features: [
       { image: "/images/products/daikin-ftxm60xvmv.png", caption: "Dòng 2 chiều cao cấp nhất tại DigiSmart — hiệu suất năng lượng (CSPF) 7.6, cao nhất trong toàn bộ catalog điều hòa Daikin đang bán." },
-      { image: "/images/products/daikin-ftxm60xvmv.png", caption: "Dàn nóng và dàn lạnh kích thước lớn hơn các dòng khác, tản nhiệt tốt hơn khi chạy liên tục." },
-      { image: "/images/products/daikin-ftxm60xvmv.png", caption: "Gas R32, phù hợp gia đình muốn đầu tư dài hạn, ưu tiên tiết kiệm điện tối đa." },
+      { image: "/images/products/daikin-ftxm50xvmv-gallery-2.png", caption: "Dàn nóng và dàn lạnh kích thước lớn hơn các dòng khác, tản nhiệt tốt hơn khi chạy liên tục." },
+      { image: "/images/products/daikin-ftxm50xvmv-gallery-3.png", caption: "Gas R32, phù hợp gia đình muốn đầu tư dài hạn, ưu tiên tiết kiệm điện tối đa." },
     ],
     description:
       "Điều hòa Daikin FTXM60XVMV (2.5HP) thuộc dòng Inverter 2 chiều (làm lạnh & sưởi ấm) cao cấp. Sản phẩm chính hãng Daikin Việt Nam, giá bán lẻ theo niêm yết trên Daikin E-Shop (daikin.com.vn). Phù hợp phòng 30-40m².",
