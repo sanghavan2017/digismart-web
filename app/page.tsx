@@ -1,6 +1,7 @@
 import Link from "next/link";
 import Image from "next/image";
 import { products, categories } from "@/data/products";
+import SolutionDiagram from "@/components/SolutionDiagram";
 import type { Metadata } from "next";
 
 export const metadata: Metadata = {
@@ -82,6 +83,8 @@ export default function HomePage() {
           </div>
         </div>
       </section>
+
+      <SolutionDiagram />
 
       {/* Featured Products */}
       <section style={{ padding: "3rem 0", background: "var(--bg)" }}>
