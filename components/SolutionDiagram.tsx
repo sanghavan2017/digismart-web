@@ -1,20 +1,47 @@
 "use client";
 import { useEffect, useState } from "react";
 
-const CENTER = { x: 500, y: 150, w: 280, h: 84 };
-const HUB_AC = { x: 270, y: 320, w: 210, h: 62, label: ["ĐIỀU HÒA", "KHÔNG KHÍ"] };
-const HUB_WATER = { x: 730, y: 320, w: 210, h: 62, label: ["MÁY LỌC", "NƯỚC"] };
+const CENTER = { x: 500, y: 300, w: 260, h: 90 };
+const HUB_AC = { x: 210, y: 300, w: 180, h: 58, label: ["ĐIỀU HÒA", "KHÔNG KHÍ"] };
+const HUB_WATER = { x: 790, y: 300, w: 180, h: 58, label: ["MÁY LỌC", "NƯỚC"] };
 
-const LEAVES = [
-  { hub: HUB_AC, x: 120, y: 480, w: 170, h: 56, icon: "❄️", label: ["Mitsubishi Electric"] },
-  { hub: HUB_AC, x: 420, y: 480, w: 170, h: 56, icon: "🌀", label: ["Daikin"] },
-  { hub: HUB_WATER, x: 580, y: 480, w: 170, h: 56, icon: "💧", label: ["Cleansui"] },
-  { hub: HUB_WATER, x: 880, y: 480, w: 170, h: 56, icon: "🚰", label: ["Kitz Micro Filter"] },
+type Logo = { type: "image"; src: string; aspect: number } | { type: "mitsubishi"; aspect: number };
+
+const LEAVES: { hub: typeof HUB_AC; x: number; y: number; w: number; h: number; logo: Logo; href: string }[] = [
+  { hub: HUB_AC, x: 90, y: 170, w: 190, h: 64, logo: { type: "mitsubishi", aspect: 4.25 }, href: "/san-pham?brand=Mitsubishi+Electric" },
+  { hub: HUB_AC, x: 90, y: 430, w: 190, h: 64, logo: { type: "image", src: "/images/brands/daikin-logo.png", aspect: 345 / 84 }, href: "/san-pham?brand=Daikin" },
+  { hub: HUB_WATER, x: 910, y: 170, w: 190, h: 64, logo: { type: "image", src: "/images/brands/cleansui-logo.svg", aspect: 116 / 40 }, href: "/san-pham?brand=Cleansui" },
+  { hub: HUB_WATER, x: 910, y: 430, w: 190, h: 64, logo: { type: "image", src: "/images/brands/kitz-logo.png", aspect: 482 / 143 }, href: "/san-pham?brand=Kitz" },
 ];
 
-function elbow(x1: number, y1: number, x2: number, y2: number) {
-  const midY = (y1 + y2) / 2;
-  return `M${x1},${y1} V${midY} H${x2} V${y2}`;
+function elbowH(x1: number, y1: number, x2: number, y2: number) {
+  const midX = (x1 + x2) / 2;
+  return `M${x1},${y1} H${midX} V${y2} H${x2}`;
+}
+
+function MitsubishiLogo({ x, y, width, height }: { x: number; y: number; width: number; height: number }) {
+  const diamond = (cx: number, cy: number, d: number) =>
+    `M${cx},${cy - d / 2} L${cx + d / 2},${cy} L${cx},${cy + d / 2} L${cx - d / 2},${cy} Z`;
+  return (
+    <svg x={x} y={y} width={width} height={height} viewBox="0 0 170 40" preserveAspectRatio="xMidYMid meet">
+      <path d={diamond(12, 20, 15)} fill="#E60012" />
+      <path d={diamond(24, 20, 15)} fill="#E60012" />
+      <path d={diamond(36, 20, 15)} fill="#E60012" />
+      <text x={48} y={26} textLength={118} lengthAdjust="spacingAndGlyphs"
+        style={{ fontFamily: "var(--font-sans)", fontSize: 15, fontWeight: 800, fill: "#0F172A" }}>
+        MITSUBISHI ELECTRIC
+      </text>
+    </svg>
+  );
+}
+
+function LeafLogo({ logo, x, y, w, h }: { logo: Logo; x: number; y: number; w: number; h: number }) {
+  const dispH = h - 20;
+  const dispW = dispH * logo.aspect;
+  const dispX = x + (w - dispW) / 2;
+  const dispY = y + (h - dispH) / 2;
+  if (logo.type === "mitsubishi") return <MitsubishiLogo x={dispX} y={dispY} width={dispW} height={dispH} />;
+  return <image href={logo.src} x={dispX} y={dispY} width={dispW} height={dispH} preserveAspectRatio="xMidYMid meet" />;
 }
 
 export default function SolutionDiagram() {
@@ -25,12 +52,16 @@ export default function SolutionDiagram() {
     setAnimate(!mq.matches);
   }, []);
 
-  const centerBottom = { x: CENTER.x, y: CENTER.y + CENTER.h / 2 };
   const hubPaths = [
-    elbow(centerBottom.x, centerBottom.y, HUB_AC.x, HUB_AC.y - HUB_AC.h / 2),
-    elbow(centerBottom.x, centerBottom.y, HUB_WATER.x, HUB_WATER.y - HUB_WATER.h / 2),
+    `M${CENTER.x - CENTER.w / 2},${CENTER.y} H${HUB_AC.x + HUB_AC.w / 2}`,
+    `M${CENTER.x + CENTER.w / 2},${CENTER.y} H${HUB_WATER.x - HUB_WATER.w / 2}`,
   ];
-  const leafPaths = LEAVES.map(l => elbow(l.hub.x, l.hub.y + l.hub.h / 2, l.x, l.y - l.h / 2));
+  const leafPaths = LEAVES.map(l => {
+    const fromRight = l.hub === HUB_AC;
+    const hubEdgeX = fromRight ? l.hub.x - l.hub.w / 2 : l.hub.x + l.hub.w / 2;
+    const leafEdgeX = fromRight ? l.x + l.w / 2 : l.x - l.w / 2;
+    return elbowH(hubEdgeX, l.hub.y, leafEdgeX, l.y);
+  });
   const allPaths = [...hubPaths, ...leafPaths];
 
   return (
@@ -65,7 +96,7 @@ export default function SolutionDiagram() {
               </circle>
             ))}
 
-            {/* Center hub */}
+            {/* Center hub — dead center of the diagram */}
             <g className={animate ? "dgs-sd-pulse" : undefined} style={{ animationDelay: "0s" }}>
               <rect x={CENTER.x - CENTER.w / 2} y={CENTER.y - CENTER.h / 2} width={CENTER.w} height={CENTER.h}
                 rx={12} fill="#F07B20" stroke="#FFB27A" strokeWidth={1.5} />
@@ -73,7 +104,7 @@ export default function SolutionDiagram() {
               <line x1={CENTER.x - CENTER.w / 2 + 10} y1={CENTER.y - CENTER.h / 2 + 8} x2={CENTER.x - CENTER.w / 2 + 10} y2={CENTER.y - CENTER.h / 2 + 20} stroke="#fff" strokeWidth={1.5} />
               <line x1={CENTER.x + CENTER.w / 2 - 10} y1={CENTER.y + CENTER.h / 2 - 8} x2={CENTER.x + CENTER.w / 2 - 22} y2={CENTER.y + CENTER.h / 2 - 8} stroke="#fff" strokeWidth={1.5} />
               <line x1={CENTER.x + CENTER.w / 2 - 10} y1={CENTER.y + CENTER.h / 2 - 8} x2={CENTER.x + CENTER.w / 2 - 10} y2={CENTER.y + CENTER.h / 2 - 20} stroke="#fff" strokeWidth={1.5} />
-              <text x={CENTER.x} y={CENTER.y - 4} textAnchor="middle" style={{ fontFamily: "var(--font-sans)", fontSize: 19, fontWeight: 700, fill: "#fff", letterSpacing: 1 }}>
+              <text x={CENTER.x} y={CENTER.y - 6} textAnchor="middle" style={{ fontFamily: "var(--font-sans)", fontSize: 19, fontWeight: 700, fill: "#fff", letterSpacing: 1 }}>
                 DIGISMART
               </text>
               <text x={CENTER.x} y={CENTER.y + 18} textAnchor="middle" style={{ fontFamily: "var(--font-sans)", fontSize: 10, fontWeight: 500, fill: "rgba(255,255,255,0.9)" }}>
@@ -95,19 +126,13 @@ export default function SolutionDiagram() {
               </g>
             ))}
 
-            {/* Leaf nodes */}
-            {LEAVES.map(l => (
-              <g key={l.label.join("")}>
+            {/* Leaf nodes — real brand logos, full-size, no squish; each links to filtered product listing */}
+            {LEAVES.map((l, i) => (
+              <a key={i} href={l.href} className="dgs-sd-leaf">
                 <rect x={l.x - l.w / 2} y={l.y - l.h / 2} width={l.w} height={l.h} rx={9}
-                  fill="#081F38" stroke="rgba(56,189,248,0.5)" strokeWidth={1.5} />
-                <text x={l.x - l.w / 2 + 26} y={l.y + 7} textAnchor="middle" style={{ fontSize: 20 }}>{l.icon}</text>
-                {l.label.map((line, i) => (
-                  <text key={line} x={l.x + 14} y={l.y + 5 + i * 14 - (l.label.length - 1) * 7} textAnchor="middle"
-                    style={{ fontFamily: "var(--font-sans)", fontSize: 12, fontWeight: 600, fill: "#fff" }}>
-                    {line}
-                  </text>
-                ))}
-              </g>
+                  fill="#fff" stroke="rgba(56,189,248,0.6)" strokeWidth={1.5} />
+                <LeafLogo logo={l.logo} x={l.x - l.w / 2} y={l.y - l.h / 2} w={l.w} h={l.h} />
+              </a>
             ))}
           </svg>
         </div>
@@ -121,11 +146,14 @@ export default function SolutionDiagram() {
                 {group.h}
               </div>
               <div style={{ display: "grid", gridTemplateColumns: "repeat(2, 1fr)", gap: "0.75rem" }}>
-                {group.items.map(l => (
-                  <div key={l.label.join("")} style={{ background: "#081F38", border: "1.5px solid rgba(56,189,248,0.4)", borderRadius: 10, padding: "0.9rem", textAlign: "center" }}>
-                    <div style={{ fontSize: "1.5rem", marginBottom: "0.35rem" }}>{l.icon}</div>
-                    <div style={{ fontFamily: "var(--font-sans)", fontSize: "0.76rem", fontWeight: 600, color: "#fff" }}>{l.label.join(" ")}</div>
-                  </div>
+                {group.items.map((l, i) => (
+                  <a key={i} href={l.href} style={{ background: "#fff", border: "1.5px solid rgba(56,189,248,0.4)", borderRadius: 10, padding: "0.9rem", display: "flex", alignItems: "center", justifyContent: "center", minHeight: 50 }}>
+                    {l.logo.type === "image"
+                      ? <img src={l.logo.src} alt="" style={{ maxHeight: 34, maxWidth: "100%", objectFit: "contain" }} />
+                      : <svg width={34 * (l.logo as { aspect: number }).aspect} height={34} viewBox="0 0 170 40" style={{ maxWidth: "100%" }}>
+                          <MitsubishiLogo x={0} y={0} width={170} height={40} />
+                        </svg>}
+                  </a>
                 ))}
               </div>
             </div>
@@ -141,6 +169,8 @@ export default function SolutionDiagram() {
         @keyframes dgs-sd-pulse { 0%, 100% { filter: drop-shadow(0 0 0px rgba(56,189,248,0.5)); } 50% { filter: drop-shadow(0 0 6px rgba(56,189,248,0.85)); } }
         .dgs-sd-flow { animation: dgs-sd-dash 1s linear infinite; }
         .dgs-sd-pulse { animation: dgs-sd-pulse 2.6s ease-in-out infinite; }
+        .dgs-sd-leaf { cursor: pointer; transform-box: fill-box; transform-origin: center; transition: transform 0.15s ease; }
+        .dgs-sd-leaf:hover { transform: scale(1.05); }
         @media (max-width: 767px) {
           .dgs-sd-svg-wrap { display: none; }
           .dgs-sd-mobile { display: block; }
