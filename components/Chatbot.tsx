@@ -17,6 +17,9 @@ const WELCOME_SUGGESTIONS = [
   "Chi phí lắp đặt",
 ];
 
+const WELCOME_MESSAGE =
+  "Dạ chào anh/chị! Mình là trợ lý AI của DigiSmart. Mình tư vấn điều hòa, máy lọc nước Cleansui & Kitz — so sánh, gợi ý theo nhu cầu, anh/chị cứ hỏi tự nhiên nhé.";
+
 const productIndex = new Map(products.map(p => [p.id, p]));
 
 function escapeHtml(t: string) {
@@ -79,8 +82,20 @@ export default function Chatbot() {
   const [voiceOn, setVoiceOn] = useState(false);
   const bottomRef = useRef<HTMLDivElement>(null);
   const recognitionRef = useRef<unknown>(null);
+  const userToggled = useRef(false);
 
   useEffect(() => { bottomRef.current?.scrollIntoView({ behavior: "smooth" }); }, [messages, loading]);
+
+  useEffect(() => {
+    const t = setTimeout(() => {
+      if (userToggled.current) return;
+      setOpen(true);
+      setWelcomed(true);
+      setMessages([{ role: "assistant", content: WELCOME_MESSAGE }]);
+    }, 2500);
+    return () => clearTimeout(t);
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, []);
 
   function speak(html: string) {
     if (!voiceOn || typeof window === "undefined" || !window.speechSynthesis) return;
@@ -142,12 +157,13 @@ export default function Chatbot() {
   }
 
   function handleOpen() {
+    userToggled.current = true;
     const next = !open;
     setOpen(next);
     if (next && !welcomed) {
       setWelcomed(true);
       setTimeout(() => {
-        setMessages([{ role: "assistant", content: "Dạ chào anh/chị! Mình là trợ lý AI của DigiSmart. Mình tư vấn điều hòa, máy lọc nước Cleansui & Kitz — so sánh, gợi ý theo nhu cầu, anh/chị cứ hỏi tự nhiên nhé." }]);
+        setMessages([{ role: "assistant", content: WELCOME_MESSAGE }]);
       }, 300);
     }
   }

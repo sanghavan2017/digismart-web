@@ -1,5 +1,5 @@
 "use client";
-import { useState } from "react";
+import { useState, useEffect, useRef } from "react";
 
 const CHANNELS = [
   { key: "zalo", label: "Zalo", href: "https://zalo.me/0778886758", bg: "#0068FF", icon: "💬" },
@@ -10,6 +10,14 @@ const CHANNELS = [
 
 export default function ContactWidget() {
   const [open, setOpen] = useState(false);
+  const userToggled = useRef(false);
+
+  useEffect(() => {
+    const t = setTimeout(() => {
+      if (!userToggled.current) setOpen(true);
+    }, 1500);
+    return () => clearTimeout(t);
+  }, []);
 
   return (
     <div style={{ position: "fixed", bottom: 20, left: 20, zIndex: 999, display: "flex", flexDirection: "column", alignItems: "center", gap: 10, fontFamily: "var(--font-sans)" }}>
@@ -46,7 +54,7 @@ export default function ContactWidget() {
         }
       `}</style>
       <button
-        onClick={() => setOpen(o => !o)}
+        onClick={() => { userToggled.current = true; setOpen(o => !o); }}
         aria-label={open ? "Đóng liên hệ nhanh" : "Mở liên hệ nhanh"}
         style={{
           width: 54,
