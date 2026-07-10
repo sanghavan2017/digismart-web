@@ -63,6 +63,13 @@ export default function Navbar() {
           <span style={{ fontFamily: "var(--font-sans)", fontSize: "1.35rem", color: "#fff", fontWeight: 700, letterSpacing: 0.3 }}>
             Digi<span style={{ color: "var(--accent)" }}>Smart</span>
           </span>
+          <span style={{
+            fontFamily: "var(--font-sans)", fontSize: "0.62rem", fontWeight: 700, color: "var(--accent)",
+            border: "1px solid var(--accent)", borderRadius: 4, padding: "1px 5px", letterSpacing: 0.5,
+            lineHeight: 1.4, alignSelf: "flex-start", marginTop: 2,
+          }}>
+            BETA
+          </span>
         </Link>
 
         {/* Desktop nav */}

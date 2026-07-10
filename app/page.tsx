@@ -1,8 +1,19 @@
 import Link from "next/link";
 import Image from "next/image";
 import { products, categories } from "@/data/products";
-import SolutionDiagram from "@/components/SolutionDiagram";
+import SolutionDiagram, { MitsubishiLogo } from "@/components/SolutionDiagram";
 import type { Metadata } from "next";
+
+const CATEGORY_LOGOS: Record<string, { src?: string; mitsubishi?: boolean; alt: string }[]> = {
+  "may-loc-nuoc": [
+    { src: "/images/brands/cleansui-logo.svg", alt: "Cleansui" },
+    { src: "/images/brands/kitz-logo.png", alt: "Kitz Micro Filter" },
+  ],
+  "dieu-hoa": [
+    { mitsubishi: true, alt: "Mitsubishi Electric" },
+    { src: "/images/brands/daikin-logo.png", alt: "Daikin" },
+  ],
+};
 
 export const metadata: Metadata = {
   title: "DigiSmart — Điều hòa & Máy lọc nước chính hãng",
@@ -75,7 +86,17 @@ export default function HomePage() {
             {categories.map(c => (
               <Link key={c.name} href={`/san-pham?cat=${encodeURIComponent(c.name)}`}
                 style={{ background: "var(--brand-light)", borderRadius: 8, padding: "1.5rem", textDecoration: "none", display: "block", border: "1px solid var(--border)" }}>
-                <div style={{ fontSize: "2.2rem", marginBottom: "0.75rem" }}>{c.icon}</div>
+                <div style={{ display: "flex", alignItems: "center", gap: "1rem", marginBottom: "0.75rem", height: 32 }}>
+                  {(CATEGORY_LOGOS[c.slug] ?? []).map(logo =>
+                    logo.mitsubishi ? (
+                      <svg key={logo.alt} width={32 * 4.25} height={32} viewBox="0 0 170 40" style={{ maxWidth: "40%" }} aria-label={logo.alt}>
+                        <MitsubishiLogo x={0} y={0} width={170} height={40} />
+                      </svg>
+                    ) : (
+                      <img key={logo.alt} src={logo.src} alt={logo.alt} style={{ height: 32, maxWidth: "45%", objectFit: "contain" }} />
+                    )
+                  )}
+                </div>
                 <div style={{ fontFamily: "var(--font-sans)", fontWeight: 700, color: "var(--brand)", marginBottom: "0.4rem" }}>{c.name}</div>
                 <div style={{ fontFamily: "var(--font-sans)", fontSize: "0.85rem", color: "var(--muted)" }}>{c.desc}</div>
               </Link>

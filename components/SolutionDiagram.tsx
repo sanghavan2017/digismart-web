@@ -1,9 +1,9 @@
 "use client";
 import { useEffect, useState } from "react";
 
-const CENTER = { x: 500, y: 300, w: 260, h: 90 };
-const HUB_AC = { x: 210, y: 300, w: 180, h: 58, label: ["ĐIỀU HÒA", "KHÔNG KHÍ"] };
-const HUB_WATER = { x: 790, y: 300, w: 180, h: 58, label: ["MÁY LỌC", "NƯỚC"] };
+const CENTER = { x: 500, y: 300, w: 260, h: 90, href: "/" };
+const HUB_AC = { x: 210, y: 300, w: 180, h: 58, label: ["ĐIỀU HÒA", "KHÔNG KHÍ"], href: "/dieu-hoa" };
+const HUB_WATER = { x: 790, y: 300, w: 180, h: 58, label: ["MÁY LỌC", "NƯỚC"], href: "/may-loc-nuoc" };
 
 type Logo = { type: "image"; src: string; aspect: number } | { type: "mitsubishi"; aspect: number };
 
@@ -19,7 +19,7 @@ function elbowH(x1: number, y1: number, x2: number, y2: number) {
   return `M${x1},${y1} H${midX} V${y2} H${x2}`;
 }
 
-function MitsubishiLogo({ x, y, width, height }: { x: number; y: number; width: number; height: number }) {
+export function MitsubishiLogo({ x, y, width, height }: { x: number; y: number; width: number; height: number }) {
   const diamond = (cx: number, cy: number, d: number) =>
     `M${cx},${cy - d / 2} L${cx + d / 2},${cy} L${cx},${cy + d / 2} L${cx - d / 2},${cy} Z`;
   return (
@@ -96,8 +96,8 @@ export default function SolutionDiagram() {
               </circle>
             ))}
 
-            {/* Center hub — dead center of the diagram */}
-            <g className={animate ? "dgs-sd-pulse" : undefined} style={{ animationDelay: "0s" }}>
+            {/* Center hub — dead center of the diagram, links home */}
+            <a href={CENTER.href} className={`dgs-sd-leaf${animate ? " dgs-sd-pulse" : ""}`} style={{ animationDelay: "0s" }}>
               <rect x={CENTER.x - CENTER.w / 2} y={CENTER.y - CENTER.h / 2} width={CENTER.w} height={CENTER.h}
                 rx={12} fill="#F07B20" stroke="#FFB27A" strokeWidth={1.5} />
               <line x1={CENTER.x - CENTER.w / 2 + 10} y1={CENTER.y - CENTER.h / 2 + 8} x2={CENTER.x - CENTER.w / 2 + 22} y2={CENTER.y - CENTER.h / 2 + 8} stroke="#fff" strokeWidth={1.5} />
@@ -110,11 +110,11 @@ export default function SolutionDiagram() {
               <text x={CENTER.x} y={CENTER.y + 18} textAnchor="middle" style={{ fontFamily: "var(--font-sans)", fontSize: 10, fontWeight: 500, fill: "rgba(255,255,255,0.9)" }}>
                 Tư vấn AI · Lắp đặt tận nơi · Bảo hành chính hãng
               </text>
-            </g>
+            </a>
 
-            {/* Category hubs */}
+            {/* Category hubs — link to /dieu-hoa and /may-loc-nuoc */}
             {[HUB_AC, HUB_WATER].map((h, hi) => (
-              <g key={h.label.join("")} className={animate ? "dgs-sd-pulse" : undefined} style={{ animationDelay: `${0.4 + hi * 0.3}s` }}>
+              <a key={h.label.join("")} href={h.href} className={`dgs-sd-leaf${animate ? " dgs-sd-pulse" : ""}`} style={{ animationDelay: `${0.4 + hi * 0.3}s` }}>
                 <rect x={h.x - h.w / 2} y={h.y - h.h / 2} width={h.w} height={h.h} rx={10}
                   fill="#0A2C4E" stroke="#38BDF8" strokeWidth={2} />
                 {h.label.map((line, i) => (
@@ -123,7 +123,7 @@ export default function SolutionDiagram() {
                     {line}
                   </text>
                 ))}
-              </g>
+              </a>
             ))}
 
             {/* Leaf nodes — real brand logos, full-size, no squish; each links to filtered product listing */}
@@ -139,12 +139,12 @@ export default function SolutionDiagram() {
 
         {/* Mobile: grouped card sections */}
         <div className="dgs-sd-mobile">
-          {[{ h: HUB_AC.label.join(" "), items: LEAVES.filter(l => l.hub === HUB_AC) },
-            { h: HUB_WATER.label.join(" "), items: LEAVES.filter(l => l.hub === HUB_WATER) }].map(group => (
+          {[{ h: HUB_AC.label.join(" "), href: HUB_AC.href, items: LEAVES.filter(l => l.hub === HUB_AC) },
+            { h: HUB_WATER.label.join(" "), href: HUB_WATER.href, items: LEAVES.filter(l => l.hub === HUB_WATER) }].map(group => (
             <div key={group.h} style={{ marginBottom: "1.25rem" }}>
-              <div style={{ fontFamily: "var(--font-sans)", fontSize: "0.8rem", fontWeight: 700, color: "#38BDF8", letterSpacing: 1, marginBottom: "0.6rem" }}>
-                {group.h}
-              </div>
+              <a href={group.href} style={{ display: "block", fontFamily: "var(--font-sans)", fontSize: "0.8rem", fontWeight: 700, color: "#38BDF8", letterSpacing: 1, marginBottom: "0.6rem", textDecoration: "none" }}>
+                {group.h} →
+              </a>
               <div style={{ display: "grid", gridTemplateColumns: "repeat(2, 1fr)", gap: "0.75rem" }}>
                 {group.items.map((l, i) => (
                   <a key={i} href={l.href} style={{ background: "#fff", border: "1.5px solid rgba(56,189,248,0.4)", borderRadius: 10, padding: "0.9rem", display: "flex", alignItems: "center", justifyContent: "center", minHeight: 50 }}>
