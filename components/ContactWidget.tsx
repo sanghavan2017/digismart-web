@@ -3,9 +3,9 @@ import { useState, useEffect, useRef } from "react";
 
 const CHANNELS = [
   { key: "zalo", label: "Zalo", href: "https://zalo.me/0778886758", bg: "#0068FF", icon: "💬" },
-  { key: "messenger", label: "Messenger", href: "https://facebook.com/digismartvn", bg: "linear-gradient(135deg, #00B2FF, #006AFF 50%, #A033FF, #FF5CA1)", icon: "🗨️" },
+  { key: "messenger", label: "Messenger", href: "https://www.facebook.com/digismart606", bg: "linear-gradient(135deg, #00B2FF, #006AFF 50%, #A033FF, #FF5CA1)", icon: "🗨️" },
   { key: "phone", label: "Gọi điện", href: "tel:0778886758", bg: "#fff", border: "2px solid #FF3B30", icon: "📞" },
-  { key: "email", label: "Email", href: "mailto:digismart606@gmail.com", bg: "#fff", border: "2px solid #FF3B30", icon: "✉️" },
+  { key: "email", label: "Email", href: "mailto:info@digismartvn.com", bg: "#fff", border: "2px solid #FF3B30", icon: "✉️" },
 ];
 
 export default function ContactWidget() {
@@ -20,7 +20,7 @@ export default function ContactWidget() {
   }, []);
 
   return (
-    <div style={{ position: "fixed", bottom: 20, left: 20, zIndex: 999, display: "flex", flexDirection: "column", alignItems: "center", gap: 10, fontFamily: "var(--font-sans)" }}>
+    <div style={{ position: "fixed", bottom: 90, right: 20, zIndex: 999, display: "flex", flexDirection: "column", alignItems: "center", gap: 10, fontFamily: "var(--font-sans)" }}>
       {open &&
         CHANNELS.map((c, i) => (
           <a
