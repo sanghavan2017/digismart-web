@@ -43,6 +43,7 @@ next-env.d.ts
 # private/credentials — never commit
 Quanr tri Web digismartvn.vn/
 API Console Web.txt
+API console.txt
 
 # local tooling & scratch
 .playwright-mcp/
@@ -52,6 +53,15 @@ dev_*.log
 test_output.md
 exclude.txt
 *.xlsx
+
+# Claude Code loop/speckit scaffolding — local automation config, not app source
+.specify/
+LOOP.md
+STATE.md
+loop-budget.md
+loop-constraints.md
+loop-run-log.md
+skills-lock.json
 
 # QA screenshots at repo root
 /*.jpeg
