@@ -42,17 +42,35 @@ export default async function KienThucPostPage({
 
   const related = posts.filter(p => p.category === post.category && p.slug !== post.slug).slice(0, 3);
 
+  const firstImage = post.sections.find(s => s.image)?.image;
+  const toAbsolute = (path: string) => (path.startsWith("http") ? path : `${BASE_URL}${path}`);
+
   const articleJsonLd = {
     "@context": "https://schema.org",
     "@type": "Article",
     headline: post.title,
     description: post.excerpt,
+    image: firstImage ? [toAbsolute(firstImage.src)] : undefined,
     datePublished: post.date,
+    dateModified: post.date,
     inLanguage: "vi",
     author: { "@type": "Organization", name: "DigiSmart", url: BASE_URL },
     publisher: { "@type": "Organization", name: "DigiSmart", url: BASE_URL },
     mainEntityOfPage: `${BASE_URL}/kien-thuc/${post.slug}`,
   };
+
+  // FAQPage schema: FAQ rich result trên Google đã bị gỡ (5/2026) nhưng Bing/Perplexity/RAG
+  // crawler vẫn đọc — quan trọng hơn là câu trả lời phải đã rõ ràng ngay trong nội dung bài,
+  // schema chỉ hỗ trợ máy phân tích cấu trúc câu hỏi/trả lời.
+  const faqJsonLd = post.faq && post.faq.length > 0 ? {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    mainEntity: post.faq.map(f => ({
+      "@type": "Question",
+      name: f.question,
+      acceptedAnswer: { "@type": "Answer", text: f.answer },
+    })),
+  } : null;
 
   return (
     <>
@@ -60,6 +78,12 @@ export default async function KienThucPostPage({
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(articleJsonLd) }}
       />
+      {faqJsonLd && (
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(faqJsonLd) }}
+        />
+      )}
 
       {/* Breadcrumb */}
       <div style={{ background: "#fff", borderBottom: "1px solid var(--border)", padding: "0.75rem 0" }}>
@@ -133,6 +157,25 @@ export default async function KienThucPostPage({
                 )}
               </section>
             ))}
+
+            {/* Câu hỏi thường gặp — nội dung hiển thị khớp với FAQPage schema ở trên */}
+            {post.faq && post.faq.length > 0 && (
+              <div style={{ borderTop: "1px solid var(--border)", marginTop: "1.75rem", paddingTop: "1.5rem" }}>
+                <h2 style={{ fontFamily: "var(--font-sans)", fontSize: "1.05rem", color: "var(--brand)", marginBottom: "1rem" }}>
+                  Câu hỏi thường gặp
+                </h2>
+                {post.faq.map((f, i) => (
+                  <div key={i} style={{ marginBottom: i === post.faq!.length - 1 ? 0 : "1.1rem" }}>
+                    <p style={{ fontFamily: "var(--font-sans)", fontWeight: 700, fontSize: "0.92rem", color: "var(--text)", marginBottom: "0.35rem" }}>
+                      {f.question}
+                    </p>
+                    <p style={{ fontFamily: "var(--font-sans)", fontSize: "0.9rem", color: "var(--text)", lineHeight: 1.7 }}>
+                      {f.answer}
+                    </p>
+                  </div>
+                ))}
+              </div>
+            )}
 
             {/* Nguồn tham khảo */}
             <div style={{ borderTop: "1px solid var(--border)", marginTop: "1.75rem", paddingTop: "1.25rem" }}>

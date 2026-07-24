@@ -29,6 +29,8 @@ export type PostSection = {
   image?: { src: string; alt: string; caption?: string };
 };
 
+export type PostFaq = { question: string; answer: string };
+
 export type Post = {
   slug: string;
   title: string;
@@ -39,6 +41,7 @@ export type Post = {
   sections: PostSection[];
   sources: { label: string; url: string }[];
   relatedCategory: string; // link tới trang danh mục liên quan
+  faq?: PostFaq[]; // dùng để render FAQPage schema (GEO) — trích thẳng từ nội dung bài, không thêm thông tin mới
 };
 
 export const posts: Post[] = [
@@ -103,6 +106,16 @@ export const posts: Post[] = [
         url: "https://www.daikin.com.vn/truyen-thong/kinh-nghiem-hay/lua-chon-cong-suat-dieu-hoa-hop-ly-khong-lo-lang-phi-tien-dien",
       },
     ],
+    faq: [
+      {
+        question: "Phòng 20m² nên chọn điều hòa bao nhiêu BTU?",
+        answer: "Theo khuyến nghị của Daikin, phòng 16–22m² cần khoảng 12.000 BTU (1.5HP). Công thức nhanh: diện tích phòng (m²) nhân 600 ra số BTU cần thiết, áp dụng cho trần cao khoảng 3m.",
+      },
+      {
+        question: "Chọn điều hòa thiếu công suất có sao không?",
+        answer: "Máy thiếu công suất phải chạy hết công suất liên tục, tốn điện hơn máy đúng công suất chạy nhàn nhã, và xuống cấp nhanh hơn vì máy nén không có thời gian nghỉ giữa các chu kỳ.",
+      },
+    ],
     relatedCategory: "/dieu-hoa",
   },
   {
@@ -156,6 +169,16 @@ export const posts: Post[] = [
         url: "https://vietnam.mitsubishielectric.com/vi/products-solutions/ac/index.html",
       },
     ],
+    faq: [
+      {
+        question: "Điều hòa Inverter tiết kiệm được bao nhiêu điện so với máy thường?",
+        answer: "Theo công bố của Daikin và Mitsubishi Electric, Inverter giúp tiết kiệm khoảng 30% điện năng so với máy thường khi chạy trong thời gian dài, tùy thuộc số giờ sử dụng và nhiệt độ cài đặt.",
+      },
+      {
+        question: "Khi nào nên mua điều hòa Inverter thay vì máy thường?",
+        answer: "Nếu dùng điều hòa từ 6–8 tiếng/ngày trở lên, tiền điện tiết kiệm được sẽ bù lại chênh lệch giá máy chỉ sau khoảng 1–2 mùa nóng. Nếu chỉ dùng vài tiếng cuối tuần, máy thường vẫn hợp lý hơn.",
+      },
+    ],
     relatedCategory: "/dieu-hoa",
   },
   {
@@ -203,6 +226,16 @@ export const posts: Post[] = [
         url: "https://www.daikin.com.vn/",
       },
     ],
+    faq: [
+      {
+        question: "CSPF là gì?",
+        answer: "CSPF (Cooling Seasonal Performance Factor) là chỉ số hiệu suất lạnh toàn mùa: với mỗi 1 kWh điện tiêu thụ, máy tạo ra được bao nhiêu năng lượng làm lạnh. CSPF càng cao thì máy càng tiết kiệm điện.",
+      },
+      {
+        question: "Số sao trên nhãn năng lượng điều hòa có ý nghĩa gì?",
+        answer: "Số sao (1–5) được xếp hạng dựa trên CSPF trong cùng phân khúc công suất — máy 5 sao là nhóm hiệu suất cao nhất. Chỉ nên so sánh CSPF giữa các máy cùng công suất, không so máy khác công suất với nhau.",
+      },
+    ],
     relatedCategory: "/dieu-hoa",
   },
   {
@@ -240,6 +273,16 @@ export const posts: Post[] = [
       {
         label: "Daikin Việt Nam — dòng sản phẩm điều hòa dân dụng",
         url: "https://www.daikin.com.vn/",
+      },
+    ],
+    faq: [
+      {
+        question: "Ở TPHCM có cần mua điều hòa 2 chiều không?",
+        answer: "Không cần thiết với đa số gia đình. TPHCM nóng quanh năm, chức năng sưởi của máy 2 chiều gần như không dùng đến trong thực tế. Máy 1 chiều đủ dùng và tiết kiệm chi phí đầu tư ban đầu.",
+      },
+      {
+        question: "Điều hòa 1 chiều và 2 chiều khác nhau ở điểm nào?",
+        answer: "Khác đúng một chức năng: máy 2 chiều có thêm chế độ bơm nhiệt để sưởi ấm. Khả năng làm lạnh của hai loại hoàn toàn không khác nhau.",
       },
     ],
     relatedCategory: "/dieu-hoa",
@@ -294,6 +337,16 @@ export const posts: Post[] = [
         url: "https://meta.vn/hotro/cach-ve-sinh-dieu-hoa-may-lanh-daikin-15003",
       },
     ],
+    faq: [
+      {
+        question: "Bao lâu nên vệ sinh điều hòa một lần?",
+        answer: "Lưới lọc dàn lạnh nên tự tháo rửa mỗi 1–2 tháng nếu dùng hằng ngày. Bảo dưỡng tổng thể (dàn lạnh, dàn nóng, kiểm tra gas) nên làm 3–6 tháng/lần với gia đình dùng thường xuyên, 2–3 tháng với văn phòng nhiều bụi, tối thiểu 1 năm/lần dù dùng ít.",
+      },
+      {
+        question: "Dấu hiệu nào cho thấy điều hòa cần vệ sinh ngay?",
+        answer: "Máy lâu mát hơn dù cùng mức nhiệt, có mùi hôi/ẩm mốc khi bật máy, dàn lạnh nhỏ giọt nước hoặc ồn bất thường, và tiền điện tăng rõ rệt dù thói quen sử dụng không đổi.",
+      },
+    ],
     relatedCategory: "/dieu-hoa",
   },
   {
@@ -339,6 +392,16 @@ export const posts: Post[] = [
       {
         label: "Thư viện Pháp luật — QCVN 01-1:2018/BYT về chất lượng nước sạch sinh hoạt",
         url: "https://thuvienphapluat.vn/phap-luat/qcvn-0112018byt-quy-dinh-chat-luong-nuoc-sach-su-dung-cho-muc-dich-sinh-hoat-nuoc-sach-dung-cho-sin-114773.html",
+      },
+    ],
+    faq: [
+      {
+        question: "Nước uống có TDS bao nhiêu là an toàn?",
+        answer: "Theo WHO, dưới 300 mg/L được xem là rất ngon, 300–600 mg/L là tốt, 600–900 mg/L trung bình, 900–1.200 mg/L kém, trên 1.200 mg/L gần như không uống nổi. Tuy nhiên TDS chủ yếu ảnh hưởng vị nước, không phải chỉ số sức khỏe trực tiếp.",
+      },
+      {
+        question: "Bút đo TDS có đánh giá được nước có an toàn để uống không?",
+        answer: "Không đủ. TDS thấp không đồng nghĩa nước an toàn vì vi khuẩn, virus không làm tăng chỉ số TDS. Cần xem thêm các chỉ số vi sinh (Coliform, E.coli), kim loại nặng, clo dư theo QCVN 01-1:2018/BYT của Bộ Y tế.",
       },
     ],
     relatedCategory: "/may-loc-nuoc",
@@ -392,6 +455,16 @@ export const posts: Post[] = [
         url: "https://mitsubishicleansui.vn/cong-nghe-loc/",
       },
     ],
+    faq: [
+      {
+        question: "Công nghệ màng sợi rỗng Cleansui là gì?",
+        answer: "Là các ống polyetylen siêu mảnh với hàng triệu lỗ lọc kích thước 0,01–0,1 micromet, nhỏ hơn vi khuẩn hàng chục đến hàng trăm lần, do Mitsubishi Rayon (nay là Mitsubishi Chemical) phát triển từ thập niên 1970.",
+      },
+      {
+        question: "Máy lọc màng sợi rỗng Cleansui khác gì máy lọc RO?",
+        answer: "Màng sợi rỗng hoạt động bằng áp lực nước máy sẵn có, không dùng điện, không nước thải, và giữ lại khoáng chất tự nhiên. Máy RO loại bỏ gần như mọi chất hòa tan kể cả khoáng chất có lợi, cần dùng điện và phát sinh nước thải.",
+      },
+    ],
     relatedCategory: "/may-loc-nuoc",
   },
   {
@@ -441,6 +514,16 @@ export const posts: Post[] = [
       {
         label: "Kitz Micro Filter Việt Nam",
         url: "https://kitzmf.vn/",
+      },
+    ],
+    faq: [
+      {
+        question: "Bao lâu phải thay lõi lọc nước Cleansui?",
+        answer: "Tùy model, lõi lọc được vài trăm đến vài nghìn lít nước; các dòng cao cấp đạt khoảng 8.000 lít, tương đương khoảng 12 tháng sử dụng liên tục theo công bố của hãng.",
+      },
+      {
+        question: "Dấu hiệu nào cho thấy lõi lọc nước cần thay ngay?",
+        answer: "Nước chảy yếu hẳn, nước có mùi/vị lạ trở lại, nước có màu hoặc vẩn đục nhìn thấy được, hoặc đã dùng quá hạn ghi trên hộp dù nhìn bằng mắt vẫn thấy nước ổn.",
       },
     ],
     relatedCategory: "/may-loc-nuoc",
@@ -498,6 +581,16 @@ export const posts: Post[] = [
       {
         label: "Kitz Micro Filter Việt Nam",
         url: "https://kitzmf.vn/",
+      },
+    ],
+    faq: [
+      {
+        question: "Nên chọn máy lọc tại vòi hay bộ lọc tổng đầu nguồn?",
+        answer: "Nhà nước máy ổn định, chỉ cần nước uống ngon thì máy lọc tại vòi Cleansui là đủ. Nhà hay gặp nước đục sau mưa, đường ống cũ thì nên có thêm bộ lọc tổng Kitz Micro Filter để bảo vệ hệ thống trong nhà.",
+      },
+      {
+        question: "Bộ lọc tổng đầu nguồn có nhiệm vụ gì khác với máy lọc tại vòi?",
+        answer: "Bộ lọc tổng bảo vệ đường ống và thiết bị (máy giặt, bình nóng lạnh) khỏi cặn bẩn, rỉ sét. Máy lọc tại vòi lọc tinh đến 0,01 micron ngay trước khi uống, chặn vi khuẩn và giữ khoáng chất tự nhiên.",
       },
     ],
     relatedCategory: "/may-loc-nuoc",

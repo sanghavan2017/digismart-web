@@ -40,11 +40,71 @@ const filterHighlights = [
   { icon: "🛡️", title: "Vật liệu bền, ổn định", desc: "Lõi lọc và thân máy dùng vật liệu cao cấp, ổn định hiệu suất lọc suốt vòng đời sử dụng." },
 ];
 
+const BASE_URL = "https://www.digismartvn.com";
+
+// FAQ tái sử dụng nguyên vẹn dữ kiện đã kiểm chứng trong data/kienthuc.ts (bài TDS, thay lõi, tại vòi/lọc tổng)
+const faq = [
+  {
+    question: "Nên chọn máy lọc tại vòi hay bộ lọc tổng đầu nguồn?",
+    answer: "Nhà có nước máy ổn định, chỉ cần nước uống ngon thì máy lọc tại vòi Cleansui là đủ. Nhà hay gặp nước đục sau mưa, đường ống cũ thì nên có thêm bộ lọc tổng Kitz Micro Filter để bảo vệ hệ thống trong nhà.",
+  },
+  {
+    question: "Bao lâu phải thay lõi lọc nước?",
+    answer: "Tùy model, lõi lọc được vài trăm đến vài nghìn lít nước; các dòng Cleansui cao cấp đạt khoảng 8.000 lít, tương đương khoảng 12 tháng sử dụng liên tục theo công bố của hãng.",
+  },
+  {
+    question: "Nước TDS bao nhiêu thì uống được?",
+    answer: "Theo WHO, dưới 300 mg/L được xem là rất ngon, 300–600 mg/L là tốt. Tuy nhiên TDS chủ yếu ảnh hưởng vị nước, không phải chỉ số an toàn duy nhất — cần xem thêm chỉ số vi sinh, kim loại nặng theo QCVN 01-1:2018/BYT.",
+  },
+];
+
+const faqJsonLd = {
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  mainEntity: faq.map(f => ({
+    "@type": "Question",
+    name: f.question,
+    acceptedAnswer: { "@type": "Answer", text: f.answer },
+  })),
+};
+
+const serviceJsonLd = {
+  "@context": "https://schema.org",
+  "@type": "Service",
+  serviceType: "Lắp đặt máy lọc nước tại nhà",
+  provider: {
+    "@type": "HomeAndConstructionBusiness",
+    name: "DigiSmart",
+    telephone: "+84-778-886-758",
+    url: BASE_URL,
+  },
+  areaServed: { "@type": "City", name: "TP. Hồ Chí Minh" },
+  description:
+    "Dịch vụ tư vấn, cung cấp và lắp đặt máy lọc nước Cleansui (Mitsubishi Chemical), Kitz Micro Filter chính hãng tại TPHCM. Khảo sát nguồn nước, tư vấn công suất lọc phù hợp, lắp đặt tận nơi, bảo hành.",
+  hasOfferCatalog: {
+    "@type": "OfferCatalog",
+    name: "Dịch vụ máy lọc nước",
+    itemListElement: [
+      { "@type": "Offer", itemOffered: { "@type": "Service", name: "Lắp đặt máy lọc nước tại vòi" } },
+      { "@type": "Offer", itemOffered: { "@type": "Service", name: "Lắp đặt bộ lọc tổng đầu nguồn" } },
+      { "@type": "Offer", itemOffered: { "@type": "Service", name: "Thay lõi lọc định kỳ" } },
+    ],
+  },
+};
+
 export default function MayLocNuocPage() {
   const items = products.filter(p => p.category === "Máy lọc nước");
 
   return (
     <>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(serviceJsonLd) }}
+      />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(faqJsonLd) }}
+      />
       {/* Hero */}
       <section style={{ background: "linear-gradient(135deg, #042C53 0%, #185FA5 100%)", padding: "3.5rem 0" }}>
         <div className="container" style={{ display: "grid", gridTemplateColumns: "repeat(auto-fit, minmax(280px, 1fr))", gap: "2rem", alignItems: "center" }}>
@@ -274,8 +334,29 @@ export default function MayLocNuocPage() {
         </div>
       </section>
 
+      {/* Câu hỏi thường gặp — nội dung hiển thị khớp với FAQPage schema ở trên */}
+      <section style={{ padding: "3rem 0", background: "var(--bg)", borderTop: "1px solid var(--border)" }}>
+        <div className="container" style={{ maxWidth: 720 }}>
+          <h2 style={{ fontFamily: "var(--font-sans)", fontSize: "1.3rem", color: "var(--brand)", marginBottom: "1.5rem" }}>
+            Câu hỏi thường gặp
+          </h2>
+          <div style={{ display: "flex", flexDirection: "column", gap: "1.25rem" }}>
+            {faq.map((f, i) => (
+              <div key={i}>
+                <p style={{ fontFamily: "var(--font-sans)", fontWeight: 700, fontSize: "0.95rem", color: "var(--text)", marginBottom: "0.4rem" }}>
+                  {f.question}
+                </p>
+                <p style={{ fontFamily: "var(--font-sans)", fontSize: "0.9rem", color: "var(--muted)", lineHeight: 1.7 }}>
+                  {f.answer}
+                </p>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
       {/* Lead form CTA */}
-      <section style={{ padding: "3rem 0", background: "var(--bg)" }}>
+      <section style={{ padding: "3rem 0", background: "#fff" }}>
         <div className="container" style={{ maxWidth: 480, textAlign: "center" }}>
           <h2 style={{ fontFamily: "var(--font-sans)", fontSize: "1.3rem", color: "var(--brand)", marginBottom: "0.75rem" }}>
             Cần tư vấn chọn máy lọc nước phù hợp?
