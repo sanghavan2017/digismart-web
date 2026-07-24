@@ -1,6 +1,12 @@
 import { NextRequest, NextResponse } from "next/server";
 import { products } from "@/data/products";
 import { warrantyPolicies } from "@/data/warranty";
+import { checkRateLimit } from "@/lib/kv";
+
+function getClientIp(req: NextRequest): string {
+  const fwd = req.headers.get("x-forwarded-for");
+  return fwd ? fwd.split(",")[0].trim() : "unknown";
+}
 
 function formatPrice(n: number) {
   return n.toLocaleString("vi-VN") + "đ";
@@ -52,6 +58,7 @@ ${buildCatalogText()}
 QUY TẮC NỘI DUNG:
 - Không bịa giá hoặc thông số không có trong dữ liệu trên.
 - Nếu khách hỏi sản phẩm/thông tin không có trong danh mục → nói rõ chưa có thông tin, sau đó chủ động gợi ý 1-2 sản phẩm gần nhất đang có trong danh mục có thể đáp ứng nhu cầu tương tự, và mời gọi hotline 0778 886 758 nếu cần thứ ngoài danh mục.
+- DigiSmart KHÔNG kinh doanh đồ gia dụng khác trên website này (ví dụ Unimax, Kruger, Zimmermann, Living Sense, hay bất kỳ mặt hàng gia dụng nào ngoài điều hòa/máy lọc nước) — nếu khách hỏi về các thương hiệu/mặt hàng này, trả lời dứt khoát là DigiSmart hiện không kinh doanh mặt hàng đó trên website, không suy đoán hay bịa thông tin về chúng, và có thể gợi ý sản phẩm gần nhất trong danh mục điều hòa/máy lọc nước nếu phù hợp nhu cầu khách.
 - Khi khách mô tả nhu cầu (số người trong nhà, diện tích phòng, ngân sách, kiểu lắp đặt) → gợi ý tối đa 2 sản phẩm phù hợp nhất kèm lý do ngắn gọn, không liệt kê hết cả danh mục.
 - Sản phẩm đánh dấu [PHỤ KIỆN] (ví dụ đồng hồ đo nước) KHÔNG phải máy lọc nước hay điều hòa — tuyệt đối không gợi ý các sản phẩm này khi khách hỏi về máy lọc nước/điều hòa (kể cả khi khách hỏi theo ngân sách thấp). Chỉ nhắc đến khi khách hỏi đúng về phụ kiện đó. Nếu ngân sách khách đưa ra thấp hơn sản phẩm rẻ nhất trong danh mục thực tế, thành thật nói rõ mức đó chưa có sản phẩm phù hợp, rồi gợi ý sản phẩm gần nhất hoặc mời gọi hotline.
 
@@ -59,16 +66,46 @@ QUY TẮC ĐỊNH DẠNG (khung chat hẹp, hiển thị ký tự thô, không r
 - Tuyệt đối không dùng bảng markdown, không dùng heading (#), không dùng **bold**, không VIẾT HOA TOÀN BỘ CÂU. Mỗi câu trả lời tối đa 4-5 dòng. Hạn chế emoji (tối đa 1 emoji/câu trả lời).
 - Tên sản phẩm và giá viết liền trong câu, ví dụ: "Cleansui EU103 giá 11.690.000đ".
 - Bắt buộc: mỗi khi nhắc đến 1 sản phẩm cụ thể, chèn ngay tag {{CARD:id}} ngay sau câu nhắc đến (id phải khớp chính xác giá trị "id" ghi trong danh mục trên, ví dụ {{CARD:cleansui-eu103}}). Tag này sẽ được hệ thống thay bằng card ảnh sản phẩm, khách không thấy ký tự tag. Tối đa 2 tag/câu trả lời.
+- Khi cần mời khách để lại thông tin liên hệ ngay trong chat (theo QUY TẮC BÁN HÀNG bên dưới), kết thúc toàn bộ câu trả lời bằng đúng tag {{LEAD_FORM}} (không tham số, chỉ 1 lần/câu trả lời, đặt ở cuối cùng). Tag này sẽ được hệ thống thay bằng form nhập tên + số điện thoại ngay trong khung chat, khách không thấy ký tự tag.
 
 QUY TẮC BÁN HÀNG (mục tiêu: dẫn khách đến hành động tiếp theo):
 - Luôn kết thúc câu trả lời bằng 1 câu hỏi ngắn để hiểu rõ hơn nhu cầu khách, hoặc mời khách để lại số điện thoại / gọi hotline 0778 886 758 để được khảo sát/tư vấn miễn phí.
-- Khi khách đã hỏi 2-3 lượt và có vẻ quan tâm rõ một sản phẩm → chủ động đề xuất chốt: mời để lại thông tin liên hệ hoặc gọi hotline, không lặp lại tư vấn vòng vo.
+- Khi khách đã hỏi 2-3 lượt và có vẻ quan tâm rõ một sản phẩm, hoặc thể hiện ý định mua rõ ràng (ví dụ "mua", "đặt", "lắp đặt", "chốt") → chủ động đề xuất chốt: mời để lại thông tin liên hệ ngay trong chat bằng tag {{LEAD_FORM}}, không lặp lại tư vấn vòng vo.
+- Khi câu hỏi vượt quá khả năng trả lời chắc chắn của bạn (ngoài dữ liệu/danh mục trên) → sau khi trả lời theo QUY TẮC NỘI DUNG, cũng dùng tag {{LEAD_FORM}} để khách có thể để lại thông tin liên hệ ngay trong chat cho CSKH gọi lại, thay vì chỉ nhắc khách tự gọi hotline.
 - Không dùng từ ngữ thúc ép hoặc cam kết những điều không có trong dữ liệu (không tự ý hứa giảm giá, hứa ngày giao hàng cụ thể, không nói "tốt nhất thị trường"/"rẻ nhất VN" nếu không có bằng chứng).
 - Trả lời bằng tiếng Việt. Nếu câu hỏi ngoài phạm vi sản phẩm DigiSmart (điều hòa, máy lọc nước): lịch sự cho biết DigiSmart hiện chỉ kinh doanh 2 ngành hàng này.`;
 
 export async function POST(req: NextRequest) {
   try {
+    // Rate limit: tối đa 20 lượt chat / phút / IP — chặn spam đốt quota Anthropic API.
+    const ip = getClientIp(req);
+    const allowed = await checkRateLimit(`chat:${ip}`, 20, 60);
+    if (!allowed) {
+      return NextResponse.json(
+        { reply: "Bạn đang gửi quá nhiều yêu cầu, vui lòng thử lại sau ít phút hoặc gọi hotline 0778 886 758." },
+        { status: 429 }
+      );
+    }
+
     const { messages } = await req.json();
+
+    // Chặn payload bất thường: không phải array, quá nhiều lượt, hoặc 1 message quá dài
+    // (phòng lạm dụng để đốt token/chi phí Anthropic qua request trực tiếp không qua UI).
+    if (!Array.isArray(messages) || messages.length === 0 || messages.length > 30) {
+      return NextResponse.json(
+        { reply: "Yêu cầu không hợp lệ." },
+        { status: 400 }
+      );
+    }
+    const tooLong = messages.some(
+      (m: { content?: unknown }) => typeof m?.content === "string" && m.content.length > 4000
+    );
+    if (tooLong) {
+      return NextResponse.json(
+        { reply: "Nội dung quá dài, anh/chị vui lòng hỏi ngắn gọn hơn hoặc gọi hotline 0778 886 758." },
+        { status: 400 }
+      );
+    }
 
     const response = await fetch("https://api.anthropic.com/v1/messages", {
       method: "POST",

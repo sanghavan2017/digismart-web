@@ -30,3 +30,19 @@ export async function kvGetAllLeads(): Promise<{ name: string; phone: string; pr
   const raw = (await kvCommand(["lrange", "leads", "0", "-1"])) as string[];
   return (raw || []).map(r => JSON.parse(r));
 }
+
+// Rate limit đơn giản theo key (thường là "route:ip") — dùng INCR + EXPIRE trên Upstash Redis.
+// Trả về true nếu còn được phép gọi, false nếu đã vượt hạn mức trong window hiện tại.
+// Nếu KV chưa cấu hình hoặc lỗi mạng: cho qua (fail-open) để không làm sập chức năng chính.
+export async function checkRateLimit(key: string, limit: number, windowSeconds: number): Promise<boolean> {
+  try {
+    const count = (await kvCommand(["incr", `ratelimit:${key}`])) as number;
+    if (count === 1) {
+      await kvCommand(["expire", `ratelimit:${key}`, String(windowSeconds)]);
+    }
+    return count <= limit;
+  } catch (err) {
+    console.error("checkRateLimit error (fail-open):", err);
+    return true;
+  }
+}

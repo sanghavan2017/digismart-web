@@ -1,5 +1,10 @@
 import { NextRequest, NextResponse } from "next/server";
-import { kvPushLead } from "@/lib/kv";
+import { kvPushLead, checkRateLimit } from "@/lib/kv";
+
+function getClientIp(req: NextRequest): string {
+  const fwd = req.headers.get("x-forwarded-for");
+  return fwd ? fwd.split(",")[0].trim() : "unknown";
+}
 
 // Resend ở chế độ test (chưa verify domain riêng) chỉ gửi được tới email đã đăng ký tài khoản Resend.
 // Verify domain tại resend.com/domains để gửi được nhiều địa chỉ nhận.
@@ -18,10 +23,23 @@ function esc(s: unknown) {
 
 export async function POST(req: NextRequest) {
   try {
+    // Rate limit: tối đa 5 lượt gửi lead / 10 phút / IP — chặn spam email Resend + phình KV list.
+    const ip = getClientIp(req);
+    const allowed = await checkRateLimit(`lead:${ip}`, 5, 600);
+    if (!allowed) {
+      return NextResponse.json(
+        { error: "Bạn đã gửi yêu cầu nhiều lần, vui lòng thử lại sau hoặc gọi hotline 0778 886 758." },
+        { status: 429 }
+      );
+    }
+
     const { name, phone, note, address, productName, items } = await req.json();
 
     if (!name || !phone) {
       return NextResponse.json({ error: "Thiếu họ tên hoặc số điện thoại." }, { status: 400 });
+    }
+    if (String(name).length > 200 || String(phone).length > 30) {
+      return NextResponse.json({ error: "Thông tin không hợp lệ." }, { status: 400 });
     }
 
     // Giỏ hàng gửi kèm items → email "Đặt lịch lắp đặt"; không có → email báo giá như cũ

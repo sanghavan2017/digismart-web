@@ -2,7 +2,7 @@
 import { useState, useRef, useEffect } from "react";
 import { products } from "@/data/products";
 
-type Message = { role: "user" | "assistant"; content: string };
+type Message = { role: "user" | "assistant"; content: string; leadForm?: boolean };
 
 const QUICK_MENU = [
   "So sánh các dòng máy lọc nước",
@@ -51,6 +51,26 @@ function formatPrice(n: number) {
   return n.toLocaleString("vi-VN") + "đ";
 }
 
+// Tách tag {{LEAD_FORM}} (tín hiệu từ AI: nên mời khách để lại liên hệ) ra khỏi nội dung hiển thị
+function stripLeadFormTag(text: string): { text: string; hasLeadForm: boolean } {
+  const hasLeadForm = /\{\{LEAD_FORM\}\}/.test(text);
+  return { text: text.replace(/\{\{LEAD_FORM\}\}/g, "").trimEnd(), hasLeadForm };
+}
+
+// Lấy tên sản phẩm {{CARD:id}} nhắc tới gần nhất trong 1 câu trả lời, để gắn kèm khi gửi lead
+function extractLastProductName(text: string): string | undefined {
+  const matches = [...text.matchAll(/\{\{CARD:([^}]+)\}\}/g)];
+  if (matches.length === 0) return undefined;
+  const lastId = matches[matches.length - 1][1].trim();
+  return productIndex.get(lastId)?.name;
+}
+
+// Số điện thoại di động Việt Nam: 0 hoặc +84, đầu số 3/5/7/8/9, đủ 10 số (0xxxxxxxxx)
+function isValidVnPhone(phone: string): boolean {
+  const cleaned = phone.replace(/[\s-]/g, "");
+  return /^(0|\+84)(3|5|7|8|9)\d{8}$/.test(cleaned);
+}
+
 // Thay {{CARD:id}} bằng card ảnh + giá thật từ data/products.ts
 function renderReplyHtml(text: string) {
   const clean = sanitizeMarkdown(text);
@@ -72,6 +92,88 @@ function renderReplyHtml(text: string) {
   });
 }
 
+// Form thu thập tên + SĐT ngay trong chat, hiện khi AI phát tín hiệu {{LEAD_FORM}} — gửi thẳng
+// vào /api/lead có sẵn (dùng chung hạ tầng lead/email của website, không tạo route mới).
+function ChatLeadCapture({
+  productName,
+  onSubmitted,
+}: {
+  productName?: string;
+  onSubmitted: () => void;
+}) {
+  const [name, setName] = useState("");
+  const [phone, setPhone] = useState("");
+  const [submitting, setSubmitting] = useState(false);
+  const [error, setError] = useState("");
+  const [dismissed, setDismissed] = useState(false);
+
+  if (dismissed) return null;
+
+  async function handleSubmit() {
+    if (!name.trim()) {
+      setError("Anh/chị nhập giúp họ tên nhé.");
+      return;
+    }
+    if (!isValidVnPhone(phone)) {
+      setError("Số điện thoại chưa đúng định dạng, anh/chị kiểm tra lại giúp mình.");
+      return;
+    }
+    setError("");
+    setSubmitting(true);
+    try {
+      const res = await fetch("/api/lead", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({
+          name: name.trim(),
+          phone: phone.trim(),
+          note: "Yêu cầu tư vấn từ Chatbot",
+          productName,
+        }),
+      });
+      const data = await res.json();
+      if (!res.ok || !data.ok) {
+        setError("Có lỗi xảy ra, anh/chị thử lại hoặc gọi hotline 0778 886 758 giúp mình.");
+        setSubmitting(false);
+        return;
+      }
+      onSubmitted();
+    } catch {
+      setError("Có lỗi xảy ra, anh/chị thử lại hoặc gọi hotline 0778 886 758 giúp mình.");
+      setSubmitting(false);
+    }
+  }
+
+  return (
+    <div className="dgs-lead">
+      <input
+        className="dgs-lead-input"
+        value={name}
+        onChange={e => setName(e.target.value)}
+        placeholder="Họ tên"
+        disabled={submitting}
+      />
+      <input
+        className="dgs-lead-input"
+        value={phone}
+        onChange={e => setPhone(e.target.value)}
+        placeholder="Số điện thoại"
+        inputMode="tel"
+        disabled={submitting}
+      />
+      {error && <div className="dgs-lead-error">{error}</div>}
+      <div className="dgs-lead-actions">
+        <button className="dgs-lead-submit" onClick={handleSubmit} disabled={submitting}>
+          {submitting ? "Đang gửi..." : "Gửi, để CSKH gọi lại"}
+        </button>
+        <button className="dgs-lead-dismiss" onClick={() => setDismissed(true)} disabled={submitting}>
+          Để sau
+        </button>
+      </div>
+    </div>
+  );
+}
+
 export default function Chatbot() {
   const [open, setOpen] = useState(false);
   const [welcomed, setWelcomed] = useState(false);
@@ -80,6 +182,8 @@ export default function Chatbot() {
   const [loading, setLoading] = useState(false);
   const [listening, setListening] = useState(false);
   const [voiceOn, setVoiceOn] = useState(false);
+  const [leadSubmitted, setLeadSubmitted] = useState(false);
+  const [lastProductName, setLastProductName] = useState<string | undefined>(undefined);
   const bottomRef = useRef<HTMLDivElement>(null);
   const recognitionRef = useRef<unknown>(null);
   const userToggled = useRef(false);
@@ -94,7 +198,6 @@ export default function Chatbot() {
       setMessages([{ role: "assistant", content: WELCOME_MESSAGE }]);
     }, 2500);
     return () => clearTimeout(t);
-    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
   function speak(html: string) {
@@ -126,12 +229,26 @@ export default function Chatbot() {
         body: JSON.stringify({ messages: nextMessages.map(m => ({ role: m.role, content: m.content })) }),
       });
       const data = await res.json();
-      setMessages(prev => [...prev, { role: "assistant", content: data.reply }]);
-      speak(renderReplyHtml(data.reply));
+      const { text: reply, hasLeadForm } = stripLeadFormTag(data.reply || "");
+      const productName = extractLastProductName(reply);
+      if (productName) setLastProductName(productName);
+      setMessages(prev => [...prev, { role: "assistant", content: reply, leadForm: hasLeadForm }]);
+      speak(renderReplyHtml(reply));
     } catch {
       setMessages(prev => [...prev, { role: "assistant", content: "Xin lỗi, có lỗi xảy ra. Vui lòng thử lại hoặc gọi hotline 0778 886 758." }]);
     }
     setLoading(false);
+  }
+
+  function handleLeadSubmitted() {
+    setLeadSubmitted(true);
+    setMessages(prev => [
+      ...prev,
+      {
+        role: "assistant",
+        content: "Dạ DigiSmart đã nhận được thông tin, sẽ gọi lại anh/chị sớm nhất. Cần gấp thì gọi ngay 0778 886 758 nhé.",
+      },
+    ]);
   }
 
   function startVoice() {
@@ -176,6 +293,12 @@ export default function Chatbot() {
         .dgs-pc-info { flex:1; min-width:0; }
         .dgs-pc-name { font-size:12px; font-weight:700; color:var(--brand); line-height:1.3; }
         .dgs-pc-price { font-size:13px; font-weight:800; color:#F07B20; margin-top:2px; }
+        .dgs-lead { display:flex; flex-direction:column; gap:6px; background:var(--brand-light); border:1px solid #cfe3f5; border-radius:14px; padding:10px; margin-top:6px; width:100%; }
+        .dgs-lead-input { border:1px solid var(--border); border-radius:10px; padding:6px 10px; font-size:0.78rem; font-family:inherit; outline:none; }
+        .dgs-lead-actions { display:flex; gap:6px; }
+        .dgs-lead-submit { flex:1; background:var(--brand); color:#fff; border:none; border-radius:20px; padding:6px 10px; font-size:0.75rem; font-weight:600; cursor:pointer; font-family:inherit; }
+        .dgs-lead-dismiss { background:#fff; border:1px solid var(--border); color:var(--muted); border-radius:20px; padding:6px 10px; font-size:0.75rem; cursor:pointer; font-family:inherit; }
+        .dgs-lead-error { color:#c0392b; font-size:0.7rem; }
       `}</style>
       {open && (
         <div style={{ position: "absolute", bottom: 68, right: 0, width: 340, background: "#fff", borderRadius: 16, border: "1px solid var(--border)", boxShadow: "0 8px 32px rgba(0,0,0,0.15)", overflow: "hidden" }}>
@@ -210,11 +333,16 @@ export default function Chatbot() {
               </div>
             )}
             {messages.map((m, i) => (
-              <div key={i} style={{ maxWidth: "88%", padding: "8px 12px", borderRadius: 12, fontSize: "0.8rem", lineHeight: 1.5, alignSelf: m.role === "user" ? "flex-end" : "flex-start", background: m.role === "user" ? "var(--brand)" : "var(--bg)", color: m.role === "user" ? "#fff" : "var(--text)", borderBottomRightRadius: m.role === "user" ? 4 : 12, borderBottomLeftRadius: m.role === "assistant" ? 4 : 12 }}>
-                {m.role === "assistant" ? (
-                  <span dangerouslySetInnerHTML={{ __html: renderReplyHtml(m.content) }} />
-                ) : (
-                  m.content
+              <div key={i} style={{ display: "flex", flexDirection: "column", alignSelf: m.role === "user" ? "flex-end" : "flex-start", maxWidth: "88%" }}>
+                <div style={{ padding: "8px 12px", borderRadius: 12, fontSize: "0.8rem", lineHeight: 1.5, background: m.role === "user" ? "var(--brand)" : "var(--bg)", color: m.role === "user" ? "#fff" : "var(--text)", borderBottomRightRadius: m.role === "user" ? 4 : 12, borderBottomLeftRadius: m.role === "assistant" ? 4 : 12 }}>
+                  {m.role === "assistant" ? (
+                    <span dangerouslySetInnerHTML={{ __html: renderReplyHtml(m.content) }} />
+                  ) : (
+                    m.content
+                  )}
+                </div>
+                {m.role === "assistant" && m.leadForm && !leadSubmitted && i === messages.length - 1 && (
+                  <ChatLeadCapture productName={lastProductName} onSubmitted={handleLeadSubmitted} />
                 )}
               </div>
             ))}
@@ -262,7 +390,7 @@ export default function Chatbot() {
 
       {/* Toggle Button */}
       <button onClick={handleOpen}
-        style={{ width: 54, height: 54, background: "var(--brand)", border: "none", borderRadius: "50%", cursor: "pointer", display: "flex", alignItems: "center", justifyContent: "center", fontSize: "1.4rem", boxShadow: "0 4px 16px rgba(26,77,58,0.4)", position: "relative" }}>
+        style={{ width: 54, height: 54, background: "var(--brand)", border: "none", borderRadius: "50%", cursor: "pointer", display: "flex", alignItems: "center", justifyContent: "center", fontSize: "1.4rem", boxShadow: "0 4px 16px rgba(26,77,58,0.4)", position: "relative", color: "#fff" }}>
         {open ? "✕" : "💬"}
         {!open && (
           <span style={{ position: "absolute", top: -4, right: -4, background: "var(--accent)", color: "#fff", fontSize: "0.65rem", fontWeight: 700, width: 18, height: 18, borderRadius: "50%", display: "flex", alignItems: "center", justifyContent: "center", border: "2px solid #fff" }}>AI</span>
