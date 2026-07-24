@@ -4,6 +4,47 @@ import { products, categories } from "@/data/products";
 import SolutionDiagram, { MitsubishiLogo } from "@/components/SolutionDiagram";
 import type { Metadata } from "next";
 
+const ICON_PROPS = { viewBox: "0 0 24 24", fill: "none", stroke: "currentColor", strokeWidth: 1.75, strokeLinecap: "round" as const, strokeLinejoin: "round" as const };
+
+function CheckIcon(props: { width: number; height: number }) {
+  return (
+    <svg {...ICON_PROPS} width={props.width} height={props.height} aria-hidden="true">
+      <circle cx="12" cy="12" r="9" />
+      <path d="M8 12.5l2.5 2.5L16 9.5" />
+    </svg>
+  );
+}
+function WrenchIcon(props: { width: number; height: number }) {
+  return (
+    <svg {...ICON_PROPS} width={props.width} height={props.height} aria-hidden="true">
+      <path d="M14.7 6.3a4 4 0 0 0-5.4 5.4L4 17v3h3l5.3-5.3a4 4 0 0 0 5.4-5.4l-2.6 2.6-2-2 2.6-2.6z" />
+    </svg>
+  );
+}
+function ChatIcon(props: { width: number; height: number }) {
+  return (
+    <svg {...ICON_PROPS} width={props.width} height={props.height} aria-hidden="true">
+      <path d="M4 5h16v11H8l-4 4V5z" />
+    </svg>
+  );
+}
+function WalletIcon(props: { width: number; height: number }) {
+  return (
+    <svg {...ICON_PROPS} width={props.width} height={props.height} aria-hidden="true">
+      <rect x="3" y="6" width="18" height="13" rx="2" />
+      <path d="M3 10h18" />
+      <circle cx="16.5" cy="14" r="1.25" fill="currentColor" stroke="none" />
+    </svg>
+  );
+}
+function PhoneIcon(props: { width: number; height: number }) {
+  return (
+    <svg {...ICON_PROPS} width={props.width} height={props.height} aria-hidden="true">
+      <path d="M6.5 3h3l1.5 4-2 1.5a12 12 0 0 0 6 6l1.5-2 4 1.5v3a2 2 0 0 1-2.2 2A17 17 0 0 1 4.5 5.2 2 2 0 0 1 6.5 3z" />
+    </svg>
+  );
+}
+
 const CATEGORY_LOGOS: Record<string, { src?: string; mitsubishi?: boolean; alt: string }[]> = {
   "may-loc-nuoc": [
     { src: "/images/brands/cleansui-logo.svg", alt: "Cleansui" },
@@ -45,16 +86,16 @@ export default function HomePage() {
               <span style={{ color: "#F07B20" }}>— Giá hợp lý nhất</span>
             </h1>
             <p style={{ fontFamily: "var(--font-sans)", fontSize: "1rem", opacity: 0.85, lineHeight: 1.7, marginBottom: "0.5rem" }}>
-              "Mua thông minh — Sống tiện nghi"
+              &quot;Mua thông minh — Sống tiện nghi&quot;
             </p>
             <p style={{ fontFamily: "var(--font-sans)", fontSize: "0.9rem", opacity: 0.75, lineHeight: 1.7, marginBottom: "2rem" }}>
               Điều hòa, máy lọc nước Cleansui, Kitz Micro Filter — chính hãng, lắp đặt tận nơi tại TPHCM.
             </p>
             <div style={{ display: "flex", gap: "1rem", flexWrap: "wrap" }}>
-              <Link href="/san-pham" style={{ background: "#F07B20", color: "#fff", padding: "12px 28px", borderRadius: 6, fontSize: "0.95rem", fontWeight: 700, textDecoration: "none", fontFamily: "var(--font-sans)" }}>
+              <Link href="/san-pham" className="btn-primary" style={{ background: "#F07B20", color: "var(--brand)", padding: "12px 28px", borderRadius: 6, fontSize: "0.95rem", fontWeight: 700, textDecoration: "none", fontFamily: "var(--font-sans)" }}>
                 Xem sản phẩm
               </Link>
-              <Link href="/lien-he" style={{ background: "transparent", color: "#fff", border: "1.5px solid rgba(255,255,255,0.5)", padding: "12px 28px", borderRadius: 6, fontSize: "0.95rem", fontWeight: 500, textDecoration: "none", fontFamily: "var(--font-sans)" }}>
+              <Link href="/lien-he" className="btn-outline" style={{ background: "transparent", color: "#fff", border: "1.5px solid rgba(255,255,255,0.5)", padding: "12px 28px", borderRadius: 6, fontSize: "0.95rem", fontWeight: 500, textDecoration: "none", fontFamily: "var(--font-sans)" }}>
                 Liên hệ ngay
               </Link>
             </div>
@@ -84,7 +125,7 @@ export default function HomePage() {
           </h2>
           <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fit, minmax(200px, 1fr))", gap: "1rem" }}>
             {categories.map(c => (
-              <Link key={c.name} href={`/san-pham?cat=${encodeURIComponent(c.name)}`}
+              <Link key={c.name} href={`/san-pham?cat=${encodeURIComponent(c.name)}`} className="card-link"
                 style={{ background: "var(--brand-light)", borderRadius: 8, padding: "1.5rem", textDecoration: "none", display: "block", border: "1px solid var(--border)" }}>
                 <div style={{ display: "flex", alignItems: "center", gap: "1rem", marginBottom: "0.75rem", height: 32 }}>
                   {(CATEGORY_LOGOS[c.slug] ?? []).map(logo =>
@@ -93,7 +134,9 @@ export default function HomePage() {
                         <MitsubishiLogo x={0} y={0} width={170} height={40} />
                       </svg>
                     ) : (
-                      <img key={logo.alt} src={logo.src} alt={logo.alt} style={{ height: 32, maxWidth: "45%", objectFit: "contain" }} />
+                      <div key={logo.alt} style={{ position: "relative", width: 110, height: 32, maxWidth: "45%" }}>
+                        <Image src={logo.src!} alt={logo.alt} fill sizes="110px" style={{ objectFit: "contain" }} />
+                      </div>
                     )
                   )}
                 </div>
@@ -118,7 +161,7 @@ export default function HomePage() {
           </div>
           <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fill, minmax(240px, 1fr))", gap: "1rem" }}>
             {featured.map((p, idx) => (
-              <Link key={p.id} href={`/san-pham/${p.id}`}
+              <Link key={p.id} href={`/san-pham/${p.id}`} className="card-link"
                 style={{ background: "#fff", border: "1px solid var(--border)", borderRadius: 8, overflow: "hidden", textDecoration: "none", display: "block" }}>
                 <div style={{ background: "#fff", borderBottom: "1px solid var(--border)", height: 150, display: "flex", alignItems: "center", justifyContent: "center", fontSize: "3rem", position: "relative", overflow: "hidden" }}>
                   {p.imageUrl ? (
@@ -127,7 +170,7 @@ export default function HomePage() {
                     p.icon
                   )}
                   {discountPct(p.originalPrice, p.price) > 0 && (
-                    <span style={{ position: "absolute", top: 8, left: 8, background: "#F07B20", color: "#fff", fontSize: "0.7rem", fontWeight: 700, padding: "3px 8px", borderRadius: 4 }}>
+                    <span style={{ position: "absolute", top: 8, left: 8, background: "#F07B20", color: "var(--brand)", fontSize: "0.7rem", fontWeight: 700, padding: "3px 8px", borderRadius: 4 }}>
                       -{discountPct(p.originalPrice, p.price)}%
                     </span>
                   )}
@@ -161,13 +204,13 @@ export default function HomePage() {
         <div className="container">
           <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fit, minmax(180px, 1fr))", gap: "1.5rem" }}>
             {[
-              { icon: "✅", title: "Hàng chính hãng", desc: "Nguồn gốc rõ ràng, bảo hành đầy đủ" },
-              { icon: "🔧", title: "Lắp đặt tận nơi", desc: "Kỹ thuật DigiSmart lắp đặt trực tiếp tại TPHCM" },
-              { icon: "💬", title: "Tư vấn miễn phí", desc: "Hỗ trợ qua hotline & Zalo" },
-              { icon: "💰", title: "Giá minh bạch", desc: "Báo giá rõ ràng trọn gói, không phát sinh" },
+              { Icon: CheckIcon, title: "Hàng chính hãng", desc: "Nguồn gốc rõ ràng, bảo hành đầy đủ" },
+              { Icon: WrenchIcon, title: "Lắp đặt tận nơi", desc: "Kỹ thuật DigiSmart lắp đặt trực tiếp tại TPHCM" },
+              { Icon: ChatIcon, title: "Tư vấn miễn phí", desc: "Hỗ trợ qua hotline & Zalo" },
+              { Icon: WalletIcon, title: "Giá minh bạch", desc: "Báo giá rõ ràng trọn gói, không phát sinh" },
             ].map(b => (
               <div key={b.title} style={{ display: "flex", gap: "0.875rem", alignItems: "flex-start" }}>
-                <span style={{ fontSize: "1.5rem", flexShrink: 0 }}>{b.icon}</span>
+                <span style={{ color: "var(--brand2)", flexShrink: 0 }}><b.Icon width={28} height={28} /></span>
                 <div>
                   <div style={{ fontFamily: "var(--font-sans)", fontWeight: 700, fontSize: "0.9rem", color: "var(--brand)", marginBottom: 3 }}>{b.title}</div>
                   <div style={{ fontFamily: "var(--font-sans)", fontSize: "0.82rem", color: "var(--muted)" }}>{b.desc}</div>
@@ -188,11 +231,11 @@ export default function HomePage() {
             Liên hệ ngay để được hỗ trợ nhanh nhất
           </p>
           <div style={{ display: "flex", gap: "1rem", justifyContent: "center", flexWrap: "wrap" }}>
-            <a href="tel:0778886758" style={{ background: "#F07B20", color: "#fff", padding: "12px 28px", borderRadius: 6, fontWeight: 700, textDecoration: "none", fontFamily: "var(--font-sans)" }}>
-              📞 Gọi ngay: 0778 886 758
+            <a href="tel:0778886758" className="btn-primary" style={{ background: "#F07B20", color: "var(--brand)", padding: "12px 28px", borderRadius: 6, fontWeight: 700, textDecoration: "none", fontFamily: "var(--font-sans)", display: "inline-flex", alignItems: "center", gap: 8 }}>
+              <PhoneIcon width={18} height={18} /> Gọi ngay: 0778 886 758
             </a>
-            <a href="https://zalo.me/0778886758" target="_blank" rel="noopener noreferrer" style={{ background: "transparent", color: "#fff", border: "1.5px solid rgba(255,255,255,0.5)", padding: "12px 28px", borderRadius: 6, fontWeight: 500, textDecoration: "none", fontFamily: "var(--font-sans)" }}>
-              💬 Chat Zalo
+            <a href="https://zalo.me/0778886758" target="_blank" rel="noopener noreferrer" className="btn-outline" style={{ background: "transparent", color: "#fff", border: "1.5px solid rgba(255,255,255,0.5)", padding: "12px 28px", borderRadius: 6, fontWeight: 500, textDecoration: "none", fontFamily: "var(--font-sans)", display: "inline-flex", alignItems: "center", gap: 8 }}>
+              <ChatIcon width={18} height={18} /> Chat Zalo
             </a>
           </div>
         </div>

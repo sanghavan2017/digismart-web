@@ -10,7 +10,7 @@
   --bg:          #F4F7FA;
   --surface:     #FFFFFF;
   --text:        #2C2C2A;
-  --muted:       #B4B2A9;
+  --muted:       #6E6C63;
   --border:      #D6E4F0;
 
   /* Màu phụ theo ngành hàng (category accent) — KHÔNG thay brand chính, chỉ dùng cho nhấn nhá riêng từng ngành */
@@ -33,6 +33,16 @@ h1, h2, h3, h4 {
 }
 
 .container { max-width: 1200px; margin: 0 auto; padding: 0 1.5rem; }
+
+/* Interactive feedback: hover/press/focus states for links & buttons */
+a, button { transition: filter 0.15s ease, box-shadow 0.15s ease, transform 0.15s ease, border-color 0.15s ease, background 0.15s ease; }
+a:focus-visible, button:focus-visible { outline: 2px solid var(--brand2); outline-offset: 2px; border-radius: 4px; }
+
+.btn-primary:hover { filter: brightness(0.92); }
+.btn-primary:active { filter: brightness(0.85); transform: translateY(1px); }
+.btn-outline:hover { background: rgba(255,255,255,0.12); }
+.btn-outline:active { background: rgba(255,255,255,0.2); }
+.card-link:hover { border-color: var(--brand2); box-shadow: 0 4px 14px rgba(4,44,83,0.1); transform: translateY(-2px); }
 
 /* Navbar responsive */
 .nav-links { display: flex; gap: 1.75rem; align-items: center; }
