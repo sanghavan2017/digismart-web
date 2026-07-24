@@ -12,6 +12,10 @@ const eslintConfig = defineConfig([
     "out/**",
     "build/**",
     "next-env.d.ts",
+    // Claude Code tooling — worktrees, installed skills, agent scripts. Not app source.
+    ".claude/**",
+    // Legacy standalone project folder kept for reference, not part of this app.
+    "Quanr tri Web digismartvn.vn/**",
   ]),
 ]);
 

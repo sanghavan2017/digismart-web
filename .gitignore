@@ -56,3 +56,4 @@ exclude.txt
 # QA screenshots at repo root
 /*.jpeg
 .gstack/
+.claude/

@@ -19,7 +19,7 @@ export default function Footer() {
               </span>
             </div>
             <p style={{ fontFamily: "var(--font-sans)", fontSize: "0.85rem", lineHeight: 1.7, marginBottom: "0.5rem" }}>
-              "Mua thông minh — Sống tiện nghi"
+              &quot;Mua thông minh — Sống tiện nghi&quot;
             </p>
             <p style={{ fontFamily: "var(--font-sans)", fontSize: "0.82rem", lineHeight: 1.6, marginBottom: "0.5rem" }}>
               Điều hòa, máy lọc nước chính hãng — lắp đặt tận nơi.

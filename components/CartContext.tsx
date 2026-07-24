@@ -32,6 +32,9 @@ export function CartProvider({ children }: { children: React.ReactNode }) {
   useEffect(() => {
     try {
       const raw = localStorage.getItem(STORAGE_KEY);
+      // Đọc localStorage chỉ khả dụng phía client — phải nạp sau mount rồi setState,
+      // giữ initial state rỗng khớp với HTML server render để tránh lệch hydration.
+      // eslint-disable-next-line react-hooks/set-state-in-effect
       if (raw) setItems(JSON.parse(raw));
     } catch {
       // localStorage hỏng/bị chặn → bắt đầu với giỏ trống

@@ -334,7 +334,7 @@ export default function CleansuiLandingPage() {
           <div>
             <div style={{ fontFamily: mono, fontSize: 12.5, letterSpacing: "0.14em", textTransform: "uppercase", color: "var(--water)", marginBottom: 14 }}>Không chỉ ảnh studio</div>
             <p style={{ fontFamily: serif, fontWeight: 600, fontSize: 24, lineHeight: 1.3, color: "var(--brand)", margin: "0 0 18px" }}>
-              "Lõi lọc treo gọn dưới gầm tủ, đấu thẳng vào đường nước lạnh có sẵn — không khoan thêm lỗ trên mặt đá."
+              &quot;Lõi lọc treo gọn dưới gầm tủ, đấu thẳng vào đường nước lạnh có sẵn — không khoan thêm lỗ trên mặt đá.&quot;
             </p>
             <p style={{ color: soft, fontSize: 15, margin: "0 0 24px", maxWidth: "46ch" }}>
               Khách thường hỏi &quot;lõi lọc để đâu, có chiếm chỗ tủ không&quot; — ảnh lắp đặt thực tế này trả lời trực tiếp, thay vì chỉ xem ảnh sản phẩm rời trên nền trắng.

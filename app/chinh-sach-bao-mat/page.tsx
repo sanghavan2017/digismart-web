@@ -58,7 +58,7 @@ export default function ChinhSachBaoMatPage() {
         </Section>
 
         <Section title="6. Thay đổi chính sách">
-          <p>Nếu chính sách này có cập nhật, chúng tôi sẽ thay đổi ngày "Cập nhật lần cuối" ở đầu trang. Các thay đổi có hiệu lực ngay khi đăng tải.</p>
+          <p>Nếu chính sách này có cập nhật, chúng tôi sẽ thay đổi ngày &quot;Cập nhật lần cuối&quot; ở đầu trang. Các thay đổi có hiệu lực ngay khi đăng tải.</p>
         </Section>
 
         <div style={{ marginTop: "2.5rem", padding: "1.25rem 1.5rem", background: "#f5f8fc", borderRadius: 8, borderLeft: "4px solid #042C53" }}>

@@ -49,6 +49,9 @@ export default function SolutionDiagram() {
 
   useEffect(() => {
     const mq = window.matchMedia("(prefers-reduced-motion: reduce)");
+    // matchMedia chỉ có ở client — phải set sau mount để khớp HTML server render (animate=false),
+    // tránh lệch hydration.
+    // eslint-disable-next-line react-hooks/set-state-in-effect
     setAnimate(!mq.matches);
   }, []);
 
