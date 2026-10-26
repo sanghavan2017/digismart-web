@@ -103,7 +103,7 @@ export default function HomePage() {
 
           <div style={{ display: "grid", gridTemplateColumns: "repeat(2, minmax(110px, 1fr))", gap: "1.5rem 2.5rem" }}>
             {[
-              { num: "18+", label: "Sản phẩm" },
+              { num: `${products.length}+`, label: "Sản phẩm" },
               { num: "2", label: "Ngành hàng" },
               { num: "100%", label: "Chính hãng" },
               { num: "Tận nơi", label: "Lắp đặt" },
