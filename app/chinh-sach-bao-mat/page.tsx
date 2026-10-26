@@ -14,7 +14,7 @@ export default function ChinhSachBaoMatPage() {
           Chính sách bảo mật thông tin
         </h1>
         <p style={{ color: "#666", fontFamily: "var(--font-sans)", marginBottom: "2.5rem" }}>
-          Cập nhật lần cuối: 01/07/2026
+          Cập nhật lần cuối: 11/07/2026
         </p>
 
         <Section title="1. Chúng tôi thu thập thông tin gì?">
@@ -37,7 +37,7 @@ export default function ChinhSachBaoMatPage() {
         </Section>
 
         <Section title="3. Chúng tôi lưu trữ và bảo vệ thông tin như thế nào?">
-          <p>Thông tin bạn gửi được lưu trữ an toàn trên hệ thống Cloudflare KV (mã hóa tại tầng lưu trữ) và chuyển về email nội bộ của DigiSmart qua dịch vụ Resend (tuân thủ SOC 2 Type II). Chúng tôi không chia sẻ, bán, hoặc cho thuê thông tin của bạn cho bất kỳ bên thứ ba nào.</p>
+          <p>Thông tin bạn gửi được lưu trữ an toàn trên hệ thống Vercel KV (mã hóa tại tầng lưu trữ) và chuyển về email nội bộ của DigiSmart qua dịch vụ Resend (tuân thủ SOC 2 Type II). Chúng tôi không chia sẻ, bán, hoặc cho thuê thông tin của bạn cho bất kỳ bên thứ ba nào.</p>
         </Section>
 
         <Section title="4. Quyền của bạn">

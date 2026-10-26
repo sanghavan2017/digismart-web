@@ -85,6 +85,17 @@ export default async function ProductDetailPage({
     ],
   };
 
+  // FAQPage schema (GEO): chỉ render khi sản phẩm có sẵn dữ kiện FAQ đã kiểm chứng trong data/products.ts
+  const faqJsonLd = product.faq && product.faq.length > 0 ? {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    mainEntity: product.faq.map(f => ({
+      "@type": "Question",
+      name: f.question,
+      acceptedAnswer: { "@type": "Answer", text: f.answer },
+    })),
+  } : null;
+
   return (
     <>
       <script
@@ -95,6 +106,12 @@ export default async function ProductDetailPage({
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbJsonLd) }}
       />
+      {faqJsonLd && (
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(faqJsonLd) }}
+        />
+      )}
       {/* Breadcrumb */}
       <div style={{ background: "#fff", borderBottom: "1px solid var(--border)", padding: "0.75rem 0" }}>
         <div className="container" style={{ display: "flex", gap: "0.5rem", fontFamily: "var(--font-sans)", fontSize: "0.85rem", color: "var(--muted)", flexWrap: "wrap" }}>
@@ -284,6 +301,29 @@ export default async function ProductDetailPage({
                 allowFullScreen
                 style={{ position: "absolute", top: 0, left: 0, width: "100%", height: "100%", border: "none" }}
               />
+            </div>
+          </div>
+        </section>
+      )}
+
+      {/* Câu hỏi thường gặp — nội dung hiển thị khớp với FAQPage schema ở trên */}
+      {product.faq && product.faq.length > 0 && (
+        <section style={{ background: "var(--bg)", padding: "3rem 0", borderTop: "1px solid var(--border)" }}>
+          <div className="container" style={{ maxWidth: 720 }}>
+            <h2 style={{ fontFamily: "var(--font-sans)", fontSize: "1.3rem", color: "var(--brand)", marginBottom: "1.5rem" }}>
+              Câu hỏi thường gặp
+            </h2>
+            <div style={{ display: "flex", flexDirection: "column", gap: "1.25rem" }}>
+              {product.faq.map((f, i) => (
+                <div key={i}>
+                  <p style={{ fontFamily: "var(--font-sans)", fontWeight: 700, fontSize: "0.95rem", color: "var(--text)", marginBottom: "0.4rem" }}>
+                    {f.question}
+                  </p>
+                  <p style={{ fontFamily: "var(--font-sans)", fontSize: "0.9rem", color: "var(--muted)", lineHeight: 1.7 }}>
+                    {f.answer}
+                  </p>
+                </div>
+              ))}
             </div>
           </div>
         </section>

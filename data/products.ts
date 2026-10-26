@@ -32,6 +32,8 @@ export type Product = {
   features?: { image: string; caption: string }[];
   // Bullet ngắn "Tính năng" hiện ngay trên card ở trang danh sách (tham khảo bố cục trang chính hãng mitsubishicleansui.vn)
   highlights?: string[];
+  // FAQ cho trang chi tiết sản phẩm — dùng để render FAQPage schema (GEO), trích từ thông số/chính sách đã có trong file này và data/warranty.ts, không thêm thông tin mới
+  faq?: { question: string; answer: string }[];
 };
 
 export const categories = [
@@ -1712,6 +1714,28 @@ export const products: Product[] = [
     warranty_years: 5,
     btu: 9000,
     inverter: true,
+    faq: [
+      {
+        question: "Daikin FTKB25ZVMV 1HP phù hợp phòng bao nhiêu m²?",
+        answer: "FTKB25ZVMV (9.000 BTU/h) phù hợp phòng dưới 15m² như phòng ngủ nhỏ, phòng làm việc. Nếu phòng rộng hơn, nên chọn bản 1.5HP (FTKB35ZVMV) để máy không phải chạy quá tải.",
+      },
+      {
+        question: "Máy Inverter FTKB25ZVMV tiết kiệm điện thế nào?",
+        answer: "Máy dùng công nghệ Inverter với hiệu suất năng lượng CSPF 5.38, điện năng tiêu thụ định mức 930W (dao động 120–1.100W tuỳ tải). Đây là dòng Inverter phổ thông, tiết kiệm điện hơn máy thường nhưng có giá dễ tiếp cận nhất trong các dòng Inverter Daikin.",
+      },
+      {
+        question: "FTKB25ZVMV dùng loại gas gì, có an toàn không?",
+        answer: "Máy dùng gas R32 — loại gas lạnh thế hệ mới, thân thiện với môi trường hơn gas R22 cũ, đồng thời hiệu suất trao đổi nhiệt tốt hơn, giúp máy chạy êm và bền hơn theo tiêu chuẩn của Daikin.",
+      },
+      {
+        question: "Điều hòa Daikin FTKB25ZVMV bảo hành bao lâu?",
+        answer: "Theo chính sách Daikin Việt Nam: thân máy bảo hành 12 tháng kể từ ngày lắp đặt, riêng máy nén (block) bảo hành 60 tháng (5 năm). Dòng FTKB còn nằm trong chương trình mở rộng lên 3 năm cho thân máy nếu khách tự đăng ký qua app Daikin Vietnam trong 12 tháng đầu — DigiSmart hỗ trợ hướng dẫn đăng ký khi lắp đặt.",
+      },
+      {
+        question: "Máy có ồn không, kích thước dàn lạnh/dàn nóng bao nhiêu?",
+        answer: "Độ ồn dàn lạnh dao động 19–36dBA tuỳ tốc độ quạt, mức khá êm cho phòng ngủ. Dàn lạnh kích thước 291 x 775 x 242mm, dàn nóng 418 x 695 x 244mm — cần chú ý khoảng trống lắp đặt tương ứng khi thi công.",
+      },
+    ],
   },
   {
     id: "daikin-ftkb35zvmv",

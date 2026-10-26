@@ -1,5 +1,9 @@
 # DigiSmart Website — Trạng thái & Roadmap
-(Cập nhật: 04/07/2026 — đây là nguồn sự thật duy nhất về tình trạng project. Đọc file này trước khi bắt đầu mỗi phiên làm việc mới.)
+(Cập nhật: 26/10/2026 — đây là nguồn sự thật duy nhất về tình trạng project. Đọc file này trước khi bắt đầu mỗi phiên làm việc mới.)
+
+**Khoảng trống 24/07 → 26/10/2026**: không có commit nào trong 3 tháng này — phiên làm việc gần nhất dừng ở 24/07/2026 (batch: hoàn thiện chatbot, GEO/FAQ, UI trang chủ, dọn lint). File này trước đó dừng ở mốc 09/07/2026 và thiếu hẳn việc đã làm trong batch 09–24/07 (đổi font, trang Cleansui riêng, widget liên hệ nhanh, sơ đồ hệ sinh thái, sửa logo, GEO...) — bản cập nhật này đã rà lại toàn bộ git log + code thật để bổ sung, không dựa vào bản cũ.
+
+⚠️ **Lưu ý quan trọng — `CLAUDE.md` của repo này đang mô tả nhầm sang 1 app khác**: nội dung "Tech Stack: Supabase project Unimax, 4 role Admin/Warehouse/Sales/CSKH, giá 3 tier Shop Thường/Mall/TikTok" trong `CLAUDE.md` là của app quản lý nội bộ khác (`G:\My Drive\DS\ds_app\web`), **không phải** web digismartvn.com này. Code trong repo này không dùng Supabase, không có hệ thống role, không có giá 3 tier — data sản phẩm nằm thẳng trong `data/*.ts`. Nên tách riêng `CLAUDE.md` cho 2 project để tránh AI (và người) bị lẫn ngữ cảnh khi làm việc. Chưa tự sửa vì đây là quyết định cấu trúc tài liệu, cần bạn xác nhận trước.
 
 ## 🗺️ Checklist tổng thể — web đã "xong" chưa?
 Mục này để nhìn toàn cảnh 1 lần, không cần đoán hay chờ gợi ý từng phần. Cập nhật trạng thái mỗi khi xử lý xong 1 dòng.
@@ -21,6 +25,11 @@ Mục này để nhìn toàn cảnh 1 lần, không cần đoán hay chờ gợi
 - ✅ Chatbot AI tư vấn theo data thật
 - ✅ Hotline, Zalo, Shopee/TikTok link
 - ✅ **Giỏ hàng + đặt lịch lắp đặt nhiều sản phẩm** (04/07/2026, Giai đoạn 2 xong): nút "🛒 Thêm vào giỏ" trên card (`/san-pham`, `/may-loc-nuoc`, `/dieu-hoa`) + trang chi tiết, icon giỏ + badge trên Navbar, trang `/gio-hang` (chỉnh số lượng, xoá, tổng tiền, form đặt lịch), `/api/lead` mở rộng nhận `items` + `address` (email dạng bảng, subject "Đặt lịch lắp đặt", vẫn tương thích form báo giá cũ). Giỏ lưu localStorage, không cần backend. Spec: `specs/2026-07-04-gio-hang-dat-lich.md`. Đã test end-to-end trên dev server: thêm 2 SP → chỉnh qty → gửi form → email đi (API 200) → giỏ tự xoá → màn hình cảm ơn; mobile 375px không tràn ngang.
+- ✅ **Widget liên hệ nhanh** (`components/ContactWidget.tsx`, 09–10/07/2026): nút nổi Zalo/Messenger/Phone/Email kiểu Mitsubishi Electric, đặt cạnh nút chatbot AI (góc phải), cả 2 widget tự mở vài giây sau khi khách vào trang.
+- ✅ **Chatbot hoàn thiện** (24/07/2026, spec `specs/001-finish-product-chatbot/`, 18/18 task đã verify):
+  - Giới hạn đúng phạm vi kinh doanh — từ chối rõ ràng khi khách hỏi về Unimax/Kruger/Zimmermann/Living Sense hay đồ gia dụng ngoài điều hòa/máy lọc nước, không bịa giá/thông số.
+  - Tag `{{LEAD_FORM}}` để AI tự mời khách để lại tên + SĐT ngay trong khung chat khi có ý định mua rõ hoặc hỏi ngoài khả năng trả lời chắc chắn (form `ChatLeadCapture`, validate SĐT VN, gửi thẳng vào `/api/lead` có sẵn).
+  - Rate-limit chống spam cho cả `/api/chat` và `/api/lead` (qua `lib/kv.ts`, fail-open nếu KV lỗi — không chặn khách khi hạ tầng trục trặc).
 
 ### C. SEO & khả năng được tìm thấy
 - ✅ `sitemap.xml`, `robots.txt`
@@ -30,6 +39,7 @@ Mục này để nhìn toàn cảnh 1 lần, không cần đoán hay chờ gợi
 - ✅ **Open Graph tags** (05/07/2026) — share link lên Zalo/Facebook/Messenger giờ có ảnh + tiêu đề đẹp: banner brand `public/images/og-banner.png` (1200×630, vẽ bằng sharp theo brand mark) cho mọi trang, riêng trang sản phẩm dùng đúng ảnh + tên sản phẩm đó. `metadataBase` đã khai báo trong `app/layout.tsx`.
 - ✅ **Trang 404 riêng** (05/07/2026) — `app/not-found.tsx` theo brand, có nút về trang chủ + xem sản phẩm.
 - ✅ **SEO on-page hoàn chỉnh** (05/07/2026): canonical URL cho mọi trang (kể cả 86 trang sản phẩm), `/gio-hang` noindex, Organization JSON-LD (tên/logo/SĐT) trong layout, BreadcrumbList JSON-LD trang sản phẩm, sửa description trang Liên hệ (còn ghi "phụ kiện điện tử" cũ), title `/san-pham` thêm từ khóa. Đã pass: title/description riêng 12 trang, 1 H1/trang, 13/13 ảnh có alt.
+- ✅ **GEO (Generative Engine Optimization) — cấp trang danh mục** (24/07/2026, spec `specs/2026-07-19-toi-uu-geo.md`): thêm FAQPage schema (JSON-LD) + Service schema (HVACBusiness/HomeAndConstructionBusiness) vào `/dieu-hoa` và `/may-loc-nuoc`, FAQ hiển thị tái sử dụng nguyên văn dữ kiện đã có trong `data/kienthuc.ts` (không bịa thêm). Cả 9/9 bài kiến thức đã có field `faq`, Article schema bổ sung `image`/`dateModified`. Thêm `public/llms.txt` — file hướng dẫn cho AI crawler (ChatGPT/Perplexity/Gemini...) đọc nội dung site. ⚠️ Phần FAQ ở **cấp từng sản phẩm** (không phải cấp danh mục) mới làm 1/86 sản phẩm — xem mục A, đang dở.
 
 ### D. Pháp lý
 - ✅ **Chính sách bảo mật thông tin khách hàng** — đã có trang `/chinh-sach-bao-mat` (commit `dc16639`), link ở footer
@@ -44,8 +54,16 @@ Mục này để nhìn toàn cảnh 1 lần, không cần đoán hay chờ gợi
 
 ### F. Thương hiệu/hình ảnh
 - ✅ **Favicon logo DigiSmart** (04/07/2026) — `app/icon.svg` vẽ brand mark 4 ô vuông (3 trắng + 1 cam trên nền navy, khớp logo Navbar/Footer). Đã xóa favicon.ico + svg mặc định Next/Vercel trong `public/`. Logo gốc đầy đủ ở `G:\My Drive\DS\` (bản mới nhất: `digismart_logo v2.png`, `DS logo 2.svg`).
+- ✅ **Đổi font toàn site: Montserrat → Noto Sans JP** (09/07/2026, qua `next/font/google` trong `app/layout.tsx`, biến `--font-sans`). Riêng trang Cleansui dùng thêm Noto Serif JP (xem bên dưới).
+- ✅ **Sửa logo brand đúng tỷ lệ + thêm nhãn BETA** (10/07/2026): vẽ lại logo Mitsubishi Electric (3 kim cương ngang) và chỉnh Daikin/Cleansui đúng theo nguồn, không bóp méo tỷ lệ; logo giờ link thẳng đến trang sản phẩm lọc theo brand; thêm nhãn "BETA" cạnh logo DigiSmart trên Navbar.
+- ✅ **Sơ đồ hệ sinh thái sản phẩm/dịch vụ** (`components/SolutionDiagram.tsx`, 10/07/2026) trên trang chủ: kiểu hub-spoke (DigiSmart → Điều hòa/Máy lọc nước → logo từng brand) giống trang Mitsubishi Electric, có hiệu ứng động, mỗi node bấm được dẫn tới đúng trang danh mục/brand.
 
-**Tóm lại: catalog đã đủ data thật cho CẢ 2 danh mục (18 máy lọc nước + 68 điều hòa), giá bán đã chốt (Mitsubishi −10%, Daikin theo E-Shop), giỏ hàng + đặt lịch đã chạy, trang chi tiết Mitsubishi Electric/Daikin/Kitz giờ có mục "Điểm nổi bật" như trang hãng. Việc lớn còn lại cần bạn: đăng ký Google Business Profile, 2 ảnh Kitz.**
+- ✅ **Trang Cleansui — landing page riêng** (`/may-loc-nuoc/cleansui`, 09/07/2026): thiết kế/font riêng (Noto Serif JP + Noto Sans JP), khác phần còn lại của site, link từ trang `/may-loc-nuoc`. Spec: `specs/2026-07-08-design-system-landing-cleansui.md`.
+- ✅ **UI trang chủ hoàn thiện** (24/07/2026): icon SVG riêng cho từng danh mục (thay emoji), hover/focus state cho nút và card sản phẩm, logo brand chuyển sang `next/image`.
+- ✅ **Dọn lint + chặn rò API key** (24/07/2026): phát hiện 1 file `API console.txt` chứa Anthropic API key dạng plaintext — **chưa từng được commit lên git, không có key nào bị lộ lên GitHub** — đã chặn vào `.gitignore` ngay để tránh lỡ tay `git add -A` sau này. Dọn luôn các lỗi ESLint còn sót trong file thật, loại thư mục tooling cũ khỏi phạm vi lint.
+- 🔄 **ĐANG LÀM, CHƯA COMMIT — FAQ riêng cho từng trang sản phẩm** (phần GEO, bắt đầu 24/07/2026): field `faq?` đã thêm vào type `Product` (`data/products.ts`) + `app/san-pham/[id]/page.tsx` đã render mục "Câu hỏi thường gặp" + xuất JSON-LD FAQPage. Mới viết FAQ cho **1/86 sản phẩm** (Daikin FTKB25ZVMV) — còn ~85 sản phẩm chưa có. (Khác với FAQ ở cấp trang danh mục `/dieu-hoa`, `/may-loc-nuoc` — mục đó đã xong, xem phần SEO.)
+
+**Tóm lại: catalog đã đủ data thật cho CẢ 2 danh mục (18 máy lọc nước + 68 điều hòa), giá bán đã chốt (Mitsubishi −10%, Daikin theo E-Shop), giỏ hàng + đặt lịch đã chạy, trang chi tiết Mitsubishi Electric/Daikin/Kitz giờ có mục "Điểm nổi bật" như trang hãng, chatbot đã giới hạn đúng phạm vi kinh doanh + tự thu lead trong khung chat. Việc lớn còn lại cần bạn: đăng ký Google Business Profile, 2 ảnh Kitz, link social đúng. Việc đang dở cần làm tiếp: FAQ cho 85 sản phẩm còn lại.**
 
 - ✅ **Trang chi tiết sản phẩm — bổ sung mục "Điểm nổi bật" (features)** (05/07/2026): phát hiện 0/68 sản phẩm Mitsubishi Electric + Daikin có mục này (khác với Cleansui đã có từ trước) — khi so với trang hãng thật (mitsubishi-electric.vn) thấy thiếu hẳn phần feature card (Mát lạnh siêu tốc, Tiết kiệm điện, Khử mùi kháng khuẩn...). Đã viết bổ sung cho toàn bộ 6 dòng Mitsubishi Electric (MSY-JY/JA/GR, MSZ-HT/LN, MS-JS) + 10 dòng Daikin (FTKB/FTKF/FTKY/FTKM/FTKZ/FTHB/FTHF/FTXV/FTXM/FTF), dựa trên specs/thông số **đã xác minh sẵn trong data** (không bịa thêm claim mới) — riêng dòng MS-JS dùng đúng nội dung từ screenshot trang thật bạn gửi. ⚠️ Không tự truy cập lại được trang marketing SPA của hãng trong phiên này (WebFetch không render được JS, trình duyệt bị chặn domain ngoài) nên nội dung không phải chép nguyên văn 100% — nếu muốn khớp chính xác câu chữ marketing mới nhất của hãng, cần chụp màn hình gửi thêm hoặc mở quyền truy cập domain đó cho trình duyệt.
 - ✅ Bổ sung "Điểm nổi bật" cho `kitz-micro-filter-10inch` (dựa trên specs có sẵn).
@@ -61,7 +79,7 @@ Mục này để nhìn toàn cảnh 1 lần, không cần đoán hay chờ gợi
 - `.claude/launch.json` trỏ `npm --prefix <đường dẫn clone C: của máy đang dùng>` — **đường dẫn này đặc thù theo máy, sửa cục bộ không commit** khi đổi máy (tránh ghi đè cấu hình máy khác).
 - ⚠️ Vẫn là quy trình 2 bước (sửa G: → robocopy → chạy C:), chưa phải "chuyển hẳn sang git thuần" như mục tiêu Giai đoạn 1.5 ban đầu — lý do: Claude Code session gắn với thư mục `G:\My Drive\Hoc AI\digismart-web` (nơi có CLAUDE.md/AGENTS.md của project), đổi hẳn sang C: sẽ cần mở lại session ở đường dẫn mới. Đã cải thiện so với trước: clone ở C: giờ **thường trực** (không tạo lại mỗi phiên như bản scratchpad tạm trước đây), nên chỉ cần robocopy nhanh (~4 giây, không cần `npm ci` lại) thay vì dựng lại từ đầu mỗi lần.
 - Stack: Next.js 16 (App Router, Turbopack), deploy Vercel
-- Brand: Navy #042C53, Cam #F07B20, font **Montserrat** (geometric sans-serif, toàn bộ heading + body — đổi 05/07/2026 theo yêu cầu, thay Trebuchet MS/Calibri của guideline cũ). Nạp qua `next/font/google` trong `app/layout.tsx` (subset latin + vietnamese, self-host lúc build), biến CSS `--font-sans` trong `app/globals.css`. Muốn đổi font khác: sửa import trong `layout.tsx` là xong — mọi chỗ khác đều dùng `var(--font-sans)`.
+- Brand: Navy #042C53, Cam #F07B20, font **Noto Sans JP** (toàn bộ heading + body — đổi 09/07/2026 từ Montserrat; Montserrat trước đó đã đổi từ Trebuchet MS/Calibri của guideline cũ 05/07/2026). Nạp qua `next/font/google` trong `app/layout.tsx` (subset latin + vietnamese, self-host lúc build), biến CSS `--font-sans` trong `app/globals.css`. Trang `/may-loc-nuoc/cleansui` dùng thêm Noto Serif JP riêng. Muốn đổi font khác: sửa import trong `layout.tsx` là xong — mọi chỗ khác đều dùng `var(--font-sans)`.
 
 ## Đã làm xong
 - Trang: `/`, `/san-pham`, `/san-pham/[id]`, `/dieu-hoa`, `/may-loc-nuoc`, `/ve-chung-toi`, `/lien-he`
@@ -86,6 +104,9 @@ Mục này để nhìn toàn cảnh 1 lần, không cần đoán hay chờ gợi
    - `kitz-dong-ho-do-nuoc-thong-minh`: ảnh hiện tại là sản phẩm brand **Callme** (callme.vn) — cần bạn xác nhận có đúng sản phẩm đang bán không rồi mới thay ảnh.
 4. **Link mạng xã hội/sàn TMĐT SAI — chờ bạn gửi link đúng** (phát hiện 05/07/2026): `shopee.vn/digismart85` (404, shop không tồn tại), `facebook.com/digismartvn`, `tiktok.com/@digismart85` — tổng 12 chỗ trong `components/Footer.tsx`, `app/lien-he/page.tsx`, `app/san-pham/[id]/page.tsx`. Khi có link đúng, Claude sẽ thay tất cả 1 lần (và gom về 1 file constants để sau này chỉ sửa 1 chỗ). **09/07/2026: thêm 1 chỗ dùng link tạm nữa** — `components/ContactWidget.tsx` (icon Messenger trong cụm liên hệ nhanh góc dưới-trái) dùng tạm `facebook.com/digismartvn` + email tạm `digismart606@gmail.com`, cần thay khi có Facebook Page/email công khai thật.
 5. ~~node_modules trên ổ G: (máy này) đã hỏng do Google Drive sync~~ — **đã xử lý 06/07/2026 (Giai đoạn 1.5)**: dựng clone thường trực tại `C:\Users\ad\projects\digismart-web`, `.claude\launch.json` trỏ vào đó, verify giỏ hàng end-to-end pass. Quy trình vẫn cần robocopy (G: → C:) trước khi chạy dev — xem mục "Repo & môi trường chạy code" ở trên.
+6. **FAQ cho từng sản phẩm còn dở — 85/86 sản phẩm chưa có** (xem mục A, bắt đầu 24/07/2026): cần viết tiếp FAQ cho các sản phẩm còn lại dựa trên specs/thông số đã có trong `data/products.ts`/`data/warranty.ts` (không bịa thêm claim mới), theo đúng mẫu đã làm cho `daikin-ftkb25zvmv`.
+7. **`CLAUDE.md` của repo đang mô tả nhầm sang app `ds_app/web` (Supabase/role/giá 3 tier)** — xem ghi chú đầu file. Cần bạn xác nhận cách tách: (a) xoá phần Supabase/role khỏi `CLAUDE.md` của repo này, hay (b) đổi hẳn sang 1 file CLAUDE.md khác đúng ngữ cảnh web digismartvn.com.
+8. **Thư mục `openwiki/` (tài liệu kỹ thuật tự sinh) chưa được commit vào git** — đang nằm untracked trong working copy, nên commit để không bị mất khi dọn máy/robocopy.
 
 ## Đã xử lý gần đây
 - ✅ (04/07/2026) **Ảnh EU202** — tải ảnh chính hãng nền trắng từ mitsubishicleansui.vn, gắn vào `data/products.ts`. 18/18 sản phẩm máy lọc nước đã có ảnh thật.
@@ -98,7 +119,7 @@ Mục này để nhìn toàn cảnh 1 lần, không cần đoán hay chờ gợi
 Mô hình thật: khách bỏ SP vào giỏ → đặt lịch lắp đặt → **thu tiền lúc lắp đặt** (không cần checkout online ngay). Vì vậy bỏ Medusa.js khỏi roadmap — không cần backend thương mại riêng.
 
 ## Roadmap
-1. **Giai đoạn 1 — Brand/content + chatbot (gần xong):** còn data Điều hòa thật + xử lý 5 việc đang chặn ở trên.
+1. ✅ **Giai đoạn 1 — Brand/content + chatbot: THỰC TẾ ĐÃ XONG PHẦN LỚN (cập nhật 26/10/2026)**: data Điều hòa + máy lọc nước thật, chatbot đã hoàn thiện (giới hạn phạm vi, thu lead trong chat, rate-limit), GEO cấp danh mục đã xong. Còn lại: xử lý 8 việc đang chặn ở trên (trong đó FAQ cấp sản phẩm cho 85 SKU là việc lớn nhất còn mở).
 2. ⚠️ **Giai đoạn 1.5 — Ổn định quy trình dev — MỘT PHẦN xong (06/07/2026)**: mỗi máy giờ có clone thường trực ở ổ C: (không cần `npm ci` lại mỗi phiên, chỉ robocopy nhanh ~4 giây từ G: trước khi chạy) — đỡ hẳn phần chậm/lỗi node_modules. Chưa xong phần "chuyển hẳn sang git thuần" (bỏ Google Drive làm nơi sửa code chính) vì Claude Code session vẫn gắn với thư mục `G:\My Drive\...`; muốn dứt điểm cần đổi nơi mở Claude Code sang thẳng clone C: — đây là quyết định của bạn (ảnh hưởng chỗ mở app/editor hàng ngày), chưa tự làm.
 3. ✅ **Giai đoạn 2 — Giỏ hàng nhẹ + đặt lịch lắp đặt: XONG 04/07/2026** (xem mục B checklist ở trên). Đã merge `cleansui-wip` → `master` (commit `a83fed0`, được duyệt 04/07/2026) — **đã live trên digismartvn.com**: `/gio-hang` trả 200, nút "Thêm vào giỏ" + icon giỏ Navbar đã hiện trên production.
 4. **Giai đoạn 3 — Cổng thanh toán (tuỳ chọn):** VNPay/MoMo/ZaloPay để khách đặt cọc trước khi lắp đặt.
