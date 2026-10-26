@@ -759,7 +759,7 @@ export const products: Product[] = [
       { image: "/images/products/mitsubishi-msy-jy25vf-gallery-4.jpg", caption: "Bảo hành chính hãng: thân máy 2 năm, máy nén 5 năm." },
     ],
     description:
-      "Máy lạnh MSY-JY25VF nằm trong dòng sản phẩm Inverter Một Chiều Sang Trọng MSY-JY series của Mitsubishi Electric, giúp tiết kiệm năng lượng tối đa và vận hành cực kỳ êm ái, giúp mang lại sự thoải mái cho không gian sống và đáp ứng nhu cầu điều hòa không khí của người dùng. Bảo hành: - Thân máy: 2 năm - Máy nén: 5 năm",
+      "Máy lạnh MSY-JY25VF nằm trong dòng sản phẩm Inverter Một Chiều Sang Trọng MSY-JY series của Mitsubishi Electric, giúp tiết kiệm năng lượng tối đa và vận hành cực kỳ êm ái, giúp mang lại sự thoải mái cho không gian sống và đáp ứng nhu cầu điều hòa không khí của người dùng.",
     specs: [
       "Loại máy: Inverter - 1 chiều",
       "Tên model dàn nóng: MUY-JY25VF",
@@ -801,7 +801,7 @@ export const products: Product[] = [
       { image: "/images/products/mitsubishi-msy-jy35vf-gallery-4.jpg", caption: "Bảo hành chính hãng: thân máy 2 năm, máy nén 5 năm." },
     ],
     description:
-      "Máy lạnh MSY-JY35VF nằm trong dòng sản phẩm Inverter Một Chiều Sang Trọng MSY-JY series của Mitsubishi Electric, giúp tiết kiệm năng lượng tối đa và vận hành cực kỳ êm ái, giúp mang lại sự thoải mái cho không gian sống và đáp ứng nhu cầu điều hòa không khí của người dùng. Bảo hành: - Thân máy: 2 năm - Máy nén: 5 năm",
+      "Máy lạnh MSY-JY35VF nằm trong dòng sản phẩm Inverter Một Chiều Sang Trọng MSY-JY series của Mitsubishi Electric, giúp tiết kiệm năng lượng tối đa và vận hành cực kỳ êm ái, giúp mang lại sự thoải mái cho không gian sống và đáp ứng nhu cầu điều hòa không khí của người dùng.",
     specs: [
       "Loại máy: Inverter - 1 chiều",
       "Tên model dàn nóng: MUY-JY35VF",
@@ -843,7 +843,7 @@ export const products: Product[] = [
       { image: "/images/products/mitsubishi-msy-jy50vf-gallery-4.jpg", caption: "Bảo hành chính hãng: thân máy 2 năm, máy nén 5 năm." },
     ],
     description:
-      "Máy lạnh MSY-JY50VF nằm trong dòng sản phẩm Inverter Một Chiều Sang Trọng MSY-JY series của Mitsubishi Electric, giúp tiết kiệm năng lượng tối đa và vận hành cực kỳ êm ái, giúp mang lại sự thoải mái cho không gian sống và đáp ứng nhu cầu điều hòa không khí của người dùng. Bảo hành: - Thân máy: 2 năm - Máy nén: 5 năm",
+      "Máy lạnh MSY-JY50VF nằm trong dòng sản phẩm Inverter Một Chiều Sang Trọng MSY-JY series của Mitsubishi Electric, giúp tiết kiệm năng lượng tối đa và vận hành cực kỳ êm ái, giúp mang lại sự thoải mái cho không gian sống và đáp ứng nhu cầu điều hòa không khí của người dùng.",
     specs: [
       "Loại máy: Inverter - 1 chiều",
       "Tên model dàn nóng: MUY-JY50VF",
@@ -885,7 +885,7 @@ export const products: Product[] = [
       { image: "/images/products/mitsubishi-msy-jy60vf-gallery-4.jpg", caption: "Bảo hành chính hãng: thân máy 2 năm, máy nén 5 năm." },
     ],
     description:
-      "Máy lạnh MSY-JW60VF nằm trong dòng sản phẩm Inverter Một Chiều Sang Trọng MSY-JY series của Mitsubishi Electric, giúp tiết kiệm năng lượng tối đa và vận hành cực kỳ êm ái, giúp mang lại sự thoải mái cho không gian sống và đáp ứng nhu cầu điều hòa không khí của người dùng. Bảo hành: - Thân máy: 2 năm - Máy nén: 5 năm",
+      "Máy lạnh MSY-JY60VF nằm trong dòng sản phẩm Inverter Một Chiều Sang Trọng MSY-JY series của Mitsubishi Electric, giúp tiết kiệm năng lượng tối đa và vận hành cực kỳ êm ái, giúp mang lại sự thoải mái cho không gian sống và đáp ứng nhu cầu điều hòa không khí của người dùng.",
     specs: [
       "Loại máy: Inverter - 1 chiều",
       "Tên model dàn nóng: MUY-JY60VF",
@@ -927,7 +927,7 @@ export const products: Product[] = [
       { image: "/images/products/mitsubishi-msy-ja25vf-gallery-4.jpg", caption: "Bảo hành chính hãng: thân máy 2 năm, máy nén 5 năm." },
     ],
     description:
-      "Máy lạnh MSY-JA25VF nằm trong dòng sản phẩm Inverter Một chiều Tiện nghi MSY-JA series của Mitsubishi Electric, giúp tiết kiệm năng lượng tối đa và vận hành cực kỳ êm ái, giúp mang lại sự thoải mái cho không gian sống và đáp ứng nhu cầu điều hòa không khí của người dùng. Bảo hành: - Thân máy: 2 năm - Máy nén: 5 năm",
+      "Máy lạnh MSY-JA25VF nằm trong dòng sản phẩm Inverter Một chiều Tiện nghi MSY-JA series của Mitsubishi Electric, giúp tiết kiệm năng lượng tối đa và vận hành cực kỳ êm ái, giúp mang lại sự thoải mái cho không gian sống và đáp ứng nhu cầu điều hòa không khí của người dùng.",
     specs: [
       "Loại máy: Inverter - 1 chiều",
       "Tên model dàn nóng: MUY-JA25VF",
@@ -969,7 +969,7 @@ export const products: Product[] = [
       { image: "/images/products/mitsubishi-msy-ja35vf-gallery-4.jpg", caption: "Bảo hành chính hãng: thân máy 2 năm, máy nén 5 năm." },
     ],
     description:
-      "Máy lạnh MSY-JA35VF nằm trong dòng sản phẩm Inverter Một chiều Tiện nghi MSY-JA series của Mitsubishi Electric, giúp tiết kiệm năng lượng tối đa và vận hành cực kỳ êm ái, giúp mang lại sự thoải mái cho không gian sống và đáp ứng nhu cầu điều hòa không khí của người dùng. Bảo hành: - Thân máy: 2 năm - Máy nén: 5 năm",
+      "Máy lạnh MSY-JA35VF nằm trong dòng sản phẩm Inverter Một chiều Tiện nghi MSY-JA series của Mitsubishi Electric, giúp tiết kiệm năng lượng tối đa và vận hành cực kỳ êm ái, giúp mang lại sự thoải mái cho không gian sống và đáp ứng nhu cầu điều hòa không khí của người dùng.",
     specs: [
       "Loại máy: Inverter - 1 chiều",
       "Tên model dàn nóng: MUY-JA35VF",
@@ -1011,7 +1011,7 @@ export const products: Product[] = [
       { image: "/images/products/mitsubishi-msy-ja50vf-gallery-4.jpg", caption: "Bảo hành chính hãng: thân máy 2 năm, máy nén 5 năm." },
     ],
     description:
-      "Máy lạnh MSY-JA50VF nằm trong dòng sản phẩm Inverter Một chiều Tiện nghi MSY-JA series của Mitsubishi Electric, giúp tiết kiệm năng lượng tối đa và vận hành cực kỳ êm ái, giúp mang lại sự thoải mái cho không gian sống và đáp ứng nhu cầu điều hòa không khí của người dùng. Bảo hành: - Thân máy: 2 năm - Máy nén: 5 năm",
+      "Máy lạnh MSY-JA50VF nằm trong dòng sản phẩm Inverter Một chiều Tiện nghi MSY-JA series của Mitsubishi Electric, giúp tiết kiệm năng lượng tối đa và vận hành cực kỳ êm ái, giúp mang lại sự thoải mái cho không gian sống và đáp ứng nhu cầu điều hòa không khí của người dùng.",
     specs: [
       "Loại máy: Inverter - 1 chiều",
       "Tên model dàn nóng: MUY-JA50VF",
@@ -1053,7 +1053,7 @@ export const products: Product[] = [
       { image: "/images/products/mitsubishi-msy-ja60vf-gallery-4.jpg", caption: "Bảo hành chính hãng: thân máy 2 năm, máy nén 5 năm." },
     ],
     description:
-      "Máy lạnh MSY-JA60VF nằm trong dòng sản phẩm Inverter Một chiều Tiện nghi MSY-JA series của Mitsubishi Electric, giúp tiết kiệm năng lượng tối đa và vận hành cực kỳ êm ái, giúp mang lại sự thoải mái cho không gian sống và đáp ứng nhu cầu điều hòa không khí của người dùng. Bảo hành: - Thân máy: 2 năm - Máy nén: 5 năm",
+      "Máy lạnh MSY-JA60VF nằm trong dòng sản phẩm Inverter Một chiều Tiện nghi MSY-JA series của Mitsubishi Electric, giúp tiết kiệm năng lượng tối đa và vận hành cực kỳ êm ái, giúp mang lại sự thoải mái cho không gian sống và đáp ứng nhu cầu điều hòa không khí của người dùng.",
     specs: [
       "Loại máy: Inverter - 1 chiều",
       "Tên model dàn nóng: MUY-JA60VF",
@@ -1096,7 +1096,7 @@ export const products: Product[] = [
     ],
     videoId: "lCQ0f7x8RAU",
     description:
-      "Máy lạnh MSY-GR25VF nằm trong dòng sản phẩm Inverter Một chiều Siêu Sang Trọng MSY-GR series của Mitsubishi Electric, giúp tiết kiệm năng lượng tối đa và vận hành cực kỳ êm ái, giúp mang lại sự thoải mái cho không gian sống và đáp ứng nhu cầu điều hòa không khí của người dùng. Bảo hành: - Thân máy: 2 năm - Máy nén: 5 năm",
+      "Máy lạnh MSY-GR25VF nằm trong dòng sản phẩm Inverter Một chiều Siêu Sang Trọng MSY-GR series của Mitsubishi Electric, giúp tiết kiệm năng lượng tối đa và vận hành cực kỳ êm ái, giúp mang lại sự thoải mái cho không gian sống và đáp ứng nhu cầu điều hòa không khí của người dùng.",
     specs: [
       "Loại máy: Inverter - 1 chiều",
       "Tên model dàn nóng: MUY-GR25VF",
@@ -1139,7 +1139,7 @@ export const products: Product[] = [
     ],
     videoId: "lCQ0f7x8RAU",
     description:
-      "Máy lạnh MSY-GR35VF nằm trong dòng sản phẩm Inverter Một chiều Siêu Sang Trọng MSY-GR series của Mitsubishi Electric, giúp tiết kiệm năng lượng tối đa và vận hành cực kỳ êm ái, giúp mang lại sự thoải mái cho không gian sống và đáp ứng nhu cầu điều hòa không khí của người dùng. Bảo hành: - Thân máy: 2 năm - Máy nén: 5 năm",
+      "Máy lạnh MSY-GR35VF nằm trong dòng sản phẩm Inverter Một chiều Siêu Sang Trọng MSY-GR series của Mitsubishi Electric, giúp tiết kiệm năng lượng tối đa và vận hành cực kỳ êm ái, giúp mang lại sự thoải mái cho không gian sống và đáp ứng nhu cầu điều hòa không khí của người dùng.",
     specs: [
       "Loại máy: Inverter - 1 chiều",
       "Tên model dàn nóng: MUY-GR35VF",
@@ -1182,7 +1182,7 @@ export const products: Product[] = [
     ],
     videoId: "lCQ0f7x8RAU",
     description:
-      "Máy lạnh MSY-GR50VF nằm trong dòng sản phẩm Inverter Một chiều Siêu Sang Trọng MSY-GR series của Mitsubishi Electric, giúp tiết kiệm năng lượng tối đa và vận hành cực kỳ êm ái, giúp mang lại sự thoải mái cho không gian sống và đáp ứng nhu cầu điều hòa không khí của người dùng. Bảo hành: - Thân máy: 2 năm - Máy nén: 5 năm",
+      "Máy lạnh MSY-GR50VF nằm trong dòng sản phẩm Inverter Một chiều Siêu Sang Trọng MSY-GR series của Mitsubishi Electric, giúp tiết kiệm năng lượng tối đa và vận hành cực kỳ êm ái, giúp mang lại sự thoải mái cho không gian sống và đáp ứng nhu cầu điều hòa không khí của người dùng.",
     specs: [
       "Loại máy: Inverter - 1 chiều",
       "Tên model dàn nóng: MUY-GR50VF",
@@ -1225,7 +1225,7 @@ export const products: Product[] = [
     ],
     videoId: "lCQ0f7x8RAU",
     description:
-      "Máy lạnh MSY-GR60VF nằm trong dòng sản phẩm Inverter Một chiều Siêu Sang Trọng MSY-GR series của Mitsubishi Electric, giúp tiết kiệm năng lượng tối đa và vận hành cực kỳ êm ái, giúp mang lại sự thoải mái cho không gian sống và đáp ứng nhu cầu điều hòa không khí của người dùng. Bảo hành: - Thân máy: 2 năm - Máy nén: 5 năm",
+      "Máy lạnh MSY-GR60VF nằm trong dòng sản phẩm Inverter Một chiều Siêu Sang Trọng MSY-GR series của Mitsubishi Electric, giúp tiết kiệm năng lượng tối đa và vận hành cực kỳ êm ái, giúp mang lại sự thoải mái cho không gian sống và đáp ứng nhu cầu điều hòa không khí của người dùng.",
     specs: [
       "Loại máy: Inverter - 1 chiều",
       "Tên model dàn nóng: MUY-GR60VF",
@@ -1268,7 +1268,7 @@ export const products: Product[] = [
     ],
     videoId: "lCQ0f7x8RAU",
     description:
-      "Máy lạnh MSY-GR71VF nằm trong dòng sản phẩm Inverter Một chiều Siêu Sang Trọng MSY-GR series của Mitsubishi Electric, giúp tiết kiệm năng lượng tối đa và vận hành cực kỳ êm ái, giúp mang lại sự thoải mái cho không gian sống và đáp ứng nhu cầu điều hòa không khí của người dùng. Bảo hành: - Thân máy: 2 năm - Máy nén: 5 năm",
+      "Máy lạnh MSY-GR71VF nằm trong dòng sản phẩm Inverter Một chiều Siêu Sang Trọng MSY-GR series của Mitsubishi Electric, giúp tiết kiệm năng lượng tối đa và vận hành cực kỳ êm ái, giúp mang lại sự thoải mái cho không gian sống và đáp ứng nhu cầu điều hòa không khí của người dùng.",
     specs: [
       "Loại máy: Inverter - 1 chiều",
       "Tên model dàn nóng: MUY-GR71VF",
@@ -1352,7 +1352,7 @@ export const products: Product[] = [
       { image: "/images/products/mitsubishi-msz-ht35vf-gallery-4.JPG", caption: "Bảo hành chính hãng: thân máy 2 năm, máy nén 5 năm." },
     ],
     description:
-      "Máy lạnh MSZ-HT35VFnằm trong dòng sản phẩm Inverter Hai chiều MSZ-HT series của Mitsubishi Electric, giúp tiết kiệm năng lượng tối đa và vận hành cực kỳ êm ái, giúp mang lại sự thoải mái cho không gian sống và đáp ứng nhu cầu điều hòa không khí của người dùng. Bảo hành: - Thân máy: 2 năm - Máy nén: 5 năm",
+      "Máy lạnh MSZ-HT35VF nằm trong dòng sản phẩm Inverter Hai chiều MSZ-HT series của Mitsubishi Electric, giúp tiết kiệm năng lượng tối đa và vận hành cực kỳ êm ái, giúp mang lại sự thoải mái cho không gian sống và đáp ứng nhu cầu điều hòa không khí của người dùng.",
     specs: [
       "Loại máy: Inverter - 2 chiều — làm lạnh & sưởi ấm",
       "Tên model dàn nóng: MUZ-HT35VF",
@@ -1394,7 +1394,7 @@ export const products: Product[] = [
       { image: "/images/products/mitsubishi-msz-ht50vf-gallery-4.JPG", caption: "Bảo hành chính hãng: thân máy 2 năm, máy nén 5 năm." },
     ],
     description:
-      "Máy lạnh MSZ-HT50VFnằm trong dòng sản phẩm Inverter Hai chiều MSZ-HT series của Mitsubishi Electric, giúp tiết kiệm năng lượng tối đa và vận hành cực kỳ êm ái, giúp mang lại sự thoải mái cho không gian sống và đáp ứng nhu cầu điều hòa không khí của người dùng. Bảo hành: - Thân máy: 2 năm - Máy nén: 5 năm",
+      "Máy lạnh MSZ-HT50VF nằm trong dòng sản phẩm Inverter Hai chiều MSZ-HT series của Mitsubishi Electric, giúp tiết kiệm năng lượng tối đa và vận hành cực kỳ êm ái, giúp mang lại sự thoải mái cho không gian sống và đáp ứng nhu cầu điều hòa không khí của người dùng.",
     specs: [
       "Loại máy: Inverter - 2 chiều — làm lạnh & sưởi ấm",
       "Tên model dàn nóng: MUZ-HT50VF",
@@ -1437,7 +1437,7 @@ export const products: Product[] = [
     ],
     videoId: "YwhC4c9qJis",
     description:
-      "Máy lạnh MSZ-LN25VFR nằm trong dòng sản phẩm Inverter Hai chiều sang trọng MSZ-LN series của Mitsubishi Electric, giúp tiết kiệm năng lượng tối đa và vận hành cực kỳ êm ái, giúp mang lại sự thoải mái cho không gian sống và đáp ứng nhu cầu điều hòa không khí của người dùng. Bảo hành: - Thân máy: 2 năm - Máy nén: 5 năm",
+      "Máy lạnh MSZ-LN25VFR nằm trong dòng sản phẩm Inverter Hai chiều sang trọng MSZ-LN series của Mitsubishi Electric, giúp tiết kiệm năng lượng tối đa và vận hành cực kỳ êm ái, giúp mang lại sự thoải mái cho không gian sống và đáp ứng nhu cầu điều hòa không khí của người dùng.",
     specs: [
       "Loại máy: Inverter - 2 chiều — làm lạnh & sưởi ấm",
       "Tên model dàn nóng: MUZ-LN25VF",
@@ -1480,7 +1480,7 @@ export const products: Product[] = [
     ],
     videoId: "YwhC4c9qJis",
     description:
-      "Máy lạnh MSZ-LN25VFB nằm trong dòng sản phẩm Inverter Hai chiều sang trọng MSZ-LN series của Mitsubishi Electric, giúp tiết kiệm năng lượng tối đa và vận hành cực kỳ êm ái, giúp mang lại sự thoải mái cho không gian sống và đáp ứng nhu cầu điều hòa không khí của người dùng. Bảo hành: - Thân máy: 2 năm - Máy nén: 5 năm",
+      "Máy lạnh MSZ-LN25VFB nằm trong dòng sản phẩm Inverter Hai chiều sang trọng MSZ-LN series của Mitsubishi Electric, giúp tiết kiệm năng lượng tối đa và vận hành cực kỳ êm ái, giúp mang lại sự thoải mái cho không gian sống và đáp ứng nhu cầu điều hòa không khí của người dùng.",
     specs: [
       "Loại máy: Inverter - 2 chiều — làm lạnh & sưởi ấm",
       "Tên model dàn nóng: MUZ-LN25VF",
@@ -1523,7 +1523,7 @@ export const products: Product[] = [
       { image: "/images/products/mitsubishi-ms-js25vf.png", caption: "Vận hành bền bỉ trong điều kiện môi trường khắc nghiệt." },
     ],
     description:
-      "Máy lạnh MS-JS25VF nằm trong dòng sản phẩm Dòng Một Chiều Sang Trọng MS-JS series của Mitsubishi Electric, giúp tiết kiệm năng lượng tối đa và vận hành cực kỳ êm ái, giúp mang lại sự thoải mái cho không gian sống và đáp ứng nhu cầu điều hòa không khí của người dùng. Bảo hành: - Thân máy: 2 năm - Máy nén: 5 năm",
+      "Máy lạnh MS-JS25VF nằm trong dòng sản phẩm Dòng Một Chiều Sang Trọng MS-JS series của Mitsubishi Electric, giúp tiết kiệm năng lượng tối đa và vận hành cực kỳ êm ái, giúp mang lại sự thoải mái cho không gian sống và đáp ứng nhu cầu điều hòa không khí của người dùng.",
     specs: [
       "Loại máy: Tiêu chuẩn - 1 chiều",
       "Tên model dàn nóng: MU-JS25VF",
@@ -1566,7 +1566,7 @@ export const products: Product[] = [
       { image: "/images/products/mitsubishi-ms-js35vf.png", caption: "Vận hành bền bỉ trong điều kiện môi trường khắc nghiệt." },
     ],
     description:
-      "Máy lạnh MS-JS35VF nằm trong dòng sản phẩm Dòng Một Chiều Sang Trọng MS-JS series của Mitsubishi Electric, giúp tiết kiệm năng lượng tối đa và vận hành cực kỳ êm ái, giúp mang lại sự thoải mái cho không gian sống và đáp ứng nhu cầu điều hòa không khí của người dùng. Bảo hành: - Thân máy: 2 năm - Máy nén: 5 năm",
+      "Máy lạnh MS-JS35VF nằm trong dòng sản phẩm Dòng Một Chiều Sang Trọng MS-JS series của Mitsubishi Electric, giúp tiết kiệm năng lượng tối đa và vận hành cực kỳ êm ái, giúp mang lại sự thoải mái cho không gian sống và đáp ứng nhu cầu điều hòa không khí của người dùng.",
     specs: [
       "Loại máy: Tiêu chuẩn - 1 chiều",
       "Tên model dàn nóng: MU-JS35VF",
@@ -1609,7 +1609,7 @@ export const products: Product[] = [
       { image: "/images/products/mitsubishi-ms-js50vf.png", caption: "Vận hành bền bỉ trong điều kiện môi trường khắc nghiệt." },
     ],
     description:
-      "Máy lạnh MS-JS50VF nằm trong dòng sản phẩm Dòng Một Chiều Sang Trọng MS-JS series của Mitsubishi Electric, giúp tiết kiệm năng lượng tối đa và vận hành cực kỳ êm ái, giúp mang lại sự thoải mái cho không gian sống và đáp ứng nhu cầu điều hòa không khí của người dùng. Bảo hành: - Thân máy: 2 năm - Máy nén: 5 năm",
+      "Máy lạnh MS-JS50VF nằm trong dòng sản phẩm Dòng Một Chiều Sang Trọng MS-JS series của Mitsubishi Electric, giúp tiết kiệm năng lượng tối đa và vận hành cực kỳ êm ái, giúp mang lại sự thoải mái cho không gian sống và đáp ứng nhu cầu điều hòa không khí của người dùng.",
     specs: [
       "Loại máy: Tiêu chuẩn - 1 chiều",
       "Tên model dàn nóng: MU-JS50VF",
@@ -1652,7 +1652,7 @@ export const products: Product[] = [
       { image: "/images/products/mitsubishi-ms-js60vf.png", caption: "Vận hành bền bỉ trong điều kiện môi trường khắc nghiệt." },
     ],
     description:
-      "Máy lạnh MS-JS60VF nằm trong dòng sản phẩm Dòng Một Chiều Sang Trọng MS-JS series của Mitsubishi Electric, giúp tiết kiệm năng lượng tối đa và vận hành cực kỳ êm ái, giúp mang lại sự thoải mái cho không gian sống và đáp ứng nhu cầu điều hòa không khí của người dùng. Bảo hành: - Thân máy: 2 năm - Máy nén: 5 năm",
+      "Máy lạnh MS-JS60VF nằm trong dòng sản phẩm Dòng Một Chiều Sang Trọng MS-JS series của Mitsubishi Electric, giúp tiết kiệm năng lượng tối đa và vận hành cực kỳ êm ái, giúp mang lại sự thoải mái cho không gian sống và đáp ứng nhu cầu điều hòa không khí của người dùng.",
     specs: [
       "Loại máy: Tiêu chuẩn - 1 chiều",
       "Tên model dàn nóng: MU-JS60VF",
