@@ -10,7 +10,6 @@ const values = [
   { icon: "✅", title: "Hàng chính hãng 100%", desc: "Mỗi sản phẩm đều có tem nhập khẩu, nguồn gốc rõ ràng, được kiểm định trước khi đến tay khách hàng." },
   { icon: "🔧", title: "Lắp đặt tận nơi", desc: "Điều hòa, máy lọc nước được kỹ thuật DigiSmart tư vấn và lắp đặt trực tiếp tại TPHCM." },
   { icon: "💬", title: "Tư vấn tận tâm", desc: "Đội ngũ tư vấn nhiệt tình, am hiểu sản phẩm, hỗ trợ qua Zalo và điện thoại mọi ngày." },
-  { icon: "🛍️", title: "Phụ kiện đa kênh", desc: "Ngoài điều hòa & máy lọc nước, phụ kiện điện tử được phân phối qua Shopee, Lazada, TikTok Shop." },
 ];
 
 const milestones = [
