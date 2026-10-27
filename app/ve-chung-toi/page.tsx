@@ -2,7 +2,7 @@ import type { Metadata } from "next";
 
 export const metadata: Metadata = {
   title: "Về chúng tôi — DigiSmart",
-  description: "DigiSmart — chuyên cung cấp & lắp đặt Điều hòa, Máy lọc nước chính hãng tại TPHCM. Ngoài ra phân phối phụ kiện điện tử qua Shopee, Lazada, TikTok Shop.",
+  description: "DigiSmart — chuyên cung cấp & lắp đặt Điều hòa, Máy lọc nước chính hãng tại TPHCM. Mitsubishi Electric, Daikin, Cleansui, Kitz Micro Filter — giá hợp lý, lắp đặt tận nơi.",
   alternates: { canonical: "/ve-chung-toi" },
 };
 
