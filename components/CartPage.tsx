@@ -3,6 +3,7 @@ import Link from "next/link";
 import Image from "next/image";
 import { useState } from "react";
 import { useCart } from "./CartContext";
+import { products } from "@/data/products";
 
 type FormState = "idle" | "sending" | "sent" | "error";
 
@@ -36,6 +37,9 @@ export default function CartPage() {
   const { items, remove, setQty, clear, total } = useCart();
   const [form, setForm] = useState({ name: "", phone: "", address: "", note: "" });
   const [state, setState] = useState<FormState>("idle");
+  // Giỏ chỉ toàn Máy lọc nước (giao thẳng) → dẫn sang checkout thật /thanh-toan.
+  // Có lẫn Điều hòa (cần khảo sát/lắp đặt) → giữ nguyên form đặt lịch bên dưới.
+  const isDirectShipOnly = items.length > 0 && items.every(i => products.find(p => p.id === i.id)?.category === "Máy lọc nước");
 
   function handleChange(e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) {
     setForm(prev => ({ ...prev, [e.target.name]: e.target.value }));
@@ -155,7 +159,21 @@ export default function CartPage() {
         </p>
       </div>
 
-      {/* Form đặt lịch lắp đặt */}
+      {/* Máy lọc nước (giao thẳng): dẫn sang checkout thật. Có Điều hòa: giữ form đặt lịch cũ bên dưới. */}
+      {isDirectShipOnly ? (
+        <div style={{ background: "#fff", border: "1px solid var(--border)", borderRadius: 12, padding: "1.5rem", textAlign: "center" }}>
+          <h2 style={{ fontFamily: "var(--font-sans)", fontWeight: 700, fontSize: "1.1rem", color: "var(--brand)", marginBottom: "0.75rem" }}>
+            Sẵn sàng thanh toán
+          </h2>
+          <p style={{ fontFamily: "var(--font-sans)", fontSize: "0.85rem", color: "var(--muted)", marginBottom: "1.25rem" }}>
+            Đặt hàng ngay — giao tận nơi, thanh toán COD hoặc chuyển khoản.
+          </p>
+          <Link href="/thanh-toan"
+            style={{ display: "inline-block", background: "#F07B20", color: "#fff", padding: "12px 28px", borderRadius: 8, textDecoration: "none", fontFamily: "var(--font-sans)", fontWeight: 700, fontSize: "0.95rem" }}>
+            Thanh toán ngay
+          </Link>
+        </div>
+      ) : (
       <div style={{ background: "#fff", border: "1px solid var(--border)", borderRadius: 12, padding: "1.5rem" }}>
         <h2 style={{ fontFamily: "var(--font-sans)", fontWeight: 700, fontSize: "1.1rem", color: "var(--brand)", marginBottom: "0.4rem" }}>
           Đặt lịch lắp đặt
@@ -194,6 +212,7 @@ export default function CartPage() {
           </button>
         </form>
       </div>
+      )}
     </div>
   );
 }
