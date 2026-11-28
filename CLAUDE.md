@@ -1,6 +1,6 @@
 @AGENTS.md
 
-# DigiSmart Web (digismartvn.vn) — Nguyên tắc làm việc bắt buộc
+# DigiSmart Web (digismartvn.com) — Nguyên tắc làm việc bắt buộc
 
 > File này được Claude Code tự đọc khi mở session trong project này.
 > KHÔNG xoá, KHÔNG sửa nếu không có lý do rõ ràng.
