@@ -63,55 +63,29 @@ export default function HomePage() {
 
   return (
     <>
-      {/* Hero */}
-      <section style={{ background: "linear-gradient(135deg, #042C53 0%, #185FA5 70%, #378ADD 100%)", padding: "5rem 0" }}>
-        <div className="container" style={{ display: "flex", alignItems: "center", justifyContent: "space-between", gap: "2rem", flexWrap: "wrap" }}>
-          <div style={{ color: "#fff", maxWidth: 560 }}>
+      {/* Hero — màn hình chọn cổng: Cửa hàng (mua máy lọc nước, giao tận nơi) / Dịch vụ
+          (điều hòa, khảo sát lắp đặt). Gộp cùng 1 section để khách thấy đủ 2 lựa chọn
+          ngay màn hình đầu, không cần cuộn (FR-002, US2 trong
+          specs/002-url-cua-hang-dich-vu/spec.md). */}
+      <section style={{ background: "linear-gradient(135deg, #042C53 0%, #185FA5 70%, #378ADD 100%)", padding: "3.5rem 0" }}>
+        <div className="container">
+          <div style={{ textAlign: "center", color: "#fff", maxWidth: 680, margin: "0 auto 2.25rem" }}>
             <div style={{ background: "rgba(255,255,255,0.12)", border: "1px solid rgba(255,255,255,0.25)", color: "rgba(255,255,255,0.9)", fontSize: "0.8rem", padding: "4px 14px", borderRadius: 20, display: "inline-block", marginBottom: "1.25rem", fontWeight: 500 }}>
               ✦ Điều hòa & Máy lọc nước chính hãng — Lắp đặt tận nơi
             </div>
-            <h1 style={{ fontFamily: "var(--font-sans)", fontSize: "clamp(2rem, 4vw, 2.8rem)", lineHeight: 1.2, marginBottom: "0.75rem" }}>
+            <h1 style={{ fontFamily: "var(--font-sans)", fontSize: "clamp(1.8rem, 4vw, 2.6rem)", lineHeight: 1.25, marginBottom: "0.75rem" }}>
               Công nghệ chính hãng<br />
               <span style={{ color: "#F07B20" }}>— Giá hợp lý nhất</span>
             </h1>
-            <p style={{ fontFamily: "var(--font-sans)", fontSize: "1rem", opacity: 0.85, lineHeight: 1.7, marginBottom: "0.5rem" }}>
-              &quot;Mua thông minh — Sống tiện nghi&quot;
+            <p style={{ fontFamily: "var(--font-sans)", fontSize: "0.95rem", opacity: 0.8, lineHeight: 1.7 }}>
+              Chọn đúng nhu cầu của bạn bên dưới — DigiSmart có cả mua hàng giao ngay và dịch vụ tư vấn/lắp đặt tận nơi.
             </p>
-            <p style={{ fontFamily: "var(--font-sans)", fontSize: "0.9rem", opacity: 0.75, lineHeight: 1.7, marginBottom: "2rem" }}>
-              Điều hòa, máy lọc nước Cleansui, Kitz Micro Filter — chính hãng, lắp đặt tận nơi tại TPHCM.
-            </p>
-            <div style={{ display: "flex", gap: "1rem", flexWrap: "wrap" }}>
-              <Link href="/san-pham" className="btn-primary" style={{ background: "#F07B20", color: "var(--brand)", padding: "12px 28px", borderRadius: 6, fontSize: "0.95rem", fontWeight: 700, textDecoration: "none", fontFamily: "var(--font-sans)" }}>
-                Xem sản phẩm
-              </Link>
-              <Link href="/lien-he" className="btn-outline" style={{ background: "transparent", color: "#fff", border: "1.5px solid rgba(255,255,255,0.5)", padding: "12px 28px", borderRadius: 6, fontSize: "0.95rem", fontWeight: 500, textDecoration: "none", fontFamily: "var(--font-sans)" }}>
-                Liên hệ ngay
-              </Link>
-            </div>
           </div>
 
-          <div style={{ display: "grid", gridTemplateColumns: "repeat(2, minmax(110px, 1fr))", gap: "1.5rem 2.5rem" }}>
-            {[
-              { num: `${products.length}+`, label: "Sản phẩm" },
-              { num: "2", label: "Ngành hàng" },
-              { num: "100%", label: "Chính hãng" },
-              { num: "Tận nơi", label: "Lắp đặt" },
-            ].map(s => (
-              <div key={s.label} style={{ textAlign: "center" }}>
-                <div style={{ fontFamily: "var(--font-sans)", fontSize: "2rem", color: "#F07B20", fontWeight: 700 }}>{s.num}</div>
-                <div style={{ fontFamily: "var(--font-sans)", fontSize: "0.78rem", color: "rgba(255,255,255,0.7)", marginTop: 4 }}>{s.label}</div>
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      {/* 2 cổng: Cửa hàng (mua máy lọc nước, giao tận nơi) / Dịch vụ (điều hòa, khảo sát lắp đặt) */}
-      <section style={{ padding: "2.5rem 0", background: "#fff" }}>
-        <div className="container">
-          <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fit, minmax(280px, 1fr))", gap: "1.25rem" }}>
-            <Link href="/may-loc-nuoc" className="card-link"
-              style={{ display: "block", textDecoration: "none", borderRadius: 12, padding: "2rem", background: "linear-gradient(135deg, #042C53 0%, #185FA5 100%)", color: "#fff" }}>
+          {/* 2 cổng */}
+          <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fit, minmax(280px, 1fr))", gap: "1.25rem", maxWidth: 820, margin: "0 auto" }}>
+            <Link href="/cua-hang" className="card-link"
+              style={{ display: "block", textDecoration: "none", borderRadius: 12, padding: "2rem", background: "rgba(255,255,255,0.1)", border: "1.5px solid rgba(255,255,255,0.3)", color: "#fff" }}>
               <div style={{ fontSize: "2rem", marginBottom: "0.5rem" }}>🛒</div>
               <div style={{ fontFamily: "var(--font-sans)", fontWeight: 700, fontSize: "1.2rem", marginBottom: "0.4rem" }}>
                 Cửa hàng — Máy lọc nước
@@ -123,8 +97,8 @@ export default function HomePage() {
                 Mua ngay →
               </span>
             </Link>
-            <Link href="/dieu-hoa" className="card-link"
-              style={{ display: "block", textDecoration: "none", borderRadius: 12, padding: "2rem", background: "var(--brand-light)", border: "1px solid var(--border)" }}>
+            <Link href="/dich-vu" className="card-link"
+              style={{ display: "block", textDecoration: "none", borderRadius: 12, padding: "2rem", background: "#fff" }}>
               <div style={{ fontSize: "2rem", marginBottom: "0.5rem" }}>🔧</div>
               <div style={{ fontFamily: "var(--font-sans)", fontWeight: 700, fontSize: "1.2rem", marginBottom: "0.4rem", color: "var(--brand)" }}>
                 Dịch vụ — Điều hòa
@@ -136,6 +110,21 @@ export default function HomePage() {
                 Xem & đặt lịch khảo sát →
               </span>
             </Link>
+          </div>
+
+          {/* Số liệu — gọn lại thành 1 dòng mỏng dưới 2 cổng, không còn chiếm nửa hero như trước */}
+          <div style={{ display: "flex", justifyContent: "center", gap: "2.5rem", flexWrap: "wrap", marginTop: "2rem" }}>
+            {[
+              { num: `${products.length}+`, label: "Sản phẩm" },
+              { num: "2", label: "Ngành hàng" },
+              { num: "100%", label: "Chính hãng" },
+              { num: "Tận nơi", label: "Lắp đặt" },
+            ].map(s => (
+              <div key={s.label} style={{ textAlign: "center" }}>
+                <div style={{ fontFamily: "var(--font-sans)", fontSize: "1.3rem", color: "#F07B20", fontWeight: 700 }}>{s.num}</div>
+                <div style={{ fontFamily: "var(--font-sans)", fontSize: "0.75rem", color: "rgba(255,255,255,0.7)", marginTop: 2 }}>{s.label}</div>
+              </div>
+            ))}
           </div>
         </div>
       </section>
