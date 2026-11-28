@@ -4,6 +4,8 @@ import { products } from "@/data/products";
 import LeadFormButton from "@/components/LeadFormButton";
 import AddToCartButton from "@/components/AddToCartButton";
 import BuyNowButton from "@/components/BuyNowButton";
+import TrustBadgeBar from "@/components/TrustBadgeBar";
+import PromoCampaignBlock from "@/components/PromoCampaignBlock";
 import type { Metadata } from "next";
 
 export const metadata: Metadata = {
@@ -115,6 +117,9 @@ export default function DieuHoaPage() {
           <div style={{ fontSize: "8rem", textAlign: "center" }}>❄️</div>
         </div>
       </section>
+
+      <TrustBadgeBar />
+      <PromoCampaignBlock />
 
       {/* Product list — đưa lên ngay sau Hero để khách vào là thấy hàng ngay */}
       <section style={{ padding: "3rem 0", background: "#fff" }}>

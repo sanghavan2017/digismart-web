@@ -5,6 +5,7 @@ import { warrantyPolicies } from "@/data/warranty";
 import LeadFormButton from "@/components/LeadFormButton";
 import AddToCartButton from "@/components/AddToCartButton";
 import ProductGallery from "@/components/ProductGallery";
+import TrustBadgeBar from "@/components/TrustBadgeBar";
 import { notFound } from "next/navigation";
 import type { Metadata } from "next";
 
@@ -131,6 +132,8 @@ export default async function ProductDetailPage({
           <span style={{ color: "var(--text)", fontWeight: 500 }}>{product.name}</span>
         </div>
       </div>
+
+      <TrustBadgeBar />
 
       {/* Product Detail */}
       <section style={{ background: "var(--bg)", padding: "2.5rem 0" }}>

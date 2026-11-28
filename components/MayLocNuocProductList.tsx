@@ -15,30 +15,93 @@ function discountPct(orig: number, price: number) {
 }
 
 type SortOption = "default" | "price-asc" | "price-desc";
+type PriceRange = "all" | "under-2m" | "2m-5m" | "5m-10m" | "over-10m";
 
+function matchesPriceRange(price: number, range: PriceRange) {
+  if (range === "under-2m") return price < 2_000_000;
+  if (range === "2m-5m") return price >= 2_000_000 && price < 5_000_000;
+  if (range === "5m-10m") return price >= 5_000_000 && price < 10_000_000;
+  if (range === "over-10m") return price >= 10_000_000;
+  return true;
+}
+
+// Lọc theo thương hiệu/khoảng giá/tồn kho + sắp xếp theo giá (FR-006, US3 trong
+// specs/002-url-cua-hang-dich-vu/spec.md). Giữ ở component này (không đẩy lên page)
+// để tái dùng được nguyên vẹn sort đã có từ trước, không phá vỡ hành vi cũ.
 export default function MayLocNuocProductList({ items }: { items: Product[] }) {
   const [sort, setSort] = useState<SortOption>("default");
+  const [brand, setBrand] = useState<string>("all");
+  const [priceRange, setPriceRange] = useState<PriceRange>("all");
+  const [inStockOnly, setInStockOnly] = useState(false);
+
+  const brands = useMemo(() => Array.from(new Set(items.map(p => p.brand))), [items]);
+
+  const filteredItems = useMemo(() => {
+    return items.filter(p =>
+      (brand === "all" || p.brand === brand) &&
+      matchesPriceRange(p.price, priceRange) &&
+      (!inStockOnly || p.inStock)
+    );
+  }, [items, brand, priceRange, inStockOnly]);
 
   const sortedItems = useMemo(() => {
-    if (sort === "price-asc") return [...items].sort((a, b) => a.price - b.price);
-    if (sort === "price-desc") return [...items].sort((a, b) => b.price - a.price);
-    return items;
-  }, [items, sort]);
+    if (sort === "price-asc") return [...filteredItems].sort((a, b) => a.price - b.price);
+    if (sort === "price-desc") return [...filteredItems].sort((a, b) => b.price - a.price);
+    return filteredItems;
+  }, [filteredItems, sort]);
 
   return (
     <>
-      <div style={{ display: "flex", justifyContent: "flex-end", marginBottom: "1.25rem" }}>
+      <div style={{ display: "flex", flexWrap: "wrap", gap: "0.75rem", alignItems: "center", marginBottom: "1.25rem" }}>
+        {brands.length > 1 && (
+          <div style={{ display: "flex", gap: "0.5rem", flexWrap: "wrap" }}>
+            <button type="button" onClick={() => setBrand("all")}
+              style={{ padding: "6px 14px", borderRadius: 16, fontFamily: "var(--font-sans)", fontSize: "0.8rem", fontWeight: 600, cursor: "pointer", background: brand === "all" ? "var(--brand)" : "#fff", color: brand === "all" ? "#fff" : "var(--brand)", border: `1.5px solid ${brand === "all" ? "var(--brand)" : "var(--border)"}` }}>
+              Tất cả thương hiệu
+            </button>
+            {brands.map(b => (
+              <button key={b} type="button" onClick={() => setBrand(b)}
+                style={{ padding: "6px 14px", borderRadius: 16, fontFamily: "var(--font-sans)", fontSize: "0.8rem", fontWeight: 600, cursor: "pointer", background: brand === b ? "var(--brand)" : "#fff", color: brand === b ? "#fff" : "var(--brand)", border: `1.5px solid ${brand === b ? "var(--brand)" : "var(--border)"}` }}>
+                {b}
+              </button>
+            ))}
+          </div>
+        )}
+
+        <select
+          value={priceRange}
+          onChange={e => setPriceRange(e.target.value as PriceRange)}
+          aria-label="Lọc theo khoảng giá"
+          style={{ padding: "8px 14px", border: "1.5px solid var(--border)", borderRadius: 8, fontFamily: "var(--font-sans)", fontSize: "0.85rem", color: "var(--text)", background: "#fff" }}
+        >
+          <option value="all">Mọi khoảng giá</option>
+          <option value="under-2m">Dưới 2 triệu</option>
+          <option value="2m-5m">2 - 5 triệu</option>
+          <option value="5m-10m">5 - 10 triệu</option>
+          <option value="over-10m">Trên 10 triệu</option>
+        </select>
+
+        <label style={{ display: "flex", alignItems: "center", gap: 6, fontFamily: "var(--font-sans)", fontSize: "0.82rem", color: "var(--text)", cursor: "pointer" }}>
+          <input type="checkbox" checked={inStockOnly} onChange={e => setInStockOnly(e.target.checked)} />
+          Chỉ hiện còn hàng
+        </label>
+
         <select
           value={sort}
           onChange={e => setSort(e.target.value as SortOption)}
           aria-label="Sắp xếp theo giá"
-          style={{ padding: "8px 14px", border: "1.5px solid var(--border)", borderRadius: 8, fontFamily: "var(--font-sans)", fontSize: "0.85rem", color: "var(--text)", background: "#fff" }}
+          style={{ marginLeft: "auto", padding: "8px 14px", border: "1.5px solid var(--border)", borderRadius: 8, fontFamily: "var(--font-sans)", fontSize: "0.85rem", color: "var(--text)", background: "#fff" }}
         >
           <option value="default">Mặc định</option>
           <option value="price-asc">Giá: thấp đến cao</option>
           <option value="price-desc">Giá: cao đến thấp</option>
         </select>
       </div>
+      {sortedItems.length === 0 ? (
+        <div style={{ textAlign: "center", padding: "3rem 0", color: "var(--muted)", fontFamily: "var(--font-sans)" }}>
+          Không tìm thấy sản phẩm phù hợp — thử bỏ bớt điều kiện lọc.
+        </div>
+      ) : (
       <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fill, minmax(260px, 1fr))", gap: "1.25rem" }}>
         {sortedItems.map((p, idx) => (
           <div key={p.id} style={{ background: "var(--bg)", border: "1px solid var(--border)", borderRadius: 10, overflow: "hidden" }}>
@@ -123,6 +186,7 @@ export default function MayLocNuocProductList({ items }: { items: Product[] }) {
           </div>
         ))}
       </div>
+      )}
     </>
   );
 }
