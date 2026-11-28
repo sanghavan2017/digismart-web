@@ -97,6 +97,20 @@ export const products: Product[] = [
     has_hot: false,
     has_cold: false,
     warranty_years: 5,
+    faq: [
+      {
+        question: "Cleansui EU301 phù hợp gia đình mấy người?",
+        answer: "EU301 kèm bộ lọc EUC3000 đầu tiên, công suất lọc 8.000 lít/12 tháng (~22 lít/ngày) — phù hợp gia đình 4-6 người theo khuyến nghị của hãng.",
+      },
+      {
+        question: "Nước ion kiềm EU301 tạo ra có uống trực tiếp được không?",
+        answer: "EU301 tạo 6 chế độ nước với pH 5,0-10,5 (4 mức kiềm, 1 mức acid, 1 mức nước lọc giữ khoáng), đạt chứng nhận Viện Pasteur, tiêu chuẩn JIS Nhật Bản và Tổng cục Tiêu chuẩn Đo lường Chất lượng Việt Nam.",
+      },
+      {
+        question: "Bảo hành Cleansui EU301 bao lâu?",
+        answer: "Vòi bảo hành 5 năm, thân máy/bo mạch 2 năm, lõi lọc 6 tháng nếu lỗi sản xuất — DigiSmart hỗ trợ đăng ký bảo hành cho khách khi mua hàng.",
+      },
+    ],
   },
   {
     id: "cleansui-eu201",
@@ -138,6 +152,20 @@ export const products: Product[] = [
     ],
     inStock: true,
     warranty_years: 5,
+    faq: [
+      {
+        question: "Cleansui EU201 lắp đặt có phức tạp không?",
+        answer: "EU201 lắp tích hợp dưới bồn rửa, vòi xoay 120° tiện lợi, không dùng điện, không tạo nước thải — đội kỹ thuật DigiSmart lắp đặt tận nơi.",
+      },
+      {
+        question: "Công suất lọc EU201 dùng được bao lâu?",
+        answer: "Công suất lọc 8.000 lít/12 tháng (~22 lít/ngày), lưu lượng 3 lít/phút, lọc tới 0,01 micromet bằng màng sợi rỗng mà vẫn giữ khoáng tự nhiên.",
+      },
+      {
+        question: "Bảo hành Cleansui EU201 ra sao?",
+        answer: "Vòi bảo hành 5 năm, lõi lọc đổi mới trong 6 tháng nếu lỗi kỹ thuật — DigiSmart hỗ trợ đăng ký bảo hành.",
+      },
+    ],
   },
   {
     id: "cleansui-eu202",
@@ -176,6 +204,16 @@ export const products: Product[] = [
     ],
     inStock: true,
     warranty_years: 5,
+    faq: [
+      {
+        question: "Cleansui EU202 khác gì EU201?",
+        answer: "EU202 dùng vòi xoay 100° (EU201 là 120°) và có giá tốt hơn, nhưng cùng công suất lọc 8.000 lít/12 tháng, phù hợp gia đình 4-6 người, cùng công nghệ lọc màng sợi rỗng giữ khoáng tự nhiên.",
+      },
+      {
+        question: "Bảo hành Cleansui EU202 ra sao?",
+        answer: "Vòi bảo hành 5 năm, lõi lọc đổi mới trong 6 tháng nếu lỗi kỹ thuật — DigiSmart hỗ trợ đăng ký bảo hành.",
+      },
+    ],
   },
   {
     id: "cleansui-eu103",
@@ -217,6 +255,16 @@ export const products: Product[] = [
     ],
     inStock: true,
     warranty_years: 5,
+    faq: [
+      {
+        question: "Cleansui EU103 có gì khác các mẫu Cleansui dưới bồn rửa khác?",
+        answer: "EU103 là mẫu rẻ nhất trong dòng lắp dưới bồn rửa của Cleansui, nhưng vẫn dùng cùng công nghệ lọc màng sợi rỗng 0,01 micromet, công suất lọc 8.000 lít/12 tháng như các mẫu EU201/EU202.",
+      },
+      {
+        question: "Bảo hành Cleansui EU103 ra sao?",
+        answer: "Vòi bảo hành 5 năm, dây kết nối 2 năm, lõi lọc đổi mới trong 6 tháng nếu lỗi kỹ thuật — DigiSmart hỗ trợ đăng ký bảo hành.",
+      },
+    ],
   },
   {
     id: "cleansui-cwmf-500e",
@@ -257,6 +305,20 @@ export const products: Product[] = [
     has_hot: true,
     has_cold: true,
     warranty_years: 2,
+    faq: [
+      {
+        question: "Cleansui CWMF-500E có nóng lạnh không, nhiệt độ bao nhiêu?",
+        answer: "Có — nước nóng 80-90°C (dung tích 2L), nước lạnh 4-10°C (dung tích 3,2L), dùng bộ lọc EUC3000 sản xuất 100% tại Nhật Bản.",
+      },
+      {
+        question: "Máy CWMF-500E có an toàn cho trẻ nhỏ không?",
+        answer: "Có khóa trẻ em, chống quá nhiệt bimetal, phao cơ chống tràn và van chống rò rỉ an toàn.",
+      },
+      {
+        question: "Bảo hành Cleansui CWMF-500E ra sao?",
+        answer: "Thân máy bảo hành 2 năm, lõi lọc EUC3000 bảo hành 4.000 lít hoặc 6 tháng (tùy điều kiện đến trước) — DigiSmart hỗ trợ đăng ký bảo hành.",
+      },
+    ],
   },
   {
     id: "cleansui-mp02-3",
@@ -296,6 +358,16 @@ export const products: Product[] = [
     ],
     inStock: true,
     warranty_years: 2,
+    faq: [
+      {
+        question: "Cleansui MP02-3 phù hợp dùng cho nơi nào?",
+        answer: "MP02-3 là máy lọc thương mại công suất 150.000 lít/12 tháng (~410 lít/ngày), lưu lượng 10 lít/phút — phù hợp văn phòng, nhà hàng, khách sạn cần lượng nước lớn hơn hộ gia đình.",
+      },
+      {
+        question: "Bảo hành Cleansui MP02-3 ra sao?",
+        answer: "Thân máy bảo hành 1 năm, lõi lọc UMC2150 đổi mới trong 1 tháng nếu lỗi kỹ thuật — DigiSmart hỗ trợ đăng ký bảo hành.",
+      },
+    ],
   },
   {
     id: "cleansui-mp02-4",
@@ -335,6 +407,16 @@ export const products: Product[] = [
     ],
     inStock: true,
     warranty_years: 2,
+    faq: [
+      {
+        question: "Cleansui MP02-4 khác MP02-3 ở điểm nào?",
+        answer: "MP02-4 công suất 50.000 lít/12 tháng (MP02-3 là 150.000 lít), lưu lượng 8 lít/phút — phù hợp gia đình lớn, nhà hàng, spa cần công suất vừa phải hơn.",
+      },
+      {
+        question: "Bảo hành Cleansui MP02-4 ra sao?",
+        answer: "Thân máy bảo hành 1 năm, lõi lọc UMC2050 đổi mới trong 1 tháng nếu lỗi kỹ thuật — DigiSmart hỗ trợ đăng ký bảo hành.",
+      },
+    ],
   },
   {
     id: "cleansui-mpoe-s4",
@@ -376,6 +458,20 @@ export const products: Product[] = [
     ],
     inStock: true,
     warranty_years: 2,
+    faq: [
+      {
+        question: "Hệ thống MPOE-S4 có cần khảo sát trước khi lắp không?",
+        answer: "Có, cần khảo sát kỹ thuật trước khi lắp đặt — nước đầu vào cần đạt QCVN 01-1:2024/BYT, nhiệt độ 5-40°C, áp suất 0,2-0,4 MPa.",
+      },
+      {
+        question: "Bộ lọc MPOE-S4 dùng được bao lâu mới phải thay?",
+        answer: "MPOE-S4 kèm 4 bộ lọc MPOE050E sản xuất 100% tại Nhật, tuổi thọ tới 500.000 lít/bộ lọc, có cơ chế tự động làm sạch bộ lọc để tăng tuổi thọ.",
+      },
+      {
+        question: "Bảo hành hệ thống MPOE-S4 ra sao?",
+        answer: "Tủ lọc/tủ điện bảo hành 2 năm, linh phụ kiện 12 tháng — DigiSmart hỗ trợ đăng ký bảo hành.",
+      },
+    ],
   },
   {
     id: "cleansui-mpoe-p",
@@ -419,6 +515,20 @@ export const products: Product[] = [
     ],
     inStock: true,
     warranty_years: 2,
+    faq: [
+      {
+        question: "Hệ thống MPOE-P khác gì MPOE-S4?",
+        answer: "MPOE-P dùng 2 bộ lọc MPOE050E (MPOE-S4 dùng 4 bộ), có màn hình cảm ứng TFT 8,4 inch dễ điều khiển, giữ khoáng tự nhiên và Clo kháng khuẩn trong bồn chứa.",
+      },
+      {
+        question: "MPOE-P có cần khảo sát trước khi lắp không?",
+        answer: "Có, cần khảo sát kỹ thuật trước khi lắp đặt — nước đầu vào cần đạt QCVN 01-1:2024/BYT, nhiệt độ dưới 40°C, áp suất 0,18-0,4 MPa.",
+      },
+      {
+        question: "Bảo hành hệ thống MPOE-P ra sao?",
+        answer: "Tủ lọc/tủ điện/màn hình bảo hành 2 năm — DigiSmart hỗ trợ đăng ký bảo hành.",
+      },
+    ],
   },
   {
     id: "cleansui-mpoe-s",
@@ -461,6 +571,20 @@ export const products: Product[] = [
     ],
     inStock: true,
     warranty_years: 2,
+    faq: [
+      {
+        question: "Hệ thống MPOE-S khác MPOE-P ở điểm nào?",
+        answer: "MPOE-S không có màn hình cảm ứng (MPOE-P có), kích thước nhỏ gọn nhất trong dòng MPOE, cùng dùng 2 bộ lọc MPOE050E tuổi thọ 500.000 lít/bộ.",
+      },
+      {
+        question: "MPOE-S có cần khảo sát trước khi lắp không?",
+        answer: "Có, cần khảo sát kỹ thuật trước khi lắp đặt — nước đầu vào cần đạt QCVN 01-1:2024/BYT, nhiệt độ dưới 40°C, áp suất 0,18-0,4 MPa.",
+      },
+      {
+        question: "Bảo hành hệ thống MPOE-S ra sao?",
+        answer: "Tủ lọc/tủ điện bảo hành 2 năm — DigiSmart hỗ trợ đăng ký bảo hành.",
+      },
+    ],
   },
   // ------- Máy lọc nước: Kitz Micro Filter -------
   // Nguồn: leaflet 9 sản phẩm Kitz Micro Filter (giá bán lẻ), cập nhật 27/06/2026
@@ -504,6 +628,20 @@ export const products: Product[] = [
     ],
     inStock: true,
     warranty_years: 2,
+    faq: [
+      {
+        question: "Lõi lọc Kitz Purifree thay giá bao nhiêu, bao lâu thay 1 lần?",
+        answer: "Giá thay lõi lọc 3.600.000đ, nên thay khi hết công suất lọc 8.000 lít (lưu lượng 3,5 lít/phút).",
+      },
+      {
+        question: "Purifree có giữ khoáng tự nhiên không?",
+        answer: "Có — lọc 4 cấp qua màng sợi rỗng (vải không dệt, than hoạt tính dạng hạt, than hoạt tính dạng sợi, màng sợi rỗng), giữ khoáng tự nhiên, không dùng điện, không tạo nước thải.",
+      },
+      {
+        question: "Bảo hành Kitz Purifree ra sao?",
+        answer: "Bảo hành thiết bị 24 tháng — lắp đặt và bảo hành do kỹ thuật DigiSmart thực hiện trực tiếp.",
+      },
+    ],
   },
   {
     id: "kitz-oas-nts9",
@@ -542,6 +680,16 @@ export const products: Product[] = [
     ],
     inStock: true,
     warranty_years: 2,
+    faq: [
+      {
+        question: "Kitz OAS-NTS9 lắp được ở đâu — tại vòi hay âm tủ?",
+        answer: "Lắp linh hoạt tại vòi hoặc âm tủ, lưu lượng 5 lít/phút, công suất lọc 7.500 lít/12 tháng. Giá thay lõi lọc 3.200.000đ.",
+      },
+      {
+        question: "Bảo hành Kitz OAS-NTS9 ra sao?",
+        answer: "Đạt chuẩn JIS S 3201, JWPAS B 100, ISO 9001:2015, ISO 14001:2015 — bảo hành thiết bị 24 tháng, lắp đặt và bảo hành do kỹ thuật DigiSmart thực hiện.",
+      },
+    ],
   },
   {
     id: "kitz-oss-t7",
@@ -575,6 +723,16 @@ export const products: Product[] = [
     ],
     inStock: true,
     warranty_years: 2,
+    faq: [
+      {
+        question: "Kitz OSS-T7 công suất lọc bao nhiêu, giá thay lõi thế nào?",
+        answer: "Công suất lọc 11.000 lít, lưu lượng 5 lít/phút. Giá thay lõi lọc OSSC-7 là 4.000.000đ.",
+      },
+      {
+        question: "Bảo hành Kitz OSS-T7 ra sao?",
+        answer: "Bảo hành thiết bị 24 tháng — lắp đặt và bảo hành do kỹ thuật DigiSmart thực hiện trực tiếp.",
+      },
+    ],
   },
   {
     id: "kitz-oss-g4-e",
@@ -614,6 +772,16 @@ export const products: Product[] = [
     ],
     inStock: true,
     warranty_years: 2,
+    faq: [
+      {
+        question: "Vòi Kitz OSS-G4-E có bền không?",
+        answer: "Vòi sản xuất tại Nhật, được bảo hành chống gỉ riêng 5 năm (thiết bị tổng thể bảo hành 24 tháng). Công suất lọc 8.000 lít, lưu lượng 3,5 lít/phút, lắp âm tủ.",
+      },
+      {
+        question: "Bảo hành Kitz OSS-G4-E ra sao?",
+        answer: "Vòi bảo hành chống gỉ 5 năm, thiết bị bảo hành 24 tháng — lắp đặt và bảo hành do kỹ thuật DigiSmart thực hiện trực tiếp.",
+      },
+    ],
   },
   {
     id: "kitz-oas-9",
@@ -653,6 +821,16 @@ export const products: Product[] = [
     ],
     inStock: true,
     warranty_years: 2,
+    faq: [
+      {
+        question: "Kitz OAS-9 khác Kitz OSS-T7 ở đâu?",
+        answer: "OAS-9 có thân thép không gỉ SUS304, cùng công suất lọc 11.000 lít như OSS-T7, nhưng giá thay lõi lọc 3.800.000đ (OSS-T7 là 4.000.000đ).",
+      },
+      {
+        question: "Bảo hành Kitz OAS-9 ra sao?",
+        answer: "Bảo hành thiết bị 24 tháng — lắp đặt và bảo hành do kỹ thuật DigiSmart thực hiện trực tiếp.",
+      },
+    ],
   },
   {
     id: "kitz-micro-filter-10inch",
@@ -684,6 +862,16 @@ export const products: Product[] = [
     ],
     inStock: true,
     warranty_years: 2,
+    faq: [
+      {
+        question: "Bộ lọc tổng Kitz 10 inch dùng để làm gì?",
+        answer: "Lắp đầu nguồn đường ống nước sinh hoạt, loại bỏ cặn bẩn, gỉ sét, vi khuẩn kích thước lớn trước khi nước chảy vào các thiết bị trong nhà — bảo vệ máy giặt, bình nóng lạnh, vòi sen khỏi cặn bẩn tích tụ.",
+      },
+      {
+        question: "Bảo hành bộ lọc tổng Kitz 10 inch ra sao?",
+        answer: "Bảo hành thiết bị 24 tháng, lõi lọc 12 tháng — lắp đặt và bảo hành do DigiSmart thực hiện.",
+      },
+    ],
   },
   {
     id: "kitz-bo-loc-tong-2-coc",
@@ -709,6 +897,16 @@ export const products: Product[] = [
     ],
     inStock: true,
     warranty_years: 2,
+    faq: [
+      {
+        question: "Bộ lọc tổng 2 cốc Kitz lọc được gì?",
+        answer: "Kết hợp 2 cốc lọc: lõi PP lọc cặn thô và lõi than hoạt tính nén Kitz khử mùi, clo dư — lắp đầu nguồn đường ống nước sinh hoạt.",
+      },
+      {
+        question: "Bảo hành bộ lọc tổng 2 cốc ra sao?",
+        answer: "Bảo hành thiết bị 24 tháng, lõi lọc 12 tháng — lắp đặt và bảo hành do DigiSmart thực hiện.",
+      },
+    ],
   },
   {
     id: "kitz-dong-ho-do-nuoc-thong-minh",
@@ -733,6 +931,12 @@ export const products: Product[] = [
     ],
     inStock: true,
     isAccessory: true,
+    faq: [
+      {
+        question: "Đồng hồ đo nước thông minh theo dõi được những gì?",
+        answer: "Theo dõi lượng nước sử dụng qua smartphone, cảnh báo mức nước bất thường, hiển thị lưu lượng sử dụng theo thời gian thực. Phân phối và lắp đặt bởi DigiSmart.",
+      },
+    ],
   },
   // ------- Điều hòa: Mitsubishi Electric (ĐHKK dân dụng) -------
   // Nguồn: mitsubishi-electric.vn/dieu-hoa-khong-khi-dan-dung (API GetDetailDto), lấy 04/07/2026.
@@ -778,6 +982,20 @@ export const products: Product[] = [
     btu: 9000,
     inverter: true,
     warranty_years: 5,
+    faq: [
+      {
+        question: "Mitsubishi Electric MSY-JY25VF phù hợp phòng bao nhiêu m²?",
+        answer: "Mitsubishi Electric MSY-JY25VF (9.000 BTU/h) phù hợp phòng khoảng 15m² theo công thức diện tích phòng (m²) nhân 600. DigiSmart tư vấn miễn phí để chọn đúng công suất trước khi lắp.",
+      },
+      {
+        question: "Mitsubishi Electric MSY-JY25VF có phải máy Inverter không?",
+        answer: "Có — máy dùng công nghệ Inverter, tự điều chỉnh công suất máy nén theo nhu cầu làm lạnh thực tế, tiết kiệm điện hơn máy thường.",
+      },
+      {
+        question: "Bảo hành Mitsubishi Electric MSY-JY25VF bao lâu?",
+        answer: "Bảo hành chính hãng máy nén 5 năm — DigiSmart hỗ trợ đăng ký bảo hành và lắp đặt tận nơi tại TPHCM.",
+      },
+    ],
   },
   {
     id: "mitsubishi-msy-jy35vf",
@@ -820,6 +1038,20 @@ export const products: Product[] = [
     btu: 12000,
     inverter: true,
     warranty_years: 5,
+    faq: [
+      {
+        question: "Mitsubishi Electric MSY-JY35VF phù hợp phòng bao nhiêu m²?",
+        answer: "Mitsubishi Electric MSY-JY35VF (12.000 BTU/h) phù hợp phòng khoảng 20m² theo công thức diện tích phòng (m²) nhân 600. DigiSmart tư vấn miễn phí để chọn đúng công suất trước khi lắp.",
+      },
+      {
+        question: "Mitsubishi Electric MSY-JY35VF có phải máy Inverter không?",
+        answer: "Có — máy dùng công nghệ Inverter, tự điều chỉnh công suất máy nén theo nhu cầu làm lạnh thực tế, tiết kiệm điện hơn máy thường.",
+      },
+      {
+        question: "Bảo hành Mitsubishi Electric MSY-JY35VF bao lâu?",
+        answer: "Bảo hành chính hãng máy nén 5 năm — DigiSmart hỗ trợ đăng ký bảo hành và lắp đặt tận nơi tại TPHCM.",
+      },
+    ],
   },
   {
     id: "mitsubishi-msy-jy50vf",
@@ -862,6 +1094,20 @@ export const products: Product[] = [
     btu: 18000,
     inverter: true,
     warranty_years: 5,
+    faq: [
+      {
+        question: "Mitsubishi Electric MSY-JY50VF phù hợp phòng bao nhiêu m²?",
+        answer: "Mitsubishi Electric MSY-JY50VF (18.000 BTU/h) phù hợp phòng khoảng 30m² theo công thức diện tích phòng (m²) nhân 600. DigiSmart tư vấn miễn phí để chọn đúng công suất trước khi lắp.",
+      },
+      {
+        question: "Mitsubishi Electric MSY-JY50VF có phải máy Inverter không?",
+        answer: "Có — máy dùng công nghệ Inverter, tự điều chỉnh công suất máy nén theo nhu cầu làm lạnh thực tế, tiết kiệm điện hơn máy thường.",
+      },
+      {
+        question: "Bảo hành Mitsubishi Electric MSY-JY50VF bao lâu?",
+        answer: "Bảo hành chính hãng máy nén 5 năm — DigiSmart hỗ trợ đăng ký bảo hành và lắp đặt tận nơi tại TPHCM.",
+      },
+    ],
   },
   {
     id: "mitsubishi-msy-jy60vf",
@@ -904,6 +1150,20 @@ export const products: Product[] = [
     btu: 22000,
     inverter: true,
     warranty_years: 5,
+    faq: [
+      {
+        question: "Mitsubishi Electric MSY-JY60VF phù hợp phòng bao nhiêu m²?",
+        answer: "Mitsubishi Electric MSY-JY60VF (22.000 BTU/h) phù hợp phòng khoảng 37m² theo công thức diện tích phòng (m²) nhân 600. DigiSmart tư vấn miễn phí để chọn đúng công suất trước khi lắp.",
+      },
+      {
+        question: "Mitsubishi Electric MSY-JY60VF có phải máy Inverter không?",
+        answer: "Có — máy dùng công nghệ Inverter, tự điều chỉnh công suất máy nén theo nhu cầu làm lạnh thực tế, tiết kiệm điện hơn máy thường.",
+      },
+      {
+        question: "Bảo hành Mitsubishi Electric MSY-JY60VF bao lâu?",
+        answer: "Bảo hành chính hãng máy nén 5 năm — DigiSmart hỗ trợ đăng ký bảo hành và lắp đặt tận nơi tại TPHCM.",
+      },
+    ],
   },
   {
     id: "mitsubishi-msy-ja25vf",
@@ -946,6 +1206,20 @@ export const products: Product[] = [
     btu: 9000,
     inverter: true,
     warranty_years: 5,
+    faq: [
+      {
+        question: "Mitsubishi Electric MSY-JA25VF phù hợp phòng bao nhiêu m²?",
+        answer: "Mitsubishi Electric MSY-JA25VF (9.000 BTU/h) phù hợp phòng khoảng 15m² theo công thức diện tích phòng (m²) nhân 600. DigiSmart tư vấn miễn phí để chọn đúng công suất trước khi lắp.",
+      },
+      {
+        question: "Mitsubishi Electric MSY-JA25VF có phải máy Inverter không?",
+        answer: "Có — máy dùng công nghệ Inverter, tự điều chỉnh công suất máy nén theo nhu cầu làm lạnh thực tế, tiết kiệm điện hơn máy thường.",
+      },
+      {
+        question: "Bảo hành Mitsubishi Electric MSY-JA25VF bao lâu?",
+        answer: "Bảo hành chính hãng máy nén 5 năm — DigiSmart hỗ trợ đăng ký bảo hành và lắp đặt tận nơi tại TPHCM.",
+      },
+    ],
   },
   {
     id: "mitsubishi-msy-ja35vf",
@@ -988,6 +1262,20 @@ export const products: Product[] = [
     btu: 12000,
     inverter: true,
     warranty_years: 5,
+    faq: [
+      {
+        question: "Mitsubishi Electric MSY-JA35VF phù hợp phòng bao nhiêu m²?",
+        answer: "Mitsubishi Electric MSY-JA35VF (12.000 BTU/h) phù hợp phòng khoảng 20m² theo công thức diện tích phòng (m²) nhân 600. DigiSmart tư vấn miễn phí để chọn đúng công suất trước khi lắp.",
+      },
+      {
+        question: "Mitsubishi Electric MSY-JA35VF có phải máy Inverter không?",
+        answer: "Có — máy dùng công nghệ Inverter, tự điều chỉnh công suất máy nén theo nhu cầu làm lạnh thực tế, tiết kiệm điện hơn máy thường.",
+      },
+      {
+        question: "Bảo hành Mitsubishi Electric MSY-JA35VF bao lâu?",
+        answer: "Bảo hành chính hãng máy nén 5 năm — DigiSmart hỗ trợ đăng ký bảo hành và lắp đặt tận nơi tại TPHCM.",
+      },
+    ],
   },
   {
     id: "mitsubishi-msy-ja50vf",
@@ -1030,6 +1318,20 @@ export const products: Product[] = [
     btu: 18000,
     inverter: true,
     warranty_years: 5,
+    faq: [
+      {
+        question: "Mitsubishi Electric MSY-JA50VF phù hợp phòng bao nhiêu m²?",
+        answer: "Mitsubishi Electric MSY-JA50VF (18.000 BTU/h) phù hợp phòng khoảng 30m² theo công thức diện tích phòng (m²) nhân 600. DigiSmart tư vấn miễn phí để chọn đúng công suất trước khi lắp.",
+      },
+      {
+        question: "Mitsubishi Electric MSY-JA50VF có phải máy Inverter không?",
+        answer: "Có — máy dùng công nghệ Inverter, tự điều chỉnh công suất máy nén theo nhu cầu làm lạnh thực tế, tiết kiệm điện hơn máy thường.",
+      },
+      {
+        question: "Bảo hành Mitsubishi Electric MSY-JA50VF bao lâu?",
+        answer: "Bảo hành chính hãng máy nén 5 năm — DigiSmart hỗ trợ đăng ký bảo hành và lắp đặt tận nơi tại TPHCM.",
+      },
+    ],
   },
   {
     id: "mitsubishi-msy-ja60vf",
@@ -1072,6 +1374,20 @@ export const products: Product[] = [
     btu: 22000,
     inverter: true,
     warranty_years: 5,
+    faq: [
+      {
+        question: "Mitsubishi Electric MSY-JA60VF phù hợp phòng bao nhiêu m²?",
+        answer: "Mitsubishi Electric MSY-JA60VF (22.000 BTU/h) phù hợp phòng khoảng 37m² theo công thức diện tích phòng (m²) nhân 600. DigiSmart tư vấn miễn phí để chọn đúng công suất trước khi lắp.",
+      },
+      {
+        question: "Mitsubishi Electric MSY-JA60VF có phải máy Inverter không?",
+        answer: "Có — máy dùng công nghệ Inverter, tự điều chỉnh công suất máy nén theo nhu cầu làm lạnh thực tế, tiết kiệm điện hơn máy thường.",
+      },
+      {
+        question: "Bảo hành Mitsubishi Electric MSY-JA60VF bao lâu?",
+        answer: "Bảo hành chính hãng máy nén 5 năm — DigiSmart hỗ trợ đăng ký bảo hành và lắp đặt tận nơi tại TPHCM.",
+      },
+    ],
   },
   {
     id: "mitsubishi-msy-gr25vf",
@@ -1115,6 +1431,20 @@ export const products: Product[] = [
     btu: 9554,
     inverter: true,
     warranty_years: 5,
+    faq: [
+      {
+        question: "Mitsubishi Electric MSY-GR25VF phù hợp phòng bao nhiêu m²?",
+        answer: "Mitsubishi Electric MSY-GR25VF (9.554 BTU/h) phù hợp phòng khoảng 16m² theo công thức diện tích phòng (m²) nhân 600. DigiSmart tư vấn miễn phí để chọn đúng công suất trước khi lắp.",
+      },
+      {
+        question: "Mitsubishi Electric MSY-GR25VF có phải máy Inverter không?",
+        answer: "Có — máy dùng công nghệ Inverter, tự điều chỉnh công suất máy nén theo nhu cầu làm lạnh thực tế, tiết kiệm điện hơn máy thường.",
+      },
+      {
+        question: "Bảo hành Mitsubishi Electric MSY-GR25VF bao lâu?",
+        answer: "Bảo hành chính hãng máy nén 5 năm — DigiSmart hỗ trợ đăng ký bảo hành và lắp đặt tận nơi tại TPHCM.",
+      },
+    ],
   },
   {
     id: "mitsubishi-msy-gr35vf",
@@ -1158,6 +1488,20 @@ export const products: Product[] = [
     btu: 12624,
     inverter: true,
     warranty_years: 5,
+    faq: [
+      {
+        question: "Mitsubishi Electric MSY-GR35VF phù hợp phòng bao nhiêu m²?",
+        answer: "Mitsubishi Electric MSY-GR35VF (12.624 BTU/h) phù hợp phòng khoảng 21m² theo công thức diện tích phòng (m²) nhân 600. DigiSmart tư vấn miễn phí để chọn đúng công suất trước khi lắp.",
+      },
+      {
+        question: "Mitsubishi Electric MSY-GR35VF có phải máy Inverter không?",
+        answer: "Có — máy dùng công nghệ Inverter, tự điều chỉnh công suất máy nén theo nhu cầu làm lạnh thực tế, tiết kiệm điện hơn máy thường.",
+      },
+      {
+        question: "Bảo hành Mitsubishi Electric MSY-GR35VF bao lâu?",
+        answer: "Bảo hành chính hãng máy nén 5 năm — DigiSmart hỗ trợ đăng ký bảo hành và lắp đặt tận nơi tại TPHCM.",
+      },
+    ],
   },
   {
     id: "mitsubishi-msy-gr50vf",
@@ -1201,6 +1545,20 @@ export const products: Product[] = [
     btu: 17742,
     inverter: true,
     warranty_years: 5,
+    faq: [
+      {
+        question: "Mitsubishi Electric MSY-GR50VF phù hợp phòng bao nhiêu m²?",
+        answer: "Mitsubishi Electric MSY-GR50VF (17.742 BTU/h) phù hợp phòng khoảng 30m² theo công thức diện tích phòng (m²) nhân 600. DigiSmart tư vấn miễn phí để chọn đúng công suất trước khi lắp.",
+      },
+      {
+        question: "Mitsubishi Electric MSY-GR50VF có phải máy Inverter không?",
+        answer: "Có — máy dùng công nghệ Inverter, tự điều chỉnh công suất máy nén theo nhu cầu làm lạnh thực tế, tiết kiệm điện hơn máy thường.",
+      },
+      {
+        question: "Bảo hành Mitsubishi Electric MSY-GR50VF bao lâu?",
+        answer: "Bảo hành chính hãng máy nén 5 năm — DigiSmart hỗ trợ đăng ký bảo hành và lắp đặt tận nơi tại TPHCM.",
+      },
+    ],
   },
   {
     id: "mitsubishi-msy-gr60vf",
@@ -1244,6 +1602,20 @@ export const products: Product[] = [
     btu: 20472,
     inverter: true,
     warranty_years: 5,
+    faq: [
+      {
+        question: "Mitsubishi Electric MSY-GR60VF phù hợp phòng bao nhiêu m²?",
+        answer: "Mitsubishi Electric MSY-GR60VF (20.472 BTU/h) phù hợp phòng khoảng 34m² theo công thức diện tích phòng (m²) nhân 600. DigiSmart tư vấn miễn phí để chọn đúng công suất trước khi lắp.",
+      },
+      {
+        question: "Mitsubishi Electric MSY-GR60VF có phải máy Inverter không?",
+        answer: "Có — máy dùng công nghệ Inverter, tự điều chỉnh công suất máy nén theo nhu cầu làm lạnh thực tế, tiết kiệm điện hơn máy thường.",
+      },
+      {
+        question: "Bảo hành Mitsubishi Electric MSY-GR60VF bao lâu?",
+        answer: "Bảo hành chính hãng máy nén 5 năm — DigiSmart hỗ trợ đăng ký bảo hành và lắp đặt tận nơi tại TPHCM.",
+      },
+    ],
   },
   {
     id: "mitsubishi-msy-gr71vf",
@@ -1287,6 +1659,20 @@ export const products: Product[] = [
     btu: 24225,
     inverter: true,
     warranty_years: 5,
+    faq: [
+      {
+        question: "Mitsubishi Electric MSY-GR71VF phù hợp phòng bao nhiêu m²?",
+        answer: "Mitsubishi Electric MSY-GR71VF (24.225 BTU/h) phù hợp phòng khoảng 40m² theo công thức diện tích phòng (m²) nhân 600. DigiSmart tư vấn miễn phí để chọn đúng công suất trước khi lắp.",
+      },
+      {
+        question: "Mitsubishi Electric MSY-GR71VF có phải máy Inverter không?",
+        answer: "Có — máy dùng công nghệ Inverter, tự điều chỉnh công suất máy nén theo nhu cầu làm lạnh thực tế, tiết kiệm điện hơn máy thường.",
+      },
+      {
+        question: "Bảo hành Mitsubishi Electric MSY-GR71VF bao lâu?",
+        answer: "Bảo hành chính hãng máy nén 5 năm — DigiSmart hỗ trợ đăng ký bảo hành và lắp đặt tận nơi tại TPHCM.",
+      },
+    ],
   },
   {
     id: "mitsubishi-msz-ht25vf",
@@ -1329,6 +1715,20 @@ export const products: Product[] = [
     btu: 9000,
     inverter: true,
     warranty_years: 5,
+    faq: [
+      {
+        question: "Mitsubishi Electric MSZ-HT25VF phù hợp phòng bao nhiêu m²?",
+        answer: "Mitsubishi Electric MSZ-HT25VF (9.000 BTU/h) phù hợp phòng khoảng 15m² theo công thức diện tích phòng (m²) nhân 600. DigiSmart tư vấn miễn phí để chọn đúng công suất trước khi lắp.",
+      },
+      {
+        question: "Mitsubishi Electric MSZ-HT25VF dùng công nghệ gì, có tiết kiệm điện không?",
+        answer: "Máy dùng công nghệ Inverter (tự điều chỉnh công suất theo nhu cầu làm lạnh, tiết kiệm điện hơn máy thường) và gas lạnh R32 — loại gas thế hệ mới, thân thiện môi trường hơn R22 cũ.",
+      },
+      {
+        question: "Bảo hành Mitsubishi Electric MSZ-HT25VF bao lâu?",
+        answer: "Bảo hành chính hãng máy nén 5 năm — DigiSmart hỗ trợ đăng ký bảo hành và lắp đặt tận nơi tại TPHCM.",
+      },
+    ],
   },
   {
     id: "mitsubishi-msz-ht35vf",
@@ -1371,6 +1771,20 @@ export const products: Product[] = [
     btu: 12000,
     inverter: true,
     warranty_years: 5,
+    faq: [
+      {
+        question: "Mitsubishi Electric MSZ-HT35VF phù hợp phòng bao nhiêu m²?",
+        answer: "Mitsubishi Electric MSZ-HT35VF (12.000 BTU/h) phù hợp phòng khoảng 20m² theo công thức diện tích phòng (m²) nhân 600. DigiSmart tư vấn miễn phí để chọn đúng công suất trước khi lắp.",
+      },
+      {
+        question: "Mitsubishi Electric MSZ-HT35VF dùng công nghệ gì, có tiết kiệm điện không?",
+        answer: "Máy dùng công nghệ Inverter (tự điều chỉnh công suất theo nhu cầu làm lạnh, tiết kiệm điện hơn máy thường) và gas lạnh R32 — loại gas thế hệ mới, thân thiện môi trường hơn R22 cũ.",
+      },
+      {
+        question: "Bảo hành Mitsubishi Electric MSZ-HT35VF bao lâu?",
+        answer: "Bảo hành chính hãng máy nén 5 năm — DigiSmart hỗ trợ đăng ký bảo hành và lắp đặt tận nơi tại TPHCM.",
+      },
+    ],
   },
   {
     id: "mitsubishi-msz-ht50vf",
@@ -1413,6 +1827,20 @@ export const products: Product[] = [
     btu: 18000,
     inverter: true,
     warranty_years: 5,
+    faq: [
+      {
+        question: "Mitsubishi Electric MSZ-HT50VF phù hợp phòng bao nhiêu m²?",
+        answer: "Mitsubishi Electric MSZ-HT50VF (18.000 BTU/h) phù hợp phòng khoảng 30m² theo công thức diện tích phòng (m²) nhân 600. DigiSmart tư vấn miễn phí để chọn đúng công suất trước khi lắp.",
+      },
+      {
+        question: "Mitsubishi Electric MSZ-HT50VF dùng công nghệ gì, có tiết kiệm điện không?",
+        answer: "Máy dùng công nghệ Inverter (tự điều chỉnh công suất theo nhu cầu làm lạnh, tiết kiệm điện hơn máy thường) và gas lạnh R32 — loại gas thế hệ mới, thân thiện môi trường hơn R22 cũ.",
+      },
+      {
+        question: "Bảo hành Mitsubishi Electric MSZ-HT50VF bao lâu?",
+        answer: "Bảo hành chính hãng máy nén 5 năm — DigiSmart hỗ trợ đăng ký bảo hành và lắp đặt tận nơi tại TPHCM.",
+      },
+    ],
   },
   {
     id: "mitsubishi-msz-ln25vfr",
@@ -1456,6 +1884,20 @@ export const products: Product[] = [
     btu: 9000,
     inverter: true,
     warranty_years: 5,
+    faq: [
+      {
+        question: "Mitsubishi Electric MSZ-LN25VFR phù hợp phòng bao nhiêu m²?",
+        answer: "Mitsubishi Electric MSZ-LN25VFR (9.000 BTU/h) phù hợp phòng khoảng 15m² theo công thức diện tích phòng (m²) nhân 600. DigiSmart tư vấn miễn phí để chọn đúng công suất trước khi lắp.",
+      },
+      {
+        question: "Mitsubishi Electric MSZ-LN25VFR dùng công nghệ gì, có tiết kiệm điện không?",
+        answer: "Máy dùng công nghệ Inverter (tự điều chỉnh công suất theo nhu cầu làm lạnh, tiết kiệm điện hơn máy thường) và gas lạnh R32 — loại gas thế hệ mới, thân thiện môi trường hơn R22 cũ.",
+      },
+      {
+        question: "Bảo hành Mitsubishi Electric MSZ-LN25VFR bao lâu?",
+        answer: "Bảo hành chính hãng máy nén 5 năm — DigiSmart hỗ trợ đăng ký bảo hành và lắp đặt tận nơi tại TPHCM.",
+      },
+    ],
   },
   {
     id: "mitsubishi-msz-ln25vfb",
@@ -1499,6 +1941,20 @@ export const products: Product[] = [
     btu: 9000,
     inverter: true,
     warranty_years: 5,
+    faq: [
+      {
+        question: "Mitsubishi Electric MSZ-LN25VFB phù hợp phòng bao nhiêu m²?",
+        answer: "Mitsubishi Electric MSZ-LN25VFB (9.000 BTU/h) phù hợp phòng khoảng 15m² theo công thức diện tích phòng (m²) nhân 600. DigiSmart tư vấn miễn phí để chọn đúng công suất trước khi lắp.",
+      },
+      {
+        question: "Mitsubishi Electric MSZ-LN25VFB dùng công nghệ gì, có tiết kiệm điện không?",
+        answer: "Máy dùng công nghệ Inverter (tự điều chỉnh công suất theo nhu cầu làm lạnh, tiết kiệm điện hơn máy thường) và gas lạnh R32 — loại gas thế hệ mới, thân thiện môi trường hơn R22 cũ.",
+      },
+      {
+        question: "Bảo hành Mitsubishi Electric MSZ-LN25VFB bao lâu?",
+        answer: "Bảo hành chính hãng máy nén 5 năm — DigiSmart hỗ trợ đăng ký bảo hành và lắp đặt tận nơi tại TPHCM.",
+      },
+    ],
   },
   {
     id: "mitsubishi-ms-js25vf",
@@ -1542,6 +1998,16 @@ export const products: Product[] = [
     btu: 9000,
     inverter: false,
     warranty_years: 5,
+    faq: [
+      {
+        question: "Mitsubishi Electric MS-JS25VF phù hợp phòng bao nhiêu m²?",
+        answer: "Mitsubishi Electric MS-JS25VF (9.000 BTU/h) phù hợp phòng khoảng 15m² theo công thức diện tích phòng (m²) nhân 600. DigiSmart tư vấn miễn phí để chọn đúng công suất trước khi lắp.",
+      },
+      {
+        question: "Bảo hành Mitsubishi Electric MS-JS25VF bao lâu?",
+        answer: "Bảo hành chính hãng máy nén 5 năm — DigiSmart hỗ trợ đăng ký bảo hành và lắp đặt tận nơi tại TPHCM.",
+      },
+    ],
   },
   {
     id: "mitsubishi-ms-js35vf",
@@ -1585,6 +2051,16 @@ export const products: Product[] = [
     btu: 12000,
     inverter: false,
     warranty_years: 5,
+    faq: [
+      {
+        question: "Mitsubishi Electric MS-JS35VF phù hợp phòng bao nhiêu m²?",
+        answer: "Mitsubishi Electric MS-JS35VF (12.000 BTU/h) phù hợp phòng khoảng 20m² theo công thức diện tích phòng (m²) nhân 600. DigiSmart tư vấn miễn phí để chọn đúng công suất trước khi lắp.",
+      },
+      {
+        question: "Bảo hành Mitsubishi Electric MS-JS35VF bao lâu?",
+        answer: "Bảo hành chính hãng máy nén 5 năm — DigiSmart hỗ trợ đăng ký bảo hành và lắp đặt tận nơi tại TPHCM.",
+      },
+    ],
   },
   {
     id: "mitsubishi-ms-js50vf",
@@ -1628,6 +2104,16 @@ export const products: Product[] = [
     btu: 18000,
     inverter: false,
     warranty_years: 5,
+    faq: [
+      {
+        question: "Mitsubishi Electric MS-JS50VF phù hợp phòng bao nhiêu m²?",
+        answer: "Mitsubishi Electric MS-JS50VF (18.000 BTU/h) phù hợp phòng khoảng 30m² theo công thức diện tích phòng (m²) nhân 600. DigiSmart tư vấn miễn phí để chọn đúng công suất trước khi lắp.",
+      },
+      {
+        question: "Bảo hành Mitsubishi Electric MS-JS50VF bao lâu?",
+        answer: "Bảo hành chính hãng máy nén 5 năm — DigiSmart hỗ trợ đăng ký bảo hành và lắp đặt tận nơi tại TPHCM.",
+      },
+    ],
   },
   {
     id: "mitsubishi-ms-js60vf",
@@ -1671,6 +2157,16 @@ export const products: Product[] = [
     btu: 22000,
     inverter: false,
     warranty_years: 5,
+    faq: [
+      {
+        question: "Mitsubishi Electric MS-JS60VF phù hợp phòng bao nhiêu m²?",
+        answer: "Mitsubishi Electric MS-JS60VF (22.000 BTU/h) phù hợp phòng khoảng 37m² theo công thức diện tích phòng (m²) nhân 600. DigiSmart tư vấn miễn phí để chọn đúng công suất trước khi lắp.",
+      },
+      {
+        question: "Bảo hành Mitsubishi Electric MS-JS60VF bao lâu?",
+        answer: "Bảo hành chính hãng máy nén 5 năm — DigiSmart hỗ trợ đăng ký bảo hành và lắp đặt tận nơi tại TPHCM.",
+      },
+    ],
   },
   // ------- Điều hòa: Daikin (loại 2 dàn rời, treo tường) -------
   // Nguồn: daikin.com.vn/shop/san-pham/loai-2-dan-roi, lấy 04/07/2026.
@@ -1776,6 +2272,20 @@ export const products: Product[] = [
     warranty_years: 5,
     btu: 12000,
     inverter: true,
+    faq: [
+      {
+        question: "Daikin FTKB35ZVMV phù hợp phòng bao nhiêu m²?",
+        answer: "Daikin FTKB35ZVMV (12.000 BTU/h) phù hợp phòng khoảng 20m² theo công thức diện tích phòng (m²) nhân 600. DigiSmart tư vấn miễn phí để chọn đúng công suất trước khi lắp.",
+      },
+      {
+        question: "Daikin FTKB35ZVMV dùng công nghệ gì, có tiết kiệm điện không?",
+        answer: "Máy dùng công nghệ Inverter (tự điều chỉnh công suất theo nhu cầu làm lạnh, tiết kiệm điện hơn máy thường) và gas lạnh R32 — loại gas thế hệ mới, thân thiện môi trường hơn R22 cũ.",
+      },
+      {
+        question: "Bảo hành Daikin FTKB35ZVMV bao lâu?",
+        answer: "Bảo hành chính hãng máy nén 5 năm — DigiSmart hỗ trợ đăng ký bảo hành và lắp đặt tận nơi tại TPHCM.",
+      },
+    ],
   },
   {
     id: "daikin-ftkb50zvmv",
@@ -1816,6 +2326,20 @@ export const products: Product[] = [
     warranty_years: 5,
     btu: 18000,
     inverter: true,
+    faq: [
+      {
+        question: "Daikin FTKB50ZVMV phù hợp phòng bao nhiêu m²?",
+        answer: "Daikin FTKB50ZVMV (18.000 BTU/h) phù hợp phòng khoảng 30m² theo công thức diện tích phòng (m²) nhân 600. DigiSmart tư vấn miễn phí để chọn đúng công suất trước khi lắp.",
+      },
+      {
+        question: "Daikin FTKB50ZVMV dùng công nghệ gì, có tiết kiệm điện không?",
+        answer: "Máy dùng công nghệ Inverter (tự điều chỉnh công suất theo nhu cầu làm lạnh, tiết kiệm điện hơn máy thường) và gas lạnh R32 — loại gas thế hệ mới, thân thiện môi trường hơn R22 cũ.",
+      },
+      {
+        question: "Bảo hành Daikin FTKB50ZVMV bao lâu?",
+        answer: "Bảo hành chính hãng máy nén 5 năm — DigiSmart hỗ trợ đăng ký bảo hành và lắp đặt tận nơi tại TPHCM.",
+      },
+    ],
   },
   {
     id: "daikin-ftkb60zvmv",
@@ -1856,6 +2380,20 @@ export const products: Product[] = [
     warranty_years: 5,
     btu: 21000,
     inverter: true,
+    faq: [
+      {
+        question: "Daikin FTKB60ZVMV phù hợp phòng bao nhiêu m²?",
+        answer: "Daikin FTKB60ZVMV (21.000 BTU/h) phù hợp phòng khoảng 35m² theo công thức diện tích phòng (m²) nhân 600. DigiSmart tư vấn miễn phí để chọn đúng công suất trước khi lắp.",
+      },
+      {
+        question: "Daikin FTKB60ZVMV dùng công nghệ gì, có tiết kiệm điện không?",
+        answer: "Máy dùng công nghệ Inverter (tự điều chỉnh công suất theo nhu cầu làm lạnh, tiết kiệm điện hơn máy thường) và gas lạnh R32 — loại gas thế hệ mới, thân thiện môi trường hơn R22 cũ.",
+      },
+      {
+        question: "Bảo hành Daikin FTKB60ZVMV bao lâu?",
+        answer: "Bảo hành chính hãng máy nén 5 năm — DigiSmart hỗ trợ đăng ký bảo hành và lắp đặt tận nơi tại TPHCM.",
+      },
+    ],
   },
   {
     id: "daikin-ftkf25zvmv",
@@ -1896,6 +2434,20 @@ export const products: Product[] = [
     warranty_years: 5,
     btu: 9000,
     inverter: true,
+    faq: [
+      {
+        question: "Daikin FTKF25ZVMV phù hợp phòng bao nhiêu m²?",
+        answer: "Daikin FTKF25ZVMV (9.000 BTU/h) phù hợp phòng khoảng 15m² theo công thức diện tích phòng (m²) nhân 600. DigiSmart tư vấn miễn phí để chọn đúng công suất trước khi lắp.",
+      },
+      {
+        question: "Daikin FTKF25ZVMV dùng công nghệ gì, có tiết kiệm điện không?",
+        answer: "Máy dùng công nghệ Inverter (tự điều chỉnh công suất theo nhu cầu làm lạnh, tiết kiệm điện hơn máy thường) và gas lạnh R32 — loại gas thế hệ mới, thân thiện môi trường hơn R22 cũ.",
+      },
+      {
+        question: "Bảo hành Daikin FTKF25ZVMV bao lâu?",
+        answer: "Bảo hành chính hãng máy nén 5 năm — DigiSmart hỗ trợ đăng ký bảo hành và lắp đặt tận nơi tại TPHCM.",
+      },
+    ],
   },
   {
     id: "daikin-ftkf35zvmv",
@@ -1936,6 +2488,20 @@ export const products: Product[] = [
     warranty_years: 5,
     btu: 12000,
     inverter: true,
+    faq: [
+      {
+        question: "Daikin FTKF35ZVMV phù hợp phòng bao nhiêu m²?",
+        answer: "Daikin FTKF35ZVMV (12.000 BTU/h) phù hợp phòng khoảng 20m² theo công thức diện tích phòng (m²) nhân 600. DigiSmart tư vấn miễn phí để chọn đúng công suất trước khi lắp.",
+      },
+      {
+        question: "Daikin FTKF35ZVMV dùng công nghệ gì, có tiết kiệm điện không?",
+        answer: "Máy dùng công nghệ Inverter (tự điều chỉnh công suất theo nhu cầu làm lạnh, tiết kiệm điện hơn máy thường) và gas lạnh R32 — loại gas thế hệ mới, thân thiện môi trường hơn R22 cũ.",
+      },
+      {
+        question: "Bảo hành Daikin FTKF35ZVMV bao lâu?",
+        answer: "Bảo hành chính hãng máy nén 5 năm — DigiSmart hỗ trợ đăng ký bảo hành và lắp đặt tận nơi tại TPHCM.",
+      },
+    ],
   },
   {
     id: "daikin-ftkf50zvmv",
@@ -1976,6 +2542,20 @@ export const products: Product[] = [
     warranty_years: 5,
     btu: 18000,
     inverter: true,
+    faq: [
+      {
+        question: "Daikin FTKF50ZVMV phù hợp phòng bao nhiêu m²?",
+        answer: "Daikin FTKF50ZVMV (18.000 BTU/h) phù hợp phòng khoảng 30m² theo công thức diện tích phòng (m²) nhân 600. DigiSmart tư vấn miễn phí để chọn đúng công suất trước khi lắp.",
+      },
+      {
+        question: "Daikin FTKF50ZVMV dùng công nghệ gì, có tiết kiệm điện không?",
+        answer: "Máy dùng công nghệ Inverter (tự điều chỉnh công suất theo nhu cầu làm lạnh, tiết kiệm điện hơn máy thường) và gas lạnh R32 — loại gas thế hệ mới, thân thiện môi trường hơn R22 cũ.",
+      },
+      {
+        question: "Bảo hành Daikin FTKF50ZVMV bao lâu?",
+        answer: "Bảo hành chính hãng máy nén 5 năm — DigiSmart hỗ trợ đăng ký bảo hành và lắp đặt tận nơi tại TPHCM.",
+      },
+    ],
   },
   {
     id: "daikin-ftkf60zvmv",
@@ -2016,6 +2596,20 @@ export const products: Product[] = [
     warranty_years: 5,
     btu: 21000,
     inverter: true,
+    faq: [
+      {
+        question: "Daikin FTKF60ZVMV phù hợp phòng bao nhiêu m²?",
+        answer: "Daikin FTKF60ZVMV (21.000 BTU/h) phù hợp phòng khoảng 35m² theo công thức diện tích phòng (m²) nhân 600. DigiSmart tư vấn miễn phí để chọn đúng công suất trước khi lắp.",
+      },
+      {
+        question: "Daikin FTKF60ZVMV dùng công nghệ gì, có tiết kiệm điện không?",
+        answer: "Máy dùng công nghệ Inverter (tự điều chỉnh công suất theo nhu cầu làm lạnh, tiết kiệm điện hơn máy thường) và gas lạnh R32 — loại gas thế hệ mới, thân thiện môi trường hơn R22 cũ.",
+      },
+      {
+        question: "Bảo hành Daikin FTKF60ZVMV bao lâu?",
+        answer: "Bảo hành chính hãng máy nén 5 năm — DigiSmart hỗ trợ đăng ký bảo hành và lắp đặt tận nơi tại TPHCM.",
+      },
+    ],
   },
   {
     id: "daikin-ftkf71zvmv",
@@ -2056,6 +2650,20 @@ export const products: Product[] = [
     warranty_years: 5,
     btu: 24000,
     inverter: true,
+    faq: [
+      {
+        question: "Daikin FTKF71ZVMV phù hợp phòng bao nhiêu m²?",
+        answer: "Daikin FTKF71ZVMV (24.000 BTU/h) phù hợp phòng khoảng 40m² theo công thức diện tích phòng (m²) nhân 600. DigiSmart tư vấn miễn phí để chọn đúng công suất trước khi lắp.",
+      },
+      {
+        question: "Daikin FTKF71ZVMV dùng công nghệ gì, có tiết kiệm điện không?",
+        answer: "Máy dùng công nghệ Inverter (tự điều chỉnh công suất theo nhu cầu làm lạnh, tiết kiệm điện hơn máy thường) và gas lạnh R32 — loại gas thế hệ mới, thân thiện môi trường hơn R22 cũ.",
+      },
+      {
+        question: "Bảo hành Daikin FTKF71ZVMV bao lâu?",
+        answer: "Bảo hành chính hãng máy nén 5 năm — DigiSmart hỗ trợ đăng ký bảo hành và lắp đặt tận nơi tại TPHCM.",
+      },
+    ],
   },
   {
     id: "daikin-ftky25zvmv",
@@ -2096,6 +2704,20 @@ export const products: Product[] = [
     warranty_years: 5,
     btu: 9000,
     inverter: true,
+    faq: [
+      {
+        question: "Daikin FTKY25ZVMV phù hợp phòng bao nhiêu m²?",
+        answer: "Daikin FTKY25ZVMV (9.000 BTU/h) phù hợp phòng khoảng 15m² theo công thức diện tích phòng (m²) nhân 600. DigiSmart tư vấn miễn phí để chọn đúng công suất trước khi lắp.",
+      },
+      {
+        question: "Daikin FTKY25ZVMV dùng công nghệ gì, có tiết kiệm điện không?",
+        answer: "Máy dùng công nghệ Inverter (tự điều chỉnh công suất theo nhu cầu làm lạnh, tiết kiệm điện hơn máy thường) và gas lạnh R32 — loại gas thế hệ mới, thân thiện môi trường hơn R22 cũ.",
+      },
+      {
+        question: "Bảo hành Daikin FTKY25ZVMV bao lâu?",
+        answer: "Bảo hành chính hãng máy nén 5 năm — DigiSmart hỗ trợ đăng ký bảo hành và lắp đặt tận nơi tại TPHCM.",
+      },
+    ],
   },
   {
     id: "daikin-ftky35zvmv",
@@ -2136,6 +2758,20 @@ export const products: Product[] = [
     warranty_years: 5,
     btu: 12000,
     inverter: true,
+    faq: [
+      {
+        question: "Daikin FTKY35ZVMV phù hợp phòng bao nhiêu m²?",
+        answer: "Daikin FTKY35ZVMV (12.000 BTU/h) phù hợp phòng khoảng 20m² theo công thức diện tích phòng (m²) nhân 600. DigiSmart tư vấn miễn phí để chọn đúng công suất trước khi lắp.",
+      },
+      {
+        question: "Daikin FTKY35ZVMV dùng công nghệ gì, có tiết kiệm điện không?",
+        answer: "Máy dùng công nghệ Inverter (tự điều chỉnh công suất theo nhu cầu làm lạnh, tiết kiệm điện hơn máy thường) và gas lạnh R32 — loại gas thế hệ mới, thân thiện môi trường hơn R22 cũ.",
+      },
+      {
+        question: "Bảo hành Daikin FTKY35ZVMV bao lâu?",
+        answer: "Bảo hành chính hãng máy nén 5 năm — DigiSmart hỗ trợ đăng ký bảo hành và lắp đặt tận nơi tại TPHCM.",
+      },
+    ],
   },
   {
     id: "daikin-ftky50zvmv",
@@ -2176,6 +2812,20 @@ export const products: Product[] = [
     warranty_years: 5,
     btu: 18000,
     inverter: true,
+    faq: [
+      {
+        question: "Daikin FTKY50ZVMV phù hợp phòng bao nhiêu m²?",
+        answer: "Daikin FTKY50ZVMV (18.000 BTU/h) phù hợp phòng khoảng 30m² theo công thức diện tích phòng (m²) nhân 600. DigiSmart tư vấn miễn phí để chọn đúng công suất trước khi lắp.",
+      },
+      {
+        question: "Daikin FTKY50ZVMV dùng công nghệ gì, có tiết kiệm điện không?",
+        answer: "Máy dùng công nghệ Inverter (tự điều chỉnh công suất theo nhu cầu làm lạnh, tiết kiệm điện hơn máy thường) và gas lạnh R32 — loại gas thế hệ mới, thân thiện môi trường hơn R22 cũ.",
+      },
+      {
+        question: "Bảo hành Daikin FTKY50ZVMV bao lâu?",
+        answer: "Bảo hành chính hãng máy nén 5 năm — DigiSmart hỗ trợ đăng ký bảo hành và lắp đặt tận nơi tại TPHCM.",
+      },
+    ],
   },
   {
     id: "daikin-ftky60zvmv",
@@ -2216,6 +2866,20 @@ export const products: Product[] = [
     warranty_years: 5,
     btu: 21000,
     inverter: true,
+    faq: [
+      {
+        question: "Daikin FTKY60ZVMV phù hợp phòng bao nhiêu m²?",
+        answer: "Daikin FTKY60ZVMV (21.000 BTU/h) phù hợp phòng khoảng 35m² theo công thức diện tích phòng (m²) nhân 600. DigiSmart tư vấn miễn phí để chọn đúng công suất trước khi lắp.",
+      },
+      {
+        question: "Daikin FTKY60ZVMV dùng công nghệ gì, có tiết kiệm điện không?",
+        answer: "Máy dùng công nghệ Inverter (tự điều chỉnh công suất theo nhu cầu làm lạnh, tiết kiệm điện hơn máy thường) và gas lạnh R32 — loại gas thế hệ mới, thân thiện môi trường hơn R22 cũ.",
+      },
+      {
+        question: "Bảo hành Daikin FTKY60ZVMV bao lâu?",
+        answer: "Bảo hành chính hãng máy nén 5 năm — DigiSmart hỗ trợ đăng ký bảo hành và lắp đặt tận nơi tại TPHCM.",
+      },
+    ],
   },
   {
     id: "daikin-ftky71zvmv",
@@ -2256,6 +2920,20 @@ export const products: Product[] = [
     warranty_years: 5,
     btu: 24000,
     inverter: true,
+    faq: [
+      {
+        question: "Daikin FTKY71ZVMV phù hợp phòng bao nhiêu m²?",
+        answer: "Daikin FTKY71ZVMV (24.000 BTU/h) phù hợp phòng khoảng 40m² theo công thức diện tích phòng (m²) nhân 600. DigiSmart tư vấn miễn phí để chọn đúng công suất trước khi lắp.",
+      },
+      {
+        question: "Daikin FTKY71ZVMV dùng công nghệ gì, có tiết kiệm điện không?",
+        answer: "Máy dùng công nghệ Inverter (tự điều chỉnh công suất theo nhu cầu làm lạnh, tiết kiệm điện hơn máy thường) và gas lạnh R32 — loại gas thế hệ mới, thân thiện môi trường hơn R22 cũ.",
+      },
+      {
+        question: "Bảo hành Daikin FTKY71ZVMV bao lâu?",
+        answer: "Bảo hành chính hãng máy nén 5 năm — DigiSmart hỗ trợ đăng ký bảo hành và lắp đặt tận nơi tại TPHCM.",
+      },
+    ],
   },
   {
     id: "daikin-ftkm25avmv",
@@ -2296,6 +2974,20 @@ export const products: Product[] = [
     warranty_years: 5,
     btu: 9000,
     inverter: true,
+    faq: [
+      {
+        question: "Daikin FTKM25AVMV phù hợp phòng bao nhiêu m²?",
+        answer: "Daikin FTKM25AVMV (9.000 BTU/h) phù hợp phòng khoảng 15m² theo công thức diện tích phòng (m²) nhân 600. DigiSmart tư vấn miễn phí để chọn đúng công suất trước khi lắp.",
+      },
+      {
+        question: "Daikin FTKM25AVMV dùng công nghệ gì, có tiết kiệm điện không?",
+        answer: "Máy dùng công nghệ Inverter (tự điều chỉnh công suất theo nhu cầu làm lạnh, tiết kiệm điện hơn máy thường) và gas lạnh R32 — loại gas thế hệ mới, thân thiện môi trường hơn R22 cũ.",
+      },
+      {
+        question: "Bảo hành Daikin FTKM25AVMV bao lâu?",
+        answer: "Bảo hành chính hãng máy nén 5 năm — DigiSmart hỗ trợ đăng ký bảo hành và lắp đặt tận nơi tại TPHCM.",
+      },
+    ],
   },
   {
     id: "daikin-ftkm35avmv",
@@ -2336,6 +3028,20 @@ export const products: Product[] = [
     warranty_years: 5,
     btu: 12000,
     inverter: true,
+    faq: [
+      {
+        question: "Daikin FTKM35AVMV phù hợp phòng bao nhiêu m²?",
+        answer: "Daikin FTKM35AVMV (12.000 BTU/h) phù hợp phòng khoảng 20m² theo công thức diện tích phòng (m²) nhân 600. DigiSmart tư vấn miễn phí để chọn đúng công suất trước khi lắp.",
+      },
+      {
+        question: "Daikin FTKM35AVMV dùng công nghệ gì, có tiết kiệm điện không?",
+        answer: "Máy dùng công nghệ Inverter (tự điều chỉnh công suất theo nhu cầu làm lạnh, tiết kiệm điện hơn máy thường) và gas lạnh R32 — loại gas thế hệ mới, thân thiện môi trường hơn R22 cũ.",
+      },
+      {
+        question: "Bảo hành Daikin FTKM35AVMV bao lâu?",
+        answer: "Bảo hành chính hãng máy nén 5 năm — DigiSmart hỗ trợ đăng ký bảo hành và lắp đặt tận nơi tại TPHCM.",
+      },
+    ],
   },
   {
     id: "daikin-ftkm50avmv",
@@ -2376,6 +3082,20 @@ export const products: Product[] = [
     warranty_years: 5,
     btu: 18000,
     inverter: true,
+    faq: [
+      {
+        question: "Daikin FTKM50AVMV phù hợp phòng bao nhiêu m²?",
+        answer: "Daikin FTKM50AVMV (18.000 BTU/h) phù hợp phòng khoảng 30m² theo công thức diện tích phòng (m²) nhân 600. DigiSmart tư vấn miễn phí để chọn đúng công suất trước khi lắp.",
+      },
+      {
+        question: "Daikin FTKM50AVMV dùng công nghệ gì, có tiết kiệm điện không?",
+        answer: "Máy dùng công nghệ Inverter (tự điều chỉnh công suất theo nhu cầu làm lạnh, tiết kiệm điện hơn máy thường) và gas lạnh R32 — loại gas thế hệ mới, thân thiện môi trường hơn R22 cũ.",
+      },
+      {
+        question: "Bảo hành Daikin FTKM50AVMV bao lâu?",
+        answer: "Bảo hành chính hãng máy nén 5 năm — DigiSmart hỗ trợ đăng ký bảo hành và lắp đặt tận nơi tại TPHCM.",
+      },
+    ],
   },
   {
     id: "daikin-ftkm60avmv",
@@ -2416,6 +3136,20 @@ export const products: Product[] = [
     warranty_years: 5,
     btu: 21000,
     inverter: true,
+    faq: [
+      {
+        question: "Daikin FTKM60AVMV phù hợp phòng bao nhiêu m²?",
+        answer: "Daikin FTKM60AVMV (21.000 BTU/h) phù hợp phòng khoảng 35m² theo công thức diện tích phòng (m²) nhân 600. DigiSmart tư vấn miễn phí để chọn đúng công suất trước khi lắp.",
+      },
+      {
+        question: "Daikin FTKM60AVMV dùng công nghệ gì, có tiết kiệm điện không?",
+        answer: "Máy dùng công nghệ Inverter (tự điều chỉnh công suất theo nhu cầu làm lạnh, tiết kiệm điện hơn máy thường) và gas lạnh R32 — loại gas thế hệ mới, thân thiện môi trường hơn R22 cũ.",
+      },
+      {
+        question: "Bảo hành Daikin FTKM60AVMV bao lâu?",
+        answer: "Bảo hành chính hãng máy nén 5 năm — DigiSmart hỗ trợ đăng ký bảo hành và lắp đặt tận nơi tại TPHCM.",
+      },
+    ],
   },
   {
     id: "daikin-ftkm71avmv",
@@ -2456,6 +3190,20 @@ export const products: Product[] = [
     warranty_years: 5,
     btu: 24000,
     inverter: true,
+    faq: [
+      {
+        question: "Daikin FTKM71AVMV phù hợp phòng bao nhiêu m²?",
+        answer: "Daikin FTKM71AVMV (24.000 BTU/h) phù hợp phòng khoảng 40m² theo công thức diện tích phòng (m²) nhân 600. DigiSmart tư vấn miễn phí để chọn đúng công suất trước khi lắp.",
+      },
+      {
+        question: "Daikin FTKM71AVMV dùng công nghệ gì, có tiết kiệm điện không?",
+        answer: "Máy dùng công nghệ Inverter (tự điều chỉnh công suất theo nhu cầu làm lạnh, tiết kiệm điện hơn máy thường) và gas lạnh R32 — loại gas thế hệ mới, thân thiện môi trường hơn R22 cũ.",
+      },
+      {
+        question: "Bảo hành Daikin FTKM71AVMV bao lâu?",
+        answer: "Bảo hành chính hãng máy nén 5 năm — DigiSmart hỗ trợ đăng ký bảo hành và lắp đặt tận nơi tại TPHCM.",
+      },
+    ],
   },
   {
     id: "daikin-ftkz25vvmv",
@@ -2496,6 +3244,20 @@ export const products: Product[] = [
     warranty_years: 5,
     btu: 9000,
     inverter: true,
+    faq: [
+      {
+        question: "Daikin FTKZ25VVMV phù hợp phòng bao nhiêu m²?",
+        answer: "Daikin FTKZ25VVMV (9.000 BTU/h) phù hợp phòng khoảng 15m² theo công thức diện tích phòng (m²) nhân 600. DigiSmart tư vấn miễn phí để chọn đúng công suất trước khi lắp.",
+      },
+      {
+        question: "Daikin FTKZ25VVMV dùng công nghệ gì, có tiết kiệm điện không?",
+        answer: "Máy dùng công nghệ Inverter (tự điều chỉnh công suất theo nhu cầu làm lạnh, tiết kiệm điện hơn máy thường) và gas lạnh R32 — loại gas thế hệ mới, thân thiện môi trường hơn R22 cũ.",
+      },
+      {
+        question: "Bảo hành Daikin FTKZ25VVMV bao lâu?",
+        answer: "Bảo hành chính hãng máy nén 5 năm — DigiSmart hỗ trợ đăng ký bảo hành và lắp đặt tận nơi tại TPHCM.",
+      },
+    ],
   },
   {
     id: "daikin-ftkz35vvmv",
@@ -2536,6 +3298,20 @@ export const products: Product[] = [
     warranty_years: 5,
     btu: 12000,
     inverter: true,
+    faq: [
+      {
+        question: "Daikin FTKZ35VVMV phù hợp phòng bao nhiêu m²?",
+        answer: "Daikin FTKZ35VVMV (12.000 BTU/h) phù hợp phòng khoảng 20m² theo công thức diện tích phòng (m²) nhân 600. DigiSmart tư vấn miễn phí để chọn đúng công suất trước khi lắp.",
+      },
+      {
+        question: "Daikin FTKZ35VVMV dùng công nghệ gì, có tiết kiệm điện không?",
+        answer: "Máy dùng công nghệ Inverter (tự điều chỉnh công suất theo nhu cầu làm lạnh, tiết kiệm điện hơn máy thường) và gas lạnh R32 — loại gas thế hệ mới, thân thiện môi trường hơn R22 cũ.",
+      },
+      {
+        question: "Bảo hành Daikin FTKZ35VVMV bao lâu?",
+        answer: "Bảo hành chính hãng máy nén 5 năm — DigiSmart hỗ trợ đăng ký bảo hành và lắp đặt tận nơi tại TPHCM.",
+      },
+    ],
   },
   {
     id: "daikin-ftkz50vvmv",
@@ -2576,6 +3352,20 @@ export const products: Product[] = [
     warranty_years: 5,
     btu: 18000,
     inverter: true,
+    faq: [
+      {
+        question: "Daikin FTKZ50VVMV phù hợp phòng bao nhiêu m²?",
+        answer: "Daikin FTKZ50VVMV (18.000 BTU/h) phù hợp phòng khoảng 30m² theo công thức diện tích phòng (m²) nhân 600. DigiSmart tư vấn miễn phí để chọn đúng công suất trước khi lắp.",
+      },
+      {
+        question: "Daikin FTKZ50VVMV dùng công nghệ gì, có tiết kiệm điện không?",
+        answer: "Máy dùng công nghệ Inverter (tự điều chỉnh công suất theo nhu cầu làm lạnh, tiết kiệm điện hơn máy thường) và gas lạnh R32 — loại gas thế hệ mới, thân thiện môi trường hơn R22 cũ.",
+      },
+      {
+        question: "Bảo hành Daikin FTKZ50VVMV bao lâu?",
+        answer: "Bảo hành chính hãng máy nén 5 năm — DigiSmart hỗ trợ đăng ký bảo hành và lắp đặt tận nơi tại TPHCM.",
+      },
+    ],
   },
   {
     id: "daikin-ftkz60vvmv",
@@ -2616,6 +3406,20 @@ export const products: Product[] = [
     warranty_years: 5,
     btu: 21000,
     inverter: true,
+    faq: [
+      {
+        question: "Daikin FTKZ60VVMV phù hợp phòng bao nhiêu m²?",
+        answer: "Daikin FTKZ60VVMV (21.000 BTU/h) phù hợp phòng khoảng 35m² theo công thức diện tích phòng (m²) nhân 600. DigiSmart tư vấn miễn phí để chọn đúng công suất trước khi lắp.",
+      },
+      {
+        question: "Daikin FTKZ60VVMV dùng công nghệ gì, có tiết kiệm điện không?",
+        answer: "Máy dùng công nghệ Inverter (tự điều chỉnh công suất theo nhu cầu làm lạnh, tiết kiệm điện hơn máy thường) và gas lạnh R32 — loại gas thế hệ mới, thân thiện môi trường hơn R22 cũ.",
+      },
+      {
+        question: "Bảo hành Daikin FTKZ60VVMV bao lâu?",
+        answer: "Bảo hành chính hãng máy nén 5 năm — DigiSmart hỗ trợ đăng ký bảo hành và lắp đặt tận nơi tại TPHCM.",
+      },
+    ],
   },
   {
     id: "daikin-ftkz71vvmv",
@@ -2656,6 +3460,20 @@ export const products: Product[] = [
     warranty_years: 5,
     btu: 24000,
     inverter: true,
+    faq: [
+      {
+        question: "Daikin FTKZ71VVMV phù hợp phòng bao nhiêu m²?",
+        answer: "Daikin FTKZ71VVMV (24.000 BTU/h) phù hợp phòng khoảng 40m² theo công thức diện tích phòng (m²) nhân 600. DigiSmart tư vấn miễn phí để chọn đúng công suất trước khi lắp.",
+      },
+      {
+        question: "Daikin FTKZ71VVMV dùng công nghệ gì, có tiết kiệm điện không?",
+        answer: "Máy dùng công nghệ Inverter (tự điều chỉnh công suất theo nhu cầu làm lạnh, tiết kiệm điện hơn máy thường) và gas lạnh R32 — loại gas thế hệ mới, thân thiện môi trường hơn R22 cũ.",
+      },
+      {
+        question: "Bảo hành Daikin FTKZ71VVMV bao lâu?",
+        answer: "Bảo hành chính hãng máy nén 5 năm — DigiSmart hỗ trợ đăng ký bảo hành và lắp đặt tận nơi tại TPHCM.",
+      },
+    ],
   },
   {
     id: "daikin-fthb25zvmv",
@@ -2696,6 +3514,20 @@ export const products: Product[] = [
     warranty_years: 5,
     btu: 9000,
     inverter: true,
+    faq: [
+      {
+        question: "Daikin FTHB25ZVMV phù hợp phòng bao nhiêu m²?",
+        answer: "Daikin FTHB25ZVMV (9.000 BTU/h) phù hợp phòng khoảng 15m² theo công thức diện tích phòng (m²) nhân 600. DigiSmart tư vấn miễn phí để chọn đúng công suất trước khi lắp.",
+      },
+      {
+        question: "Daikin FTHB25ZVMV dùng công nghệ gì, có tiết kiệm điện không?",
+        answer: "Máy dùng công nghệ Inverter (tự điều chỉnh công suất theo nhu cầu làm lạnh, tiết kiệm điện hơn máy thường) và gas lạnh R32 — loại gas thế hệ mới, thân thiện môi trường hơn R22 cũ.",
+      },
+      {
+        question: "Bảo hành Daikin FTHB25ZVMV bao lâu?",
+        answer: "Bảo hành chính hãng máy nén 5 năm — DigiSmart hỗ trợ đăng ký bảo hành và lắp đặt tận nơi tại TPHCM.",
+      },
+    ],
   },
   {
     id: "daikin-fthb35zvmv",
@@ -2736,6 +3568,20 @@ export const products: Product[] = [
     warranty_years: 5,
     btu: 12000,
     inverter: true,
+    faq: [
+      {
+        question: "Daikin FTHB35ZVMV phù hợp phòng bao nhiêu m²?",
+        answer: "Daikin FTHB35ZVMV (12.000 BTU/h) phù hợp phòng khoảng 20m² theo công thức diện tích phòng (m²) nhân 600. DigiSmart tư vấn miễn phí để chọn đúng công suất trước khi lắp.",
+      },
+      {
+        question: "Daikin FTHB35ZVMV dùng công nghệ gì, có tiết kiệm điện không?",
+        answer: "Máy dùng công nghệ Inverter (tự điều chỉnh công suất theo nhu cầu làm lạnh, tiết kiệm điện hơn máy thường) và gas lạnh R32 — loại gas thế hệ mới, thân thiện môi trường hơn R22 cũ.",
+      },
+      {
+        question: "Bảo hành Daikin FTHB35ZVMV bao lâu?",
+        answer: "Bảo hành chính hãng máy nén 5 năm — DigiSmart hỗ trợ đăng ký bảo hành và lắp đặt tận nơi tại TPHCM.",
+      },
+    ],
   },
   {
     id: "daikin-fthb50zvmv",
@@ -2776,6 +3622,20 @@ export const products: Product[] = [
     warranty_years: 5,
     btu: 18000,
     inverter: true,
+    faq: [
+      {
+        question: "Daikin FTHB50ZVMV phù hợp phòng bao nhiêu m²?",
+        answer: "Daikin FTHB50ZVMV (18.000 BTU/h) phù hợp phòng khoảng 30m² theo công thức diện tích phòng (m²) nhân 600. DigiSmart tư vấn miễn phí để chọn đúng công suất trước khi lắp.",
+      },
+      {
+        question: "Daikin FTHB50ZVMV dùng công nghệ gì, có tiết kiệm điện không?",
+        answer: "Máy dùng công nghệ Inverter (tự điều chỉnh công suất theo nhu cầu làm lạnh, tiết kiệm điện hơn máy thường) và gas lạnh R32 — loại gas thế hệ mới, thân thiện môi trường hơn R22 cũ.",
+      },
+      {
+        question: "Bảo hành Daikin FTHB50ZVMV bao lâu?",
+        answer: "Bảo hành chính hãng máy nén 5 năm — DigiSmart hỗ trợ đăng ký bảo hành và lắp đặt tận nơi tại TPHCM.",
+      },
+    ],
   },
   {
     id: "daikin-fthb60zvmv",
@@ -2816,6 +3676,20 @@ export const products: Product[] = [
     warranty_years: 5,
     btu: 21000,
     inverter: true,
+    faq: [
+      {
+        question: "Daikin FTHB60ZVMV phù hợp phòng bao nhiêu m²?",
+        answer: "Daikin FTHB60ZVMV (21.000 BTU/h) phù hợp phòng khoảng 35m² theo công thức diện tích phòng (m²) nhân 600. DigiSmart tư vấn miễn phí để chọn đúng công suất trước khi lắp.",
+      },
+      {
+        question: "Daikin FTHB60ZVMV dùng công nghệ gì, có tiết kiệm điện không?",
+        answer: "Máy dùng công nghệ Inverter (tự điều chỉnh công suất theo nhu cầu làm lạnh, tiết kiệm điện hơn máy thường) và gas lạnh R32 — loại gas thế hệ mới, thân thiện môi trường hơn R22 cũ.",
+      },
+      {
+        question: "Bảo hành Daikin FTHB60ZVMV bao lâu?",
+        answer: "Bảo hành chính hãng máy nén 5 năm — DigiSmart hỗ trợ đăng ký bảo hành và lắp đặt tận nơi tại TPHCM.",
+      },
+    ],
   },
   {
     id: "daikin-fthf25xvmv",
@@ -2856,6 +3730,20 @@ export const products: Product[] = [
     warranty_years: 5,
     btu: 9000,
     inverter: true,
+    faq: [
+      {
+        question: "Daikin FTHF25XVMV phù hợp phòng bao nhiêu m²?",
+        answer: "Daikin FTHF25XVMV (9.000 BTU/h) phù hợp phòng khoảng 15m² theo công thức diện tích phòng (m²) nhân 600. DigiSmart tư vấn miễn phí để chọn đúng công suất trước khi lắp.",
+      },
+      {
+        question: "Daikin FTHF25XVMV dùng công nghệ gì, có tiết kiệm điện không?",
+        answer: "Máy dùng công nghệ Inverter (tự điều chỉnh công suất theo nhu cầu làm lạnh, tiết kiệm điện hơn máy thường) và gas lạnh R32 — loại gas thế hệ mới, thân thiện môi trường hơn R22 cũ.",
+      },
+      {
+        question: "Bảo hành Daikin FTHF25XVMV bao lâu?",
+        answer: "Bảo hành chính hãng máy nén 5 năm — DigiSmart hỗ trợ đăng ký bảo hành và lắp đặt tận nơi tại TPHCM.",
+      },
+    ],
   },
   {
     id: "daikin-fthf35xvmv",
@@ -2896,6 +3784,20 @@ export const products: Product[] = [
     warranty_years: 5,
     btu: 12000,
     inverter: true,
+    faq: [
+      {
+        question: "Daikin FTHF35XVMV phù hợp phòng bao nhiêu m²?",
+        answer: "Daikin FTHF35XVMV (12.000 BTU/h) phù hợp phòng khoảng 20m² theo công thức diện tích phòng (m²) nhân 600. DigiSmart tư vấn miễn phí để chọn đúng công suất trước khi lắp.",
+      },
+      {
+        question: "Daikin FTHF35XVMV dùng công nghệ gì, có tiết kiệm điện không?",
+        answer: "Máy dùng công nghệ Inverter (tự điều chỉnh công suất theo nhu cầu làm lạnh, tiết kiệm điện hơn máy thường) và gas lạnh R32 — loại gas thế hệ mới, thân thiện môi trường hơn R22 cũ.",
+      },
+      {
+        question: "Bảo hành Daikin FTHF35XVMV bao lâu?",
+        answer: "Bảo hành chính hãng máy nén 5 năm — DigiSmart hỗ trợ đăng ký bảo hành và lắp đặt tận nơi tại TPHCM.",
+      },
+    ],
   },
   {
     id: "daikin-fthf50vavmv",
@@ -2936,6 +3838,20 @@ export const products: Product[] = [
     warranty_years: 5,
     btu: 18000,
     inverter: true,
+    faq: [
+      {
+        question: "Daikin FTHF50VAVMV phù hợp phòng bao nhiêu m²?",
+        answer: "Daikin FTHF50VAVMV (18.000 BTU/h) phù hợp phòng khoảng 30m² theo công thức diện tích phòng (m²) nhân 600. DigiSmart tư vấn miễn phí để chọn đúng công suất trước khi lắp.",
+      },
+      {
+        question: "Daikin FTHF50VAVMV dùng công nghệ gì, có tiết kiệm điện không?",
+        answer: "Máy dùng công nghệ Inverter (tự điều chỉnh công suất theo nhu cầu làm lạnh, tiết kiệm điện hơn máy thường) và gas lạnh R32 — loại gas thế hệ mới, thân thiện môi trường hơn R22 cũ.",
+      },
+      {
+        question: "Bảo hành Daikin FTHF50VAVMV bao lâu?",
+        answer: "Bảo hành chính hãng máy nén 5 năm — DigiSmart hỗ trợ đăng ký bảo hành và lắp đặt tận nơi tại TPHCM.",
+      },
+    ],
   },
   {
     id: "daikin-fthf60vavmv",
@@ -2976,6 +3892,20 @@ export const products: Product[] = [
     warranty_years: 5,
     btu: 21000,
     inverter: true,
+    faq: [
+      {
+        question: "Daikin FTHF60VAVMV phù hợp phòng bao nhiêu m²?",
+        answer: "Daikin FTHF60VAVMV (21.000 BTU/h) phù hợp phòng khoảng 35m² theo công thức diện tích phòng (m²) nhân 600. DigiSmart tư vấn miễn phí để chọn đúng công suất trước khi lắp.",
+      },
+      {
+        question: "Daikin FTHF60VAVMV dùng công nghệ gì, có tiết kiệm điện không?",
+        answer: "Máy dùng công nghệ Inverter (tự điều chỉnh công suất theo nhu cầu làm lạnh, tiết kiệm điện hơn máy thường) và gas lạnh R32 — loại gas thế hệ mới, thân thiện môi trường hơn R22 cũ.",
+      },
+      {
+        question: "Bảo hành Daikin FTHF60VAVMV bao lâu?",
+        answer: "Bảo hành chính hãng máy nén 5 năm — DigiSmart hỗ trợ đăng ký bảo hành và lắp đặt tận nơi tại TPHCM.",
+      },
+    ],
   },
   {
     id: "daikin-fthf71vavmv",
@@ -3016,6 +3946,20 @@ export const products: Product[] = [
     warranty_years: 5,
     btu: 24000,
     inverter: true,
+    faq: [
+      {
+        question: "Daikin FTHF71VAVMV phù hợp phòng bao nhiêu m²?",
+        answer: "Daikin FTHF71VAVMV (24.000 BTU/h) phù hợp phòng khoảng 40m² theo công thức diện tích phòng (m²) nhân 600. DigiSmart tư vấn miễn phí để chọn đúng công suất trước khi lắp.",
+      },
+      {
+        question: "Daikin FTHF71VAVMV dùng công nghệ gì, có tiết kiệm điện không?",
+        answer: "Máy dùng công nghệ Inverter (tự điều chỉnh công suất theo nhu cầu làm lạnh, tiết kiệm điện hơn máy thường) và gas lạnh R32 — loại gas thế hệ mới, thân thiện môi trường hơn R22 cũ.",
+      },
+      {
+        question: "Bảo hành Daikin FTHF71VAVMV bao lâu?",
+        answer: "Bảo hành chính hãng máy nén 5 năm — DigiSmart hỗ trợ đăng ký bảo hành và lắp đặt tận nơi tại TPHCM.",
+      },
+    ],
   },
   {
     id: "daikin-ftxv25qvmv",
@@ -3053,6 +3997,20 @@ export const products: Product[] = [
     warranty_years: 5,
     btu: 9000,
     inverter: true,
+    faq: [
+      {
+        question: "Daikin FTXV25QVMV phù hợp phòng bao nhiêu m²?",
+        answer: "Daikin FTXV25QVMV (9.000 BTU/h) phù hợp phòng khoảng 15m² theo công thức diện tích phòng (m²) nhân 600. DigiSmart tư vấn miễn phí để chọn đúng công suất trước khi lắp.",
+      },
+      {
+        question: "Daikin FTXV25QVMV dùng công nghệ gì, có tiết kiệm điện không?",
+        answer: "Máy dùng công nghệ Inverter (tự điều chỉnh công suất theo nhu cầu làm lạnh, tiết kiệm điện hơn máy thường) và gas lạnh R32 — loại gas thế hệ mới, thân thiện môi trường hơn R22 cũ.",
+      },
+      {
+        question: "Bảo hành Daikin FTXV25QVMV bao lâu?",
+        answer: "Bảo hành chính hãng máy nén 5 năm — DigiSmart hỗ trợ đăng ký bảo hành và lắp đặt tận nơi tại TPHCM.",
+      },
+    ],
   },
   {
     id: "daikin-ftxv35qvmv",
@@ -3090,6 +4048,20 @@ export const products: Product[] = [
     warranty_years: 5,
     btu: 12000,
     inverter: true,
+    faq: [
+      {
+        question: "Daikin FTXV35QVMV phù hợp phòng bao nhiêu m²?",
+        answer: "Daikin FTXV35QVMV (12.000 BTU/h) phù hợp phòng khoảng 20m² theo công thức diện tích phòng (m²) nhân 600. DigiSmart tư vấn miễn phí để chọn đúng công suất trước khi lắp.",
+      },
+      {
+        question: "Daikin FTXV35QVMV dùng công nghệ gì, có tiết kiệm điện không?",
+        answer: "Máy dùng công nghệ Inverter (tự điều chỉnh công suất theo nhu cầu làm lạnh, tiết kiệm điện hơn máy thường) và gas lạnh R32 — loại gas thế hệ mới, thân thiện môi trường hơn R22 cũ.",
+      },
+      {
+        question: "Bảo hành Daikin FTXV35QVMV bao lâu?",
+        answer: "Bảo hành chính hãng máy nén 5 năm — DigiSmart hỗ trợ đăng ký bảo hành và lắp đặt tận nơi tại TPHCM.",
+      },
+    ],
   },
   {
     id: "daikin-ftxv50qvmv",
@@ -3127,6 +4099,20 @@ export const products: Product[] = [
     warranty_years: 5,
     btu: 18000,
     inverter: true,
+    faq: [
+      {
+        question: "Daikin FTXV50QVMV phù hợp phòng bao nhiêu m²?",
+        answer: "Daikin FTXV50QVMV (18.000 BTU/h) phù hợp phòng khoảng 30m² theo công thức diện tích phòng (m²) nhân 600. DigiSmart tư vấn miễn phí để chọn đúng công suất trước khi lắp.",
+      },
+      {
+        question: "Daikin FTXV50QVMV dùng công nghệ gì, có tiết kiệm điện không?",
+        answer: "Máy dùng công nghệ Inverter (tự điều chỉnh công suất theo nhu cầu làm lạnh, tiết kiệm điện hơn máy thường) và gas lạnh R32 — loại gas thế hệ mới, thân thiện môi trường hơn R22 cũ.",
+      },
+      {
+        question: "Bảo hành Daikin FTXV50QVMV bao lâu?",
+        answer: "Bảo hành chính hãng máy nén 5 năm — DigiSmart hỗ trợ đăng ký bảo hành và lắp đặt tận nơi tại TPHCM.",
+      },
+    ],
   },
   {
     id: "daikin-ftxv60qvmv",
@@ -3164,6 +4150,20 @@ export const products: Product[] = [
     warranty_years: 5,
     btu: 21000,
     inverter: true,
+    faq: [
+      {
+        question: "Daikin FTXV60QVMV phù hợp phòng bao nhiêu m²?",
+        answer: "Daikin FTXV60QVMV (21.000 BTU/h) phù hợp phòng khoảng 35m² theo công thức diện tích phòng (m²) nhân 600. DigiSmart tư vấn miễn phí để chọn đúng công suất trước khi lắp.",
+      },
+      {
+        question: "Daikin FTXV60QVMV dùng công nghệ gì, có tiết kiệm điện không?",
+        answer: "Máy dùng công nghệ Inverter (tự điều chỉnh công suất theo nhu cầu làm lạnh, tiết kiệm điện hơn máy thường) và gas lạnh R32 — loại gas thế hệ mới, thân thiện môi trường hơn R22 cũ.",
+      },
+      {
+        question: "Bảo hành Daikin FTXV60QVMV bao lâu?",
+        answer: "Bảo hành chính hãng máy nén 5 năm — DigiSmart hỗ trợ đăng ký bảo hành và lắp đặt tận nơi tại TPHCM.",
+      },
+    ],
   },
   {
     id: "daikin-ftxv71qvmv",
@@ -3201,6 +4201,20 @@ export const products: Product[] = [
     warranty_years: 5,
     btu: 24000,
     inverter: true,
+    faq: [
+      {
+        question: "Daikin FTXV71QVMV phù hợp phòng bao nhiêu m²?",
+        answer: "Daikin FTXV71QVMV (24.000 BTU/h) phù hợp phòng khoảng 40m² theo công thức diện tích phòng (m²) nhân 600. DigiSmart tư vấn miễn phí để chọn đúng công suất trước khi lắp.",
+      },
+      {
+        question: "Daikin FTXV71QVMV dùng công nghệ gì, có tiết kiệm điện không?",
+        answer: "Máy dùng công nghệ Inverter (tự điều chỉnh công suất theo nhu cầu làm lạnh, tiết kiệm điện hơn máy thường) và gas lạnh R32 — loại gas thế hệ mới, thân thiện môi trường hơn R22 cũ.",
+      },
+      {
+        question: "Bảo hành Daikin FTXV71QVMV bao lâu?",
+        answer: "Bảo hành chính hãng máy nén 5 năm — DigiSmart hỗ trợ đăng ký bảo hành và lắp đặt tận nơi tại TPHCM.",
+      },
+    ],
   },
   {
     id: "daikin-ftxm25xvmv",
@@ -3241,6 +4255,20 @@ export const products: Product[] = [
     warranty_years: 5,
     btu: 9000,
     inverter: true,
+    faq: [
+      {
+        question: "Daikin FTXM25XVMV phù hợp phòng bao nhiêu m²?",
+        answer: "Daikin FTXM25XVMV (9.000 BTU/h) phù hợp phòng khoảng 15m² theo công thức diện tích phòng (m²) nhân 600. DigiSmart tư vấn miễn phí để chọn đúng công suất trước khi lắp.",
+      },
+      {
+        question: "Daikin FTXM25XVMV dùng công nghệ gì, có tiết kiệm điện không?",
+        answer: "Máy dùng công nghệ Inverter (tự điều chỉnh công suất theo nhu cầu làm lạnh, tiết kiệm điện hơn máy thường) và gas lạnh R32 — loại gas thế hệ mới, thân thiện môi trường hơn R22 cũ.",
+      },
+      {
+        question: "Bảo hành Daikin FTXM25XVMV bao lâu?",
+        answer: "Bảo hành chính hãng máy nén 5 năm — DigiSmart hỗ trợ đăng ký bảo hành và lắp đặt tận nơi tại TPHCM.",
+      },
+    ],
   },
   {
     id: "daikin-ftxm35xvmv",
@@ -3281,6 +4309,20 @@ export const products: Product[] = [
     warranty_years: 5,
     btu: 12000,
     inverter: true,
+    faq: [
+      {
+        question: "Daikin FTXM35XVMV phù hợp phòng bao nhiêu m²?",
+        answer: "Daikin FTXM35XVMV (12.000 BTU/h) phù hợp phòng khoảng 20m² theo công thức diện tích phòng (m²) nhân 600. DigiSmart tư vấn miễn phí để chọn đúng công suất trước khi lắp.",
+      },
+      {
+        question: "Daikin FTXM35XVMV dùng công nghệ gì, có tiết kiệm điện không?",
+        answer: "Máy dùng công nghệ Inverter (tự điều chỉnh công suất theo nhu cầu làm lạnh, tiết kiệm điện hơn máy thường) và gas lạnh R32 — loại gas thế hệ mới, thân thiện môi trường hơn R22 cũ.",
+      },
+      {
+        question: "Bảo hành Daikin FTXM35XVMV bao lâu?",
+        answer: "Bảo hành chính hãng máy nén 5 năm — DigiSmart hỗ trợ đăng ký bảo hành và lắp đặt tận nơi tại TPHCM.",
+      },
+    ],
   },
   {
     id: "daikin-ftxm50xvmv",
@@ -3321,6 +4363,20 @@ export const products: Product[] = [
     warranty_years: 5,
     btu: 18000,
     inverter: true,
+    faq: [
+      {
+        question: "Daikin FTXM50XVMV phù hợp phòng bao nhiêu m²?",
+        answer: "Daikin FTXM50XVMV (18.000 BTU/h) phù hợp phòng khoảng 30m² theo công thức diện tích phòng (m²) nhân 600. DigiSmart tư vấn miễn phí để chọn đúng công suất trước khi lắp.",
+      },
+      {
+        question: "Daikin FTXM50XVMV dùng công nghệ gì, có tiết kiệm điện không?",
+        answer: "Máy dùng công nghệ Inverter (tự điều chỉnh công suất theo nhu cầu làm lạnh, tiết kiệm điện hơn máy thường) và gas lạnh R32 — loại gas thế hệ mới, thân thiện môi trường hơn R22 cũ.",
+      },
+      {
+        question: "Bảo hành Daikin FTXM50XVMV bao lâu?",
+        answer: "Bảo hành chính hãng máy nén 5 năm — DigiSmart hỗ trợ đăng ký bảo hành và lắp đặt tận nơi tại TPHCM.",
+      },
+    ],
   },
   {
     id: "daikin-ftxm60xvmv",
@@ -3361,6 +4417,20 @@ export const products: Product[] = [
     warranty_years: 5,
     btu: 21000,
     inverter: true,
+    faq: [
+      {
+        question: "Daikin FTXM60XVMV phù hợp phòng bao nhiêu m²?",
+        answer: "Daikin FTXM60XVMV (21.000 BTU/h) phù hợp phòng khoảng 35m² theo công thức diện tích phòng (m²) nhân 600. DigiSmart tư vấn miễn phí để chọn đúng công suất trước khi lắp.",
+      },
+      {
+        question: "Daikin FTXM60XVMV dùng công nghệ gì, có tiết kiệm điện không?",
+        answer: "Máy dùng công nghệ Inverter (tự điều chỉnh công suất theo nhu cầu làm lạnh, tiết kiệm điện hơn máy thường) và gas lạnh R32 — loại gas thế hệ mới, thân thiện môi trường hơn R22 cũ.",
+      },
+      {
+        question: "Bảo hành Daikin FTXM60XVMV bao lâu?",
+        answer: "Bảo hành chính hãng máy nén 5 năm — DigiSmart hỗ trợ đăng ký bảo hành và lắp đặt tận nơi tại TPHCM.",
+      },
+    ],
   },
   {
     id: "daikin-ftxm71xvmv",
@@ -3401,6 +4471,20 @@ export const products: Product[] = [
     warranty_years: 5,
     btu: 24000,
     inverter: true,
+    faq: [
+      {
+        question: "Daikin FTXM71XVMV phù hợp phòng bao nhiêu m²?",
+        answer: "Daikin FTXM71XVMV (24.000 BTU/h) phù hợp phòng khoảng 40m² theo công thức diện tích phòng (m²) nhân 600. DigiSmart tư vấn miễn phí để chọn đúng công suất trước khi lắp.",
+      },
+      {
+        question: "Daikin FTXM71XVMV dùng công nghệ gì, có tiết kiệm điện không?",
+        answer: "Máy dùng công nghệ Inverter (tự điều chỉnh công suất theo nhu cầu làm lạnh, tiết kiệm điện hơn máy thường) và gas lạnh R32 — loại gas thế hệ mới, thân thiện môi trường hơn R22 cũ.",
+      },
+      {
+        question: "Bảo hành Daikin FTXM71XVMV bao lâu?",
+        answer: "Bảo hành chính hãng máy nén 5 năm — DigiSmart hỗ trợ đăng ký bảo hành và lắp đặt tận nơi tại TPHCM.",
+      },
+    ],
   },
   {
     id: "daikin-ftf25xav1v",
@@ -3441,6 +4525,20 @@ export const products: Product[] = [
     warranty_years: 5,
     btu: 9000,
     inverter: false,
+    faq: [
+      {
+        question: "Daikin FTF25XAV1V phù hợp phòng bao nhiêu m²?",
+        answer: "Daikin FTF25XAV1V (9.000 BTU/h) phù hợp phòng khoảng 15m² theo công thức diện tích phòng (m²) nhân 600. DigiSmart tư vấn miễn phí để chọn đúng công suất trước khi lắp.",
+      },
+      {
+        question: "Daikin FTF25XAV1V dùng loại gas gì?",
+        answer: "Máy dùng gas lạnh R32 — loại gas thế hệ mới, thân thiện môi trường hơn R22 cũ.",
+      },
+      {
+        question: "Bảo hành Daikin FTF25XAV1V bao lâu?",
+        answer: "Bảo hành chính hãng máy nén 5 năm — DigiSmart hỗ trợ đăng ký bảo hành và lắp đặt tận nơi tại TPHCM.",
+      },
+    ],
   },
   {
     id: "daikin-ftf35xav1v",
@@ -3481,6 +4579,20 @@ export const products: Product[] = [
     warranty_years: 5,
     btu: 12000,
     inverter: false,
+    faq: [
+      {
+        question: "Daikin FTF35XAV1V phù hợp phòng bao nhiêu m²?",
+        answer: "Daikin FTF35XAV1V (12.000 BTU/h) phù hợp phòng khoảng 20m² theo công thức diện tích phòng (m²) nhân 600. DigiSmart tư vấn miễn phí để chọn đúng công suất trước khi lắp.",
+      },
+      {
+        question: "Daikin FTF35XAV1V dùng loại gas gì?",
+        answer: "Máy dùng gas lạnh R32 — loại gas thế hệ mới, thân thiện môi trường hơn R22 cũ.",
+      },
+      {
+        question: "Bảo hành Daikin FTF35XAV1V bao lâu?",
+        answer: "Bảo hành chính hãng máy nén 5 năm — DigiSmart hỗ trợ đăng ký bảo hành và lắp đặt tận nơi tại TPHCM.",
+      },
+    ],
   },
   {
     id: "daikin-ftf50xv1v",
@@ -3521,5 +4633,19 @@ export const products: Product[] = [
     warranty_years: 5,
     btu: 18000,
     inverter: false,
+    faq: [
+      {
+        question: "Daikin FTF50XV1V phù hợp phòng bao nhiêu m²?",
+        answer: "Daikin FTF50XV1V (18.000 BTU/h) phù hợp phòng khoảng 30m² theo công thức diện tích phòng (m²) nhân 600. DigiSmart tư vấn miễn phí để chọn đúng công suất trước khi lắp.",
+      },
+      {
+        question: "Daikin FTF50XV1V dùng loại gas gì?",
+        answer: "Máy dùng gas lạnh R32 — loại gas thế hệ mới, thân thiện môi trường hơn R22 cũ.",
+      },
+      {
+        question: "Bảo hành Daikin FTF50XV1V bao lâu?",
+        answer: "Bảo hành chính hãng máy nén 5 năm — DigiSmart hỗ trợ đăng ký bảo hành và lắp đặt tận nơi tại TPHCM.",
+      },
+    ],
   },
 ];
