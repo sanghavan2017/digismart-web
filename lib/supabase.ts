@@ -112,6 +112,78 @@ export async function listOrders(limit = 100): Promise<DbOrderWithDetails[]> {
   );
 }
 
+// ------- product_reviews — xem specs/002-url-cua-hang-dich-vu/data-model.md mục 3 -------
+// Bảng này CHƯA được tạo trên Supabase — chờ chủ dự án duyệt SQL trước khi các hàm dưới
+// đây chạy được thật (sẽ báo lỗi "relation does not exist" cho tới khi đó, đúng như dự kiến).
+
+export type DbReview = {
+  id: string;
+  product_slug: string;
+  reviewer_name: string;
+  rating: number;
+  comment: string;
+  status: "pending" | "approved" | "rejected";
+  created_at: string;
+  reviewed_at: string | null;
+};
+
+export async function createReview(input: {
+  productSlug: string;
+  reviewerName: string;
+  rating: number;
+  comment: string;
+}): Promise<DbReview> {
+  const rows = await supabaseRequest<DbReview[]>("product_reviews", {
+    method: "POST",
+    body: JSON.stringify({
+      product_slug: input.productSlug,
+      reviewer_name: input.reviewerName,
+      rating: input.rating,
+      comment: input.comment,
+      status: "pending",
+    }),
+  });
+  return rows[0];
+}
+
+export async function listApprovedReviewsByProduct(productSlug: string): Promise<DbReview[]> {
+  return supabaseRequest<DbReview[]>(
+    `product_reviews?product_slug=eq.${encodeURIComponent(productSlug)}&status=eq.approved&order=created_at.desc`,
+    { method: "GET" }
+  );
+}
+
+// Rating trung bình cho TỪNG sản phẩm có ít nhất 1 đánh giá đã duyệt — dùng cho thẻ sản
+// phẩm ở trang danh mục (1 lượt gọi duy nhất, tránh gọi lặp theo từng sản phẩm).
+export async function getApprovedRatingSummaryByProduct(): Promise<Record<string, { avg: number; count: number }>> {
+  const rows = await supabaseRequest<{ product_slug: string; rating: number }[]>(
+    "product_reviews?select=product_slug,rating&status=eq.approved",
+    { method: "GET" }
+  );
+  const summary: Record<string, { total: number; count: number }> = {};
+  for (const r of rows) {
+    if (!summary[r.product_slug]) summary[r.product_slug] = { total: 0, count: 0 };
+    summary[r.product_slug].total += r.rating;
+    summary[r.product_slug].count += 1;
+  }
+  const result: Record<string, { avg: number; count: number }> = {};
+  for (const slug of Object.keys(summary)) {
+    result[slug] = { avg: summary[slug].total / summary[slug].count, count: summary[slug].count };
+  }
+  return result;
+}
+
+export async function listPendingReviews(): Promise<DbReview[]> {
+  return supabaseRequest<DbReview[]>("product_reviews?status=eq.pending&order=created_at.desc", { method: "GET" });
+}
+
+export async function moderateReview(id: string, status: "approved" | "rejected"): Promise<void> {
+  await supabaseRequest(`product_reviews?id=eq.${encodeURIComponent(id)}`, {
+    method: "PATCH",
+    body: JSON.stringify({ status, reviewed_at: new Date().toISOString() }),
+  });
+}
+
 export async function createOrderItems(
   orderId: string,
   items: { productSlug: string; productName: string; unitPrice: number; quantity: number; subtotal: number }[]

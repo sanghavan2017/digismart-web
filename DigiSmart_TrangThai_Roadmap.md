@@ -1,8 +1,9 @@
 # DigiSmart Website — Trạng thái & Roadmap
 (Cập nhật: 27/11/2026 — đây là nguồn sự thật duy nhất về tình trạng project. Đọc file này trước khi bắt đầu mỗi phiên làm việc mới.)
 
-## 🆕 Cập nhật 27/11/2026
+## 🆕 Cập nhật 28/11/2026
 
+- 🚧 **Feature 002 — Tách 2 cổng "Cửa hàng"/"Dịch vụ" theo URL mới** (`specs/002-url-cua-hang-dich-vu/`, quy trình Spec Kit đầy đủ spec→plan→tasks, đã duyệt từng bước): đổi `/` thành màn hình chọn cổng, `/may-loc-nuoc`→`/cua-hang/may-loc-nuoc`, `/dieu-hoa`→`/dich-vu/dieu-hoa` (redirect 308, không mất SEO), thêm lọc brand/giá/tồn kho + trust bar kiểu eguru. **Đã xong & test trên dev server**: US1 (link cũ không hỏng), US2 (trang chủ 2 cổng), US3 (lọc/sắp xếp danh mục), US4 (PDP vẫn mua được), US5 (Điều hòa trong nhánh Dịch vụ). **US6 (đánh giá/rating sản phẩm) đã viết xong code nhưng CHƯA chạy được** — cần bạn duyệt SQL tạo bảng `product_reviews` trên Supabase `digismart-web-shop` trước (xem tin nhắn báo cáo kèm theo). **Còn lại trước khi coi là xong hẳn**: (1) bạn duyệt SQL cho US6, (2) merge PR vào `master`, (3) tự nộp lại sitemap mới cho Google Search Console (thao tác thủ công, không tự làm được).
 - ✅ **Đã sửa cảnh báo CLAUDE.md bên dưới** (xem lịch sử): `CLAUDE.md` đã viết lại đúng cho web này (không Supabase/role/giá 3 tier), bản mô tả sai cũ lưu lại ở `CLAUDE.old.md`.
 - ✅ **Đổi chế độ làm việc** từ "TỰ CHẠY" sang **"LẬP KẾ HOẠCH → BẠN DUYỆT → LÀM"** (quyết định của bạn 27/11/2026, theo yêu cầu kiểm soát chặt hơn) — xem `CLAUDE.md` mục 2.
 - 🚧 **Spec redesign theo eGuru.vn** (`specs/2026-11-27-redesign-theo-eguru.md`, DRAFT): nâng web thành TMĐT thật (giỏ hàng + checkout), tách 2 cổng Cửa hàng/Dịch vụ. Đã chốt B/C/D (mục A — đưa Unimax/Kruger/Zimmermann/Living Sense lên web — để sau).

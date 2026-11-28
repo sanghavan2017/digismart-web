@@ -6,6 +6,7 @@ import AddToCartButton from "@/components/AddToCartButton";
 import BuyNowButton from "@/components/BuyNowButton";
 import TrustBadgeBar from "@/components/TrustBadgeBar";
 import PromoCampaignBlock from "@/components/PromoCampaignBlock";
+import ProductCardRating from "@/components/ProductCardRating";
 import type { Metadata } from "next";
 
 export const metadata: Metadata = {
@@ -150,6 +151,7 @@ export default function DieuHoaPage() {
                     <div style={{ fontFamily: "var(--font-sans)", fontWeight: 700, fontSize: "0.92rem", color: "var(--text)", lineHeight: 1.4, marginBottom: "0.6rem", minHeight: 40 }}>
                       {p.name}
                     </div>
+                    <ProductCardRating productSlug={p.id} />
                     <div style={{ display: "flex", alignItems: "baseline", gap: 8, marginBottom: "0.4rem" }}>
                       <span style={{ fontFamily: "var(--font-sans)", fontSize: "1.05rem", fontWeight: 700, color: "var(--brand2)" }}>
                         {formatPrice(p.price)}

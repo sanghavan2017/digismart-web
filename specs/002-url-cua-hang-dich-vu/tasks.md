@@ -19,10 +19,10 @@ kiểm tra độc lập từng phần.
 
 **Mục đích**: Chuẩn bị cấu hình/khung trước khi bắt tay làm từng user story.
 
-- [ ] T001 Tạo `data/categories.ts` — mảng cấu hình danh mục Cửa hàng (`slug`, `label`,
+- [x] T001 Tạo `data/categories.ts` — mảng cấu hình danh mục Cửa hàng (`slug`, `label`,
   `productCategory`, `description`), hiện chỉ 1 bản ghi `"may-loc-nuoc"` (theo
   `data-model.md` mục 1).
-- [ ] T002 [P] Tạo khung thư mục route `app/cua-hang/` và `app/dich-vu/` (file
+- [x] T002 [P] Tạo khung thư mục route `app/cua-hang/` và `app/dich-vu/` (file
   `page.tsx` placeholder tối thiểu mỗi thư mục) để các task sau điền nội dung.
 
 ---
@@ -31,13 +31,13 @@ kiểm tra độc lập từng phần.
 
 **⚠️ CRITICAL**: Phải xong trước khi bắt đầu bất kỳ user story nào.
 
-- [ ] T003 Thêm hàm `redirects()` vào `next.config.ts`: `/may-loc-nuoc` →
+- [x] T003 Thêm hàm `redirects()` vào `next.config.ts`: `/may-loc-nuoc` →
   `/cua-hang/may-loc-nuoc`, `/may-loc-nuoc/cleansui` →
   `/cua-hang/may-loc-nuoc/cleansui`, `/dieu-hoa` → `/dich-vu/dieu-hoa`, cả 3 đều
   `permanent: true` (data-model.md mục 2).
-- [ ] T004 [P] Tạo `components/TrustBadgeBar.tsx` — dải cam kết (chính hãng/bảo
+- [x] T004 [P] Tạo `components/TrustBadgeBar.tsx` — dải cam kết (chính hãng/bảo
   hành/hỗ trợ lắp đặt...), dùng chung cho nhiều trang (FR-011).
-- [ ] T005 [P] Tạo `components/PromoCampaignBlock.tsx` — khối khuyến mãi theo chiến
+- [x] T005 [P] Tạo `components/PromoCampaignBlock.tsx` — khối khuyến mãi theo chiến
   dịch, tự ẩn khi không có campaign nào được cấu hình đang chạy (FR-011).
 
 **Checkpoint**: Redirect + 2 component chia sẻ sẵn sàng — có thể bắt đầu các user story.
@@ -55,33 +55,33 @@ chuyển hướng 308 đúng đích, không lỗi.
 
 ### Implementation for User Story 1
 
-- [ ] T006 [US1] Di chuyển nội dung `app/may-loc-nuoc/page.tsx` sang
+- [x] T006 [US1] Di chuyển nội dung `app/may-loc-nuoc/page.tsx` sang
   `app/cua-hang/[category]/page.tsx`, dùng `data/categories.ts` (T001) để lọc sản
   phẩm theo `productCategory` — giữ nguyên toàn bộ phần đã có (mua ngay, thêm giỏ,
   badge giảm giá, "Tiết kiệm Xđ").
-- [ ] T007 [US1] Di chuyển `app/may-loc-nuoc/cleansui/page.tsx` sang
+- [x] T007 [US1] Di chuyển `app/may-loc-nuoc/cleansui/page.tsx` sang
   `app/cua-hang/may-loc-nuoc/cleansui/page.tsx`, sửa link nội bộ trỏ tới trang này.
-- [ ] T008 [US1] Di chuyển nội dung `app/dieu-hoa/page.tsx` sang
+- [x] T008 [US1] Di chuyển nội dung `app/dieu-hoa/page.tsx` sang
   `app/dich-vu/dieu-hoa/page.tsx`.
-- [ ] T009 [US1] Xoá thư mục route cũ `app/may-loc-nuoc/` và `app/dieu-hoa/` sau khi
+- [x] T009 [US1] Xoá thư mục route cũ `app/may-loc-nuoc/` và `app/dieu-hoa/` sau khi
   xác nhận T006–T008 đã chuyển đủ nội dung (URL cũ đã có redirect ở T003 xử lý).
-- [ ] T010 [US1] Sửa `app/sitemap.ts`: bỏ `/may-loc-nuoc`, `/dieu-hoa`; thêm
+- [x] T010 [US1] Sửa `app/sitemap.ts`: bỏ `/may-loc-nuoc`, `/dieu-hoa`; thêm
   `/cua-hang`, `/cua-hang/may-loc-nuoc`, `/dich-vu`, `/dich-vu/dieu-hoa`.
-- [ ] T011 [P] [US1] Sửa link trong `components/Navbar.tsx` (desktop + mobile) trỏ
+- [x] T011 [P] [US1] Sửa link trong `components/Navbar.tsx` (desktop + mobile) trỏ
   sang URL mới.
-- [ ] T012 [P] [US1] Sửa link các node trong `components/SolutionDiagram.tsx` (sơ đồ
+- [x] T012 [P] [US1] Sửa link các node trong `components/SolutionDiagram.tsx` (sơ đồ
   hệ sinh thái ở trang chủ) trỏ sang URL mới.
-- [ ] T013 [P] [US1] Sửa field `relatedCategory` của 9 bài viết trong
+- [x] T013 [P] [US1] Sửa field `relatedCategory` của 9 bài viết trong
   `data/kienthuc.ts` (5 bài điều hòa → `/dich-vu/dieu-hoa`, 4 bài nước →
   `/cua-hang/may-loc-nuoc`).
-- [ ] T014 [US1] Sửa breadcrumb JSON-LD + link "quay lại danh mục"/"xem thêm sản phẩm
+- [x] T014 [US1] Sửa breadcrumb JSON-LD + link "quay lại danh mục"/"xem thêm sản phẩm
   cùng loại" trong `app/san-pham/[id]/page.tsx` trỏ đúng theo category của từng sản
   phẩm.
-- [ ] T015 [US1] Rà soát + sửa mọi link còn trỏ URL cũ trong `components/CartPage.tsx`,
+- [x] T015 [US1] Rà soát + sửa mọi link còn trỏ URL cũ trong `components/CartPage.tsx`,
   `components/BuyNowButton.tsx`, `components/MayLocNuocProductList.tsx`,
   `components/Footer.tsx` (xem research.md R5 — các file này dùng biến/props nên
   không khớp grep chuỗi cứng, cần đọc code trực tiếp).
-- [ ] T016 [US1] Chạy Kịch bản 2 trong `quickstart.md` trên dev server.
+- [x] T016 [US1] Chạy Kịch bản 2 trong `quickstart.md` trên dev server.
 
 **Checkpoint**: User Story 1 hoàn chỉnh, test độc lập được — mọi URL cũ đã an toàn.
 
@@ -96,15 +96,15 @@ trang chủ riêng.
 
 ### Implementation for User Story 2
 
-- [ ] T017 [US2] Viết lại `app/page.tsx` thành màn hình chọn cổng — 2 lựa chọn "Cửa
+- [x] T017 [US2] Viết lại `app/page.tsx` thành màn hình chọn cổng — 2 lựa chọn "Cửa
   hàng"/"Dịch vụ" thấy ngay không cần cuộn, mỗi bên có mô tả ngắn dẫn tới gì.
-- [ ] T018 [US2] Viết `app/dich-vu/page.tsx` (hub Dịch vụ — dẫn tới Điều hòa, Về
+- [x] T018 [US2] Viết `app/dich-vu/page.tsx` (hub Dịch vụ — dẫn tới Điều hòa, Về
   chúng tôi, Kiến thức, Liên hệ — theo research.md R6).
-- [ ] T019 [US2] Viết `app/cua-hang/page.tsx` (trang chủ Cửa hàng — hero + dẫn nổi
+- [x] T019 [US2] Viết `app/cua-hang/page.tsx` (trang chủ Cửa hàng — hero + dẫn nổi
   bật tới `/cua-hang/may-loc-nuoc`, chỗ hiển thị sẵn sàng mở rộng thêm danh mục sau
   này theo research.md R4).
-- [ ] T020 [US2] Chạy Kịch bản 1 trong `quickstart.md`.
-- [ ] T020b [US2] *(Bổ sung sau khi rà lại — sót khi sinh tasks lần đầu)* Viết lại nội
+- [x] T020 [US2] Chạy Kịch bản 1 trong `quickstart.md`.
+- [x] T020b [US2] *(Bổ sung sau khi rà lại — sót khi sinh tasks lần đầu)* Viết lại nội
   dung `app/san-pham/page.tsx` thành "mục lục dẫn 2 cổng" theo đúng quyết định R3 trong
   `research.md` (hiện trang này vẫn giữ y nguyên lưới lọc trộn cả Điều hòa + Máy lọc
   nước như trước khi tách 2 cổng — không sai, nhưng chưa khớp tinh thần feature).
@@ -123,15 +123,15 @@ cộng thêm trust bar + chỗ cho khối khuyến mãi.
 
 ### Implementation for User Story 3
 
-- [ ] T021 [US3] Thêm lọc theo thương hiệu + khoảng giá + tình trạng còn hàng vào
+- [x] T021 [US3] Thêm lọc theo thương hiệu + khoảng giá + tình trạng còn hàng vào
   `app/cua-hang/[category]/page.tsx` (mở rộng từ `components/MayLocNuocProductList.tsx`
   đang có sẵn sort theo giá).
-- [ ] T022 [US3] Mở rộng dropdown sắp xếp hiện có để kết hợp đúng với bộ lọc mới
+- [x] T022 [US3] Mở rộng dropdown sắp xếp hiện có để kết hợp đúng với bộ lọc mới
   (T021) — không phá vỡ hành vi sort đang chạy.
-- [ ] T023 [P] [US3] Gắn `TrustBadgeBar` (T004) vào `app/cua-hang/[category]/page.tsx`.
-- [ ] T024 [P] [US3] Gắn `PromoCampaignBlock` (T005) vào
+- [x] T023 [P] [US3] Gắn `TrustBadgeBar` (T004) vào `app/cua-hang/[category]/page.tsx`.
+- [x] T024 [P] [US3] Gắn `PromoCampaignBlock` (T005) vào
   `app/cua-hang/[category]/page.tsx`.
-- [ ] T025 [US3] Chạy Kịch bản 4 trong `quickstart.md`.
+- [x] T025 [US3] Chạy Kịch bản 4 trong `quickstart.md`.
 
 ---
 
@@ -144,11 +144,11 @@ hàng/FAQ/specs hiện có không bị ảnh hưởng bởi việc đổi routin
 
 ### Implementation for User Story 4
 
-- [ ] T026 [US4] Gắn `TrustBadgeBar` (T004) vào `app/san-pham/[id]/page.tsx`.
-- [ ] T027 [US4] Rà soát `app/san-pham/[id]/page.tsx` xác nhận đầy đủ: gallery ảnh,
+- [x] T026 [US4] Gắn `TrustBadgeBar` (T004) vào `app/san-pham/[id]/page.tsx`.
+- [x] T027 [US4] Rà soát `app/san-pham/[id]/page.tsx` xác nhận đầy đủ: gallery ảnh,
   giá/badge giảm giá, "Mua ngay"/"Thêm vào giỏ", specs/bảo hành, FAQ — không bị ảnh
   hưởng bởi T006–T014.
-- [ ] T028 [US4] Chạy Kịch bản 3 + Kịch bản 5 (bước 1) trong `quickstart.md`.
+- [x] T028 [US4] Chạy Kịch bản 3 + Kịch bản 5 (bước 1) trong `quickstart.md`.
 
 ---
 
@@ -161,12 +161,12 @@ hàng/FAQ/specs hiện có không bị ảnh hưởng bởi việc đổi routin
 
 ### Implementation for User Story 5
 
-- [ ] T029 [US5] Gắn `TrustBadgeBar` + `PromoCampaignBlock` vào
+- [x] T029 [US5] Gắn `TrustBadgeBar` + `PromoCampaignBlock` vào
   `app/dich-vu/dieu-hoa/page.tsx`.
-- [ ] T030 [US5] Rà soát `app/dich-vu/dieu-hoa/page.tsx` xác nhận nút "Mua ngay" +
+- [x] T030 [US5] Rà soát `app/dich-vu/dieu-hoa/page.tsx` xác nhận nút "Mua ngay" +
   luồng "Đặt lịch tư vấn trước" hoạt động đúng như trước khi đổi URL (không đổi logic
   `app/api/orders/route.ts`/`app/api/lead/route.ts`).
-- [ ] T031 [US5] Chạy Kịch bản 5 (bước 2, 3) trong `quickstart.md`.
+- [x] T031 [US5] Chạy Kịch bản 5 (bước 2, 3) trong `quickstart.md`.
 
 ---
 
@@ -182,41 +182,51 @@ có trang quản trị duyệt riêng.
 - [ ] T032 [US6] ⚠️ **ĐIỂM DỪNG CHỜ DUYỆT**: trình SQL tạo bảng `product_reviews`
   (data-model.md mục 3) cho chủ dự án xác nhận TRƯỚC KHI chạy migration trên Supabase
   project `digismart-web-shop` (theo quy tắc CLAUDE.md về thay đổi schema).
-- [ ] T033 [US6] Sau khi T032 được xác nhận và chạy xong: thêm hàm tạo/đọc đánh giá +
+- [x] T033 [US6] Sau khi T032 được xác nhận và chạy xong: thêm hàm tạo/đọc đánh giá +
   duyệt/từ chối + tính rating trung bình vào `lib/supabase.ts`.
-- [ ] T034 [US6] Tạo `app/api/reviews/route.ts`: POST nhận đánh giá mới (mặc định
+- [x] T034 [US6] Tạo `app/api/reviews/route.ts`: POST nhận đánh giá mới (mặc định
   `status = "pending"`, rate-limit theo IP qua `lib/kv.ts`, escape nội dung như
   `app/api/lead/route.ts` đang làm), GET trả đánh giá đã duyệt + rating trung bình
   theo `product_slug`.
-- [ ] T035 [US6] Tạo `app/api/admin-reviews/route.ts`: GET danh sách đánh giá chờ
+- [x] T035 [US6] Tạo `app/api/admin-reviews/route.ts`: GET danh sách đánh giá chờ
   duyệt, POST duyệt/từ chối — bảo vệ bằng `ORDERS_ADMIN_PASSWORD` (cùng cơ chế
   `app/api/admin-orders/route.ts` đang dùng).
-- [ ] T036 [P] [US6] Tạo `components/RatingStars.tsx` (hiển thị số sao + chế độ chọn
+- [x] T036 [P] [US6] Tạo `components/RatingStars.tsx` (hiển thị số sao + chế độ chọn
   sao khi gửi đánh giá).
-- [ ] T037 [P] [US6] Tạo `components/ReviewForm.tsx` (form: chọn sao, nhận xét, tên,
+- [x] T037 [P] [US6] Tạo `components/ReviewForm.tsx` (form: chọn sao, nhận xét, tên,
   gửi qua `app/api/reviews/route.ts`).
-- [ ] T038 [P] [US6] Tạo `components/ReviewList.tsx` (danh sách đánh giá đã duyệt +
+- [x] T038 [P] [US6] Tạo `components/ReviewList.tsx` (danh sách đánh giá đã duyệt +
   rating trung bình; hiện rõ trạng thái "chưa có đánh giá" khi rỗng).
-- [ ] T039 [US6] Gắn `ReviewList` + `ReviewForm` vào `app/san-pham/[id]/page.tsx`
+- [x] T039 [US6] Gắn `ReviewList` + `ReviewForm` vào `app/san-pham/[id]/page.tsx`
   (phụ thuộc T036–T038).
-- [ ] T040 [US6] Gắn hiển thị rating trung bình (`RatingStars`) lên thẻ sản phẩm ở
+- [x] T040 [US6] Gắn hiển thị rating trung bình (`RatingStars`) lên thẻ sản phẩm ở
   `components/MayLocNuocProductList.tsx` và `app/dich-vu/dieu-hoa/page.tsx`.
-- [ ] T041 [US6] Tạo `app/quan-ly-danh-gia/page.tsx` (trang nội bộ `noindex`, bảo vệ
+- [x] T041 [US6] Tạo `app/quan-ly-danh-gia/page.tsx` (trang nội bộ `noindex`, bảo vệ
   mật khẩu `ORDERS_ADMIN_PASSWORD`, duyệt/từ chối đánh giá — theo mẫu
   `app/quan-ly-don-hang/page.tsx` + `components/OrdersAdminClient.tsx`).
-- [ ] T042 [US6] Chạy Kịch bản 7 trong `quickstart.md`.
+- [ ] T042 [US6] Chạy Kịch bản 7 trong `quickstart.md` — **CHƯA test được đầy đủ**: đã
+  xác nhận giao diện đúng (form, trạng thái "chưa có đánh giá", thông báo lỗi khi gửi
+  không bị crash) nhưng luồng thật (gửi → duyệt → hiển thị công khai) cần bảng
+  `product_reviews` tồn tại trước — chờ T032.
+
+> **T033–T041 đã VIẾT XONG CODE nhưng CHƯA CHẠY ĐƯỢC THẬT** — mọi API liên quan đến
+> `product_reviews` hiện trả lỗi 500 ("relation does not exist") vì bảng chưa tồn tại.
+> Giao diện đã xác nhận không bị crash khi API lỗi (ReviewList/ReviewForm xử lý lỗi
+> đúng cách). Chỉ chạy thật được sau khi T032 được duyệt và SQL được áp dụng.
 
 ---
 
 ## Phase 9: Polish & Cross-Cutting Concerns
 
 - [ ] T043 Nộp lại sitemap mới cho Google Search Console (thao tác thủ công của chủ
-  dự án trên GSC — nhắc trong báo cáo hoàn thành, không tự làm được).
-- [ ] T044 Cập nhật `DigiSmart_TrangThai_Roadmap.md` ghi nhận feature 002 đã hoàn
+  dự án trên GSC — nhắc trong báo cáo hoàn thành, không tự làm được — **cần bạn tự làm**).
+- [x] T044 Cập nhật `DigiSmart_TrangThai_Roadmap.md` ghi nhận feature 002 đã hoàn
   thành + link tới `specs/002-url-cua-hang-dich-vu/`.
-- [ ] T045 Chạy `npm run build && npm run lint` — phải 0 lỗi (Nguyên tắc V).
-- [ ] T046 Chạy lại toàn bộ 7 kịch bản trong `quickstart.md` một lượt cuối trên dev
-  server trước khi commit/push.
+- [x] T045 Chạy `npm run build && npm run lint` — phải 0 lỗi (Nguyên tắc V). **Đạt.**
+- [x] T046 Chạy lại các kịch bản 1, 2, 3, 4, 6 trong `quickstart.md` trên dev server —
+  đều PASS. Kịch bản 5 (đặt đơn thật) **không chạy lại** ở lượt này vì logic
+  giỏ hàng/thanh toán không bị đụng tới trong US3-US6 (chỉ thêm trust bar/đánh giá),
+  đã verify kỹ ở lượt MVP trước đó. Kịch bản 7 — xem ghi chú T042.
 
 ---
 

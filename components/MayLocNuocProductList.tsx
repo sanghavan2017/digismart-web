@@ -6,6 +6,7 @@ import type { Product } from "@/data/products";
 import LeadFormButton from "./LeadFormButton";
 import AddToCartButton from "./AddToCartButton";
 import BuyNowButton from "./BuyNowButton";
+import ProductCardRating from "./ProductCardRating";
 
 function formatPrice(n: number) {
   return n.toLocaleString("vi-VN") + "đ";
@@ -127,6 +128,7 @@ export default function MayLocNuocProductList({ items }: { items: Product[] }) {
                 <div style={{ fontFamily: "var(--font-sans)", fontWeight: 700, fontSize: "0.92rem", color: "var(--text)", lineHeight: 1.4, marginBottom: "0.6rem", minHeight: 40 }}>
                   {p.name}
                 </div>
+                <ProductCardRating productSlug={p.id} />
                 {p.highlights && p.highlights.length > 0 && (
                   <div style={{ marginBottom: "0.75rem" }}>
                     <div style={{ fontFamily: "var(--font-sans)", fontWeight: 700, fontSize: "0.68rem", color: "var(--brand)", textTransform: "uppercase", letterSpacing: 0.5, marginBottom: 4 }}>

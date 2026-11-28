@@ -6,6 +6,7 @@ import LeadFormButton from "@/components/LeadFormButton";
 import AddToCartButton from "@/components/AddToCartButton";
 import ProductGallery from "@/components/ProductGallery";
 import TrustBadgeBar from "@/components/TrustBadgeBar";
+import ReviewList from "@/components/ReviewList";
 import { notFound } from "next/navigation";
 import type { Metadata } from "next";
 
@@ -338,6 +339,16 @@ export default async function ProductDetailPage({
           </div>
         </section>
       )}
+
+      {/* Đánh giá sản phẩm (US6) */}
+      <section style={{ background: "#fff", padding: "3rem 0", borderTop: "1px solid var(--border)" }}>
+        <div className="container" style={{ maxWidth: 720 }}>
+          <h2 style={{ fontFamily: "var(--font-sans)", fontSize: "1.3rem", color: "var(--brand)", marginBottom: "1.5rem" }}>
+            Đánh giá từ khách hàng
+          </h2>
+          <ReviewList productSlug={product.id} />
+        </div>
+      </section>
 
       {/* Related Products */}
       {related.length > 0 && (
