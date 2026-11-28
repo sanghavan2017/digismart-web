@@ -116,29 +116,7 @@ export default function DieuHoaPage() {
         </div>
       </section>
 
-      {/* Benefits */}
-      <section style={{ padding: "3rem 0", background: "var(--bg)" }}>
-        <div className="container">
-          <h2 style={{ fontFamily: "var(--font-sans)", fontSize: "1.4rem", color: "var(--brand)", textAlign: "center", marginBottom: "2rem" }}>
-            Vì sao chọn DigiSmart?
-          </h2>
-          <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fit, minmax(220px, 1fr))", gap: "1.25rem" }}>
-            {benefits.map(b => (
-              <div key={b.title} style={{ background: "#fff", border: "1px solid var(--border)", borderRadius: 10, padding: "1.5rem", textAlign: "center" }}>
-                <div style={{ fontSize: "2.2rem", marginBottom: "0.75rem" }}>{b.icon}</div>
-                <div style={{ fontFamily: "var(--font-sans)", fontWeight: 700, fontSize: "1rem", color: "var(--brand)", marginBottom: "0.5rem" }}>
-                  {b.title}
-                </div>
-                <p style={{ fontFamily: "var(--font-sans)", fontSize: "0.88rem", color: "var(--text)", lineHeight: 1.6 }}>
-                  {b.desc}
-                </p>
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      {/* Product list */}
+      {/* Product list — đưa lên ngay sau Hero để khách vào là thấy hàng ngay */}
       <section style={{ padding: "3rem 0", background: "#fff" }}>
         <div className="container">
           <h2 style={{ fontFamily: "var(--font-sans)", fontSize: "1.4rem", color: "var(--brand)", marginBottom: "1.5rem" }}>
@@ -177,6 +155,11 @@ export default function DieuHoaPage() {
                         </span>
                       )}
                     </div>
+                    {p.originalPrice > p.price && (
+                      <p style={{ fontFamily: "var(--font-sans)", fontSize: "0.76rem", color: "#2E9E5B", fontWeight: 600, marginBottom: "0.3rem" }}>
+                        Tiết kiệm {formatPrice(p.originalPrice - p.price)}
+                      </p>
+                    )}
                     {p.price_install != null && (
                       <p style={{ fontFamily: "var(--font-sans)", fontSize: "0.78rem", color: "var(--muted)", marginBottom: "0.6rem" }}>
                         + Công lắp đặt từ {formatPrice(p.price_install)}
@@ -204,6 +187,28 @@ export default function DieuHoaPage() {
                     </LeadFormButton>
                   </div>
                 </div>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* Benefits */}
+      <section style={{ padding: "3rem 0", background: "var(--bg)" }}>
+        <div className="container">
+          <h2 style={{ fontFamily: "var(--font-sans)", fontSize: "1.4rem", color: "var(--brand)", textAlign: "center", marginBottom: "2rem" }}>
+            Vì sao chọn DigiSmart?
+          </h2>
+          <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fit, minmax(220px, 1fr))", gap: "1.25rem" }}>
+            {benefits.map(b => (
+              <div key={b.title} style={{ background: "#fff", border: "1px solid var(--border)", borderRadius: 10, padding: "1.5rem", textAlign: "center" }}>
+                <div style={{ fontSize: "2.2rem", marginBottom: "0.75rem" }}>{b.icon}</div>
+                <div style={{ fontFamily: "var(--font-sans)", fontWeight: 700, fontSize: "1rem", color: "var(--brand)", marginBottom: "0.5rem" }}>
+                  {b.title}
+                </div>
+                <p style={{ fontFamily: "var(--font-sans)", fontSize: "0.88rem", color: "var(--text)", lineHeight: 1.6 }}>
+                  {b.desc}
+                </p>
               </div>
             ))}
           </div>
