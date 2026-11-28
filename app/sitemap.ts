@@ -8,8 +8,11 @@ export default function sitemap(): MetadataRoute.Sitemap {
   const staticPages = [
     { url: `${BASE_URL}/`, priority: 1 },
     { url: `${BASE_URL}/san-pham`, priority: 0.9 },
-    { url: `${BASE_URL}/may-loc-nuoc`, priority: 0.9 },
-    { url: `${BASE_URL}/dieu-hoa`, priority: 0.9 },
+    { url: `${BASE_URL}/cua-hang`, priority: 0.9 },
+    { url: `${BASE_URL}/cua-hang/may-loc-nuoc`, priority: 0.9 },
+    { url: `${BASE_URL}/cua-hang/may-loc-nuoc/cleansui`, priority: 0.7 },
+    { url: `${BASE_URL}/dich-vu`, priority: 0.9 },
+    { url: `${BASE_URL}/dich-vu/dieu-hoa`, priority: 0.9 },
     { url: `${BASE_URL}/kien-thuc`, priority: 0.7 },
     { url: `${BASE_URL}/ve-chung-toi`, priority: 0.5 },
     { url: `${BASE_URL}/lien-he`, priority: 0.5 },

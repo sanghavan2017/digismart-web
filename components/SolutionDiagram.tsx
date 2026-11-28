@@ -2,8 +2,8 @@
 import { useEffect, useState } from "react";
 
 const CENTER = { x: 500, y: 300, w: 260, h: 90, href: "/" };
-const HUB_AC = { x: 210, y: 300, w: 180, h: 58, label: ["ĐIỀU HÒA", "KHÔNG KHÍ"], href: "/dieu-hoa" };
-const HUB_WATER = { x: 790, y: 300, w: 180, h: 58, label: ["MÁY LỌC", "NƯỚC"], href: "/may-loc-nuoc" };
+const HUB_AC = { x: 210, y: 300, w: 180, h: 58, label: ["ĐIỀU HÒA", "KHÔNG KHÍ"], href: "/dich-vu/dieu-hoa" };
+const HUB_WATER = { x: 790, y: 300, w: 180, h: 58, label: ["MÁY LỌC", "NƯỚC"], href: "/cua-hang/may-loc-nuoc" };
 
 type Logo = { type: "image"; src: string; aspect: number } | { type: "mitsubishi"; aspect: number };
 
@@ -115,7 +115,7 @@ export default function SolutionDiagram() {
               </text>
             </a>
 
-            {/* Category hubs — link to /dieu-hoa and /may-loc-nuoc */}
+            {/* Category hubs — link to /dich-vu/dieu-hoa and /cua-hang/may-loc-nuoc */}
             {[HUB_AC, HUB_WATER].map((h, hi) => (
               <a key={h.label.join("")} href={h.href} className={`dgs-sd-leaf${animate ? " dgs-sd-pulse" : ""}`} style={{ animationDelay: `${0.4 + hi * 0.3}s` }}>
                 <rect x={h.x - h.w / 2} y={h.y - h.h / 2} width={h.w} height={h.h} rx={10}

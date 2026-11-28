@@ -32,7 +32,7 @@ const navLinks = [
 ];
 
 // "Dịch vụ" = điều hòa (khảo sát/lắp đặt) — Máy lọc nước tách riêng thành "Cửa hàng" (mua ngay, có giỏ hàng/checkout thật)
-const serviceLinks = [{ href: "/dieu-hoa", label: "Lắp đặt điều hòa" }];
+const serviceLinks = [{ href: "/dich-vu/dieu-hoa", label: "Lắp đặt điều hòa" }];
 
 const linkStyle: React.CSSProperties = {
   color: "rgba(255,255,255,0.85)",
@@ -78,21 +78,21 @@ export default function Navbar() {
             </Link>
           ))}
 
-          {/* Cửa hàng — nổi bật, dẫn thẳng tới máy lọc nước (mua ngay, có giỏ hàng/checkout thật) */}
-          <Link href="/may-loc-nuoc"
+          {/* Cửa hàng — nổi bật, dẫn tới trang chủ Cửa hàng (mua ngay, có giỏ hàng/checkout thật) */}
+          <Link href="/cua-hang"
             style={{ ...linkStyle, background: "rgba(255,255,255,0.12)", border: "1px solid rgba(255,255,255,0.3)", padding: "6px 14px", borderRadius: 20, display: "inline-flex", alignItems: "center", gap: 6 }}>
             🛒 Cửa hàng
           </Link>
 
-          {/* Dịch vụ dropdown */}
+          {/* Dịch vụ dropdown — nhãn dẫn thẳng tới trang chủ Dịch vụ, hover mở thêm dropdown mục con */}
           <div
             onMouseEnter={() => setServiceOpen(true)}
             onMouseLeave={() => setServiceOpen(false)}
             style={{ position: "relative" }}
           >
-            <span style={{ ...linkStyle, cursor: "pointer", display: "inline-flex", alignItems: "center", gap: 4 }}>
+            <Link href="/dich-vu" style={{ ...linkStyle, cursor: "pointer", display: "inline-flex", alignItems: "center", gap: 4 }}>
               Dịch vụ <span style={{ fontSize: "0.7rem" }}>▾</span>
-            </span>
+            </Link>
             {serviceOpen && (
               <div style={{
                 position: "absolute", top: "100%", left: 0, marginTop: 6,
@@ -140,7 +140,7 @@ export default function Navbar() {
           ))}
 
           {/* Cửa hàng (mobile) */}
-          <Link href="/may-loc-nuoc"
+          <Link href="/cua-hang"
             onClick={() => setMenuOpen(false)}
             style={{ display: "block", color: "#F07B20", textDecoration: "none", fontSize: "0.92rem", fontWeight: 700, padding: "0.75rem 0", borderBottom: "1px solid rgba(255,255,255,0.08)", fontFamily: "var(--font-sans)" }}>
             🛒 Cửa hàng (Máy lọc nước)
@@ -148,11 +148,18 @@ export default function Navbar() {
 
           {/* Dịch vụ (mobile) */}
           <div style={{ borderBottom: "1px solid rgba(255,255,255,0.08)" }}>
-            <button
-              onClick={() => setMobileServiceOpen(o => !o)}
-              style={{ width: "100%", textAlign: "left", background: "none", border: "none", color: "rgba(255,255,255,0.85)", fontSize: "0.92rem", fontWeight: 500, padding: "0.75rem 0", fontFamily: "var(--font-sans)", cursor: "pointer", display: "flex", justifyContent: "space-between", alignItems: "center" }}>
-              Dịch vụ <span style={{ fontSize: "0.7rem" }}>{mobileServiceOpen ? "▴" : "▾"}</span>
-            </button>
+            <div style={{ display: "flex", alignItems: "center", justifyContent: "space-between" }}>
+              <Link href="/dich-vu" onClick={() => setMenuOpen(false)}
+                style={{ flex: 1, color: "rgba(255,255,255,0.85)", textDecoration: "none", fontSize: "0.92rem", fontWeight: 500, padding: "0.75rem 0", fontFamily: "var(--font-sans)" }}>
+                Dịch vụ
+              </Link>
+              <button
+                onClick={() => setMobileServiceOpen(o => !o)}
+                aria-label="Mở danh sách dịch vụ"
+                style={{ background: "none", border: "none", color: "rgba(255,255,255,0.85)", fontSize: "0.7rem", padding: "0.75rem 0.25rem", cursor: "pointer" }}>
+                {mobileServiceOpen ? "▴" : "▾"}
+              </button>
+            </div>
             {mobileServiceOpen && (
               <div style={{ paddingLeft: "1rem", paddingBottom: "0.5rem" }}>
                 {serviceLinks.map(item => (

@@ -116,7 +116,7 @@ export const posts: Post[] = [
         answer: "Máy thiếu công suất phải chạy hết công suất liên tục, tốn điện hơn máy đúng công suất chạy nhàn nhã, và xuống cấp nhanh hơn vì máy nén không có thời gian nghỉ giữa các chu kỳ.",
       },
     ],
-    relatedCategory: "/dieu-hoa",
+    relatedCategory: "/dich-vu/dieu-hoa",
   },
   {
     slug: "dieu-hoa-inverter-la-gi-co-dang-tien-khong",
@@ -179,7 +179,7 @@ export const posts: Post[] = [
         answer: "Nếu dùng điều hòa từ 6–8 tiếng/ngày trở lên, tiền điện tiết kiệm được sẽ bù lại chênh lệch giá máy chỉ sau khoảng 1–2 mùa nóng. Nếu chỉ dùng vài tiếng cuối tuần, máy thường vẫn hợp lý hơn.",
       },
     ],
-    relatedCategory: "/dieu-hoa",
+    relatedCategory: "/dich-vu/dieu-hoa",
   },
   {
     slug: "cspf-la-gi-cach-doc-nhan-nang-luong",
@@ -236,7 +236,7 @@ export const posts: Post[] = [
         answer: "Số sao (1–5) được xếp hạng dựa trên CSPF trong cùng phân khúc công suất — máy 5 sao là nhóm hiệu suất cao nhất. Chỉ nên so sánh CSPF giữa các máy cùng công suất, không so máy khác công suất với nhau.",
       },
     ],
-    relatedCategory: "/dieu-hoa",
+    relatedCategory: "/dich-vu/dieu-hoa",
   },
   {
     slug: "dieu-hoa-1-chieu-hay-2-chieu-mien-nam",
@@ -285,7 +285,7 @@ export const posts: Post[] = [
         answer: "Khác đúng một chức năng: máy 2 chiều có thêm chế độ bơm nhiệt để sưởi ấm. Khả năng làm lạnh của hai loại hoàn toàn không khác nhau.",
       },
     ],
-    relatedCategory: "/dieu-hoa",
+    relatedCategory: "/dich-vu/dieu-hoa",
   },
   {
     slug: "ve-sinh-dieu-hoa-bao-lau-mot-lan",
@@ -347,7 +347,7 @@ export const posts: Post[] = [
         answer: "Máy lâu mát hơn dù cùng mức nhiệt, có mùi hôi/ẩm mốc khi bật máy, dàn lạnh nhỏ giọt nước hoặc ồn bất thường, và tiền điện tăng rõ rệt dù thói quen sử dụng không đổi.",
       },
     ],
-    relatedCategory: "/dieu-hoa",
+    relatedCategory: "/dich-vu/dieu-hoa",
   },
   {
     slug: "tds-la-gi-nuoc-uong-tds-bao-nhieu-an-toan",
@@ -404,7 +404,7 @@ export const posts: Post[] = [
         answer: "Không đủ. TDS thấp không đồng nghĩa nước an toàn vì vi khuẩn, virus không làm tăng chỉ số TDS. Cần xem thêm các chỉ số vi sinh (Coliform, E.coli), kim loại nặng, clo dư theo QCVN 01-1:2018/BYT của Bộ Y tế.",
       },
     ],
-    relatedCategory: "/may-loc-nuoc",
+    relatedCategory: "/cua-hang/may-loc-nuoc",
   },
   {
     slug: "cong-nghe-mang-soi-rong-cleansui",
@@ -465,7 +465,7 @@ export const posts: Post[] = [
         answer: "Màng sợi rỗng hoạt động bằng áp lực nước máy sẵn có, không dùng điện, không nước thải, và giữ lại khoáng chất tự nhiên. Máy RO loại bỏ gần như mọi chất hòa tan kể cả khoáng chất có lợi, cần dùng điện và phát sinh nước thải.",
       },
     ],
-    relatedCategory: "/may-loc-nuoc",
+    relatedCategory: "/cua-hang/may-loc-nuoc",
   },
   {
     slug: "bao-lau-thay-loi-loc-nuoc-dau-hieu-nhan-biet",
@@ -526,7 +526,7 @@ export const posts: Post[] = [
         answer: "Nước chảy yếu hẳn, nước có mùi/vị lạ trở lại, nước có màu hoặc vẩn đục nhìn thấy được, hoặc đã dùng quá hạn ghi trên hộp dù nhìn bằng mắt vẫn thấy nước ổn.",
       },
     ],
-    relatedCategory: "/may-loc-nuoc",
+    relatedCategory: "/cua-hang/may-loc-nuoc",
   },
   {
     slug: "may-loc-nuoc-tai-voi-hay-bo-loc-tong",
@@ -593,6 +593,6 @@ export const posts: Post[] = [
         answer: "Bộ lọc tổng bảo vệ đường ống và thiết bị (máy giặt, bình nóng lạnh) khỏi cặn bẩn, rỉ sét. Máy lọc tại vòi lọc tinh đến 0,01 micron ngay trước khi uống, chặn vi khuẩn và giữ khoáng chất tự nhiên.",
       },
     ],
-    relatedCategory: "/may-loc-nuoc",
+    relatedCategory: "/cua-hang/may-loc-nuoc",
   },
 ];

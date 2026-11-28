@@ -14,6 +14,12 @@ function formatPrice(n: number) {
 function discountPct(orig: number, price: number) {
   return Math.round((1 - price / orig) * 100);
 }
+// Điều hòa thuộc nhánh Dịch vụ, các danh mục khác (hiện chỉ Máy lọc nước) thuộc nhánh
+// Cửa hàng — xem specs/002-url-cua-hang-dich-vu/research.md R4.
+function categoryHref(category: string) {
+  if (category === "Điều hòa") return "/dich-vu/dieu-hoa";
+  return "/cua-hang/may-loc-nuoc";
+}
 
 export async function generateStaticParams() {
   return products.map(p => ({ id: p.id }));
@@ -81,7 +87,8 @@ export default async function ProductDetailPage({
     itemListElement: [
       { "@type": "ListItem", position: 1, name: "Trang chủ", item: BASE_URL },
       { "@type": "ListItem", position: 2, name: "Sản phẩm", item: `${BASE_URL}/san-pham` },
-      { "@type": "ListItem", position: 3, name: product.name },
+      { "@type": "ListItem", position: 3, name: product.category, item: `${BASE_URL}${categoryHref(product.category)}` },
+      { "@type": "ListItem", position: 4, name: product.name },
     ],
   };
 
@@ -119,7 +126,7 @@ export default async function ProductDetailPage({
           <span>/</span>
           <Link href="/san-pham" style={{ color: "var(--muted)", textDecoration: "none" }}>Sản phẩm</Link>
           <span>/</span>
-          <Link href={`/san-pham?cat=${encodeURIComponent(product.category)}`} style={{ color: "var(--muted)", textDecoration: "none" }}>{product.category}</Link>
+          <Link href={categoryHref(product.category)} style={{ color: "var(--muted)", textDecoration: "none" }}>{product.category}</Link>
           <span>/</span>
           <span style={{ color: "var(--text)", fontWeight: 500 }}>{product.name}</span>
         </div>
