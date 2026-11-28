@@ -34,7 +34,7 @@ export default function Footer() {
           <div>
             <p style={{ fontFamily: "var(--font-sans)", fontWeight: 700, color: "#fff", marginBottom: "0.75rem", fontSize: "0.9rem" }}>Danh mục</p>
             {categories.map(c => (
-              <Link key={c.name} href={`/san-pham?cat=${encodeURIComponent(c.name)}`}
+              <Link key={c.name} href={c.slug === "may-loc-nuoc" ? "/cua-hang/may-loc-nuoc" : "/dich-vu/dieu-hoa"}
                 style={{ display: "block", fontFamily: "var(--font-sans)", fontSize: "0.85rem", color: "rgba(255,255,255,0.7)", textDecoration: "none", marginBottom: "0.4rem" }}>
                 {c.icon} {c.name}
               </Link>
@@ -77,7 +77,7 @@ export default function Footer() {
           <div style={{ display: "flex", gap: "1.25rem" }}>
             <Link href="/chinh-sach-bao-mat" style={{ color: "rgba(255,255,255,0.5)", textDecoration: "none" }}>Chính sách bảo mật</Link>
             <Link href="/bao-hanh-dieu-khoan" style={{ color: "rgba(255,255,255,0.5)", textDecoration: "none" }}>Bảo hành &amp; Điều khoản</Link>
-            <span style={{ color: "rgba(255,255,255,0.5)" }}>digismartvn.vn</span>
+            <span style={{ color: "rgba(255,255,255,0.5)" }}>digismartvn.com</span>
           </div>
         </div>
       </div>

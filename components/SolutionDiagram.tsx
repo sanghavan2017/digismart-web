@@ -8,10 +8,10 @@ const HUB_WATER = { x: 790, y: 300, w: 180, h: 58, label: ["MÁY LỌC", "NƯỚ
 type Logo = { type: "image"; src: string; aspect: number } | { type: "mitsubishi"; aspect: number };
 
 const LEAVES: { hub: typeof HUB_AC; x: number; y: number; w: number; h: number; logo: Logo; href: string }[] = [
-  { hub: HUB_AC, x: 90, y: 170, w: 190, h: 64, logo: { type: "mitsubishi", aspect: 4.25 }, href: "/san-pham?brand=Mitsubishi+Electric" },
-  { hub: HUB_AC, x: 90, y: 430, w: 190, h: 64, logo: { type: "image", src: "/images/brands/daikin-logo.png", aspect: 345 / 84 }, href: "/san-pham?brand=Daikin" },
-  { hub: HUB_WATER, x: 910, y: 170, w: 190, h: 64, logo: { type: "image", src: "/images/brands/cleansui-logo.svg", aspect: 116 / 40 }, href: "/san-pham?brand=Cleansui" },
-  { hub: HUB_WATER, x: 910, y: 430, w: 190, h: 64, logo: { type: "image", src: "/images/brands/kitz-logo.png", aspect: 482 / 143 }, href: "/san-pham?brand=Kitz" },
+  { hub: HUB_AC, x: 90, y: 170, w: 190, h: 64, logo: { type: "mitsubishi", aspect: 4.25 }, href: "/dich-vu/dieu-hoa" },
+  { hub: HUB_AC, x: 90, y: 430, w: 190, h: 64, logo: { type: "image", src: "/images/brands/daikin-logo.png", aspect: 345 / 84 }, href: "/dich-vu/dieu-hoa" },
+  { hub: HUB_WATER, x: 910, y: 170, w: 190, h: 64, logo: { type: "image", src: "/images/brands/cleansui-logo.svg", aspect: 116 / 40 }, href: "/cua-hang/may-loc-nuoc" },
+  { hub: HUB_WATER, x: 910, y: 430, w: 190, h: 64, logo: { type: "image", src: "/images/brands/kitz-logo.png", aspect: 482 / 143 }, href: "/cua-hang/may-loc-nuoc" },
 ];
 
 function elbowH(x1: number, y1: number, x2: number, y2: number) {

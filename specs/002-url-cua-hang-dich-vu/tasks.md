@@ -104,6 +104,10 @@ trang chủ riêng.
   bật tới `/cua-hang/may-loc-nuoc`, chỗ hiển thị sẵn sàng mở rộng thêm danh mục sau
   này theo research.md R4).
 - [ ] T020 [US2] Chạy Kịch bản 1 trong `quickstart.md`.
+- [ ] T020b [US2] *(Bổ sung sau khi rà lại — sót khi sinh tasks lần đầu)* Viết lại nội
+  dung `app/san-pham/page.tsx` thành "mục lục dẫn 2 cổng" theo đúng quyết định R3 trong
+  `research.md` (hiện trang này vẫn giữ y nguyên lưới lọc trộn cả Điều hòa + Máy lọc
+  nước như trước khi tách 2 cổng — không sai, nhưng chưa khớp tinh thần feature).
 
 **Checkpoint**: US1 + US2 xong — nền tảng URL/điều hướng 2 cổng chạy hoàn chỉnh, có
 thể demo/deploy riêng phần này nếu cần (MVP).
