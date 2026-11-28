@@ -3,6 +3,7 @@ import Link from "next/link";
 import Image from "next/image";
 import { useState } from "react";
 import { useCart } from "./CartContext";
+import { products } from "@/data/products";
 
 type FormState = "idle" | "sending" | "sent" | "error";
 
@@ -36,6 +37,9 @@ export default function CartPage() {
   const { items, remove, setQty, clear, total } = useCart();
   const [form, setForm] = useState({ name: "", phone: "", address: "", note: "" });
   const [state, setState] = useState<FormState>("idle");
+  // Giỏ có Điều hòa → vẫn cho thanh toán ngay (tiền máy), nhưng công lắp đặt báo giá riêng
+  // sau khảo sát, nên thêm lựa chọn "Đặt lịch tư vấn trước" cho khách muốn hỏi trước khi mua.
+  const hasInstallItems = items.some(i => products.find(p => p.id === i.id)?.category === "Điều hòa");
 
   function handleChange(e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) {
     setForm(prev => ({ ...prev, [e.target.name]: e.target.value }));
@@ -151,48 +155,71 @@ export default function CartPage() {
           </span>
         </div>
         <p style={{ fontFamily: "var(--font-sans)", fontSize: "0.82rem", color: "var(--muted)", padding: "0 0.25rem" }}>
-          Giá đã gồm VAT. Phí lắp đặt (nếu có) sẽ được báo khi xác nhận lịch. <strong>Thanh toán khi lắp đặt</strong> — không cần trả trước.
+          Giá đã gồm VAT.{" "}
+          {hasInstallItems
+            ? "Giá trên chưa gồm công lắp đặt — DigiSmart sẽ gọi khảo sát và báo giá công lắp riêng."
+            : "Phí lắp đặt (nếu có) sẽ được báo khi xác nhận lịch."}{" "}
+          <strong>Thanh toán khi lắp đặt</strong> — không cần trả trước.
         </p>
       </div>
 
-      {/* Form đặt lịch lắp đặt */}
-      <div style={{ background: "#fff", border: "1px solid var(--border)", borderRadius: 12, padding: "1.5rem" }}>
-        <h2 style={{ fontFamily: "var(--font-sans)", fontWeight: 700, fontSize: "1.1rem", color: "var(--brand)", marginBottom: "0.4rem" }}>
-          Đặt lịch lắp đặt
-        </h2>
-        <p style={{ fontFamily: "var(--font-sans)", fontSize: "0.85rem", color: "var(--muted)", marginBottom: "1.25rem" }}>
-          Để lại thông tin, DigiSmart sẽ gọi xác nhận lịch lắp đặt cho {items.length} sản phẩm trong giỏ.
-        </p>
-        <form onSubmit={handleSubmit} style={{ display: "flex", flexDirection: "column", gap: "1rem" }}>
-          <div>
-            <label style={labelStyle}>Họ và tên *</label>
-            <input name="name" value={form.name} onChange={handleChange} required placeholder="Nguyễn Văn A" style={inputStyle} />
-          </div>
-          <div>
-            <label style={labelStyle}>Số điện thoại *</label>
-            <input name="phone" value={form.phone} onChange={handleChange} required type="tel" placeholder="0900 000 000" style={inputStyle} />
-          </div>
-          <div>
-            <label style={labelStyle}>Địa chỉ lắp đặt</label>
-            <input name="address" value={form.address} onChange={handleChange} placeholder="Số nhà, đường, quận, TPHCM" style={inputStyle} />
-          </div>
-          <div>
-            <label style={labelStyle}>Ghi chú</label>
-            <textarea name="note" value={form.note} onChange={handleChange} rows={3} placeholder="Thời gian mong muốn, tầng lầu, chung cư..." style={{ ...inputStyle, resize: "vertical" }} />
-          </div>
-          {state === "error" && (
-            <p style={{ fontFamily: "var(--font-sans)", fontSize: "0.85rem", color: "#D64545" }}>
-              Gửi yêu cầu thất bại. Vui lòng thử lại hoặc gọi 0778 886 758.
+      {/* Luôn cho thanh toán ngay. Có Điều hòa: thêm lựa chọn "đặt lịch tư vấn trước" cho khách muốn hỏi trước khi mua. */}
+      <div style={{ display: "flex", flexDirection: "column", gap: "1.25rem" }}>
+        <div style={{ background: "#fff", border: "1px solid var(--border)", borderRadius: 12, padding: "1.5rem", textAlign: "center" }}>
+          <h2 style={{ fontFamily: "var(--font-sans)", fontWeight: 700, fontSize: "1.1rem", color: "var(--brand)", marginBottom: "0.75rem" }}>
+            Sẵn sàng thanh toán
+          </h2>
+          <p style={{ fontFamily: "var(--font-sans)", fontSize: "0.85rem", color: "var(--muted)", marginBottom: "1.25rem" }}>
+            {hasInstallItems
+              ? "Đặt hàng ngay — thanh toán tiền máy COD/chuyển khoản, công lắp đặt báo giá riêng sau khảo sát."
+              : "Đặt hàng ngay — giao tận nơi, thanh toán COD hoặc chuyển khoản."}
+          </p>
+          <Link href="/thanh-toan"
+            style={{ display: "inline-block", background: "#F07B20", color: "#fff", padding: "12px 28px", borderRadius: 8, textDecoration: "none", fontFamily: "var(--font-sans)", fontWeight: 700, fontSize: "0.95rem" }}>
+            Thanh toán ngay
+          </Link>
+        </div>
+
+        {hasInstallItems && (
+          <div style={{ background: "#fff", border: "1px solid var(--border)", borderRadius: 12, padding: "1.5rem" }}>
+            <h2 style={{ fontFamily: "var(--font-sans)", fontWeight: 700, fontSize: "1.1rem", color: "var(--brand)", marginBottom: "0.4rem" }}>
+              Hoặc đặt lịch tư vấn trước
+            </h2>
+            <p style={{ fontFamily: "var(--font-sans)", fontSize: "0.85rem", color: "var(--muted)", marginBottom: "1.25rem" }}>
+              Chưa muốn thanh toán ngay? Để lại thông tin, DigiSmart sẽ gọi tư vấn và khảo sát cho {items.length} sản phẩm trong giỏ trước.
             </p>
-          )}
-          <button
-            type="submit"
-            disabled={state === "sending"}
-            style={{ background: "#F07B20", color: "#fff", padding: "12px 24px", borderRadius: 8, fontFamily: "var(--font-sans)", fontWeight: 700, fontSize: "0.95rem", border: "none", cursor: state === "sending" ? "wait" : "pointer", opacity: state === "sending" ? 0.7 : 1 }}
-          >
-            {state === "sending" ? "Đang gửi..." : "Gửi yêu cầu đặt lịch"}
-          </button>
-        </form>
+            <form onSubmit={handleSubmit} style={{ display: "flex", flexDirection: "column", gap: "1rem" }}>
+              <div>
+                <label style={labelStyle}>Họ và tên *</label>
+                <input name="name" value={form.name} onChange={handleChange} required placeholder="Nguyễn Văn A" style={inputStyle} />
+              </div>
+              <div>
+                <label style={labelStyle}>Số điện thoại *</label>
+                <input name="phone" value={form.phone} onChange={handleChange} required type="tel" placeholder="0900 000 000" style={inputStyle} />
+              </div>
+              <div>
+                <label style={labelStyle}>Địa chỉ lắp đặt</label>
+                <input name="address" value={form.address} onChange={handleChange} placeholder="Số nhà, đường, quận, TPHCM" style={inputStyle} />
+              </div>
+              <div>
+                <label style={labelStyle}>Ghi chú</label>
+                <textarea name="note" value={form.note} onChange={handleChange} rows={3} placeholder="Thời gian mong muốn, tầng lầu, chung cư..." style={{ ...inputStyle, resize: "vertical" }} />
+              </div>
+              {state === "error" && (
+                <p style={{ fontFamily: "var(--font-sans)", fontSize: "0.85rem", color: "#D64545" }}>
+                  Gửi yêu cầu thất bại. Vui lòng thử lại hoặc gọi 0778 886 758.
+                </p>
+              )}
+              <button
+                type="submit"
+                disabled={state === "sending"}
+                style={{ background: "#F07B20", color: "#fff", padding: "12px 24px", borderRadius: 8, fontFamily: "var(--font-sans)", fontWeight: 700, fontSize: "0.95rem", border: "none", cursor: state === "sending" ? "wait" : "pointer", opacity: state === "sending" ? 0.7 : 1 }}
+              >
+                {state === "sending" ? "Đang gửi..." : "Gửi yêu cầu đặt lịch"}
+              </button>
+            </form>
+          </div>
+        )}
       </div>
     </div>
   );

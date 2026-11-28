@@ -117,6 +117,40 @@ export default function HomePage() {
         </div>
       </section>
 
+      {/* 2 cổng: Cửa hàng (mua máy lọc nước, giao tận nơi) / Dịch vụ (điều hòa, khảo sát lắp đặt) */}
+      <section style={{ padding: "2.5rem 0", background: "#fff" }}>
+        <div className="container">
+          <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fit, minmax(280px, 1fr))", gap: "1.25rem" }}>
+            <Link href="/may-loc-nuoc" className="card-link"
+              style={{ display: "block", textDecoration: "none", borderRadius: 12, padding: "2rem", background: "linear-gradient(135deg, #042C53 0%, #185FA5 100%)", color: "#fff" }}>
+              <div style={{ fontSize: "2rem", marginBottom: "0.5rem" }}>🛒</div>
+              <div style={{ fontFamily: "var(--font-sans)", fontWeight: 700, fontSize: "1.2rem", marginBottom: "0.4rem" }}>
+                Cửa hàng — Máy lọc nước
+              </div>
+              <p style={{ fontFamily: "var(--font-sans)", fontSize: "0.88rem", opacity: 0.85, marginBottom: "1rem" }}>
+                Cleansui, Kitz Micro Filter — mua ngay, giao tận nơi, thanh toán COD hoặc chuyển khoản.
+              </p>
+              <span style={{ fontFamily: "var(--font-sans)", fontWeight: 700, fontSize: "0.85rem", color: "#F07B20" }}>
+                Mua ngay →
+              </span>
+            </Link>
+            <Link href="/dieu-hoa" className="card-link"
+              style={{ display: "block", textDecoration: "none", borderRadius: 12, padding: "2rem", background: "var(--brand-light)", border: "1px solid var(--border)" }}>
+              <div style={{ fontSize: "2rem", marginBottom: "0.5rem" }}>🔧</div>
+              <div style={{ fontFamily: "var(--font-sans)", fontWeight: 700, fontSize: "1.2rem", marginBottom: "0.4rem", color: "var(--brand)" }}>
+                Dịch vụ — Điều hòa
+              </div>
+              <p style={{ fontFamily: "var(--font-sans)", fontSize: "0.88rem", color: "var(--muted)", marginBottom: "1rem" }}>
+                Mitsubishi Electric, Daikin — khảo sát miễn phí, tư vấn công suất, lắp đặt tận nơi tại TPHCM.
+              </p>
+              <span style={{ fontFamily: "var(--font-sans)", fontWeight: 700, fontSize: "0.85rem", color: "var(--brand2)" }}>
+                Xem & đặt lịch khảo sát →
+              </span>
+            </Link>
+          </div>
+        </div>
+      </section>
+
       {/* Categories */}
       <section style={{ padding: "3rem 0", background: "#fff" }}>
         <div className="container">

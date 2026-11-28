@@ -3,6 +3,7 @@ import Image from "next/image";
 import { products } from "@/data/products";
 import LeadFormButton from "@/components/LeadFormButton";
 import AddToCartButton from "@/components/AddToCartButton";
+import BuyNowButton from "@/components/BuyNowButton";
 import type { Metadata } from "next";
 
 export const metadata: Metadata = {
@@ -185,15 +186,23 @@ export default function DieuHoaPage() {
                   </div>
                 </Link>
                 <div style={{ padding: "0 1rem 1rem" }}>
-                  <LeadFormButton productName={p.name} style={{ width: "100%", padding: "10px 0", borderRadius: 6, fontSize: "0.82rem" }}>
-                    Nhận báo giá
-                  </LeadFormButton>
                   {p.inStock && (
-                    <AddToCartButton
+                    <BuyNowButton
                       product={{ id: p.id, name: p.name, price: p.price, imageUrl: p.imageUrl, icon: p.icon }}
-                      style={{ width: "100%", padding: "9px 0", borderRadius: 6, fontSize: "0.82rem", marginTop: 8 }}
+                      style={{ width: "100%", padding: "9px 0", borderRadius: 6, fontSize: "0.82rem", marginBottom: 8 }}
                     />
                   )}
+                  <div style={{ display: "flex", gap: 8 }}>
+                    {p.inStock && (
+                      <AddToCartButton
+                        product={{ id: p.id, name: p.name, price: p.price, imageUrl: p.imageUrl, icon: p.icon }}
+                        style={{ flex: 1, padding: "9px 0", borderRadius: 6, fontSize: "0.8rem" }}
+                      />
+                    )}
+                    <LeadFormButton productName={p.name} style={{ flex: 1, padding: "9px 0", borderRadius: 6, fontSize: "0.8rem" }}>
+                      Nhận báo giá
+                    </LeadFormButton>
+                  </div>
                 </div>
               </div>
             ))}

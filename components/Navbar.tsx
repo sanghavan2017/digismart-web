@@ -31,10 +31,8 @@ const navLinks = [
   { href: "/lien-he", label: "Liên hệ" },
 ];
 
-const serviceLinks = [
-  { href: "/may-loc-nuoc", label: "Máy lọc nước" },
-  { href: "/dieu-hoa", label: "Lắp đặt điều hòa" },
-];
+// "Dịch vụ" = điều hòa (khảo sát/lắp đặt) — Máy lọc nước tách riêng thành "Cửa hàng" (mua ngay, có giỏ hàng/checkout thật)
+const serviceLinks = [{ href: "/dieu-hoa", label: "Lắp đặt điều hòa" }];
 
 const linkStyle: React.CSSProperties = {
   color: "rgba(255,255,255,0.85)",
@@ -79,6 +77,12 @@ export default function Navbar() {
               {item.label}
             </Link>
           ))}
+
+          {/* Cửa hàng — nổi bật, dẫn thẳng tới máy lọc nước (mua ngay, có giỏ hàng/checkout thật) */}
+          <Link href="/may-loc-nuoc"
+            style={{ ...linkStyle, background: "rgba(255,255,255,0.12)", border: "1px solid rgba(255,255,255,0.3)", padding: "6px 14px", borderRadius: 20, display: "inline-flex", alignItems: "center", gap: 6 }}>
+            🛒 Cửa hàng
+          </Link>
 
           {/* Dịch vụ dropdown */}
           <div
@@ -134,6 +138,13 @@ export default function Navbar() {
               {item.label}
             </Link>
           ))}
+
+          {/* Cửa hàng (mobile) */}
+          <Link href="/may-loc-nuoc"
+            onClick={() => setMenuOpen(false)}
+            style={{ display: "block", color: "#F07B20", textDecoration: "none", fontSize: "0.92rem", fontWeight: 700, padding: "0.75rem 0", borderBottom: "1px solid rgba(255,255,255,0.08)", fontFamily: "var(--font-sans)" }}>
+            🛒 Cửa hàng (Máy lọc nước)
+          </Link>
 
           {/* Dịch vụ (mobile) */}
           <div style={{ borderBottom: "1px solid rgba(255,255,255,0.08)" }}>
