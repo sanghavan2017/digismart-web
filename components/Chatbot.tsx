@@ -186,19 +186,8 @@ export default function Chatbot() {
   const [lastProductName, setLastProductName] = useState<string | undefined>(undefined);
   const bottomRef = useRef<HTMLDivElement>(null);
   const recognitionRef = useRef<unknown>(null);
-  const userToggled = useRef(false);
 
   useEffect(() => { bottomRef.current?.scrollIntoView({ behavior: "smooth" }); }, [messages, loading]);
-
-  useEffect(() => {
-    const t = setTimeout(() => {
-      if (userToggled.current) return;
-      setOpen(true);
-      setWelcomed(true);
-      setMessages([{ role: "assistant", content: WELCOME_MESSAGE }]);
-    }, 2500);
-    return () => clearTimeout(t);
-  }, []);
 
   function speak(html: string) {
     if (!voiceOn || typeof window === "undefined" || !window.speechSynthesis) return;
@@ -274,7 +263,6 @@ export default function Chatbot() {
   }
 
   function handleOpen() {
-    userToggled.current = true;
     const next = !open;
     setOpen(next);
     if (next && !welcomed) {

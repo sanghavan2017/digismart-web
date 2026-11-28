@@ -92,7 +92,7 @@ export default function CartPage() {
           Giỏ hàng đang trống
         </h2>
         <p style={{ fontFamily: "var(--font-sans)", color: "var(--muted)", fontSize: "0.95rem", marginBottom: "1.5rem" }}>
-          Thêm sản phẩm vào giỏ để đặt lịch lắp đặt — thanh toán khi lắp, không cần trả trước.
+          Thêm sản phẩm vào giỏ — mua ngay thanh toán COD/chuyển khoản, hoặc đặt lịch tư vấn lắp đặt trước.
         </p>
         <Link href="/san-pham"
           style={{ display: "inline-block", background: "var(--accent)", color: "#fff", padding: "11px 28px", borderRadius: 8, textDecoration: "none", fontFamily: "var(--font-sans)", fontWeight: 700, fontSize: "0.9rem" }}>

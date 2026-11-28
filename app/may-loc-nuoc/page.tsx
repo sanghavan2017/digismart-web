@@ -118,6 +118,16 @@ export default function MayLocNuocPage() {
         </div>
       </section>
 
+      {/* Product list — đưa lên ngay sau Hero để khách vào là thấy hàng, không phải cuộn qua nội dung công nghệ mới tới */}
+      <section style={{ padding: "3rem 0", background: "#fff" }}>
+        <div className="container">
+          <h2 style={{ fontFamily: "var(--font-sans)", fontSize: "1.4rem", color: "var(--brand)", marginBottom: "1.5rem" }}>
+            Các dòng máy lọc nước đang phân phối
+          </h2>
+          <MayLocNuocProductList items={items} />
+        </div>
+      </section>
+
       {/* Banner sang trang riêng dòng Cleansui */}
       <section style={{ padding: "1.5rem 0", background: "#fff", borderBottom: "1px solid var(--border)" }}>
         <div className="container">
@@ -244,16 +254,6 @@ export default function MayLocNuocPage() {
               />
             </div>
           </div>
-        </div>
-      </section>
-
-      {/* Product list */}
-      <section style={{ padding: "3rem 0", background: "#fff" }}>
-        <div className="container">
-          <h2 style={{ fontFamily: "var(--font-sans)", fontSize: "1.4rem", color: "var(--brand)", marginBottom: "1.5rem" }}>
-            Các dòng máy lọc nước đang phân phối
-          </h2>
-          <MayLocNuocProductList items={items} />
         </div>
       </section>
 

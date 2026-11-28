@@ -89,6 +89,11 @@ export default function MayLocNuocProductList({ items }: { items: Product[] }) {
                     </span>
                   )}
                 </div>
+                {p.originalPrice > p.price && (
+                  <p style={{ fontFamily: "var(--font-sans)", fontSize: "0.76rem", color: "#2E9E5B", fontWeight: 600, marginBottom: "0.3rem" }}>
+                    Tiết kiệm {formatPrice(p.originalPrice - p.price)}
+                  </p>
+                )}
                 {p.price_install != null && (
                   <p style={{ fontFamily: "var(--font-sans)", fontSize: "0.78rem", color: "var(--muted)", marginBottom: "0.6rem" }}>
                     + Công lắp đặt từ {formatPrice(p.price_install)} · Bảo hành {p.warranty_years} năm
