@@ -63,17 +63,20 @@ export async function POST(req: NextRequest) {
     }
 
     // Tự tra giá/tên thật từ data/products.ts theo slug — không tin giá client gửi lên.
-    // Chỉ nhận sản phẩm category "Máy lọc nước" (phạm vi checkout thật giai đoạn 1, Điều hòa vẫn đi flow đặt lịch cũ).
+    // Nhận cả Máy lọc nước và Điều hòa — riêng Điều hòa chưa tính công lắp đặt vào đơn,
+    // sẽ báo giá riêng sau khảo sát (xem hasInstallItems bên dưới).
     const resolvedItems: { productSlug: string; productName: string; unitPrice: number; quantity: number; subtotal: number }[] = [];
+    let hasInstallItems = false;
     for (const raw of items) {
       const qty = Math.floor(Number(raw?.qty));
       if (!raw?.id || !Number.isFinite(qty) || qty <= 0 || qty > 50) {
         return NextResponse.json({ error: "Số lượng sản phẩm không hợp lệ." }, { status: 400 });
       }
       const product = products.find(p => p.id === raw.id);
-      if (!product || product.category !== "Máy lọc nước" || !product.inStock) {
+      if (!product || (product.category !== "Máy lọc nước" && product.category !== "Điều hòa") || !product.inStock) {
         return NextResponse.json({ error: `Sản phẩm "${esc(raw.id)}" không hợp lệ hoặc đã hết hàng.` }, { status: 400 });
       }
+      if (product.category === "Điều hòa") hasInstallItems = true;
       resolvedItems.push({
         productSlug: product.id,
         productName: product.name,
@@ -141,6 +144,7 @@ export async function POST(req: NextRequest) {
         <p><strong>Thanh toán:</strong> ${paymentMethod === "cod" ? "Thanh toán khi nhận hàng (COD)" : "Chuyển khoản"}</p>
         ${itemsHtml}
         <p><strong>Ghi chú:</strong> ${esc(note) || "(không có)"}</p>
+        ${hasInstallItems ? `<p style="color:#D64545"><strong>⚠ Có sản phẩm Điều hòa cần khảo sát — gọi khách báo giá công lắp đặt trước khi giao.</strong></p>` : ""}
       `;
       await fetch("https://api.resend.com/emails", {
         method: "POST",

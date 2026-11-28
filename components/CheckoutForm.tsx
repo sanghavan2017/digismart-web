@@ -2,6 +2,7 @@
 import Link from "next/link";
 import { useState } from "react";
 import { useCart } from "./CartContext";
+import { products } from "@/data/products";
 
 type FormState = "idle" | "sending" | "sent" | "error";
 
@@ -35,12 +36,14 @@ const labelStyle: React.CSSProperties = {
 
 export default function CheckoutForm() {
   const { items, clear, total } = useCart();
+  const hasInstallItems = items.some(i => products.find(p => p.id === i.id)?.category === "Điều hòa");
   const [form, setForm] = useState({ name: "", phone: "", email: "", address: "", note: "" });
   const [paymentMethod, setPaymentMethod] = useState<"cod" | "bank_transfer">("cod");
   const [state, setState] = useState<FormState>("idle");
   const [errorMsg, setErrorMsg] = useState("");
   const [orderCode, setOrderCode] = useState("");
   const [orderTotal, setOrderTotal] = useState(0);
+  const [orderHasInstall, setOrderHasInstall] = useState(false);
 
   function handleChange(e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) {
     setForm(prev => ({ ...prev, [e.target.name]: e.target.value }));
@@ -68,6 +71,7 @@ export default function CheckoutForm() {
       }
       setOrderCode(data.orderCode);
       setOrderTotal(total);
+      setOrderHasInstall(hasInstallItems);
       clear();
       setState("sent");
     } catch {
@@ -91,6 +95,11 @@ export default function CheckoutForm() {
             ? "DigiSmart sẽ gọi xác nhận đơn và giao hàng sớm nhất — thanh toán khi nhận hàng."
             : "Vui lòng chuyển khoản theo thông tin bên dưới. DigiSmart sẽ gọi xác nhận và giao hàng sau khi nhận được tiền."}
         </p>
+        {orderHasInstall && (
+          <p style={{ fontFamily: "var(--font-sans)", color: "#D64545", fontSize: "0.9rem", maxWidth: 440, margin: "0 auto 1rem" }}>
+            Số tiền trên chưa gồm công lắp đặt điều hòa — DigiSmart sẽ gọi khảo sát và báo giá công lắp riêng.
+          </p>
+        )}
         {paymentMethod === "bank_transfer" && (
           <div style={{ background: "var(--brand-light)", border: "1px solid var(--border)", borderRadius: 10, padding: "1rem 1.25rem", maxWidth: 420, margin: "0 auto 1.5rem", textAlign: "left", fontFamily: "var(--font-sans)", fontSize: "0.9rem", color: "var(--text)" }}>
             <div><strong>Ngân hàng:</strong> {BANK_INFO.bank}</div>
@@ -135,6 +144,11 @@ export default function CheckoutForm() {
         <p style={{ fontFamily: "var(--font-sans)", fontSize: "0.82rem", color: "var(--muted)", marginTop: "0.5rem" }}>
           Giá đã gồm VAT. Miễn phí giao hàng nội thành — DigiSmart gọi xác nhận trước khi giao.
         </p>
+        {hasInstallItems && (
+          <p style={{ fontFamily: "var(--font-sans)", fontSize: "0.82rem", color: "#D64545", marginTop: "0.4rem" }}>
+            Giá trên chưa gồm công lắp đặt điều hòa — DigiSmart sẽ gọi khảo sát và báo giá công lắp riêng sau khi xác nhận đơn.
+          </p>
+        )}
       </div>
 
       {/* Form thông tin giao hàng */}
